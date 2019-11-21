@@ -96,9 +96,9 @@ Available immediately following class or by appointment.
 * Select pre-class learning materials.
   * Aim for one to two hours of content.
   * (e.g., videos, blog posts, and/or documents or code snippets)
-  * Open a pull request to publish brief descriptions of the selected materials and links to access the materials on the course schedule.
+  * Open a pull request [on the course website](https://github.com/mmore500/cse-891) to publish brief descriptions of the selected materials and links to access the materials on the course schedule.
 * Prepare at least five conversation-starters/questions.
-  * Include in pull request to add to course schedule.
+  * Include these in the pull request that adds to the course schedule.
 * Complete preparation at least five days before the class session you are scheduled to lead.
 * Facilitate in-class discussion.
 * Consult [the course schedule page]({{ site.baseurl }}/schedule.html) for discussion leader assignments.
@@ -113,7 +113,7 @@ Four checkpoint deliverables, listed below, will be assessed for each blog post.
 [The course schedule page]({{ site.baseurl }}/schedule.html) lists checkpoint deadlines for both blog posts.
 
 1. topic
-  * Open a pull request that adds a template post with a descriptive title.
+  * Open a pull request [on the course website](https://github.com/mmore500/cse-891) that adds a template post with a descriptive title.
   * Mark your pull request with the "topic" label and comment on the pull request with a brief description of your post.
   * Consider referring to the [Possible Course Topics](#possible-course-topics) subsection
 2. outline
