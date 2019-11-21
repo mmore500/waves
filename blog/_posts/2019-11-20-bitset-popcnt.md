@@ -10,7 +10,7 @@ In recent work with the event-driven [SignalGP representation](https://dl.acm.or
 We figure out what wires together by matching bitstring tags.
 Because we calculate the matches between *a lot* of bitstring tags in our experiments, it's important for this operation to be as efficient as possible.
 
-![Gotta go fast!](/assets/mmore500/giphy-sonic.gif)
+![Gotta go fast!]({{ site.baseurl }}/assets/mmore500/giphy-sonic.gif)
 
 In practice, calculating tag matches involves performing some operation on the two tags (e.g., bitwise xor) and then counting the number of 1's in the resulting bitstring.
 Under the hood, we use `uint64_t`'s and `uint_32_t`'s to represent components of our bitstrings.
