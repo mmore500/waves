@@ -84,9 +84,10 @@ Available immediately following class or by appointment.
 
 ## Course Assignments
 
-### Attendance and Participation
+### Participation
 
 * We expect consistent engagement with class discussion and encourage active class participation.
+* Attendance is critical to participation.
 * Students should come to class prepared, having read and/or watched pre-class learning materials.
 * Two unexcused absences are allotted.
 
@@ -106,12 +107,12 @@ Available immediately following class or by appointment.
 
 ### Blog Post Author
 
-Students will author two technical posts on the class blog.
+Students will author one technical post on the class blog.
 Blog posts should describe a use case for a C++ feature or library and/or compare alternate approaches to solving a problem with C++.
 Posts should provide original evidence to (code snippets with specific discussion about readability or maintainability, intermediate representation output, execution timings, etc.).
-Blog posts (even by the same author) may cover the same topic, but each should present unique original evidence.
-Four checkpoint deliverables, listed below, will be assessed for each blog post.
-[The course schedule page]({{ site.baseurl }}/schedule.html) lists checkpoint deadlines for both blog posts.
+Multiple students' blog posts may cover the same topic, but each should present unique original evidence.
+Four checkpoint deliverables, listed below, will be assessed for the blog post.
+[The course schedule page]({{ site.baseurl }}/schedule.html) lists checkpoint deadlines for the blog post.
 
 1. topic
   * Open a pull request [on the course website](https://github.com/mmore500/cse-891) that adds a template post with a descriptive title.
@@ -167,14 +168,14 @@ Course points will be divided between assignments as follows.
 
 Category          | Points %
 ----------------- | --------
-Attendance        | 30%
+Attendance        | 40%
 Discussion leader | 20%
-Blog post 1       | 20%
-Blog post 2       | 20%
+Blog post author  | 20%
 Blog post reviews | 10%
 
-All work will receive full credit on successful completion, with points potentially deducted for tardiness.
-If instructors deem assignments unsatisfactorily completed, students will be allowed to re-submit work but may be penalized for tardiness.
+Attendance credit will be calculated as the percentage of class sessions attended.
+All other work will receive full credit on successful completion, with points potentially deducted for tardiness.
+If instructors deem blog post assignments unsatisfactorily completed, students will be allowed to re-submit work but may be penalized for tardiness.
 (See the [Late Work Policy](#late-work-policy).)
 
 Note that *both* blog post reviews are considered as *one* assignment.
@@ -191,61 +192,55 @@ Grade | Overall %
 1.5   | >=55
 1.0   | >=45
 
+We expect students who fulfill all assignments to receive a 4.0 in the class.
+
 ## Late Work Policy
 
 Deadlines are enforced at 11:59pm EST.
 
 ### Blog Post Author
 
-Blog post credit (before review) will be calculated based on the following rubric based on days late summed over each checkpoint.
+Blog post credit will be calculated based on the following rubric based on days late summed over each checkpoint.
 
 Days Late                      | Credit %
 ------------------------------ | ----------
 0                              | 100%
-0 to 1                         | 90%
-1 to 2                         | 80%
-2 to 3                         | 70%
-3 to 7                         | 60%
-7+                             | 20%
+0 to 7                         | 80%
+7+                             | 50%
 ready for review after 4/17/20 | 0%
 complete after 5/1/20          | 0%
 
 ### Blog Post Reviewer
 
-Blog post review credit will be calculated from total days late (over both assignments) based on the following rubric.
+Blog post review credit will be calculated from total days late based on the following rubric.
 (After seven days, instructors will step in to provide review.)
 
 Days Late | Credit %
 --------- | --------
 0         | 100%
-0 to 2    | 80%
-2 to 7    | 60%
+0 to 7    | 80%
 7+        | 0%
 
 ### Discussion Leader
 
 Discussion leader materials preparation credit will be assigned based on the following rubric.
 (
-After one day late, instructors will step in to prepare materials.
+After two days late, instructors will step in to prepare materials.
 If you end up needing to reschedule your discussion lead day, please email the instructors ASAP.
 )
 
 Days Late | Credit %
 --------- | --------
 0         | 100%
-0 to 1    | 80%
-1+        | 0%
+0 to 2    | 80%
+2+        | 0%
 
-### No-Penalty Late Days
+### Extensions
 
-We afford three no-penalty late days for blog checkpoints and blog review.
-(Late days do not apply to discussion materials preparation.)
-Email the instructors before turning your assignment in (preferably, before or at the original deadline) to use them.
+If circumstances necessitate extra time to complete an assignment, contact the instructors and we will work with you to accommodate.
 
-If a blog post is prepared for review late, the post's reviewer will be provided an automatic commensurate extension with none of *their* no-penalty late days deducted.
-If a blog post is not prepared for review by 4/17/20, the blog post's reviewer will not be required to complete a review and will receive full credit for the review assignment.
-
-If a blog post's review is completed late, the post's author will be provided an automatic commensurate extension with none of *their* no-penalty late days deducted.
+If a blog post is prepared for review late, the post's reviewer will be provided an automatic commensurate extension.
+Likewise, if a blog post's review is completed late, the post's author will be provided an automatic commensurate extension for their revisions.
 
 ## Required Materials
 
@@ -258,6 +253,10 @@ If the name listed in the course roster is not included on your GitHub account's
 Laptops are encouraged in class!
 They're useful for live coding and googling arcane C++ questions.
 However, for your own educational benefit and out of consideration of your classmates, please limit your laptop use to class-related activities (e.g., *not* social media, news sites, or homework).
+
+## Boilerplate
+
+From this section onwards, syllabus components are standard boilerplate!
 
 ## Spartan Code of Honor Academic Pledge
 
