@@ -160,7 +160,7 @@ There will be no final examination for this course.
 ## Course Schedule
 
 See [the course schedule page]({{ site.baseurl }}/schedule.html) for up-to-date information on deadlines.
-[The discussion topics page]({{ site.baseurl }}/schedule.html) lists upcoming .
+[The discussion topics page]({{ site.baseurl }}/schedule.html) lists subjects and pre-class learning materials for upcoming class periods.
 
 ## Grading
 
