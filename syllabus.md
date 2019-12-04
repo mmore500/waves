@@ -79,6 +79,7 @@ Available immediately following class or by appointment.
 * name mangling (and extern)
 * move semantics
 * concepts
+* modules
 * C++20/23/... features
 * the C++ Core Guidelines
 
