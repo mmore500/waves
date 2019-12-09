@@ -98,7 +98,7 @@ Available immediately following class or by appointment.
 * Select pre-class learning materials.
   * Aim for one to two hours of content.
   * (e.g., videos, blog posts, and/or documents or code snippets)
-  * Open a pull request [on the course website](https://github.com/mmore500/cse-891) to publish brief descriptions of the selected materials and links to access the materials on the course schedule.
+  * Open a pull request [on the course website](https://github.com/mmore500/cse-491) to publish brief descriptions of the selected materials and links to access the materials on the course schedule.
   You'll need to edit the relevant `discussion/_posts/2019-11-20-week??.md` file.
 * Prepare at least five conversation-starters/questions.
   * Include these in the pull request that adds to the course schedule.
@@ -116,7 +116,7 @@ Four checkpoint deliverables, listed below, will be assessed for the blog post.
 [The course schedule page]({{ site.baseurl }}/schedule.html) lists checkpoint deadlines for the blog post.
 
 1. topic
-  * Open a pull request [on the course website](https://github.com/mmore500/cse-891) that adds a template post with a descriptive title.
+  * Open a pull request [on the course website](https://github.com/mmore500/cse-491) that adds a template post with a descriptive title.
   You'll need to create a new file in `blog/_posts/`.
   Use a file that already exists in that directory as a template.
   * Mark your pull request with the "topic" label and comment on the pull request with a brief description of your post.
