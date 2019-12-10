@@ -90,7 +90,6 @@ Available immediately following class or by appointment.
 * We expect consistent engagement with class discussion and encourage active class participation.
 * Attendance is critical to participation.
 * Students should come to class prepared, having read and/or watched pre-class learning materials.
-* Two unexcused absences are allotted.
 
 ### Discussion Leader
 
