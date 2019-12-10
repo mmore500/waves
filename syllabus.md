@@ -17,8 +17,8 @@ description: Class syllabus
   * [ofria@msu.edu](ofria@msu.edu)
 * [Dr. William (Bill) Punch](http://www.cse.msu.edu/~punch/)
   * Associate Professor
-  * Computer Science and Engineering
-  * [punch@cse.msu.edu](punch@cse.msu.edu)
+  * Computational Mathematics, Science and Engineering
+  * [punch@msu.edu](punch@msu.edu)
 
 ## Meeting Place and Time
 
