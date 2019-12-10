@@ -165,83 +165,19 @@ See [the course schedule page]({{ site.baseurl }}/schedule.html) for up-to-date 
 
 ## Grading
 
-Course points will be divided between assignments as follows.
+All work will receive full credit on successful completion.
+If you will need a deadline extension, please let instructors know!
 
-Category          | Points %
------------------ | --------
-Attendance        | 40%
-Discussion leader | 20%
-Blog post author  | 20%
-Blog post reviews | 10%
-
-Attendance credit will be calculated as the percentage of class sessions attended.
-All other work will receive full credit on successful completion, with points potentially deducted for tardiness.
-If instructors deem blog post assignments unsatisfactorily completed, students will be allowed to re-submit work but may be penalized for tardiness.
-(See the [Late Work Policy](#late-work-policy).)
-
-Note that *both* blog post reviews are considered as *one* assignment.
-
-Course grades will be determined from course points as follows.
-
-Grade | Overall %
-------| ----------
-4.0   | >=91
-3.5   | >=83
-3.0   | >=76
-2.5   | >=68
-2.0   | >=62
-1.5   | >=55
-1.0   | >=45
-
+If instructors deem blog post assignments unsatisfactorily completed, students will be allowed to re-submit work twice.
 We expect students who fulfill all assignments to receive a 4.0 in the class.
 
-## Late Work Policy
+Grade points will be deducted for missing work:
+* discussion leader: 1.0 grade points
+* blog post author: 1.0 grade points
+* blog post reviews: 0.5 grade points
 
-Deadlines are enforced at 11:59pm EST.
-
-### Blog Post Author
-
-Blog post credit will be calculated based on the following rubric based on days late summed over each checkpoint.
-
-Days Late                      | Credit %
------------------------------- | ----------
-0                              | 100%
-0 to 7                         | 80%
-7+                             | 50%
-ready for review after 4/17/20 | 0%
-complete after 5/1/20          | 0%
-
-### Blog Post Reviewer
-
-Blog post review credit will be calculated from total days late based on the following rubric.
-(After seven days, instructors will step in to provide review.)
-
-Days Late | Credit %
---------- | --------
-0         | 100%
-0 to 7    | 80%
-7+        | 0%
-
-### Discussion Leader
-
-Discussion leader materials preparation credit will be assigned based on the following rubric.
-(
-After two days late, instructors will step in to prepare materials.
-If you end up needing to reschedule your discussion lead day, please email the instructors ASAP.
-)
-
-Days Late | Credit %
---------- | --------
-0         | 100%
-0 to 2    | 80%
-2+        | 0%
-
-### Extensions
-
-If circumstances necessitate extra time to complete an assignment, contact the instructors and we will work with you to accommodate.
-
-If a blog post is prepared for review late, the post's reviewer will be provided an automatic commensurate extension.
-Likewise, if a blog post's review is completed late, the post's author will be provided an automatic commensurate extension for their revisions.
+Regular attendance is necessary for a passing grade.
+If you will need to miss class, please let instructors know!
 
 ## Required Materials
 
