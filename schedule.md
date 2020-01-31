@@ -16,16 +16,16 @@ description: Class schedule
 * 1/24/20: [@cgnitash](https://github.com/cgnitash) (?) discussion leader
 
 ## Week 3
-* 1/26/20: [@mercere99](https://github.com/mercere99) discussion materials
-* 1/31/20: [@mercere](https://github.com/mercere99) discussion leader
+* 1/26/20: [Bill Punch](https://cmse.msu.edu/directory/faculty/bill-punch/) discussion materials
+* 1/31/20: [Bill Punch](https://cmse.msu.edu/directory/faculty/bill-punch/) discussion leader
 
 ## Week 4
-*  2/2/20: [jamie](https://github.com/TODO) discussion material
-*  2/7/20: [jamie](https://github.com/TODO) discussion leader
+* 2/2/20: [@BrianFuessel](https://github.com/TODO) discussion materials
+* 2/7/20: [@BrianFuessel](https://github.com/TODO) discussion leader
 
 ## Week 5
-*  2/9/20: [@sharma18yash](https://github.com/sharma18yash) discussion material
-* 2/14/20: [@sharma18yash](https://github.com/sharma18yash) discussion leader
+*  2/9/20: [jamie](https://github.com/TODO) discussion materials
+* 2/14/20: [jamie](https://github.com/TODO) discussion leader
 
 ## Week 6
 * 2/16/20: [@jgh9094](https://github.com/jgh9094) discussion materials
@@ -40,7 +40,7 @@ description: Class schedule
 * 😎 SPRING BREAK 😎
 
 ## Week 9
-*  3/8/20: [@kennedysean](https://github.com/kennedysean) discussion material
+*  3/8/20: [@kennedysean](https://github.com/kennedysean) discussion materials
 * 3/13/20: [@kennedysean](https://github.com/kennedysean) discussion leader
 * 3/13/20: **blog post outline due**
 
@@ -50,8 +50,8 @@ description: Class schedule
 
 
 ## Week 11
-* 3/22/20: [@BrianFuessel](https://github.com/TODO) discussion materials
-* 3/27/20: [@BrianFuessel](https://github.com/TODO) discussion leader
+* 3/22/20: [@TODO](https://github.com/TODO) discussion materials
+* 3/27/20: [@TODO](https://github.com/TODO) discussion leader
 * 3/27/20: **blog post rough draft due**
 
 ## Week 12
@@ -61,7 +61,7 @@ description: Class schedule
   * [@TODO1](https://github.com/TODO) `->` [@TODO2](https://github.com/TODO), [@TODO3](https://github.com/TODO)
 
 ## Week 13
-*  4/5/20: [@TODO](https://github.com/TODO) discussion material
+*  4/5/20: [@TODO](https://github.com/TODO) discussion materials
 * 4/10/20: [@TODO](https://github.com/TODO) discussion leader
 * 4/10/20: **blog post completed draft due**
 
@@ -70,5 +70,5 @@ description: Class schedule
 * 4/17/20: [@amlalejini](https://github.com/amlalejini) discussion leader
 
 ## Week 15
-* 4/19/20: [@TODO](https://github.com/TODO) discussion materials 
+* 4/19/20: [@TODO](https://github.com/TODO) discussion materials
 * 4/24/20: [@TODO](https://github.com/TODO) discussion leader
