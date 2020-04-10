@@ -52,23 +52,22 @@ description: Class schedule
 ## Week 11
 * 3/22/20: [@mercere99](https://github.com/mercere99) discussion materials
 * 3/27/20: [@mercere99](https://github.com/mercere99) discussion leader
-* 3/27/20: **blog post rough draft due**
 
 ## Week 12
 * 3/29/20: [hannah](https://github.com/TODO) discussion materials
 *  4/3/20: [hannah](https://github.com/TODO) discussion leader
-*  4/3/20: **blog post peer reviews due**
-  * [@TODO1](https://github.com/TODO) `->` [@TODO2](https://github.com/TODO), [@TODO3](https://github.com/TODO)
 
 ## Week 13
 *  4/5/20: [@mmore500](https://github.com/mmore500) discussion materials
 * 4/10/20: [@mmore500](https://github.com/mmore500) discussion leader
-* 4/10/20: **blog post completed draft due**
 
 ## Week 14
-* 4/12/20: [@amlalejini](https://github.com/amlalejini) discussion materials
-* 4/17/20: [@amlalejini](https://github.com/amlalejini) discussion leader
+* 4/12/20: [@TODO](https://github.com/TODO) discussion materials
+* 4/17/20: [@TODO](https://github.com/TODO) discussion leader
 
 ## Week 15
-* 4/19/20: [@TODO](https://github.com/TODO) discussion materials
-* 4/24/20: [@TODO](https://github.com/TODO) discussion leader
+* 4/19/20: **blog post rough draft due**
+* 4/24/20: **blog post peer reviews due**
+
+## Finals Week
+* 4/29/20: **blog post completed draft due**
