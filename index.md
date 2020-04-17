@@ -4,6 +4,8 @@ title: Call for Participants
 description: Come join us!
 ---
 
+# Call for Participants
+
 TODO what is AvidaEd blurb should go here.
 [Here's a link.](https://avida-ed.msu.edu/)
 
