@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Class Blog
+# Workshop Blog
 
 <ul class="posts">
   {% for post in site.categories.blog %}
