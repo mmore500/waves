@@ -15,19 +15,19 @@ The goal of the workshop is four-fold:
 4. to yield software that enriches the digital evolution, scientific, and open-source comunities more broadly.
 
 This workshop is organized in conjunction with the [Avida Ed project](https://avida-ed.msu.edu/).
-The Avida Ed project packages full-fledged software originally developed for digital evolution research as a freely-available, interactive web application.
+The Avida Ed project packages full-fledged Avida software, originally developed for digital evolution research, as a freely-available, interactive web application.
 This web application enables laboratory activities that teach evolution through experiments with self-replicating computer programs.
 A curriculum of lesson plans and classroom materials targeted to high school and university students support instructors.
 Outreach and training puts these tools into real-world classrooms.
 From there, the team has used evidence-based methods to evaluate activities' effectiveness in terms of actualized learning outcomes.
 
-The WAVES workshop will center around collaboration with a graduate student advisor on a software development project related to Avida Ed.
+WAVES workshop participants will collaborate with a graduate student advisor on a software development project related to Avida Ed.
 We describe several possible project categories below.
 Participants' projects will contribute software to the foundation of future versions of Avida and Avida Ed.
 As part of their software development project, participants will build an interactive scientific web application or mini research project that demonstrates their software.
 As a culmination of their experience, participants will publish a blog post describing how their software works and how to use it.
 
-During the workshop, participants will also engage in a weekly group software discussion group and a weekly group check-in meeting.
+During the workshop, participants will also engage in a weekly software discussion group and a weekly group check-in meeting.
 
 ## Logistics
 
@@ -36,7 +36,7 @@ Participants will be expected to commit to full-time engagement with the worksho
 A $5,000 stipend will be provided to participants.
 (TODO when and how).
 
-Individuals who were enrolled as an undergaduate and graduate student during the fall of 2019 or the spring of 2020 are eligible to participate.
+Individuals who were enrolled as an undergaduate or graduate student during the fall of 2019 or the spring of 2020 are eligible to participate.
 
 We are seeking participants with prior practical experience in computer science: writing and running software of some sort.
 Prior experience with C++ is especially valuable, but not strictly required.
@@ -54,7 +54,7 @@ This workshop is funded through NSF Grant No. TODO.
 
 ## Project Direction 1
 
-Build core web framework tools.
+Build core web framework tools in the [Empirical C++ library for scientific software development](https://github.com/devosoft/Empirical).
 
 Possibilities include:
 * designing a unified web layout framework,
@@ -71,10 +71,10 @@ As part of their work, participants will assemble an example scientific, educati
 
 ## Project Direction 2
 
-Build core digital evolution framework tools.
+Build core digital evolution framework tools in the [Modular Agent-Based Evolution (MABE) project](https://github.com/hintzelab/mabe).
 
 Possibilities include:
-* work on core [MABE2](https://github.com/Hintzelab/MABE)
+* work on core MABE2
 * build/port evolution modules for MABE2
 * build virtual hardware systems for next-generation Avida
 
@@ -82,7 +82,7 @@ As part of their work, participants will assemble an evolutionary system or rese
 
 ## Project Direction 3
 
-Work on core C++ software library tools.
+Work on core C++ software library tools [Empirical C++ library for scientific software development](https://github.com/devosoft/Empirical)..
 
 Possibilities include:
 * build safety-checked versions of more stl containers for `base`
