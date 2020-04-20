@@ -18,7 +18,10 @@
 
     <header class="page-header" role="banner">
       <a href="{{ site.baseurl }}/index.html" style="text-decoration: none; color: white">
-      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h1 class="project-name">
+		  {{ site.title | default: site.github.repository_name }}
+		  <img src="{{ site.baseurl }}/assets/petri.png" alt="{{ page.title | default: site.title | default: site.github.repository_name }}" style="height: 1.0em;" />
+	  </h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       </a>
       {% if site.show_downloads %}
