@@ -102,6 +102,10 @@ Develop novel interactive scicomm or educational activities to complement existi
 
 As part of their work, participants will assemble a prototype implementation of the web tool (if necessary) and a sample lesson plan.
 
+Possibilities include:
+* put together a hands-on digital evolution activity for local Elementary Science nights
+  * perhaps making use of BEACON's nifty travel projector?
+
 ## Who We Are
 
 We are the [Digital Evolution Laboratory at Michigan State University](https://devolab.org/).
