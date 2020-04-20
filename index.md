@@ -44,7 +44,10 @@ We especially encourage applications from members of underrepresented groups in 
 
 Applications should consist of:
 1. a curriculum vitae, and
-2. a brief (two paragraph) personal background statement and explanation of interest in the program.
+2. a brief (appox. 500 to 1000 words) statement that describes
+  * your personal background and career goals,
+  * your interest in the program,
+  * and describes an example of interesting code you've written (in any setting: school, hackathon, personal project, research, work, etc. & feel free to include links!).
 
 Applications should be submitted to [TODO@msu.edu](TODO@msu.edu) no later than **May 1, 2020**.
 
