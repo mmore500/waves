@@ -118,8 +118,16 @@ You can read more about us [here](http://devolab.org/).
 
 ![group headshot collage]({{ site.baseurl }}/assets/headshot-collage.jpg){:width="100%"}
 
-### Primary Investigator
+### Primary Investigators
 
+* [Dr. Robert T. Pennock](https://msu.edu/~pennock5/)
+  * Professor
+  * Lyman Briggs College
+  * Dept. of Philosophy
+  * Dept. of Computer Science and Engineering
+  * Ecology, Evolutionary Biology and Behavior
+  * Socially Engaged Philosophy of Science (SEPOS)
+  * pennock5{at}msu.edu
 * [Dr. Charles Ofria](https://ofria.com)
   * Professor
   * Computer Science and Engineering
