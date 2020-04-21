@@ -135,11 +135,15 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 
 * Dr. Diane Blackwood
   * Evolution Software Developer
-* [Matthew Andres Moreno](https://mmore500.github.io)
+* [Matthew Andres Moreno](https://mmore500.com)
   * Graduate Student
   * Computer Science and Engineering
   * Ecology, Evolutionary Biology, and Behavior
   * [mmore500@msu.edu](mmore500@msu.edu)
+
+### Discussion Group Coordinator
+
+* [Matthew Andres Moreno](https://mmore500.com)
 
 ### Project Mentors
 
@@ -148,12 +152,7 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 * Austin Ferguson
 * Cliff Bohm
 * Dr. Diane Blackwood
-  * Evolution Software Developer
 * Jose Hernandez
 * Kate Scoelas
-* [Matthew Andres Moreno](https://mmore500.github.io)
-  * Graduate Student
-  * Computer Science and Engineering
-  * Ecology, Evolutionary Biology, and Behavior
-  * [mmore500@msu.edu](mmore500@msu.edu)
+* [Matthew Andres Moreno](https://mmore500.com)
 
