@@ -147,6 +147,7 @@ You can read more about us [here](http://devolab.org/).
 * Alexander Lalejini
 * Austin Ferguson
 * Cliff Bohm
+* Diane Blackwood
 * Jose Hernandez
 * Kate Scoelas
 * [Matthew Andres Moreno](https://mmore500.github.io)
