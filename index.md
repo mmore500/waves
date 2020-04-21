@@ -131,8 +131,10 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
   * Computer Science and Engineering
   * [ofria@msu.edu](ofria@msu.edu)
 
-### Workshop Programming Coordinator
+### Student Project Coordinators
 
+* Dr. Diane Blackwood
+  * Evolution Software Developer
 * [Matthew Andres Moreno](https://mmore500.github.io)
   * Graduate Student
   * Computer Science and Engineering
@@ -145,7 +147,8 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 * Alexander Lalejini
 * Austin Ferguson
 * Cliff Bohm
-* Diane Blackwood
+* Dr. Diane Blackwood
+  * Evolution Software Developer
 * Jose Hernandez
 * Kate Scoelas
 * [Matthew Andres Moreno](https://mmore500.github.io)
