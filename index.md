@@ -112,9 +112,7 @@ Possibilities include:
 
 ## Who We Are
 
-We are the [Digital Evolution Laboratory at Michigan State University](https://devolab.org/).
-We use digital evolution systems to study the process of evolution and solve engineering problems.
-You can read more about us [here](http://devolab.org/).
+We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Digital Evolution Laboratory](https://devolab.org/) at Michigan State University.
 
 ![group headshot collage]({{ site.baseurl }}/assets/headshot-collage.jpg){:width="100%"}
 
