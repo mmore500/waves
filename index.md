@@ -57,58 +57,27 @@ We will announce paticipant selection no later than **May 11, 2020**.
 This workshop is funded through NSF Grant No. TODO.
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
-## Project Direction 1
-
-Build core web framework tools in the [Empirical C++ library for scientific software development](https://github.com/devosoft/Empirical).
-
-Possibilities include:
-* designing a unified web layout framework,
-  * [https://github.com/devosoft/Empirical/issues/117](https://github.com/devosoft/Empirical/issues/117)
-  * example, [http://mmore500.com/dishtiny/53vgh/](http://mmore500.com/dishtiny/53vgh/)
-* building in-browser data visualizations,
-* assembling a unified run-time configuration framework
-  * combining url query paramaters with UI sliders and text fields
-  * e.g., [https://emilydolson.github.io/genomic_stability_model/web/genomic_stability_model.html](https://emilydolson.github.io/genomic_stability_model/web/genomic_stability_model.html)
-* building a multi-canvas web visualization framework,
-  * e.g., [http://mmore500.com/dishtiny/53vgh/](http://mmore500.com/dishtiny/53vgh/)
-
-As part of their work, participants will assemble an example research, educational, or science communcation web application that demonstrates their software.
-
-## Project Direction 2
+## C++ Projects:
 
 Build core digital evolution framework tools in the [Modular Agent-Based Evolution (MABE) project](https://github.com/hintzelab/mabe).
 
-Possibilities include:
-* work on core MABE2
-* build/port evolution modules for MABE2
-* build virtual hardware systems for next-generation Avida
+* Develop virtual CPUs for the Avida organisms.
+* Build simple grid-based virtual worlds for organisms to move through and interact with.
+* Extend and existing data management tools for fast and dynamic data manipulation.
+* Improve unit tests and automatic testing suite.
 
 As part of their work, participants will assemble a mini research project that demonstrates their software.
 
-## Project Direction 3
+## Emscripten Projects:
 
-Work on core C++ software library tools [Empirical C++ library for scientific software development](https://github.com/devosoft/Empirical)..
+Build core web framework tools in the Empirical C++ library for scientific software development.
 
-Possibilities include:
-* build safety-checked versions of more stl containers for `base`
-* [data collection tools](https://github.com/devosoft/Empirical/issues/111)
-* testing for the web framework
-  * e.g., [automated UI testing](https://github.com/devosoft/Empirical/issues/177) and [measuring coverage](https://github.com/devosoft/Empirical/issues/184)
-* [Write a nice interface for .tar.gz extraction (compatible with Emscripten) and package it into `emp/tools`](https://github.com/devosoft/Empirical/issues/260)
-* ["Small String" Performance optimizations for BitVector](https://github.com/devosoft/Empirical/issues/262)
-* Empirical [project template enhancements](https://github.com/devosoft/cookiecutter-empirical-project/issues)
-* writing documentation
+* Develop a C++ interface to facilitate loading and saving data files in Javascript.
+* Develop a C++ framework (that leverages existing JavaScript tools) to facilitate web page layout.
+* Develop C++ wrappers for JavaScript visualization libraries.
+* Develop a JavaScript front-end and interface to C++ configuration objects.
 
-As part of their work, participants will devise a benchmarking experiment or example use-case to demonstrate their software.
-
-## Project Direction 4
-
-Develop novel interactive science communication or educational activities to complement existing AvidaEd curriculum.
-
-As part of their work, participants will assemble a prototype implementation of the web tool (if necessary) and a sample lesson plan.
-
-Possibilities include:
-* putting together a hands-on digital evolution activity for local Elementary Science nights
+As part of their work, participants will assemble an example research, educational, or science communcation web application that demonstrates their software.
 
 ## Who We Are
 
