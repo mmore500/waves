@@ -6,7 +6,7 @@ description: Come join us!
 
 # Call for Participants
 
-We are looking to recruit five to ten early-career participants for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2020.
+We are looking to recruit five to ten early-career participants (undergraduate and graduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2020.
 
 The goal of the workshop is four-fold:
 1. to help participants advance their careers by skillbuilding through hands-on C++ and/or JavaScript software development in an academic setting,
@@ -33,7 +33,8 @@ During the workshop, participants will also engage in a weekly software discussi
 
 The virtual workshop will take place between **May 25, 2020** and **July 31, 2020**.
 Participants will be expected to commit to full-time engagement with the workshop.
-A $6,000 stipend will be disbursed in five bi-weekly installments (TODO double check this with Connie) to participants.
+All group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
+A $6,000 stipend will be disbursed in five bi-weekly installments to participants.
 
 Individuals who were enrolled as an undergaduate or graduate student during the fall of 2019 or the spring of 2020 are eligible to participate.
 
@@ -50,11 +51,11 @@ Applications should consist of:
     * in any setting: school, hackathon, personal project, research, work, etc.
     * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
 
-Applications should be submitted to [ofria@msu.edu](ofria@msu.edu) with the subject line "WAVES Application"  no later than **May 4, 2020**.
+Applications should be submitted to [ofria@msu.edu](ofria@msu.edu) with the subject line "WAVES Application" no later than **May 4, 2020**.
 
 We will announce paticipant selection no later than **May 11, 2020**.
 
-This workshop is funded through NSF Grant No. TODO.
+This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action*  (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 ## C++ Projects:
@@ -70,7 +71,7 @@ As part of their work, participants will assemble a mini research project that d
 
 ## Emscripten Projects:
 
-Build core web framework tools in the Empirical C++ library for scientific software development.
+Build core web framework tools in the current Avida-ED system and in the [Empirical C++ library for scientific software development](https://github.com/devsoft/Empirical).
 
 * Develop a C++ interface to facilitate loading and saving data files in Javascript.
 * Develop a C++ framework (that leverages existing JavaScript tools) to facilitate web page layout.
@@ -78,6 +79,17 @@ Build core web framework tools in the Empirical C++ library for scientific softw
 * Develop a JavaScript front-end and interface to C++ configuration objects.
 
 As part of their work, participants will assemble an example research, educational, or science communcation web application that demonstrates their software.
+
+## Other Web Projects
+
+* Clean up and package existing drag and drop tools.
+* Write a C++-Javascript interface to allow the web viewer access to information about global resources in the underlying simulation.
+* Work on desktop windows emulation in current Avida-ED software.
+* Make a touch and mobile interface for current Avida-ED software.
+* Work on back-end tools that allow instructors to monitor web applications within their classrooms.
+* Write software to faciltate easy translation of labels, buttons, and other text in the Avida-ED web application.
+
+As part of their work, participants will make contributions directly to existing Avida-ED software.
 
 ## Who We Are
 
@@ -100,19 +112,18 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
   * Computer Science and Engineering
   * [ofria@msu.edu](ofria@msu.edu)
 
-### Student Project Coordinators
+### Workshop Coordinator
 
-* Dr. Diane Blackwood
-  * Evolution Software Developer
 * [Matthew Andres Moreno](https://mmore500.com)
   * Graduate Student
   * Computer Science and Engineering
   * Ecology, Evolutionary Biology, and Behavior
   * [mmore500@msu.edu](mmore500@msu.edu)
 
-### Discussion Group Coordinator
+### Student Project Coordinators
 
-* [Matthew Andres Moreno](https://mmore500.com)
+* Matthew Andres Moreno (Empirical)
+* Dr. Diane Blackwood (Avida-ED)
 
 ### Project Mentors
 
