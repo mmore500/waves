@@ -25,7 +25,7 @@ Each WAVES workshop participant will collaborate with a graduate student advisor
 We will help participants choose projects based on their personal interests and background during the first week of the workshop.
 We describe several possible project categories below.
 Participants' projects will directly contribute open-source software to the foundation of future versions of Avida and Avida-ED.
-To demonstrate their software, participants wil build their own prototype scientific web application/mini research project or contribute to an existing web application/research project.
+To demonstrate their software, participants will build their own prototype scientific web application/mini research project or contribute to an existing web application/research project.
 As a culmination of their workshop experience and an exercise in professional communication, participants will publish a blog post describing how their software works and how to use it.
 
 During the workshop, participants will also engage in a weekly software discussion group and a weekly group check-in meeting.
@@ -81,7 +81,7 @@ Build core web framework tools in the current Avida-ED system and in the [Empiri
 * Develop C++ wrappers for JavaScript visualization libraries.
 * Develop a JavaScript front-end and interface to C++ configuration objects.
 
-As part of their work, participants will assemble an example research, educational, or science communcation web application that demonstrates their software.
+As part of their work, participants will assemble an example research, educational, or science communication web application that demonstrates their software.
 
 ## Other Example Web Projects
 
@@ -90,7 +90,7 @@ As part of their work, participants will assemble an example research, education
 * Work on desktop windows emulation in current Avida-ED software.
 * Make a touch and mobile interface for current Avida-ED software.
 * Work on back-end tools that allow instructors to monitor web applications within their classrooms.
-* Write software to faciltate easy translation of labels, buttons, and other text in the Avida-ED web application.
+* Write software to facilitate easy translation of labels, buttons, and other text in the Avida-ED web application.
 
 As part of their work, participants will make contributions directly to existing Avida-ED software.
 
