@@ -17,7 +17,7 @@ The goal of the workshop is four-fold:
 This workshop is organized in conjunction with the [Avida-ED project](https://avida-ed.msu.edu/).
 Avida-ED extends the full-fledged Avida software, originally developed for digital evolution research, as a freely-available, interactive web application.
 This web application enables laboratory activities that teach evolution through experiments with self-replicating computer programs.
-A curriculum of lesson plans and classroom materials targeted to high school and university students support instructors.
+A curriculum of lesson plans and classroom materials, targeted to high school and university students, supports instructors.
 Outreach and training puts these tools into hundreds of real-world classrooms.
 From there, the team has used evidence-based methods to evaluate activities' effectiveness in terms of actualized learning outcomes.
 
@@ -104,6 +104,7 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 
 * [Dr. Charles Ofria](https://ofria.com)
   * Professor of Computer Science and Engineering
+  * Ecology, Evolutionary Biology and Behavior
   * Director, BEACON Center for the Study of Evolution in Action
   * President, International Society for Artificial Life
   * [ofria@msu.edu](ofria@msu.edu)
@@ -141,6 +142,6 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 * Dr. Diane Blackwood
 * Dr. Emily Dolson
 * Jose Hernandez
-* Kate Scoelas
+* Kate Skocelas
 * [Matthew Andres Moreno](https://mmore500.com)
 
