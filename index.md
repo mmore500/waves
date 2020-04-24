@@ -135,9 +135,11 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 
 * Acacia Ackles
 * Alexander Lalejini
+* Dr. Anya Vostinar
 * Austin Ferguson
 * Cliff Bohm
 * Dr. Diane Blackwood
+* Dr. Emily Dolson
 * Jose Hernandez
 * Kate Scoelas
 * [Matthew Andres Moreno](https://mmore500.com)
