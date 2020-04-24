@@ -47,11 +47,11 @@ We especially encourage applications from members of underrepresented groups in 
 Applications should consist of:
 1. a curriculum vitae or resume,
 2. a brief (appox. 500 to 1000 words) statement that describes
-  * your personal background and career goals,
-  * your interest in the program, and
-  * an interesting coding project you've tackled.
-    * in any setting: school, hackathon, personal project, research, work, etc.
-    * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
+   - your personal background and career goals,
+   - your interest in the program, and
+   - an interesting coding project you've tackled.
+      * in any setting: school, hackathon, personal project, research, work, etc.
+      * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
 3. and, optionally, two references for your coding ability (include name, email, and relationship).
 
 Applications should be submitted to [avida-waves@googlegroups.com](avida-waves@googlegroups.com) with the subject line "WAVES Application" no later than **May 4, 2020**.
