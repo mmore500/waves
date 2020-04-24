@@ -6,7 +6,7 @@ description: Come join us!
 
 # Call for Participants
 
-We are looking to recruit five to ten early-career participants (undergraduate and graduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2020.
+We are looking to recruit five to ten early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2020.
 
 The goal of the workshop is four-fold:
 1. to help participants advance their careers by skillbuilding through hands-on C++ and/or JavaScript software development in an academic setting,
@@ -22,6 +22,7 @@ Outreach and training puts these tools into hundreds of real-world classrooms.
 From there, the team has used evidence-based methods to evaluate activities' effectiveness in terms of actualized learning outcomes.
 
 Each WAVES workshop participant will collaborate with a graduate student advisor on a software development project related to Avida-ED or the underlying scientific software tools that power it.
+We will help participants choose projects based on their personal interests and background during the first week of the workshop.
 We describe several possible project categories below.
 Participants' projects will directly contribute open-source software to the foundation of future versions of Avida and Avida-ED.
 To demonstrate their software, participants wil build their own prototype scientific web application/mini research project or contribute to an existing web application/research project.
@@ -32,33 +33,35 @@ During the workshop, participants will also engage in a weekly software discussi
 ## Logistics
 
 The virtual workshop will take place between **May 25, 2020** and **July 31, 2020**.
-Participants will be expected to commit to full-time engagement with the workshop.
-All group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
-A $6,000 stipend will be disbursed in five bi-weekly installments to participants.
+Participants will be expected to commit to full-time (approximately 40 hours/week) engagement with the workshop.
+To accomodate multiple U.S. time zones, all group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
+A **$6,000** stipend will be disbursed to participants in five bi-weekly installments of $1,200.
 
-Individuals who were enrolled as an undergaduate or graduate student during the fall of 2019 or the spring of 2020 are eligible to participate.
+All U.S. citizens/permanent residents are eligible to apply, as are international students already enrolled at Michigan State University.
+The workshop will be aimed at upper-level undergraduates in computer science, but graduate students or other early-career computer scientists are also welcome to apply.
 
 We are seeking participants with prior practical experience in computer science: writing and running software of some sort.
 Prior experience with C++ and/or JavaScript is expected, but not strictly required.
 We especially encourage applications from members of underrepresented groups in computer science.
 
 Applications should consist of:
-1. a curriculum vitae or resume, and
+1. a curriculum vitae or resume,
 2. a brief (appox. 500 to 1000 words) statement that describes
   * your personal background and career goals,
   * your interest in the program, and
   * an interesting coding project you've tackled.
     * in any setting: school, hackathon, personal project, research, work, etc.
     * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
+3. and, optionally, two references for your coding ability (include name, email, and relationship).
 
-Applications should be submitted to [ofria@msu.edu](ofria@msu.edu) with the subject line "WAVES Application" no later than **May 4, 2020**.
+Applications should be submitted to [avida-waves@googlegroups.com](avida-waves@googlegroups.com) with the subject line "WAVES Application" no later than **May 4, 2020**.
 
 We will announce paticipant selection no later than **May 11, 2020**.
 
-This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action*  (NSF IUSE #1432563).
+This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action* (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
-## C++ Projects:
+## Example C++ Projects:
 
 Build core digital evolution framework tools in the [Modular Agent-Based Evolution (MABE) project](https://github.com/hintzelab/mabe).
 
@@ -69,7 +72,7 @@ Build core digital evolution framework tools in the [Modular Agent-Based Evoluti
 
 As part of their work, participants will assemble a mini research project that demonstrates their software.
 
-## Emscripten Projects:
+## Example Emscripten Projects:
 
 Build core web framework tools in the current Avida-ED system and in the [Empirical C++ library for scientific software development](https://github.com/devsoft/Empirical).
 
@@ -80,7 +83,7 @@ Build core web framework tools in the current Avida-ED system and in the [Empiri
 
 As part of their work, participants will assemble an example research, educational, or science communcation web application that demonstrates their software.
 
-## Other Web Projects
+## Other Example Web Projects
 
 * Clean up and package existing drag and drop tools.
 * Write a C++-Javascript interface to allow the web viewer access to information about global resources in the underlying simulation.
@@ -99,6 +102,12 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 
 ### Primary Investigators
 
+* [Dr. Charles Ofria](https://ofria.com)
+  * Professor of Computer Science and Engineering
+  * Director, BEACON Center for the Study of Evolution in Action
+  * President, International Society for Artificial Life
+  * [ofria@msu.edu](ofria@msu.edu)
+  * Github: [https://github.com/mercere99](https://github.com/mercere99)
 * [Dr. Robert T. Pennock](https://msu.edu/~pennock5/)
   * Professor
   * Lyman Briggs College
@@ -107,10 +116,6 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
   * Ecology, Evolutionary Biology and Behavior
   * Socially Engaged Philosophy of Science (SEPOS)
   * pennock5{at}msu.edu
-* [Dr. Charles Ofria](https://ofria.com)
-  * Professor
-  * Computer Science and Engineering
-  * [ofria@msu.edu](ofria@msu.edu)
 
 ### Workshop Coordinator
 
@@ -119,6 +124,7 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
   * Computer Science and Engineering
   * Ecology, Evolutionary Biology, and Behavior
   * [mmore500@msu.edu](mmore500@msu.edu)
+  * Github: [https://github.com/mmore500](https://github.com/mmore500)
 
 ### Student Project Coordinators
 
