@@ -21,7 +21,7 @@ A curriculum of lesson plans and classroom materials, targeted to high school an
 Outreach and training puts these tools into hundreds of real-world classrooms.
 From there, the team has used evidence-based methods to evaluate activities' effectiveness in terms of actualized learning outcomes.
 
-Each WAVES workshop participant will collaborate with a graduate student advisor on a software development project related to Avida-ED or the underlying scientific software tools that power it.
+Each WAVES workshop participant will collaborate with an assigned mentor on a software development project related to Avida-ED or the underlying scientific software tools that power it.
 We will help participants choose projects based on their personal interests and background during the first week of the workshop.
 We describe several possible project categories below.
 Participants' projects will directly contribute open-source software to the foundation of future versions of Avida and Avida-ED.
