@@ -56,7 +56,7 @@ Applications should consist of:
 
 Applications should be submitted to [avida-waves@googlegroups.com](avida-waves@googlegroups.com) with the subject line "WAVES Application" no later than **May 4, 2020**.
 
-We will announce paticipant selection no later than **May 11, 2020**.
+We will announce participant selection no later than **May 11, 2020**.
 
 This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action* (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
