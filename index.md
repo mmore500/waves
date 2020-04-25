@@ -34,7 +34,7 @@ During the workshop, participants will also engage in a weekly software discussi
 
 The virtual workshop will take place between **May 25, 2020** and **July 31, 2020**.
 Participants will be expected to commit to full-time (approximately 40 hours/week) engagement with the workshop.
-To accomodate multiple U.S. time zones, all group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
+To accommodate multiple U.S. time zones, all group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
 A **$6,000** stipend will be disbursed to participants in five bi-weekly installments of $1,200.
 
 All U.S. citizens/permanent residents are eligible to apply, as are international students already enrolled at Michigan State University.
