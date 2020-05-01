@@ -74,7 +74,7 @@ As part of their work, participants will assemble a mini research project that d
 
 ## Example Emscripten Projects:
 
-Build core web framework tools in the current Avida-ED system and in the [Empirical C++ library for scientific software development](https://github.com/devsoft/Empirical).
+Build core web framework tools in the current Avida-ED system and in the [Empirical C++ library for scientific software development](https://github.com/devosoft/Empirical).
 
 * Develop a C++ interface to facilitate loading and saving data files in Javascript.
 * Develop a C++ framework (that leverages existing JavaScript tools) to facilitate web page layout.
