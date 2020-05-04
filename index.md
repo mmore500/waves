@@ -54,7 +54,7 @@ Applications should consist of:
       * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
 3. and, optionally, two references for your coding ability (include name, email, and relationship).
 
-Applications should be submitted to [avida-waves@googlegroups.com](avida-waves@googlegroups.com) with the subject line "WAVES Application" no later than **May 4, 2020**.
+Applications should be submitted to [avida-waves@googlegroups.com](mailto:avida-waves@googlegroups.com) with the subject line "WAVES Application" no later than **May 4, 2020**.
 
 We will announce participant selection no later than **May 11, 2020**.
 
