@@ -4,6 +4,9 @@ title: Call for Participants
 description: Come join us!
 ---
 
+*We are no longer accepting applications for summer 2020.
+However, you can sign up to receive updates on any future workshops [here](https://forms.gle/xtXiiVjfs39hWHJp7).*
+
 # Call for Participants
 
 We are looking to recruit five to ten early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2020.
