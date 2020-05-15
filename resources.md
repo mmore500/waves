@@ -27,3 +27,21 @@ description: Workshop resources
 * [Quick C++ Benchmark](http://quick-bench.com/)
 * [Compiler Explorer](https://godbolt.org/)
 * [C++ Insights](https://cppinsights.io/)
+
+## Projects & Repositories
+
+* Empirical
+  * [repository](https://github.com/devosoft/Empirical)
+  * [documentation](https://empirical.readthedocs.io/)
+  * [continuous integration](https://travis-ci.org/github/devosoft/Empirical)
+  * [project template](https://github.com/devosoft/cookiecutter-empirical-project)
+* MABE
+  * [repository](https://github.com/hintzelab/mabe)
+  * [wiki](https://github.com/Hintzelab/MABE/wiki/)
+  * [gitter](https://gitter.im/hintze-lab/MABE)
+* Avida-ED
+  * [repository](https://github.com/DBlackwood/AvidaED_user_interface)
+  * [web app](https://avida-ed.msu.edu/app/AvidaED.html)
+* Avida
+  * [repository](https://github.com/devosoft/Avida)
+  * [homepage](http://avida.devosoft.org/)
