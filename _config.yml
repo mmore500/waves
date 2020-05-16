@@ -3,3 +3,7 @@ description: Workshop for Avida-ED Software Development
 show_downloads: false
 theme: jekyll-theme-cayman
 markdown: kramdown
+plugins_dir:
+  - jemoji
+plugins:
+  - jemoji
