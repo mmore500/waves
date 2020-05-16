@@ -18,7 +18,7 @@ You should have received the password by email.
 
 ## Workshop Communication
 
-We will also be using [Slack messaging](https://slack.com/) to make workshop announcements, for group discussion, and to message with mentors.
+We will be using [Slack messaging](https://slack.com/) to make workshop announcements, for group discussion, and to message with mentors.
 The workshop's slack workspace lives at [w-aves.slack.com](https://w-aves.slack.com).
 
 :soon: Please [use this link](https://mmore500.com/hopto/at) to join, and be sure to enable notifications!
