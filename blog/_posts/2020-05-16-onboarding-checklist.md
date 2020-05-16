@@ -69,7 +69,7 @@ If you have ideas for what you'd like to see on there, feel free to [open a PR](
 ## Next Steps
 
 :soon: If you haven't marked your calendars for our first orientation meeting, be sure to do so!
-It will take place Tuesday, May 26 from 1pm to 4pm in the WAVES Zoom Room.
+It will take place Tuesday, May 26 from 1pm to 4pm in the WAVES Zoom room.
 
 We assigned initial mentors to participants based on match between mentors' projects and applicants' statements and resumes.
 These assignments may shift as participants choose which projects interest them most, but they should at least be a good start.
