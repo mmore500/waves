@@ -4,7 +4,7 @@ title: Resources
 description: Workshop resources
 ---
 
-![Treating C++ like other languates](assets/mmore500/cppcon2019-carruth-winters.gif)
+![Treating C++ like other languages](assets/mmore500/cppcon2019-carruth-winters.gif)
 
 ## Learning & Exploring C++
 
