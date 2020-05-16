@@ -8,12 +8,19 @@ description: Workshop resources
 
 ## Learning & Exploring C++
 
+* [HackerRank C++ Practice](https://www.hackerrank.com/domains/cpp)
 * Lipman, Lajoie, and Moo's [C++ Primer](https://www.amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113) textbook
 * Anthony Calandra's [list of modern C++ features, with examples](https://github.com/AnthonyCalandra/modern-cpp-features)
 * the [CppCon youtube channel](https://www.youtube.com/user/CppCon)
 * The Cherno's [C++ youtube series](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 * Jason Turner's [C++ Weekly youtube series](https://www.youtube.com/watch?v=EJtqHLvAIZE&list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1)
 * The [CppCast youtube channel](https://www.youtube.com/channel/UCuCjADS4u3uJDTqUaG0H9dA)
+
+## Evolution, Digital Evolution, & Artificial Life
+
+* [University of California Museum of Paleontology's "Understanding Evolution"](https://evolution.berkeley.edu/evolibrary/article/0_0_0/evo_01)
+* [University of California Museum of Paleontology's "Misconceptions about Evolution"](https://evolution.berkeley.edu/evolibrary/misconceptions_faq.php)
+* [Christoph Adami - Introduction to the digital evolution platform Avida](https://www.youtube.com/watch?v=ouF8wKxXWFQ)
 
 ## C++ Reference Materials
 
