@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Workshop Onboarding Checklist"
+title: "Onboarding Checklist"
 date: 2020-05-16
 author: Matthew Andres Moreno
 ---
@@ -10,8 +10,7 @@ We're looking forward to working with all of you this summer.
 
 ![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-trenwelcome.gif){:width="100%"}
 
-To ensure that we can get off to a running start when the workshop begins, we've assembled onbarding tasks and information for our participants.
-Please work through the checklist by **Friday, May 22**.
+To ensure that we can get off to a running start when the workshop begins, please work through onboarding information and tasks below by **Friday, May 22**.
 Feel free to drop a line to me at [m.more500@gmail.com](mailto:m.more500@gmail.com) with any questions or issues.
 
 Links on this checklist meant only for workshop participants are password protected.
@@ -22,7 +21,7 @@ You should have received the password by email.
 We will also be using [Slack messaging](https://slack.com/) to make workshop announcements, for group discussion, and to message with mentors.
 The workshop's slack workspace lives at [w-aves.slack.com](https://w-aves.slack.com).
 
-:Soon: Please [use this link](https://mmore500.com/hopto/at) to join, and be sure to enable notifications!
+:soon: Please [use this link](https://mmore500.com/hopto/at) to join, and be sure to enable notifications!
 
 We will be using [Zoom videoconferencing](https://zoom.us/) for "face-to-face" get togethers.
 Group meetings will be held in a dedicated Zoom room, which you can access [here](https://mmore500.com/hopto/ar).
