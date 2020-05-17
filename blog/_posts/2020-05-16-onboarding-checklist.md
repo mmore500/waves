@@ -49,6 +49,7 @@ Michgan State University requests that we refer undergraduate students working i
 They collect information that allows them to assess undergraduate research across the institution and to coordinate professional development activities.
 
 :soon: If you are a current or recent undergraduate student at any college or university, please complete their survey [here](https://mmore500.com/hopto/au).
+Enter "BEACON" for "Research Type / Program Name."
 
 ## Stipend Setup
 
