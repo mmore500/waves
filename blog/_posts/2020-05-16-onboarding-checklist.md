@@ -11,7 +11,7 @@ We're looking forward to working with all of you this summer.
 ![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-trenwelcome.gif){:width="100%"}
 
 To ensure that we can get off to a running start when the workshop begins, please work through onboarding information and tasks below by **Friday, May 22**.
-Feel free to drop a line to me at [m.more500@gmail.com](mailto:m.more500@gmail.com) with any questions or issues.
+Feel free to drop a line to me at [m.more500@gmail.com](mailto:m.more500@gmail.com) with any questions or issues.  We will also assign you an initial mentor who will contact you soon.
 
 Links on this checklist meant only for workshop participants are password protected.
 You should have received the password by email.
@@ -26,19 +26,19 @@ The workshop's slack workspace lives at [w-aves.slack.com](https://w-aves.slack.
 We will be using [Zoom videoconferencing](https://zoom.us/) for "face-to-face" get togethers.
 Group meetings will be held in a dedicated Zoom room, which you can access [here](https://mmore500.com/hopto/ar).
 
-:soon: Please get Zoom installed and click through the link above to get the WAVES Zoom room url, which you will use to join group meetings.
-(The link will also be pinned in the Slack #general channel).
+:soon: Please get Zoom installed (it's easy!) and click through the link above to get the WAVES Zoom room url, which you will use to join group meetings.
+The link will also be pinned in the Slack #general channel.
 
 ## Onboarding Surveys
 
 We put together a Google Form to collect information that will be used coordinate the workshop and assess its effectiveness.
 We included several demographic questions in this survey.
-Demographic information is collected solely to internally assess the diversity and equity of our the workshop.
+Demographic information is collected to assess the diversity and equity of our the workshop and report anonymized information to funders.
 You are not required to answer any demographics questions.
 
 :soon: Please fill out our onboarding survey [here](https://mmore500.com/hopto/aq).
 
-To the best of your ability, please keep weekdays from 1pm to 4pm EST clear on you calendars so that we can find meeting times that work for as much of the group as possible.
+Please try to keep weekdays from 1pm to 4pm EST clear on you calendars for regular and periodic meetings of the whole group.  It will be challenging to adjust schedules for individual participants, but we understand if you need to miss an occasional meeting.
 
 :soon: If you do have a critical obligation that falls between 1pm and 4pm EST on weekdays and cannot be rescheduled, please fill out [this WhenIsGood](https://mmore500.com/hopto/as) to let us know.
 Briefly describe your obligation in the comment.
@@ -47,7 +47,7 @@ Otherwise, there's no need to fill out this WhenIsGood.
 Michgan State University requests that we refer undergraduate students working in summer positions to the Undergraduate Research Office.
 They collect information that allows them to assess undergraduate research across the institution and to coordinate professional development activities.
 
-:soon: If you are a current or recent undergraduate student, please complete their survey [here](https://mmore500.com/hopto/au).
+:soon: If you are a current or recent undergraduate student at any college or university, please complete their survey [here](https://mmore500.com/hopto/au).
 
 ## Stipend Setup
 
