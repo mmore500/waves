@@ -36,9 +36,10 @@ We included several demographic questions in this survey.
 Demographic information is collected to assess the diversity and equity of our the workshop and report anonymized information to funders.
 You are not required to answer any demographics questions.
 
-:soon: Please fill out our onboarding survey [here](https://mmore500.com/hopto/aq).
+:soon: Fill out our onboarding survey [here](https://mmore500.com/hopto/aq).
 
-Please try to keep weekdays from 1pm to 4pm EST clear on you calendars for regular and periodic meetings of the whole group.  It will be challenging to adjust schedules for individual participants, but we understand if you need to miss an occasional meeting.
+Please try to keep weekdays from 1pm to 4pm EST clear on you calendars so that we can schedule whole group meetings.
+It will be challenging to adjust schedules for individual participants, but we understand if you need to miss an occasional meeting.
 
 :soon: If you do have a critical obligation that falls between 1pm and 4pm EST on weekdays and cannot be rescheduled, please fill out [this WhenIsGood](https://mmore500.com/hopto/as) to let us know.
 Briefly describe your obligation in the comment.
