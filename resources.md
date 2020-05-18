@@ -52,3 +52,5 @@ description: Workshop resources
 * Avida
   * [repository](https://github.com/devosoft/Avida)
   * [homepage](http://avida.devosoft.org/)
+* SignalGP
+  * [repository](http://github.com/amlalejini/signalgp)
