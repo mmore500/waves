@@ -7,3 +7,4 @@ plugins_dir:
   - jemoji
 plugins:
   - jemoji
+permalink: /:categories/:title:output_ext
