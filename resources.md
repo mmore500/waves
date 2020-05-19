@@ -34,6 +34,7 @@ description: Workshop resources
 * [Quick C++ Benchmark](http://quick-bench.com/)
 * [Compiler Explorer](https://godbolt.org/)
 * [C++ Insights](https://cppinsights.io/)
+* [Wandbox](https://wandbox.org)
 
 ## Projects & Repositories
 
