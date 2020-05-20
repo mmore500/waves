@@ -4,26 +4,22 @@ title: Schedule
 description: Workshop schedule
 ---
 
+![school]({{ site.baseurl }}/assets/gifcities-school.gif){:width="100%"}
+
 ## Week 0
 * May 26: [orientation 0]({{ site.baseurl }}/tutorials/lesson00.html)
-  * meeting
-  * 1 to 4pm EST
+  * meeting 1 to 4pm EST
 * May 27: [orientation 1]({{ site.baseurl }}/tutorials/lesson01.html)
-  * meeting
-  * 1 to 4pm EST
+  * meeting 2:30pm to 4pm EST
 * May 28: [orientation 2]({{ site.baseurl }}/tutorials/lesson02.html)
-  * drop-in
-  * 1 to 4pm EST
+  * meeting 1pm to 1:30pm EST
 * May 29: [orientation 3]({{ site.baseurl }}/tutorials/lesson03.html)
-  * drop-in
-  * 1 to 4pm EST
+  * meeting 1pm to 1:30pm EST
 * May 29: *stipend installment mailed*
 
 ## Week 1
-* June 1: [orientation 4]({{ site.baseurl }}/tutorials/lesson02.html)
-  * drop-in
-  * 1 to 4pm EST
-* June 2: finalize mentor & project assignments
+* June 1: [orientation 4]({{ site.baseurl }}/tutorials/lesson04.html)
+  * meeting 1pm to 1:30pm EST
 * June 2: [enrichment seminar 1]({{ site.baseurl }}/discussion/week1.html)
   * 3 to 4pm EST
   * mentor: Matthew Andres Moreno
