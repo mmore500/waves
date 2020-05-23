@@ -18,9 +18,9 @@ description: Workshop folks
 }
 </style>
 
-{% assign mentors = site.data.people | where:'role', 'mentor' %}
-{% assign participants = site.data.people | where:'role', 'participant' %}
-{% assign friends = site.data.people | where:'role', 'other' %}
+{% assign mentors = site.data.people | where:'role', 'mentor' | sort: "nick" %}
+{% assign participants = site.data.people | where:'role', 'participant' | sort: "nick" %}
+{% assign friends = site.data.people | where:'role', 'other'  | sort: "nick" %}
 {% assign shuffle = site.data.people | sample: 100 %}
 
 
