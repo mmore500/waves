@@ -51,7 +51,7 @@ description: Workshop folks
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
-    | <a href="https://github.com/{{ person.twitter }}">github</a>
+    | <a href="https://github.com/{{ person.github }}">github</a>
     {% if person.twitter %}
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
     {% endif %}
@@ -99,7 +99,7 @@ description: Workshop folks
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
-    | <a href="https://github.com/{{ person.twitter }}">github</a>
+    | <a href="https://github.com/{{ person.github }}">github</a>
     {% if person.twitter %}
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
     {% endif %}
@@ -145,7 +145,7 @@ description: Workshop folks
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
-    | <a href="https://github.com/{{ person.twitter }}">github</a>
+    | <a href="https://github.com/{{ person.github }}">github</a>
     {% if person.twitter %}
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
     {% endif %}
