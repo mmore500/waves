@@ -28,7 +28,9 @@ description: Workshop folks
 {% for person in shuffle %}
 
   <div class="img-holder">
-    <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
+    <a href="#{{person.github}}">
+      <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
+    </a>
   </div>
 {% endfor %}
 </div>
@@ -48,7 +50,7 @@ description: Workshop folks
   <div style="padding-left: 10px;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
-    | <a href="#{{ person.github }}">🔗</a>
+    | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
     | <a href="https://github.com/{{ person.twitter }}">github</a>
     {% if person.twitter %}
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
@@ -96,7 +98,7 @@ description: Workshop folks
   <div style="padding-left: 10px;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
-    | <a href="#{{ person.github }}">🔗</a>
+    | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
     | <a href="https://github.com/{{ person.twitter }}">github</a>
     {% if person.twitter %}
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
@@ -142,7 +144,7 @@ description: Workshop folks
   <div style="padding-left: 10px;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
-    | <a href="#{{ person.github }}">🔗</a>
+    | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
     | <a href="https://github.com/{{ person.twitter }}">github</a>
     {% if person.twitter %}
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
