@@ -47,7 +47,7 @@ description: Workshop folks
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
   </div>
 
-  <div style="padding-left: 10px;">
+  <div style="padding-left: 10px; min-width: 75%;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
@@ -95,7 +95,7 @@ description: Workshop folks
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
   </div>
 
-  <div style="padding-left: 10px;">
+  <div style="padding-left: 10px; min-width: 75%">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
@@ -141,7 +141,7 @@ description: Workshop folks
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
   </div>
 
-  <div style="padding-left: 10px;">
+  <div style="padding-left: 10px; min-width: 75%;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
