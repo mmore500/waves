@@ -41,13 +41,13 @@ description: Workshop folks
 
 {% for person in participants %}
 
-<div style="display: flex; flex-wrap: wrap;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
 
   <div class="img-holder">
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
   </div>
 
-  <div style="padding-left: 10px; min-width: 75%;">
+  <div style="padding-left: 10px; width: 80%; flex-grow: 1;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
@@ -89,13 +89,13 @@ description: Workshop folks
 
 {% for person in mentors %}
 
-<div style="display: flex; flex-wrap: wrap;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
 
   <div class="img-holder">
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
   </div>
 
-  <div style="padding-left: 10px; min-width: 75%">
+  <div style="padding-left: 10px; width: 80%; flex-grow: 1;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
@@ -135,13 +135,13 @@ description: Workshop folks
 
 {% for person in friends %}
 
-<div style="display: flex; flex-wrap: wrap;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
 
   <div class="img-holder">
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
   </div>
 
-  <div style="padding-left: 10px; min-width: 75%;">
+  <div style="padding-left: 10px; width: 80%; flex-grow: 1;">
     <span class="h3"> {{ person.nick }} </span>
     | {{ person.institution}}
     | <a name="{{ person.github }}" href="#{{ person.github }}">🔗</a>
