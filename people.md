@@ -56,27 +56,28 @@ description: Workshop folks
     |  <a href="https://twitter.com/{{ person.twitter }}">twitter</a>
     {% endif %}
     {% if person.href %}
-    | <a href="{{ person.href }}">www</a>
+    |  <a href="{{ person.href }}">www</a>
     {% endif %}
     |
-    <b>
     <a
       href="javascript:;"
       style="writing-mode:vertical-rl;"
       id="{{ person.github }}-show"
-      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = 'initial'; document.getElementById('{{ person.github }}-hide').style.display = 'initial';"
+      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = 'initial'; document.getElementById('{{ person.github }}-hide').style.display = 'initial'; document.getElementById('{{ person.github }}-ellipsis').style.display = 'none';"
     > » </a>
     <a
       href="javascript:;"
       style="writing-mode:vertical-rl; display:none;"
       id="{{ person.github }}-hide"
-      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = '3em'; document.getElementById('{{ person.github }}-show').style.display = 'initial';"
+      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = '3em'; document.getElementById('{{ person.github }}-show').style.display = 'initial'; document.getElementById('{{ person.github }}-ellipsis').style.display = '';"
     > « </a>
-    </b>
-    <blockquote id="{{ person.github }}-bio" style="max-height: 3em; overflow: hidden; margin-top: 0.3em;">
+
+    <blockquote id="{{ person.github }}-bio" style="max-height: 3em; overflow: hidden;">
     {{ person.bio }}
     </blockquote>
-
+    <blockquote id="{{ person.github }}-ellipsis" style="margin-top: -1em;">
+    ...
+    </blockquote>
   </div>
 
 </div>
@@ -111,18 +112,21 @@ description: Workshop folks
       href="javascript:;"
       style="writing-mode:vertical-rl;"
       id="{{ person.github }}-show"
-      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = 'initial'; document.getElementById('{{ person.github }}-hide').style.display = 'initial';"
+      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = 'initial'; document.getElementById('{{ person.github }}-hide').style.display = 'initial'; document.getElementById('{{ person.github }}-ellipsis').style.display = 'none';"
     > » </a>
     <a
       href="javascript:;"
       style="writing-mode:vertical-rl; display:none;"
       id="{{ person.github }}-hide"
-      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = '3em'; document.getElementById('{{ person.github }}-show').style.display = 'initial';"
+      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = '3em'; document.getElementById('{{ person.github }}-show').style.display = 'initial'; document.getElementById('{{ person.github }}-ellipsis').style.display = '';"
     > « </a>
-    <blockquote id="{{ person.github }}-bio" style="max-height: 3em; overflow: hidden; margin-top: 0.3em;">
+
+    <blockquote id="{{ person.github }}-bio" style="max-height: 3em; overflow: hidden;">
     {{ person.bio }}
     </blockquote>
-
+    <blockquote id="{{ person.github }}-ellipsis" style="margin-top: -1em;">
+    ...
+    </blockquote>
   </div>
 
 </div>
@@ -157,19 +161,21 @@ description: Workshop folks
       href="javascript:;"
       style="writing-mode:vertical-rl;"
       id="{{ person.github }}-show"
-      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = 'initial'; document.getElementById('{{ person.github }}-hide').style.display = 'initial';"
+      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = 'initial'; document.getElementById('{{ person.github }}-hide').style.display = 'initial'; document.getElementById('{{ person.github }}-ellipsis').style.display = 'none';"
     > » </a>
     <a
       href="javascript:;"
       style="writing-mode:vertical-rl; display:none;"
       id="{{ person.github }}-hide"
-      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = '3em'; document.getElementById('{{ person.github }}-show').style.display = 'initial';"
+      onclick="this.style.display = 'none'; document.getElementById('{{ person.github }}-bio').style.maxHeight = '3em'; document.getElementById('{{ person.github }}-show').style.display = 'initial'; document.getElementById('{{ person.github }}-ellipsis').style.display = '';"
     > « </a>
 
-    <blockquote id="{{ person.github }}-bio" style="max-height: 3em; overflow: hidden; margin-top: 0.3em;">
+    <blockquote id="{{ person.github }}-bio" style="max-height: 3em; overflow: hidden;">
     {{ person.bio }}
     </blockquote>
-
+    <blockquote id="{{ person.github }}-ellipsis" style="margin-top: -1em;">
+    ...
+    </blockquote>
   </div>
 
 </div>
