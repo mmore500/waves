@@ -35,7 +35,7 @@ description: Workshop folks
 
 # Participants
 
-![clouds](assets/gifcities-clouds.gif){:width="100%"}
+![clouds]({{ site.baseurl }}/assets/gifcities-clouds.gif){:width="100%"}
 
 {% for person in participants %}
 
@@ -83,7 +83,7 @@ description: Workshop folks
 
 # Mentors
 
-![twisting](assets/gifcities-twist.gif){:width="100%"}
+![twisting]({{ site.baseurl }}/assets/gifcities-twist.gif){:width="100%"}
 
 {% for person in mentors %}
 
@@ -129,7 +129,7 @@ description: Workshop folks
 
 # Friends
 
-![twisting](assets/gifcities-sheep.gif){:width="100%"}
+![sheep]({{ site.baseurl }}/assets/gifcities-sheep.gif){:width="100%"}
 
 {% for person in friends %}
 
