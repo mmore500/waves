@@ -41,7 +41,7 @@ description: Workshop folks
 
 {% for person in participants %}
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap;">
 
   <div class="img-holder">
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
@@ -89,7 +89,7 @@ description: Workshop folks
 
 {% for person in mentors %}
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap;">
 
   <div class="img-holder">
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
@@ -135,7 +135,7 @@ description: Workshop folks
 
 {% for person in friends %}
 
-<div style="display: flex">
+<div style="display: flex; flex-wrap: wrap;">
 
   <div class="img-holder">
     <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
