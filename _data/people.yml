@@ -215,3 +215,43 @@
   href:
   role: participant
   institution: Michigan State University
+
+- github: tetianadadakova
+  twitter:
+  nick: Tetiana
+  first: Tetiana
+  last: Dadakova
+  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  href:
+  role: participant
+  institution: UC Berkeley, Human Longevity Inc.
+
+- github: GraceWhipple
+  twitter:
+  nick: Grace
+  first: Grace
+  last: Whipple
+  bio: I am a rising junior at Michigan State University. I am a human biology major on the pre-med track. I am from Eagle, Idaho. So far, I am loving the Midwest.
+  href:
+  role: participant
+  institution: Michigan State University
+
+- github: Oliver-BE
+  twitter: oliver_be2
+  nick: Oliver
+  first: Oliver
+  last: Baldwin Edwards
+  bio: Hi! I'm a rising senior at Amherst College originally from Evanston, Illinois (I recently moved to New Orleans) and am double majoring in Computer Science and Statistics. I'm especially interested in evolutionary computation and interactive data visualizations. Outside of that, I enjoy photography, playing the piano, and climbing.
+  href:
+  role: participant
+  institution: Amherst College
+
+- github: caovicto
+  twitter:
+  nick: Victoria
+  first: Victoria
+  last: Cao
+  bio: I'm Victoria Cao, an uprising Junior at Michigan State University, studying Computer Science. During my free time I enjoy coding up side projects, drawing, and rock climbing.
+  href:
+  role: other
+  institution: Amherst College
