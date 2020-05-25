@@ -255,3 +255,33 @@
   href:
   role: other
   institution: Amherst College
+
+- github: qinyi2000
+  twitter:
+  nick: Yi
+  first: Yi
+  last: Qin
+  bio: I'm a CS major who just graduated from Grinnell College. I enjoy software development and machine learning and I intend to work in the industry after completing graduate education. My favorite disciplines are criminal psychology and quantum mechanics.
+  href:
+  role: participant
+  institution: Grinnell College
+
+- github: szendejo
+  twitter:
+  nick: Stephanie
+  first: Stephanie
+  last: Zendejo
+  bio: Hi! My name is Stephanie Zendejo. I graduated from the University of Houston-Clear Lake with a degree in Computer Science. My focuses include embedded systems and automation. I'm interested in creating and promoting technology that is open and accessible to all. Outside of work, I enjoy hiking, playing the drums, and reading.
+  href:
+  role: participant
+  institution: University of Houston-Clear Lake
+
+- github: cgnitash
+  twitter:
+  nick: Nitash
+  first: Nitash
+  last: C G
+  bio: I'm a grad student, interested in figuring out how complex things work. I enjoy the long road of getting to the answers, more than actually getting the answers. I enjoy c++, both getting it to do the things I want, as well as understanding how the language works, and how it got to be the way it is. Always happy to talk about any aspect of c++ in excruciating detail ;)
+  href:
+  role: other
+  institution: Michigan State University
