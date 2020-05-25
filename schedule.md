@@ -16,6 +16,8 @@ description: Workshop schedule
 * May 29: [orientation 3]({{ site.baseurl }}/tutorials/lesson03.html)
   * meeting 1pm to 1:30pm EST
 * May 29: *stipend installment mailed*
+  * pending assignment of vendor numbers by MSU
+  * may be delayed until this process completes
 
 ## Week 1
 * June 1: [orientation 4]({{ site.baseurl }}/tutorials/lesson04.html)
