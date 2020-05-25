@@ -6,6 +6,8 @@ description: Workshop resources
 
 ![Treating C++ like other languages](assets/mmore500/cppcon2019-carruth-winters.gif)
 
+* [WAVES YouTube Channel](https://www.youtube.com/channel/UC285Y5aPovoYtiQbc85SAFQ)
+
 ## Learning & Exploring C++
 
 * [HackerRank C++ Practice](https://www.hackerrank.com/domains/cpp)
