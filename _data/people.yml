@@ -325,3 +325,13 @@
   href:
   role: participant
   institution: Michigan State University
+
+- github: jgh9094
+  twitter:
+  nick: Jose
+  first: Jose Guadalupe
+  last: Hernandez
+  bio: My name is Jose Guadalupe Hernandez, I am entering my 2nd year as a doctoral student at MSU pursuing a dual PhD in Computer Science and Ecology, Evolutionary Biology, & Behavior. I am part of the Digital Evolution Lab under Dr. Charles Ofria. My research focuses on the analysis and improvement of evolutionary algorithms. During my free time you can catch chilling with friends, working out, or eating tasty food!
+  href:
+  role: mentor
+  institution: Michigan State University
