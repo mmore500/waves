@@ -285,3 +285,33 @@
   href:
   role: other
   institution: Michigan State University
+
+- github: djrain
+  twitter:
+  nick: Dylan
+  first: Dylan
+  last: Rainbow
+  bio: I'm Dylan, a recent computer science graduate from UC Irvine, and lifelong resident of southern California. I love to create (art, music, games). I'm also passionate about animals, fitness, and healthy plant-based food.
+  href:
+  role: participant
+  institution: University of California, Irvine
+
+- github: mkmmnn
+  twitter:
+  nick: Molly
+  first: Molly
+  last: Kammann
+  bio: I just finished my sophomore year at Carleton College in Northfield, MN. I am majoring in Computer Science and Chemistry with a minor in Biochemistry. While I'm not busy studying, I enjoy playing games with friends via zoom, exercising with my dogs, and brewing absurd quantities of cold brew coffee for myself.
+  href:
+  role: participant
+  institution: Carleton College
+
+- github: nstrasser
+  twitter:
+  nick: Nadine
+  first: Nadine
+  last: Strasser
+  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  href:
+  role: other
+  institution: University of Applied Sciences Upper Austria
