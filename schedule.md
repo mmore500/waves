@@ -12,16 +12,16 @@ description: Workshop schedule
 * May 27: [orientation 1]({{ site.baseurl }}/tutorials/lesson01.html)
   * meeting 2:30pm to 4pm EST
 * May 28: [orientation 2]({{ site.baseurl }}/tutorials/lesson02.html)
-  * meeting 1pm to 1:30pm EST
+  * meeting 1pm to 2pm EST
 * May 29: [orientation 3]({{ site.baseurl }}/tutorials/lesson03.html)
-  * meeting 1pm to 1:30pm EST
+  * meeting 1pm to 2pm EST
 * May 29: *stipend installment mailed*
   * pending assignment of vendor numbers by MSU
   * may be delayed until this process completes
 
 ## Week 1
 * June 1: [orientation 4]({{ site.baseurl }}/tutorials/lesson04.html)
-  * meeting 1pm to 1:30pm EST
+  * meeting 1pm to 2pm EST
 * June 2: [enrichment seminar 1]({{ site.baseurl }}/discussion/week1.html)
   * 3 to 4pm EST
   * mentor: Matthew Andres Moreno
