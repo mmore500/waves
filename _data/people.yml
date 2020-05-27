@@ -335,3 +335,33 @@
   href:
   role: mentor
   institution: Michigan State University
+
+- github: Eflor
+  twitter:
+  nick: Edwin
+  first: Edwin
+  last: Flores-Cardoso
+  bio: Hi! My name is Edwin Flores-Cardoso and I am from SWD, where the community consists of predominantly LatinX  people. I am entering my fourth-year at Michigan State University and am pursuing a degree in computer science and  minor in mathematics. I was introduced too STEM during my high school career, when I joined the FIRST Robotics Team. This experience increased my curiosity to purse a STEM degree.  I have also had the opportunity to work as an undergraduate learning assistant for a course in the mathematics department at Michigan State University. I improved my skill regarding communication, taking initiative, and multitasking. The WAVES program will allow me to continue growing and expand my current skill set, and I am excited to get started!
+  href:
+  role: participant
+  institution: Michigan State University
+
+- github: lsmead
+  twitter: louisesmead
+  nick: Louise
+  first: Louise
+  last: Mead
+  bio: I am the Education Director at BEACON and generally interested in the teachings and learning of evolutionary biology, and the evolution of plethodontid salamanders.
+  href:
+  role: mentor
+  institution: Michigan State University
+
+- github: rodsan0
+  twitter:
+  nick: Santiago
+  first: Santiago
+  last: Rodriguez-Papa
+  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  href:
+  role: other
+  institution: Michigan State University
