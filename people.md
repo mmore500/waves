@@ -28,7 +28,7 @@ description: Workshop folks
 {% for person in shuffle %}
 
   <div class="img-holder">
-    <a href="#{{person.github}}">
+    <a href="#{{ person.github | replace: "-", "_" }}">
       <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
     </a>
   </div>
