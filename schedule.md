@@ -6,6 +6,9 @@ description: Workshop schedule
 
 ![school]({{ site.baseurl }}/assets/gifcities-school.gif){:width="100%"}
 
+* [Google Calendar](https://calendar.google.com/calendar/embed?src=1t2ks569gug921mf6kspda68h0%40group.calendar.google.com&ctz=America%2FNew_York)
+* [iCal](https://calendar.google.com/calendar/ical/1t2ks569gug921mf6kspda68h0%40group.calendar.google.com/public/basic.ics)
+
 ## Week 0
 * May 26: [orientation 0]({{ site.baseurl }}/tutorials/lesson00.html)
   * meeting 1 to 4pm EST
