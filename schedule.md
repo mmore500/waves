@@ -27,7 +27,7 @@ description: Workshop schedule
 * June 3: [enrichment seminar 1]({{ site.baseurl }}/discussion/week1.html)
   * 2:30 to 4pm EST
   * mentor: Matthew Andres Moreno
-* June 5: *stipend installment mailed*
+* June 5: *non-MSU participants stipend installment 1 mailed*
   * pending assignment of vendor numbers by MSU
 
 ## Week 2
@@ -43,7 +43,9 @@ description: Workshop schedule
 * June 17: [enrichment seminar 3]({{ site.baseurl }}/discussion/week3.html)
   * 2:30 to 4pm EST
   * mentor: TBD
-* June 19: *stipend installment mailed*
+* June 19: *stipend installments mailed*
+  * *MSU students stipend installments 1 and 2 mailed*
+  * *non-MSU students stipend installment 2 mailed*
 
 ## Week 4
 * June 22: group check-in meeting
@@ -58,7 +60,7 @@ description: Workshop schedule
 * July 2: [enrichment seminar 5]({{ site.baseurl }}/discussion/week5.html)
   * 2:30 to 4pm EST
   * mentor: TBD
-* July 3: *stipend installment mailed*
+* July 3: *stipend installment 3 mailed*
 
 ## Week 6
 * July 7: group check-in meeting
@@ -74,7 +76,7 @@ description: Workshop schedule
 * July 16: [enrichment seminar 7]({{ site.baseurl }}/discussion/week7.html)
   * 2:30 to 4pm EST
 * July 17: **blog post outline due**
-* July 17: *stipend installment mailed*
+* July 17: *stipend installment 4 mailed*
 
 ## Week 8
 * July 21: group check-in meeting
@@ -82,7 +84,6 @@ description: Workshop schedule
 * July 23: [enrichment seminar 8]({{ site.baseurl }}/discussion/week8.html)
   * 2:30 to 4pm EST
 * July 24: **working draft blog post due**
-* July 24: *stipend installment mailed*
 
 ## Week 9
 * July 29: group check-in meeting
@@ -91,4 +92,4 @@ description: Workshop schedule
   * 2:30 to 4pm EST
 * July 29: **blog post peer feedback due**
 * July 31: **final draft blog post due**
-* July 31: *stipend installment mailed*
+* July 31: *stipend installment 5 mailed*
