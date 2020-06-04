@@ -62,6 +62,40 @@ If would prefer to submit the form by snail mail, contact her by email for instr
 
 :bangbang: If the address you would like your stipend checks delivered to differs from the permanent address you listed in your W-9 form, be sure to let Melissa know.
 
+## Tax Information
+
+:bangbang:
+*We are not lawyers or tax professionals!*
+*This advice is general in nature and not to be taken as personal professional advice.*
+
+*Thanks to [@alackles](https://github.com/alackles) for contributing the following section.*
+
+
+State and federal income tax is NOT likelu being withheld from these stipends.
+(If you live in East Lansing there local income tax may also apply.)
+This means you will likelu need to self-withhold taxes.
+
+This is a complex and annoying process; I've had to do it several times, so I'm here to help if you need any info or guidance.
+
+I've attached below a guideline for state and federal taxes.
+It's important to note that you'll pay state taxes for the state in which you are currently living not where payment is happening (Michigan).
+It's also important to note you only pay taxes on amounts you make over the standard deduction/personal exemption, both federally and at state level.
+Yeah, it's a whole thing.
+
+Note that if this is your only paid gig this year you might not have to withhold federal taxes but may have to withold state taxes.
+Note also that there are some situations where there isn't a penalty for not paying estimated taxes.
+In particular, if you didn't earn enough money last year to owe any taxes, you're probably okay (but double check your exact situation).
+Also important is there's probablu no penalty if you pay <$1,000 in tax, which would be true if this is your only taxable income where it's not automatically withheld.
+However, you WILL still have to pay this tax at the end of the year; you just don't have to pay it quarterly.
+
+The IRS page on estimated taxes is [here](https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes).
+Federal tax brackets for 2020 can be found [here](https://taxfoundation.org/2020-tax-brackets/).
+State tax brackets for 2020 can be found [here](https://taxfoundation.org/state-individual-income-tax-rates-and-brackets-for-2020/).
+
+:shrug:
+I'm so sorry that you all have to deal with this and that we don't live in a country where this is all automatically calculated for you.
+Like I said, I'm more than happy to help out with this if you haven't done this before or if you just have questions.
+
 ## Workshop Resources
 
 We have assembled a listing of web resources related to the workshop [elsewhere on the site]({{ site.baseurl }}/resources).
