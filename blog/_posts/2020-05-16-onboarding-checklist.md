@@ -71,9 +71,9 @@ If would prefer to submit the form by snail mail, contact her by email for instr
 *Thanks to [@alackles](https://github.com/alackles) for contributing the following section.*
 
 
-State and federal income tax is NOT likelu being withheld from these stipends.
+State and federal income tax is NOT likely being withheld from these stipends.
 (If you live in East Lansing there local income tax may also apply.)
-This means you will likelu need to self-withhold taxes.
+This means you will likely need to self-withhold taxes.
 
 This is a complex and annoying process; I've had to do it several times, so I'm here to help if you need any info or guidance.
 
@@ -85,7 +85,7 @@ Yeah, it's a whole thing.
 Note that if this is your only paid gig this year you might not have to withhold federal taxes but may have to withold state taxes.
 Note also that there are some situations where there isn't a penalty for not paying estimated taxes.
 In particular, if you didn't earn enough money last year to owe any taxes, you're probably okay (but double check your exact situation).
-Also important is there's probablu no penalty if you pay <$1,000 in tax, which would be true if this is your only taxable income where it's not automatically withheld.
+Also important is there's probably no penalty if you pay <$1,000 in tax, which would be true if this is your only taxable income where it's not automatically withheld.
 However, you WILL still have to pay this tax at the end of the year; you just don't have to pay it quarterly.
 
 The IRS page on estimated taxes is [here](https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes).
