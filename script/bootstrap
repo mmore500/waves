@@ -2,7 +2,5 @@
 
 set -e
 
-apt-get install -y ca-certificates
-
 gem install bundler
 bundle install
