@@ -4,7 +4,7 @@ title: Schedule
 description: Workshop schedule
 ---
 
-![school]({{ site.baseurl }}/assets/gifcities-school.gif){:width="100%"}
+![school]({{ site.baseurl }}/assets/gifcities-school.gif){:style="width:100%;"}
 
 * [Google Calendar](https://calendar.google.com/calendar?cid=MXQya3M1NjlndWc5MjFtZjZrc3BkYTY4aDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 * [iCal](https://calendar.google.com/calendar/ical/1t2ks569gug921mf6kspda68h0%40group.calendar.google.com/public/basic.ics)

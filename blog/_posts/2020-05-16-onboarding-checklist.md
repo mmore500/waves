@@ -8,7 +8,7 @@ author: Matthew Andres Moreno
 Welcome to WAVES!
 We're looking forward to working with all of you this summer.
 
-![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-trenwelcome.gif){:width="100%"}
+![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-trenwelcome.gif){:style="width:100%;"}
 
 To ensure that we can get off to a running start when the workshop begins, please work through onboarding information and tasks below by **Friday, May 22**.
 Feel free to drop a line to me at [m.more500@gmail.com](mailto:m.more500@gmail.com) with any questions or issues.  We will also assign you an initial mentor who will contact you soon.
@@ -111,7 +111,7 @@ We assigned initial mentors to participants based on match between mentors' proj
 These assignments may shift as participants choose which projects interest them most, but they should at least be a good start.
 Keep an eye out for an email from them in the next few days!
 
-![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-fishwelcome.gif){:width="100%"}
+![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-fishwelcome.gif){:style="width:100%;"}
 
 Once more, welcome to WAVES!
 We're all really looking forward to getting to work with you.

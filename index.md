@@ -101,7 +101,7 @@ As part of their work, participants will make contributions directly to existing
 
 We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Digital Evolution Laboratory](https://devolab.org/) at Michigan State University.
 
-![group headshot collage]({{ site.baseurl }}/assets/headshot-collage.jpg){:width="100%"}
+![group headshot collage]({{ site.baseurl }}/assets/headshot-collage.jpg){:style="width:100%;"}
 
 ### Primary Investigators
 
@@ -147,4 +147,3 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 * Jose Hernandez
 * Kate Skocelas
 * [Matthew Andres Moreno](https://mmore500.com)
-
