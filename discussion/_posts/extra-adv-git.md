@@ -40,11 +40,13 @@ The Solution:
   * `git remote add public git@company.com:team/project.git`
   * `git remote add personal git@github.com:jory/project.git` (IP concerns for a company!)
   * `git remote remove personal`
+  * `git remote add nonSSHpersonal https://www.github.com/jory/project.git` (IP concerns for a company!)
   * `git remote -v` (list all available - in this case, the above 4)
 * User-specific settings stored in `.git/config` set using:
   * `git config --local user.name "Me"`
   * `git config --local user.email "me@uni.edu"`
   * `git config --global core.editor "vim"` (global settings are in file `${HOME}/.gitconfig`)
+  * Note that remote URLs can use either https (`https://...`) or ssh (`git@server...`), which affects how you can push changes to the remote. https is fairly common, because we often have read-only access to most repositories, and if you try to push, git will prompt you for your login information for that repo (such as github username and password). SSH is nice to work with when you've set up ssh authentication for your repository, so git will automatically check your local ssh files in your home directory, and use that to authenticate for the remote, meaning you never have to manually log in when pushing changes. In github, you can set up ssh keys in your profile/settings to facilitate this.
 * Git allows offline work, but that means having to cache the state of the remote server(s):
   * Git stores a read-only "understanding" of what is on the remote server, so you can build on that code even if you're not online.
     * `git branch -a` to list all branches, and you'll see these read-only branches like `origin/master`, often colored red
