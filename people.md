@@ -4,20 +4,6 @@ title: People
 description: Workshop folks
 ---
 
-<style>
-.img-holder {
-  width: 20%;
-  position: relative;
-  min-width:100px;
-  max-width:150px;
-  padding: 10px;
-}
-.img-holder img {
-  top: 0;
-  left: 0;
-}
-</style>
-
 {% assign mentors = site.data.people | where:'role', 'mentor' | sort: "nick" %}
 {% assign participants = site.data.people | where:'role', 'participant' | sort: "nick" %}
 {% assign friends = site.data.people | where:'role', 'other'  | sort: "nick" %}
