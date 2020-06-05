@@ -29,7 +29,10 @@ description: Workshop folks
 
   <div class="img-holder">
     <a href="#{{ person.github | replace: "-", "_" }}">
-      <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
+      <img
+        src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png"
+        alt="{{ person.first }} {{ person.last }}"
+      >
     </a>
   </div>
 {% endfor %}
