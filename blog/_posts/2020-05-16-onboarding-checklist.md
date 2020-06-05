@@ -54,7 +54,7 @@ Enter "BEACON" for "Research Type / Program Name."
 ## Stipend Setup
 
 Stipend checks will be disbursed bi-weekly by mail.
-The dates that stipend checks will be mailed are listed on the [workshop schedule]({{ site.baseurl }}/schedule).
+The dates that stipend checks will be mailed are listed on the [workshop schedule]({{ site.baseurl }}/schedule.html).
 
 :soon: Please fill out a [W-9]({{ site.baseurl }}/assets/w9.pdf) form and send it to our accounts manager, Melissa Williams.
 You can send your completed form by email to [will3360@msu.edu](mailto:will3360@msu.edu).
@@ -98,7 +98,7 @@ Like I said, I'm more than happy to help out with this if you haven't done this 
 
 ## Workshop Resources
 
-We have assembled a listing of web resources related to the workshop [elsewhere on the site]({{ site.baseurl }}/resources).
+We have assembled a listing of web resources related to the workshop [elsewhere on the site]({{ site.baseurl }}/resources.html).
 If you would feel more comfortable brushing up on your C++ or evolution background before the workshop gets underway, feel free to click over there and check some of them out.
 If you have ideas for what you'd like to see on there, feel free to [open a PR](https://github.com/mmore500/waves) or shoot me a message!
 
