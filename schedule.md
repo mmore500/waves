@@ -33,9 +33,10 @@ description: Workshop schedule
 ## Week 2
 * June 8: group check-in meeting
   * 2:30 to 4pm EST
-* June 10: [enrichment seminar 2]({{ site.baseurl }}/discussion/week2.html)
-  * 2:30 to 4pm EST
-  * mentor: Matthew Andres Moreno
+* ~~June 10: [enrichment seminar 2]({{ site.baseurl }}/discussion/week2.html)~~
+  * ~~2:30 to 4pm EST~~
+  * ~~mentor: Matthew Andres Moreno~~
+  * in response to current events, mentor has declined to lead this seminar
 
 ## Week 3
 * June 15: group check-in meeting
