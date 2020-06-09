@@ -26,7 +26,7 @@ description: Workshop schedule
   * 2:30 to 4pm EST
 * June 3: [enrichment seminar 1]({{ site.baseurl }}/discussion/week1.html)
   * 2:30 to 4pm EST
-  * mentor: Matthew Andres Moreno
+  * mentor: Emily Dolson
 * June 5: *non-MSU participants stipend installment 1 mailed*
   * pending assignment of vendor numbers by MSU
 
@@ -35,14 +35,14 @@ description: Workshop schedule
   * 2:30 to 4pm EST
 * June 10: [enrichment seminar 2]({{ site.baseurl }}/discussion/week2.html)
   * 2:30 to 4pm EST
-  * mentor: TBD
+  * mentor: Matthew Andres Moreno
 
 ## Week 3
 * June 15: group check-in meeting
   * 2:30 to 4pm EST
 * June 17: [enrichment seminar 3]({{ site.baseurl }}/discussion/week3.html)
   * 2:30 to 4pm EST
-  * mentor: TBD
+  * mentor: Acacia Ackles
 * June 19: *stipend installments mailed*
   * *MSU students stipend installments 1 and 2 mailed*
   * *non-MSU students stipend installment 2 mailed*
