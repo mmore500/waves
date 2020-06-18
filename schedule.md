@@ -10,6 +10,7 @@ description: Workshop schedule
 * [iCal](https://calendar.google.com/calendar/ical/1t2ks569gug921mf6kspda68h0%40group.calendar.google.com/public/basic.ics)
 
 ## Week 0
+* May 25: Memorial Day
 * May 26: [orientation 0]({{ site.baseurl }}/tutorials/lesson00.html)
   * meeting 1 to 4pm EST
 * May 27: [orientation 1]({{ site.baseurl }}/tutorials/lesson01.html)
@@ -48,9 +49,11 @@ description: Workshop schedule
   * mentor: Acacia Ackles
 * June 17: virtual social games hour
   * 7 to 8pm EST
+* June 19: Juneteenth
 * June 19: *stipend installments mailed*
   * *MSU students stipend installments 1 and 2 mailed*
   * *non-MSU students stipend installment 2 mailed*
+
 
 ## Week 4
 * June 22: group check-in meeting
