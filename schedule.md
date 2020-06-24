@@ -25,7 +25,7 @@ description: Workshop schedule
   * meeting 1pm to 2pm EST
 * June 1: group check-in meeting
   * 2:30 to 4pm EST
-* June 3: [enrichment seminar 1]({{ site.baseurl }}/discussion/week1.html)
+* June 3: [enrichment seminar 1]({{ site.baseurl }}/enrichment/week1.html)
   * 2:30 to 4pm EST
   * mentor: Emily Dolson
 * June 3: virtual social games hour
@@ -36,7 +36,7 @@ description: Workshop schedule
 ## Week 2
 * June 8: group check-in meeting
   * 2:30 to 4pm EST
-* ~~June 10: [enrichment seminar 2]({{ site.baseurl }}/discussion/week2.html)~~
+* ~~June 10: [enrichment seminar 2]({{ site.baseurl }}/enrichment/week2.html)~~
   * ~~2:30 to 4pm EST~~
   * ~~mentor: Matthew Andres Moreno~~
   * in response to current events, mentor has declined to lead this seminar
@@ -44,7 +44,7 @@ description: Workshop schedule
 ## Week 3
 * June 15: group check-in meeting
   * 2:30 to 4pm EST
-* June 17: [enrichment seminar 3]({{ site.baseurl }}/discussion/week3.html)
+* June 17: [enrichment seminar 3]({{ site.baseurl }}/enrichment/week3.html)
   * 2:30 to 4pm EST
   * mentor: Acacia Ackles
 * June 17: virtual social games hour
@@ -58,7 +58,7 @@ description: Workshop schedule
 ## Week 4
 * June 22: group check-in meeting
   * 2:30 to 4pm EST
-* June 24: [enrichment seminar 4]({{ site.baseurl }}/discussion/week4.html)
+* June 24: [enrichment seminar 4]({{ site.baseurl }}/enrichment/week4.html)
   * 2:30 to 4pm EST
   * mentor: TBD
 * June 24: virtual social games hour
@@ -67,7 +67,7 @@ description: Workshop schedule
 ## Week 5
 * June 29: group check-in meeting
   * 2:30 to 4pm EST
-* July 1: [enrichment seminar 5]({{ site.baseurl }}/discussion/week5.html)
+* July 1: [enrichment seminar 5]({{ site.baseurl }}/enrichment/week5.html)
   * 2:30 to 4pm EST
   * mentor: TBD
 * July 1: virtual social games hour
@@ -77,7 +77,7 @@ description: Workshop schedule
 ## Week 6
 * July 6: group check-in meeting
   * 2:30 to 4pm EST
-* July 8: [enrichment seminar 6]({{ site.baseurl }}/discussion/week6.html)
+* July 8: [enrichment seminar 6]({{ site.baseurl }}/enrichment/week6.html)
   * 2:30 to 4pm EST
 * July 8: virtual social games hour
   * 7 to 8pm EST
@@ -87,7 +87,7 @@ description: Workshop schedule
   * some workshop meetings may be canceled
 * July 13: group check-in meeting
   * 2:30 to 4pm EST
-* July 15: [enrichment seminar 7]({{ site.baseurl }}/discussion/week7.html)
+* July 15: [enrichment seminar 7]({{ site.baseurl }}/enrichment/week7.html)
   * 2:30 to 4pm EST
 * July 15: virtual social games hour
   * 7 to 8pm EST
@@ -97,7 +97,7 @@ description: Workshop schedule
 ## Week 8
 * July 20: group check-in meeting
   * 2:30 to 4pm EST
-* July 22: [enrichment seminar 8]({{ site.baseurl }}/discussion/week8.html)
+* July 22: [enrichment seminar 8]({{ site.baseurl }}/enrichment/week8.html)
   * 2:30 to 4pm EST
 * July 22: virtual social games hour
   * 7 to 8pm EST
@@ -106,7 +106,7 @@ description: Workshop schedule
 ## Week 9
 * July 27: group check-in meeting
   * 2:30 to 4pm EST
-* July 29: [enrichment seminar 9]({{ site.baseurl }}/discussion/week9.html)
+* July 29: [enrichment seminar 9]({{ site.baseurl }}/enrichment/week9.html)
   * 2:30 to 4pm EST
 * July 29: virtual social games hour
   * 7 to 8pm EST
