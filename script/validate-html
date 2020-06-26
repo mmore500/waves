@@ -14,7 +14,7 @@ def validator(file)
 end
 
 def warn_known_errors(known_errors)
-  puts 'Known errors...' if known_errors.any?
+  puts 'Ignored errors...' if known_errors.any?
   known_errors.each { |err| puts err.to_s }
 end
 
@@ -48,6 +48,7 @@ def validate(file)
 
   return puts 'Valid!' if errors.empty?
 
+  puts 'Breaking errors...'
   errors.each { |err| puts err.to_s }
   exit 1
 end
