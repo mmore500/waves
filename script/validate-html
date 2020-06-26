@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'w3c_validators'
+require 'yaml'
 
 def validator(file)
   extension = File.extname(file)
@@ -18,12 +19,7 @@ def warn_known_errors(known_errors)
 end
 
 def get_known_errors(results)
-  ignorables = %w[
-    frameborder
-    pre-discussion-learning-material
-    conversation-startersdiscussion-question
-    topics
-  ]
+  ignorables = YAML.safe_load(File.read('script/ignored-errors.yml'))
   known_errors = results.errors.select do |err|
     ignorables.any? { |s| err.to_s.include? s }
   end
