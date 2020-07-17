@@ -99,6 +99,7 @@ description: Workshop schedule
 * July 20: **blog post outline due**
 * July 22: [enrichment seminar 8]({{ site.baseurl }}/enrichment/week8.html)
   * 2:30 to 4pm EST
+  * panel discussion on the good, the bad, & the ugly of project wrap-up/hand-off
 * July 22: virtual social games hour
   * 7 to 8pm EST
 * July 24: **working draft blog post due**
@@ -108,6 +109,7 @@ description: Workshop schedule
   * 2:30 to 4pm EST
 * July 29: [enrichment seminar 9]({{ site.baseurl }}/enrichment/week9.html)
   * 2:30 to 4pm EST
+  * participants each briefly (1 to 2 min.) overview project wrap-up/hand-off plans
 * July 29: virtual social games hour
   * 7 to 8pm EST
 * July 29: **blog post peer feedback due**
