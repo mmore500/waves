@@ -2,12 +2,16 @@
 layout: default
 ---
 
-<ol class="posts" start="0">
-  {% for post in site.categories.tutorials reversed %}
-    {% capture href %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
-      <li class="lessons_list"> » <a href="{{ href }}">{{ post.title }}</a></li>
-    <div>
-    {% include toc.html baseurl=href html=post.content %}
+<div>
+{% for post in site.categories.tutorials reversed %}
+  {% capture href %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
+    <div class="lessons_list">
+      {% increment counter %}. » <a href="{{ href }}">{{ post.title }}</a>
     </div>
-  {% endfor %}
-</ol>
+  <ul style="list-style-type:none; margin-bottom:0;">
+  <li>
+  {% include toc.html baseurl=href html=post.content %}
+  </li>
+  </ul>
+{% endfor %}
+</div>
