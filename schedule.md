@@ -91,12 +91,12 @@ description: Workshop schedule
   * 2:30 to 4pm EST
 * July 15: virtual social games hour
   * 7 to 8pm EST
-* July 17: **blog post outline due**
 * July 17: *stipend installment 4 mailed*
 
 ## Week 8
 * July 20: group check-in meeting
   * 2:30 to 4pm EST
+* July 20: **blog post outline due**
 * July 22: [enrichment seminar 8]({{ site.baseurl }}/enrichment/week8.html)
   * 2:30 to 4pm EST
 * July 22: virtual social games hour
