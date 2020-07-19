@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DataMap Features"
+title: "BitVector Optimizations and DataMap Features"
 date: 2020-06-03
 author: Jamie Schmidt
 ---
