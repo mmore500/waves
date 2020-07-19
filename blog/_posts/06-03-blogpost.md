@@ -15,7 +15,7 @@ author: Jamie Schmidt
     2. Define "DataMap Reference Capability" and include a small diagram of how the memory is used in a new DataMap entry, both in the normal way and as a reference.
 * BITVECTOR PROJECT
   1. Show the code for the method BitSetPtr and explain how and why it works.
-    * ![Alt](/BitSetPtr.png "BitSetPtr")
+    * ![Alt](BitSetPtr.png "BitSetPtr")
   2. Describe some of the issues which arose during this project.
     1. The deferenced Ptr issue.
     2. The masking issue(s).
