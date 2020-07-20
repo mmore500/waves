@@ -26,6 +26,7 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
 ### **Systematics** 
 
 Systematics is used in Empirical as a way to ...
+* Will mainly incorporate details from the documentation I wrote for systematics 
 
 ### **Phylogenetic Diversity**
 
@@ -48,11 +49,18 @@ int chooseOrg(vector<Organism> &currentGen, emp::Random &randNum){
 
 Here the Empirical number generator was utilized to ensure that results were actually random. 
 
+* Each new organism was its own clade or taxon
+    * allowed for maximum diversity 
+
 ### **Mutation and Pressure for Diversity** 
 The trees we used for comparison were trees with mutations and a pressure for diversity. 
 
 * Mutation rate used was 0.05
 * random number was generated between 0 and 1, if the number was less than 0.05, the organism's genotype (simple integer) would mutate and the child of that organism would inherit the mutated genotype, branching the tree
+
+**Pressure for Diversity**
+
+* rarer genotypes are favored for reproduction, increasing diversity
 
 **Organism Class**
 
@@ -87,7 +95,7 @@ public:
 };
 ```
 
-The model with mutation but no pressure for diversity implements this code but uses the same ChooseOrg function shown above. 
+The model with mutation but no pressure for diversity implements this code but uses the same ChooseOrg function as shown for the null model.  
 
 ### **Pressure for Diversity and Mutations**
 
@@ -157,20 +165,27 @@ For example, I would set the number of generations in the null model to be 10. T
 
 After that, I took that data and ran it through a python script which created a percentile range, by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
 
+**NEXT STEPS**
+* Using models and percentiles to determine if this can actually be used to tell a user where their phylogenetic diversity values actually fall in comparison
+* Incorporation into systematics 
+
 **_In the graphs below, I have taken the highest Phylogenetic Diversity achieved from each generation and plotted it over time (generations)._**
 
-**INSERT ANALYSIS HERE**
+## **RESULTS**
+
+_The following graphs are more of a proof of concept than actual results and will be altered with the addition of new info._
 
 **Results from the Null Model**
 
-![Graph](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBPrXshSy5Dit31HWM6bmwbx0yWDu82Hz94AKyXjmBPxQWFqjf7yubgIOvAU9JCqO2Nzr4BFgjyjPD/pubchart?oid=1072178104&format=image)
+![Graph](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBPrXshSy5Dit31HWM6bmwbx0yWDu82Hz94AKyXjmBPxQWFqjf7yubgIOvAU9JCqO2Nzr4BFgjyjPD/pubchart?oid=346498229&format=image)
 
 **Results from the model using mutations but no pressure for diversity**
 
-![Graph 2](https://docs.google.com/spreadsheets/d/e/2PACX-1vQFSakq0kOodANU8RMiW4e3n5uL_nk3Zxo94GBWk4bqg8poVSMjLxYfMsGAKASOE9pAidTGyWxurR7s/pubchart?oid=1960655507&format=image)
+![Graph 2](https://docs.google.com/spreadsheets/d/e/2PACX-1vQFSakq0kOodANU8RMiW4e3n5uL_nk3Zxo94GBWk4bqg8poVSMjLxYfMsGAKASOE9pAidTGyWxurR7s/pubchart?oid=841877077&format=image)
 
 **Results from the model with mutations and pressure for diversity**
 
-![Graph 3](https://docs.google.com/spreadsheets/d/e/2PACX-1vQS5lZwN6VlbDKRTm065_bZyIMHc-vlmjm3EF7TPtwL8DHo8eghiOE_ud6_Il99L7EFNpQ6cdjcKz6E/pubchart?oid=1440303338&format=image)
+![Graph 3](https://docs.google.com/spreadsheets/d/e/2PACX-1vQS5lZwN6VlbDKRTm065_bZyIMHc-vlmjm3EF7TPtwL8DHo8eghiOE_ud6_Il99L7EFNpQ6cdjcKz6E/pubchart?oid=835426055&format=image)
+
 
 
