@@ -41,7 +41,7 @@ author: Uma Sethuraman
       
 - **Random Access:**
   - To access position p in the current genome:
-    - Check if p is in the changelog. If it is, that means it has been either inserted or modified since the parent, so we return p’s value from the changelog
+    - Check if p is in the changelog. If it is, that means it has been either inserted or modified since the parent, so we return p’s value from the changelog.
     - If p is not in the changelog, then find the closest key to p in the offset map. Subtract this key’s offset from p, and return that position’s value from the parent. In this case, the value at position p was never changed but position p was offsetted since the parent genome.
   - This implementation allows for fast random access, with time complexity of O(logn), where n is the number of elements in the changelog. This is because we always check if the requested position is in the changelog before returning the value directly from the changelog or from the parent.
   - Animation of random access with example mutations
