@@ -14,12 +14,12 @@ The project I worked on this summer—along with the wonderful Elizabeth, Emily,
 Specifcally, this meant replacing the old Empirical D3 wrapper (built on D3 version 3) with one that supports the newest version of D3 (version 5).
 
 ## Why D3?
-[D3](d3js.org) (_Data Driven Documents_) is a JavaScript library that allows for all sorts of custom-made, interactive visualizations. 
+[D3](https://d3js.org/) (_Data Driven Documents_) is a JavaScript library that allows for all sorts of custom-made, interactive visualizations. 
 Some cool examples include:  
 * [An interactive graph](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/20/movies/among-the-oscar-contenders-a-host-of-connections.html) highlighting the connections between Oscar contenders in 2013
 * [An animation](https://observablehq.com/@d3/world-tour) of the world globe
 * [A chord diagram](https://observablehq.com/@d3/chord-diagram) of consumer's smartphone brand loyalty
-* [An interactive cartogram](9https://observablehq.com/@d3/non-contiguous-cartogram) displaying obesity in the US
+* [An interactive cartogram](https://observablehq.com/@d3/non-contiguous-cartogram) displaying obesity in the US
 
 _(talk more about motivation for choosing D3 over other visualization libraries such as its flexibility, creative allowance, and interactivity)_
 
