@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Systematics Project"
+title: "Systematics Normalization"
 date: 2020-06-03
 author: Abigail Wilson
 ---
@@ -37,7 +37,7 @@ Within the systematics manager, I added two functions to use when calculating ph
 
 The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. 
 
-**_in the final draft this code will be simplified and commented more_**
+**_in the final draft the included code will be simplified and commented more_**
 
 ```c++
   int FindPhyloData(){
@@ -304,7 +304,7 @@ Once I finalize my results next week I'll be able to add meaningful graphs and a
 
 **_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
 
-_The following graphs are more of a proof of concept than actual results and will be altered with the addition of new info._
+_The following graphs are more of a proof of concept than actual results and will be altered with the addition of new info. They do, however, show that phylogenetic diversity increases with more generations._
 
 **Results from the Null Model**
 
