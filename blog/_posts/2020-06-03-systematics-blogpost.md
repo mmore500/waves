@@ -7,6 +7,7 @@ author: Abigail Wilson
 
 
 # Systematics Normalization
+I collaborated on this project with my mentors Emily Dolson and Kate Skocelas. 
 
 ## Goal: 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
@@ -21,44 +22,59 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
  3. Creation of a tree which accounts for **pressure for diversity** and **mutation**
  4. Comparing trees from steps 3 and 4 with our null model 
 
+#### Process: 
+
+
  -------------------------------------------
 
 ### **Systematics** 
 
-Systematics is used in Empirical as a way to ...
-* Will mainly incorporate details from the documentation I wrote for systematics 
+Systematics.h is file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics allows a user to create phylogenetic trees with various levels of abstraction -- using genotypes, phenotypes, etc, to keep track of lineage. 
+
+This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could find out how their own trees compare. 
 
 ### **Phylogenetic Diversity**
 
-We decided that I would use Phylogenetic Diversity as our metric for comparison. Phylogenetic Diversity is a highly applicable trait among trees, and is easy to calculate, making it a desirable metric. 
+We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness, however, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
 
-Within systematics and my models, Phylogenetic Diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. 
+Within systematics and my models, phylogenetic diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. 
 
 ### **The Null Model**
+
+A null model is a randomly generated model of an object or stucture that is not constrained by its typical constraints, and is instead based on the randomization of data and structure, in an attempt to achieve the most unbiased model possible. 
+
 Coming up with a null model of a tree was not the most intuitive, but we decided that having the most randomly generated model was the best option. 
+
+We randomized how organisms were selected and how the tree branched as a result. 
 
 The way that organisms were chosen for reproduction is shown here: 
 
 ```c++
 int chooseOrg(vector<Organism> &currentGen, emp::Random &randNum){
 
-    parentNum = randNum.GetInt(10);  //chooses random spot in array
+    parentNum = randNum.GetInt(size(currentGen));  //chooses random spot 
     return parentNum;
 }
 ```
 
-Here the Empirical number generator was utilized to ensure that results were actually random. 
+Here the Empirical random number generator was utilized to ensure that results were actually random. Here, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
 
-* Each new organism was its own clade or taxon
-    * allowed for maximum diversity 
+In the null model, each time a new organism was created it represented its own clade or taxon to ensure maximum diversity. 
 
 ### **Mutation and Pressure for Diversity** 
-The trees we used for comparison were trees with mutations and a pressure for diversity. 
+The trees we used for comparison were trees with mutations and pressure for diversity. 
 
-* Mutation rate used was 0.05
-* random number was generated between 0 and 1, if the number was less than 0.05, the organism's genotype (simple integer) would mutate and the child of that organism would inherit the mutated genotype, branching the tree
+The mutation rate used for all of the trees was 0.05, which is a typical value for tree modeling. In these models, each organism had a genotype as an attribute. 
+
+Mutation was determined randomly. The population generated in the first round of the tree all had a genotype of integer 0. A random double between 0 and 1 was generated with each creation of an organism following this generation. If the value generated was less than 0.05, the genotype would mutate. If a mutation was required, a new random number would be generate between -3 and 3. That genotype would then be subtracted from the original genotype. 
+
+For example, if the organism had a genotype of 2, and was chosen to mutate, and the mutated genotype generated was -3, the new genotype for that organism would be 2 - (-3), which is 5. 
+
+Mutations are also heritable, meaning that the child of an organism would inherit the same mutated or unmutated genotype as its parent. Once an organism mutated, it would create a branch in the tree. 
 
 **Pressure for Diversity**
+
+In the model that used pressure for diversity and mutations, genotypes that were rarer were favored for reproduction over more common genotypes. 
 
 * rarer genotypes are favored for reproduction, increasing diversity
 
