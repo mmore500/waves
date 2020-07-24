@@ -250,7 +250,6 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 }
 ```
 
-
 ------------------------- 
 
 ## **Method**
@@ -265,10 +264,12 @@ To incoroprate this data into the systematics manager, I imported the percentile
 
 **NEXT STEPS**
 
+Once I finalize my results next week I'll be able to add meaningful graphs and a conclusion section. 
 
-**_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
+
 
 ## **RESULTS**
+**_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
 
 _The following graphs are more of a proof of concept than actual results and will be altered with the addition of new info._
 
@@ -283,6 +284,14 @@ _The following graphs are more of a proof of concept than actual results and wil
 **Results from the model with mutations and pressure for diversity**
 
 ![Graph 3](https://docs.google.com/spreadsheets/d/e/2PACX-1vQS5lZwN6VlbDKRTm065_bZyIMHc-vlmjm3EF7TPtwL8DHo8eghiOE_ud6_Il99L7EFNpQ6cdjcKz6E/pubchart?oid=835426055&format=image)
+
+## **Conclusion**
+
+Challenges:
+
+
+
+This workshop was an incredible learning experience for me. I am so grateful to my mentors, Emily and Kate, for their patience and guidance. I came into this workshop looking to improve my scientific computing and programming skills, and I can safely say that this workshop has provided me with a unique and invaluable way to do so. Thank you WAVES for such an incredible opportunity! 
 
 
 
