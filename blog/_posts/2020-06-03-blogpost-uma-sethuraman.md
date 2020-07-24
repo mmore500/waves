@@ -30,14 +30,11 @@ author: Uma Sethuraman
     <p>&nbsp<p>
 - **Insertion, Deletion, and Overwrite Mutations:**
   - **Insertion mutation:** inserts value(s) at a certain position in current genome and changes genome size
-      - Insertion Animation - Example with Change Logging
+     <img src="Insertion_Demo.gif" width="700" height="400" />
   - **Deletion mutation:** deletes value(s) at a certain position in current genome and changes genome size
-    - Deletion Animation - Example with Change Logging
-  - **Overwrite mutations:**
-    - **Point mutation:** changes the value of a single site but doesn’t affect the other sites in the genome
-      - Point Animation - Example with Change Logging
-    - **Replacement mutation:** replaces one section of the genome with new values or values copied from another section of the genome, doesn’t change genome size
-      - Replacement Animation - Example with Change Logging
+    - Deletion Animation
+  - **Overwrite mutation:** change the value of a single or multiple sites in the genome
+    - Overwrite Animation
       
 - **Random Access:**
   - To access position p in the current genome:
