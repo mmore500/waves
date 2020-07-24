@@ -33,6 +33,88 @@ Systematics.h is file manager in Empirical. It is used to track genotypes, speci
 
 This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could find out how their own trees compare. 
 
+Within the systematics manager, I added two functions to use when calculating phylogenetic diversity. 
+
+The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. 
+
+**_in the final draft this code will be simplified and commented more_**
+
+```c++
+  int FindPhyloData(){
+    int percentile; 
+
+    emp::File tree_percentiles("tree_percentiles.csv"); //loading file
+
+    emp::vector< emp::vector<double> > percentile_data = tree_percentiles.ToData<double>(','); //turns data into an array
+
+     int PhyloDiversity = GetPhylogeneticDiversity(); 
+
+    for (int i = 0; i < percentile_data.size() - 1; i++){ 
+
+        if( (PhyloDiversity >= percentile_data[i][1]) && (PhyloDiversity < percentile_data[i + 1][1])){ 
+           std::cout << "Phylogenetic Diversity (recorded in systematics): " << PhyloDiversity << std::endl; 
+           std::cout << "phylo diversity is in between: " << percentile_data[i][1] << " and " << percentile_data[i + 1][1] << std::endl; 
+           std::cout << PhyloDiversity << " is in percentile: " << percentile_data[i][0] << std::endl;       
+
+           percentile = percentile_data[i][0];
+
+           std::cout << percentile << std::endl; 
+           }
+      }
+      return percentile; 
+    }
+```
+
+The following function is used for trees that contain pressure for diversity or mutations. It can also be used for multiple generations (10 through 100 gens). When called, it takes an argument of the number of generations. This corresponds to a line in OrgGenotypePercentiles.csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
+
+_Right now, this function is used for testing our findings and prints the data to PercentileDataFullNoPressure.csv. This will probably be changed in the final product._
+
+```c++
+    void FindPhyloMultipleGens(int GenValueRaw){ 
+      int GenValue = ((GenValueRaw / 10) - 1); 
+      int percentile; 
+      bool percentFound = false; 
+
+        emp::File generation_percentiles("OrgGenotypePercentiles.csv");
+        emp::vector< emp::vector<double> >percentile_data2 = generation_percentiles.ToData<double>(',');
+
+      int PhyloDiversity = GetPhylogeneticDiversity(); 
+      int lastval = size(percentile_data2[GenValue]) - 1; 
+      std::cout << "Last element of array is: " << percentile_data2[GenValue][lastval] << std::endl;
+
+      std::fstream fs; 
+      fs.open("PercentileDataFullNoPressure.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+
+        //for(int i = 0; i < percentile_data2.size() - 1; i++){ 
+          for(int j = 0; j <= percentile_data2[GenValue].size() - 2; j++){
+          
+          if((percentile_data2[GenValue][j] <= PhyloDiversity) && (percentile_data2[GenValue][j + 1] > PhyloDiversity)){
+            std::cout << "phylo diversity is in between: " << percentile_data2[GenValue][j] << "and " << percentile_data2[GenValue][j+1] << std::endl;
+            std::cout << "I is equal to: " << GenValue << std::endl; 
+            std::cout << "J is equal to: " << j << std::endl;
+
+            std::cout << "The Phylogentic diversity value " << PhyloDiversity << " is in the " << j << " percentile, in the " << ((GenValue + 1)* 10) << " generation" << std::endl;  
+
+            fs << ((GenValue + 1)* 10) << "," << j << std::endl; 
+
+            percentFound = true; 
+          }
+          
+          if(PhyloDiversity >= percentile_data2[GenValue][lastval]){ 
+              fs << ((GenValue + 1) * 10) << "," << 100 << std::endl; 
+              fs.close(); 
+            }
+
+        if(percentFound == true){ 
+            break; 
+          }
+          }
+          if(percentFound == false){ 
+            std::cout << "PHYLO DIVERSITY IS IN 100TH PERCENTILE" << std::endl; 
+           }
+        }
+```
+
 ### **Phylogenetic Diversity**
 
 We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness, however, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
@@ -62,6 +144,9 @@ Here the Empirical random number generator was utilized to ensure that results w
 In the null model, each time a new organism was created it represented its own clade or taxon to ensure maximum diversity. 
 
 ### **Mutation and Pressure for Diversity** 
+
+**Mutation**
+
 The trees we used for comparison were trees with mutations and pressure for diversity. 
 
 The mutation rate used for all of the trees was 0.05, which is a typical value for tree modeling. In these models, each organism had a genotype as an attribute. 
@@ -72,15 +157,7 @@ For example, if the organism had a genotype of 2, and was chosen to mutate, and 
 
 Mutations are also heritable, meaning that the child of an organism would inherit the same mutated or unmutated genotype as its parent. Once an organism mutated, it would create a branch in the tree. 
 
-**Pressure for Diversity**
-
-In the model that used pressure for diversity and mutations, genotypes that were rarer were favored for reproduction over more common genotypes. 
-
-* rarer genotypes are favored for reproduction, increasing diversity
-
-**Organism Class**
-
-Each time an organism is created, it will either develop a mutation and have a new genotype, or develop no mutation and keep its previous genotype. 
+The following code shows how the organism class handles mutations. In the model that just used mutations but did not account for any pressure to diversify uses this organism class, but has no fitness calculations and still uses random choice for the creation of child organisms.  
 
 ```c++
 class Organism {
@@ -111,11 +188,9 @@ public:
 };
 ```
 
-The model with mutation but no pressure for diversity implements this code but uses the same ChooseOrg function as shown for the null model.  
+**Pressure for Diversity**
 
-### **Pressure for Diversity and Mutations**
-
-**_THIS CODE NEEDS COMMENTING AND EXPLANATION_**
+In the model that used pressure for diversity and mutations, genotypes that were rarer were favored for reproduction over more common genotypes. When rarer genotypes are chosen, diversity increases throughout the tree. We referred to this as fitness which was calculated in the following code: 
 
 ```c++
 void calcFitness(vector<Organism> &currentGen, vector<double> &fitnessVect, emp::Random &randNum) {
@@ -143,8 +218,13 @@ void calcFitness(vector<Organism> &currentGen, vector<double> &fitnessVect, emp:
         fitnessVect.push_back(1.0/CountMap[fitnessCalc[k]]);
     }
 }
+```
 
+**_THIS CODE NEEDS COMMENTING AND EXPLANATION_**
 
+After fitness was calculated, the organisms with rarer fitness were chosen for reproduction. For this, I used the following ChooseOrgDiversity function. 
+
+```c++
 int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
     emp::IndexMap fitness_index(fitnessVect.size());
 
@@ -177,15 +257,16 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 
 With each of the three models, I ran each one 1000 times for every 10 generations and collected the Phylogenetic Diversity values at the end of each run.
 
-For example, I would set the number of generations in the null model to be 10. Then, I would run it 1000 times, and at the end of each run, record the final diversity. I would then do 20 generations, and so forth, all the way through 100 generations. 
+For example, I would set the number of generations in the null model to 10. Then, I would run it 1000 times, and at the end of each run, record the final diversity. I would then do 20 generations, and so forth, all the way through 100 generations. 
 
 After that, I took that data and ran it through a python script which created a percentile range, by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
 
-**NEXT STEPS**
-* Using models and percentiles to determine if this can actually be used to tell a user where their phylogenetic diversity values actually fall in comparison
-* Incorporation into systematics 
+To incoroprate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called if future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
 
-**_In the graphs below, I have taken the highest Phylogenetic Diversity achieved from each generation and plotted it over time (generations)._**
+**NEXT STEPS**
+
+
+**_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
 
 ## **RESULTS**
 
