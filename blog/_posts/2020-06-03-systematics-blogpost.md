@@ -16,7 +16,7 @@ The purpose of this project is to develop a way to compare phylogenetic trees of
 Within Empirical as it is now, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically significant data in terms of comparison. This project aims to solve this. 
 
 #### Steps: 
- 1. Creation of a **null model** of a phylogentic tree 
+ 1. Creation of a **null model** of a phylogenetic tree 
 
  2. Creation of a tree that **mutates** and diverges in a non-random way
  3. Creation of a tree which accounts for **pressure for diversity** and **mutation**
@@ -123,7 +123,7 @@ Within systematics and my models, phylogenetic diversity is defined as the numbe
 
 ### **The Null Model**
 
-A null model is a randomly generated model of an object or stucture that is not constrained by its typical constraints, and is instead based on the randomization of data and structure, in an attempt to achieve the most unbiased model possible. 
+A null model is a randomly generated model of an object or structure that is not constrained by its typical constraints, and is instead based on the randomization of data and structure, in an attempt to achieve the most unbiased model possible. 
 
 Coming up with a null model of a tree was not the most intuitive, but we decided that having the most randomly generated model was the best option. 
 
@@ -155,7 +155,7 @@ Mutation was determined randomly. The population generated in the first round of
 
 For example, if the organism had a genotype of 2, and was chosen to mutate, and the mutated genotype generated was -3, the new genotype for that organism would be 2 - (-3), which is 5. 
 
-Mutations are also heritable, meaning that the child of an organism would inherit the same mutated or unmutated genotype as its parent. Once an organism mutated, it would create a branch in the tree. 
+Mutations are also heritable, meaning that the child of an organism would inherit the same mutated or not mutated genotype as its parent. Once an organism mutated, it would create a branch in the tree. 
 
 The following code shows how the organism class handles mutations. In the model that just used mutations but did not account for any pressure to diversify uses this organism class, but has no fitness calculations and still uses random choice for the creation of child organisms.  
 
@@ -260,7 +260,7 @@ For example, I would set the number of generations in the null model to 10. Then
 
 After that, I took that data and ran it through a python script which created a percentile range, by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
 
-To incoroprate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called if future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
+To incorporate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called if future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
 
 **NEXT STEPS**
 
@@ -286,10 +286,6 @@ _The following graphs are more of a proof of concept than actual results and wil
 ![Graph 3](https://docs.google.com/spreadsheets/d/e/2PACX-1vQS5lZwN6VlbDKRTm065_bZyIMHc-vlmjm3EF7TPtwL8DHo8eghiOE_ud6_Il99L7EFNpQ6cdjcKz6E/pubchart?oid=835426055&format=image)
 
 ## **Conclusion**
-
-Challenges:
-
-
 
 This workshop was an incredible learning experience for me. I am so grateful to my mentors, Emily and Kate, for their patience and guidance. I came into this workshop looking to improve my scientific computing and programming skills, and I can safely say that this workshop has provided me with a unique and invaluable way to do so. Thank you WAVES for such an incredible opportunity! 
 
