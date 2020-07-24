@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Future blogpost about MABE"
-date: 2020-07-24
+date: 2020-07-15
 author: Tetiana
 ---
 
