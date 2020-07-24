@@ -262,13 +262,46 @@ After that, I took that data and ran it through a python script which created a 
 
 To incorporate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called if future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
 
+After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify my diversity. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. The expected results of doing this should return values in the 50th percentile  most of the time if I run it with a tree with no pressure to diversify but having mutations. However, if I add pressure for diversity, those values should lie in the 100th percentile range. 
+
+
+## **Results**
+
+**The following table contains the percentile values for a tree with _no_ pressure for diversity**
+
+|          |    |     |    |    |    |    |    |     |     |    | Standard Deviation | Average |
+|----------|----|-----|----|----|----|----|----|-----|-----|----|--------------------|---------|
+| 10 gens  | 37 |  80 | 61 | 61 | 80 | 80 | 61 |  37 |  80 | 37 |        18.76876838 |    61.4 |
+| 20 gens  | 40 |  62 | 88 | 62 | 62 | 40 | 62 |  77 |  77 | 77 |        15.79767915 |    64.7 |
+| 30 gens  | 87 |  97 | 75 | 36 | 75 | 16 | 75 |  16 |  75 | 57 |        28.76514094 |    60.9 |
+| 40 gens  | 90 |  97 | 68 | 11 | 68 | 81 | 68 |  90 |  97 | 29 |        28.96914067 |    69.9 |
+| 50 gens  | 74 |  86 | 39 | 39 | 97 | 86 | 39 | 100 |  93 |  6 |        32.48401316 |    65.9 |
+| 60 gens  | 68 |  89 | 31 |  6 | 95 | 16 | 89 |  98 | 100 | 31 |        37.26198539 |    62.3 |
+| 70 gens  | 86 | 100 | 76 | 26 | 86 | 42 | 76 |  93 | 100 | 76 |        24.25993496 |    76.1 |
+| 80 gens  | 52 |  94 | 69 | 36 | 81 | 36 | 81 |  98 | 100 | 52 |         24.6371445 |    69.9 |
+| 90 gens  | 47 |  86 | 98 | 17 | 86 | 17 | 86 |  61 |  96 | 47 |        30.97830782 |    64.1 |
+| 100 gens | 39 |  81 | 70 | 12 | 89 | 39 | 70 |  70 |  89 | 89 |        26.28814689 |    64.8 |
+
+
+**The table below contains the percentile values for a tree with pressure for diversity.**
+
+|          |     |     |     |     |     |     |     |     |     |     | Standard Deviation | Average |
+|----------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------------------|---------|
+| 10 gens  |  96 |  80 |  90 |  61 |  98 |  90 |  80 |  96 |  13 |  90 |        25.78199199 |    79.4 |
+| 20 gens  |  88 | 100 | 100 |  77 |  95 |  88 |  95 |  98 |  62 |  62 |        14.66856048 |    86.5 |
+| 30 gens  |  75 |  75 |  97 | 100 |  97 |  75 |  95 |  98 |  95 |  87 |        10.50079362 |    89.4 |
+| 40 gens  | 100 | 100 |  94 | 100 | 100 | 100 |  90 | 100 |  81 | 100 |        6.450667493 |    96.5 |
+| 50 gens  | 100 |  97 |  93 | 100 | 100 |  97 | 100 | 100 |  97 | 100 |        2.366431913 |    98.4 |
+| 60 gens  |  98 |  95 | 100 | 100 | 100 | 100 | 100 | 100 |  98 | 100 |        1.663329993 |    99.1 |
+| 70 gens  | 100 | 100 |  97 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |       0.9486832981 |    99.7 |
+| 80 gens  | 100 | 100 |  94 | 100 | 100 |  98 |  94 |  98 | 100 | 100 |        2.458545189 |    98.4 |
+| 90 gens  | 100 |  96 |  75 | 100 | 100 | 100 |  96 | 100 | 100 | 100 |        7.803845206 |    96.7 |
+| 100 gens | 100 | 100 |  56 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |         13.9140217 |    95.6 |
+
 **NEXT STEPS**
 
 Once I finalize my results next week I'll be able to add meaningful graphs and a conclusion section. 
 
-
-
-## **RESULTS**
 **_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
 
 _The following graphs are more of a proof of concept than actual results and will be altered with the addition of new info._
