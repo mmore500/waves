@@ -30,7 +30,7 @@ author: Uma Sethuraman
     <p>&nbsp<p>
 - **Insertion, Deletion, and Overwrite Mutations:**
   - **Insertion mutation:** inserts value(s) at a certain position in current genome and changes genome size
-     <img src="Insertion_Demo.gif" width="700" height="400" />
+     <img src="Insertion_Demo_Once.gif" width="700" height="400" />
   - **Deletion mutation:** deletes value(s) at a certain position in current genome and changes genome size
     - Deletion Animation
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
