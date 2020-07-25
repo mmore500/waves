@@ -82,12 +82,6 @@ The only bright side of the benchmarks pointed at the tests of newly created gen
 Surprisingly just breaking up the vectors made significant improvements to runtime on various genome sizes. See <a href="https://caovicto.github.io/waves/blog/Victoria-Cao.html#results">results</a> to fast forward!
 
 
-### Memory Pooling ###
-To allow fast copying for the structure, a memory pool is created for each genome. The memory pool is a vector of reserved memory that allocates segment nodes.
-
-![MemoryPool]({{ site.baseurl }}/assets/caovicto/MemoryPool.png){:width="100%"}
-
-
 ## Faster Access with Indexing Table ##
 The Linked list structure gives a simple and eaily modifiable structure, but slow indexing speeds. To improve O(n), n is the nunber of nodes in the list, an index table with the offsets of each node into the genome will give an amortixed O(1) random access to any index.
 
