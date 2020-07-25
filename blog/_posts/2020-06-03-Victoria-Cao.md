@@ -89,31 +89,31 @@ Index table is a vector that contains the offset index into the genome and the n
 
 ![IndexTable]({{ site.baseurl }}/assets/caovicto/IndexTableDemo.png){:width="100%"}
 
-### Pseudo-Code Find Algorithm ###
+### Simple Find Algorithm ###
 
-```python
-TableEntry Find(index):
-   # binary sesarch through Index Table 
-    auto entry = lower_bound(IndexTable.begin(), IndexTable.end(), pair(index, 0)) 
-   entry -= IndexTable.begin()
+```c++
+TableEntry SegmentList::Find(size_t index)
+{
+    // binary sesarch through Index Table 
+    auto poolIndex = std::upper_bound(IndexTable.begin(), IndexTable.end(), index) - IndexTable.begin();
+    --poolIndex;
+    size_t left = IndexTable.at(poolIndex);
 
-    if entry >= IndexTable.size() || (IndexTable[entry].first != index && entry)
-        --entry
+    // iterate through segment list if not in index
+    while (poolIndex < Pool.size()-1)
+    {
+        if (left + Pool.at(poolIndex).size() > index)
+            break;
+            
+        // update index table
+        left += Pool.at(poolIndex).size();
+        IndexTable.push_back(left);
 
-    found = IndexTable[entry]
-    node = found.second
-    localIndex = found.first   # Index to start inside the data vector
+        ++poolIndex;
+    }
 
-    # iterate through segment list if not in node
-    while localIndex + Pool->GetSize(node)-1 < index && localIndex + Pool->GetSize(node) < SiteCount
-        localIndex += Pool->GetSize(node)
-        node = Pool->GetNext(node)
-
-        # update index table
-        IndexTable.push_back( {localIndex, node} )
-        ++entry
-
-    return {entry, node, localIndex}
+    return TableEntry(poolIndex, left);
+}
 ```
 
 Accessing a random location within the genome will give O(log(n)), with n being the size of the index table, if the index is within the table. If not, accessing will cost O(log(n)+m), with m being the extra nodes needed to traverse to find the segment with the index.
