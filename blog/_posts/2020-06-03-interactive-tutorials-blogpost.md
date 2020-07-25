@@ -62,17 +62,19 @@ As you can see, the **TutorialManager** class provides the entire programming in
 
 Now let's take a closer look at how this all works.
 
-#### Creating the TutorialManager
+## TutorialManager
 To start creating a tutorial, first you must instantiate a TutorialManager. This is simple, as it takes no arguments:
 ```C++
 TutorialManager tut();
 ```
 
-### States
+## States
 
 An active Tutorial is always in a certain State. For example, you might have a state where you wait for the user to click a particular button. Just having a State by itself is pretty much useless though. A State gains meaning by having Triggers and VisualEffects associated with it.
 
-#### Creating States
+<br>
+
+### Creating States
 To create and add a State to the tutorial, simply call AddState() and give your new State a unique string identifier:
 ```C++
 tut.AddState("start_state");
@@ -80,18 +82,22 @@ tut.AddState("start_state");
 
 We can now refer to this state in our other method calls.
 
-#### End States
+<br>
+
+### End States
 
 A State that does not contain any Triggers is called an End State. If an End State is entered, the tutorial will stop.
 
 <br>
 <br>
 
-### Triggers
+## Triggers
 
 Triggers are things that move the Tutorial from one State to another when they are fired. There are a few built-in Trigger types, or you can define custom Trigger types. The same Trigger may be reused for multiple States.
 
-#### Trigger Parameters
+<br>
+
+### Trigger Parameters
 
 All Add...Trigger() methods have some parameters in common. These are:
 
@@ -100,16 +106,20 @@ All Add...Trigger() methods have some parameters in common. These are:
 * trigger_id - (optional) a unique string ID for this Trigger.
 * callback - (optional) a callback function to be called when this Trigger fires. The function must return void and have no parameters.
 
-#### Built-in Triggers
+<br>
 
-##### ManualTrigger
+### Built-in Triggers
+
+#### ManualTrigger
 The simplest type of Trigger is the ManualTrigger. It only fires when you fire it manually from your code. 
 
 ```C++
 tut.AddEventManualTrigger(state, next_state, trigger_id, callback);
 ```
 
-##### EventListenerTrigger
+<br>
+
+#### EventListenerTrigger
 The EventListenerTrigger listens for the given html event on an Empirical Widget, and fires when the event occurs.
 
 ```C++
@@ -119,9 +129,9 @@ tut.AddEventListenerTrigger(state, next_state, widget, event_name, trigger_id, c
 * _widget_ is the Empirical widget the event listener should be placed on (you must pass the actual widget, not its ID). 
 * _event_ is the name of the html event to listen for, but without the "on" at the beginning (e.g. "click"). 
 
+<br>
 
-
-#### Custom Triggers
+### Custom Triggers
 
 To create a custom Trigger, define a class that inherits from Trigger:
 
@@ -138,18 +148,22 @@ class CustomTrigger : public Trigger {
 };
 ```
 
-The friend declarations are necessary, and the Activate/Deactivate methods must be defined. 
-Activate() is called every time a State containing the Trigger is entered. It will also be called immediately if a Trigger is added to the current State.
-Deactivate() is called when a State containing the Trigger is exited.
+* The friend declarations are necessary, and the Activate/Deactivate methods must be defined. 
+* Activate() is called every time a State containing the Trigger is entered. It will also be called immediately if a Trigger is added to the current State.
+* Deactivate() is called when a State containing the Trigger is exited.
 
+(todo: adding custom triggers)
+<br>
 
-#### Reusing Triggers
+### Reusing Triggers
 If you've previously added a Trigger to some State, you may add it to another State with this method:
 ```C++
 tut.AddExistingTrigger(current_state, next_state, trigger_id);
 ```
 
-#### Manually Firing Triggers
+<br>
+
+### Manually Firing Triggers
 All Triggers can be manually fired, as long as you have their Trigger ID:
 ```C++
 tut.FireTrigger(trigger_id);
@@ -157,7 +171,9 @@ tut.FireTrigger(trigger_id);
 
 This should only be done if you are certain that the current state contains the Trigger.
 
-#### Removing Triggers
+<br>
+
+### Removing Triggers
 You may remove a Trigger from any State containing it:
 ```C++
 tut.RemoveTrigger(trigger_id, state_name)
@@ -167,20 +183,22 @@ Note that this will deactivate the Trigger if it is active.
 <br>
 <br>
 
-### VisualEffects
+## VisualEffects
 
-A VisualEffect is any visual change made to your web page within the context of the Tutorial. This could be adding an element to the page, changing the CSS styling of an element, or anything you want via a custom VisualEffect class.
+A VisualEffect is any visual change made to your web page within the context of the Tutorial. This could be adding an element to the page, changing the CSS styling of an element, or anything you want via a custom VisualEffect class. The same Trigger may be added to multiple States.
 
-#### VisualEffects Parameters
+<br>
+
+### VisualEffect Parameters
 
 All Add...Effect() methods have the following parameters in common:
 
-* current_state - name of the State that this VisualEffect should be activated for.
+* current_state - name of the State that this VisualEffect should be added to.
 * visual_id - (optional) a unique string ID for this VisualEffect.
 
-#### Built-in VisualEffects
+### Built-in VisualEffects
 
-##### CSSEffect
+#### CSSEffect
 A CSSEffect applies a change to the CSS styling of a particular Widget.
 ```C++
 tut.AddCSSEffect(current_state, widget, attr_name, attr_value, visual_id);
@@ -188,12 +206,13 @@ tut.AddCSSEffect(current_state, widget, attr_name, attr_value, visual_id);
 
 * _widget_ is the widget to apply the change to
 * _attr_name_ is the string name of the attribute to change
-* _attr_value _is the new value of the attribute
+* _attr_value_ is the new value of the attribute
 
 The given attribute will be reverted back to its previous state when the effect is deactivated.
 
+<br>
 
-##### OverlayEffect
+#### OverlayEffect
 An OverlayEffect adds a colored overlay on top of everything else on the page. 
 ```C++
 tut.AddOverlayEffect(current_state, color, opacity, z-index, visual_id);
@@ -207,20 +226,54 @@ This effect can be used to draw a user's attention to a particular Widget (you c
 
 It can also serve to "disable" any Widgets below the overlay, as they will not be able to receive input.
 
+<br>
 
-#### Removing VisualEffects
+### Custom VisualEffects
+
+To create a custom VisualEffect, define a class that inherits from VisualEffect:
+
+```C++
+class CustomVisualEffect : public VisualEffect {
+
+    friend class Tutorial;
+    friend class State;
+
+    CustomVisualEffect(...) {};
+
+    void Activate() {}
+    void Deactivate() {}
+};
+```
+
+* The friend declarations are necessary, and the Activate/Deactivate methods must be defined. 
+* Activate() is called every time a State containing the VisualEffect is entered. It will also be called immediately if a VisualEffect is added to the current State.
+* Deactivate() is called when a State containing the VisualEffect is exited.
+
+(todo: adding custom visuals)
+<br>
+
+### Reusing VisualEffects
+If you've previously added a VisualEffect to some State, you may add it to another State with this method:
+```C++
+tut.AddExistingVisualEffect(current_state, visual_id);
+```
+
+<br>
+
+### Removing VisualEffects
 As with Triggers, You may also remove a VisualEffect from any State containing it:
 ```C++
 tut.RemoveVisualEffect(state_name, visual_id);
 ```
 
 Note that this will deactivate the VisualEffect if it is active.
+
 <br>
 <br>
 
 
-### Tutorial Flow
-#### Starting the tutorial
+## Tutorial Flow
+### Starting the tutorial
 The tutorial does not become active until you start it. To do this, you call StartAtState(), and provide it the name of a state:
 ```C++
 tut.StartAtState("add_task");
@@ -228,7 +281,9 @@ tut.StartAtState("add_task");
 
 This will activate all VisualEffects and Triggers in the given state.
 
-#### Stopping the tutorial
+<br>
+
+### Stopping the tutorial
 
 ```C++
 tut.Stop();
@@ -240,12 +295,12 @@ The tutorial will automatically stop if a State is entered that does not contain
 <br>
 <br>
 
-### Callbacks
+## Callbacks
 Any Trigger or State can be provided a callback function. 
 * For States, the callback will be called when the state is entered.
 * For Triggers, the callback will be called when the Trigger fires (but before the next state is entered).
 
-#### Setting Callbacks
+### Setting Callbacks
 You can set callbacks when the State/Trigger is added, by providing the optional callback argument that you saw in previous sections.
 
 You can also set a callback at any time using the SetStateCallback() / SetTriggerCallback() methods:
@@ -261,4 +316,4 @@ tut.SetTriggerCallback(trigger_id, callback);
 
 ### Full Code Example
 
-(Still need to add this)
+(todo)
