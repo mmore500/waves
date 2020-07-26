@@ -26,7 +26,9 @@ author: Uma Sethuraman
     - **Offset map: ordered map**
       - We use the offset map for all keys that are not in the changelog. The key represents a position in the current genome. The value is the offset (how much that position has shifted from the parent genome to the current genome). 
       - When a key x isn’t in the changelog, we find the closest key in the offset map and subtract its offset from x to get the position in the parent. We can then access the correct value in the parent.
-![changelog structures](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/ChangeloggingDataStructures.png)
+    
+    <img align="left" src="https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/ChangeloggingDataStructures.png">
+    <p>&nbsp<p>
 
 - **Insertion, Deletion, and Overwrite Mutations:**
   - **Insertion mutation:** inserts value(s) at a certain position in current genome and changes genome size
