@@ -76,15 +76,15 @@ I am so thankful to have been a part of the 2020 WAVES team! Thank you to [Dr. C
 
 I especially want to thank the other three members of the d3-wrapper team: [**Oliver Baldwin Edwards**](#check-out-these-wonderful-people:), and my two wonderful mentors, [**Emily Dolson**](#check-out-these-wonderful-people:) and [**Alex Lalejini**](#check-out-these-wonderful-people:).
 
-####Check out these wonderful people:
+#### Check out these wonderful people:
 
-> **Oliver Baldwin Edwards** (collaborator), a senior at Amherst College studying Computer Science and Statistics. We worked on this wrapper project together, and he's an amazing programmer!
+> **Oliver Baldwin Edwards** (collaborator), a senior at Amherst College studying Computer Science and Statistics. We worked on this wrapper project together, and he's an amazing programmer!\\
 [Github](https://github.com/Oliver-BE) | [Twitter](https://twitter.com/oliver_be2)
 
-> **Emily Dolson** (mentor), an Assistant Professor in Computer Science at Michigan State University starting this fall with formal training in Computer Science, Evolutionary Biology, and Ecology. She creates mind-blowing web apps and visualizations for her research!
+> **Emily Dolson** (mentor), an Assistant Professor in Computer Science at Michigan State University starting this fall with formal training in Computer Science, Evolutionary Biology, and Ecology. She creates mind-blowing web apps and visualizations for her research!\\
 [Github](https://github.com/EmilyDolson) | [Twitter](https://twitter.com/emilyldolson) | [Website](https://cse.msu.edu/~dolsonem/)
 
-> **Alex Lalejini** (mentor), a fifth year PhD student working with Dr. Charles Ofria in Computer Science and Ecology, Evolutionary Biology, & Behavior at Michigan State University. He is a super welcoming researcher and a brilliant coder!
+> **Alex Lalejini** (mentor), a fifth year PhD student working with Dr. Charles Ofria in Computer Science and Ecology, Evolutionary Biology, & Behavior at Michigan State University. He is a super welcoming researcher and a brilliant coder!\\
 [Github](https://github.com/amlalejini) | [Twitter](https://twitter.com/amlalejini) | [Website](https://lalejini.com/)
 
 ---
