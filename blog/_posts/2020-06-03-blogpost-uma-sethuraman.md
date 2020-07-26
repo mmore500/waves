@@ -34,7 +34,7 @@ author: Uma Sethuraman
   - **Deletion mutation:** deletes value(s) at a certain position in current genome and changes genome size
     - Deletion Animation
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
-    - Overwrite Animation
+    <img src="Overwrite_Demo_Once.gif" width="700" height="400" />
       
 - **Random Access:**
   - To access position p in the current genome:
