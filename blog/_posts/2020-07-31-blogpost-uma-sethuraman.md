@@ -5,17 +5,24 @@ date: 2020-06-03
 author: Uma Sethuraman
 ---
 
-## Introduction to Genomes in MABE
-- **Genomes in MABE currently (version 1.0)**
-    - Genomes in MABE are now represented as lists of values which can be read from, written to, and mutated from parent to offspring.
-    - Every genome has a contiguous piece of memory to store its values. 
-    - Genomes are copied from parent to offspring and mutations are then done on offspring genomes.
-- **Issues with how genomes work currently**
-    - Genomes are often very large, from hundreds of thousands of sites to millions of sites. Since the number of sites mutated in an offspring is usually significantly less than the number of sites which remain the same between parent and offspring, directly copying genomes from parent to offspring can be very inefficient in terms of time and memory. 
+## Project Introduction
+MABE, or Modular Agent Based Evolution Framework, is a platform which allows users to create populations of digital organisms and analyze the effects of virtually evolving these populations. One of the key components of MABE is the genome class, which represents genomes for digital organisms in the population. The goal of this project is to advance the genome class in MABE by optimizing its memory consumption and runtime.
 
-## The Change Logging Problem
+## Genomes in MABE 1.0
+Genomes are currently represented as lists of values which can be read from, written to, and mutated from parent to offspring. Every genome has a contiguous piece of memory to store its values.
+
+## The Problem
+- Genomes are often very large, from hundreds of thousands of sites to millions of sites.
+- Genomes in MABE 1.0 are copied from parent to offspring, and the offspring will contain some mutations from the parent.
+- However, with large genome sizes and low mutation rates, the number of sites mutated in an offspring is usually significantly less than the number of sites which remain the same between parent and offspring. This makes the current genome class’s approach of directly copying genomes from parent to offspring very inefficient in terms of time and memory. 
+- This copying from generation to generation can be seen in the gif below!
+![genome copies](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/GenomeCopies.gif)
+
+## Change Logging as a Solution
 - With change logging, genomes will only store the differences between parent and offspring genomes. Each genome will keep track of a log of changes, documenting the mutations between the last saved “parent” genome and the current genome. The “parent” genome will be reset whenever the changelog becomes too large. 
-- Using the changelog, the current genome can be reconstructed. Any random site in the current genome can also be accessed without having to store a full copy of the current genome. Thus, change logging can save significant time and memory, especially for larger genomes. 
+- Using the changelog, the current genome can be reconstructed. 
+- Any random site in the current genome can also be accessed without having to store a full copy of the current genome. 
+- Thus, change logging can save significant time and memory, especially for larger genomes. 
 
 ## My Algorithm for Change Logging
 - **Data Structures:**
@@ -30,12 +37,14 @@ author: Uma Sethuraman
     <img align="left" src="https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/ChangeloggingDataStructures.png">
     <p>&nbsp<p>
 
-- **Insertion, Deletion, and Overwrite Mutations:**
-  - **Insertion mutation:** inserts value(s) at a certain position in current genome and changes genome size
+- **Insert, Remove, and Overwrite Mutations:**
+  - **Insert mutation:** inserts value(s) at a certain position in current genome and changes genome size
+    - The demo below goes through all of the steps involved in an insertion:
      ![insertion demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/InsertionDemo.gif)
-  - **Deletion mutation:** deletes value(s) at a certain position in current genome and changes genome size
-    - Deletion Animation
+  - **Remove mutation:** deletes value(s) at a certain position in current genome and changes genome size
+    - Remove animation to be inserted
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
+    - The demo below goes through all of the steps involved in an overwrite:
     ![overwrite demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/OverwriteDemo.gif)
       
 - **Random Access:**
@@ -43,11 +52,16 @@ author: Uma Sethuraman
     - Check if p is in the changelog. If it is, that means it has been either inserted or modified since the parent, so we return p’s value from the changelog.
     - If p is not in the changelog, then find the closest key to p in the offset map. Subtract this key’s offset from p, and return that position’s value from the parent. In this case, the value at position p was never changed but position p was offsetted since the parent genome.
   - This implementation allows for fast random access, with time complexity of O(logn), where n is the number of elements in the changelog. This is because we always check if the requested position is in the changelog before returning the value directly from the changelog or from the parent.
-  - Animation of random access with example mutations
   
-## Algorithm Demonstration
-  - Animation (or slides) showing a full walkthrough of my implementation with multiple mutations
-  
-## Results and Conclusion: 
+## Results: 
   - Analysis of time and space complexity of my implementation
   - Graphs comparing the time/space complexity and performance of the current MABE genome implementation to my implementation
+  - Benchmarking of the different implementations is done through catch2.
+  - Results not yet finalized
+  
+## Conclusion:
+- I’ve really enjoyed working on this project with a great team of participants and mentors. It’s been so helpful to have a team to collaborate with, debug with, bounce ideas off of, and learn from. Each participant in my team implemented a different algorithm to this problem in order to test out multiple diffferent solutions. I’m really excited to have contributed to advancing genomes in MABE through my project this summer. I can’t wait to see how not only genomes but all parts of MABE will continue to evolve ( pun intended😂 ) in the future! Thank you to my wonderful mentors and great teammates who I’ve listed below! Thank you also to the entire WAVES team who has made this summer program's experience so amazing!
+
+## Team MABE 🎉
+- **Mentors:** Clifford Bohm, Jory Schossau, Jose Hernandez
+- **Participants:** Stephanie Zendejo, Tetiana Dadakova, Victoria Cao, Jamell Dacon
