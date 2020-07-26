@@ -14,8 +14,7 @@ Genomes are currently represented as lists of values which can be read from, wri
 ## The Problem
 - Genomes are often very large, from hundreds of thousands of sites to millions of sites.
 - Genomes in MABE 1.0 are copied from parent to offspring, and the offspring will contain some mutations from the parent.
-- However, with large genome sizes and low mutation rates, the number of sites mutated in an offspring is usually significantly less than the number of sites which remain the same between parent and offspring. This makes the current genome class’s approach of directly copying genomes from parent to offspring very inefficient in terms of time and memory. 
-- This copying from generation to generation can be seen in the gif below!
+- However, with large genome sizes and low mutation rates, the number of sites mutated in an offspring is usually significantly less than the number of sites which remain the same between parent and offspring. This makes the current genome class’s approach of directly copying genomes from parent to offspring very inefficient in terms of time and memory, much like the gif below!
 ![genome copies](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/GenomeCopies.gif)
 
 ## Change Logging as a Solution
