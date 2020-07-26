@@ -15,7 +15,6 @@ BitVector is, as the name suggests, a Vector of bits (though it's actually bytes
 DataMap is similar to a regular map, but is heavily optimized for scientific computing.  All of its memory is stored in a single array of bytes, and layout information (detailing what is stored where) can be shared between separate DataMaps.  However, DataMap did not contain a way to store a reference to another object in the same place as the object itself.  In other words, given a variable in a DataMap, you couldn't set that variable to be a reference elsewhere.  When you added that variable, you had to choose whether it was going to be the variable itself or a pointer to that variable.  
 
 ## BitVector
-![WIP BitVector Image](BitVector.png "BitVector")
 
 A BitVector is an eight-byte size and an eight-byte pointer to an array of bytes.  They are generally constructed with a certain length, and all of the bits are set to 0 or 1 based on a boolean you may choose to supply to the constructor.  After that, you can treat it as an array of bits, indexing with Get and Set (or their respective byte and uint variants).  You can also use bit operations such as AND(BitVector bv2) and OR(BitVector bv2), which return the result, or bit operations such as AND_SELF(BitVector bv2) and OR_SELF(BitVector bv2) which return the result and set the BitVector to that result.  If the BitVector needs to become larger or smaller, it can be resized with Resize(size_t newSize).  
 
@@ -26,7 +25,6 @@ But let's look at that pointer for a moment.  Eight bytes is 64 bits, which is q
 There's also the secondary small BitVector optimization which will involve adding an extra byte of control bits before the size and cannibalizing the eight bits of size for extra space to grant BitVector the same optimization for 128 bits and fewer.  
 
 ## DataMap
-![WIP MemoryImage Image](MemoryImage.png "MemoryImage")
 
 A DataMap is two other classes in a trench coat: a pointer to a DataLayout and a MemoryImage.  Each MemoryImage belongs to one and only one DataMap, but DataLayouts can be linked to several DataMaps.  The DataLayout contains information about the MemoryImage, such as the names (strings), indices (size_ts), descriptions and notes (strings), and such things as constructors and destructors for more complex objects.  The MemoryImage is a vector of bytes with each object taking up a number of them in contiguous memory.  Much of the MemoryImage's deeper workings rely on reinterpret casts and memory tricks (which I won't go into), but the main gist of it is that it contains a region of memory which holds a series of items of various types.  On the surface, however, you don't ever need to interact with DataLayout or MemoryImage.  Add variables using AddVar\<T\>(string name, T value, string description, string notes), which returns a size_t which is the variable's index in the Vector of bytes.  Now, you can access that variable with Get\<T\>(string name) or Get\<T\>(size_t id), but the id access is significantly faster.  You can also set the variable again with Set\<T\>(string name, T value) or Set\<T\>(size_t id, T value).  There are other methods involving comparing layouts and getting types and seeing if ids and names exist, but those are far less important for the day-to-day use of DataMap.
 
@@ -36,8 +34,11 @@ However, as I said before, this rigidity poses a bit of a flaw.  What if you add
 
 ## The Small BitVector Optimizations.
 This is how a BitVector used to be structured:
+
 ![WIP BitVector Image](BitVector.png "BitVector")
+
 And this is how I have restructured it for small BitVectors.
+
 ![WIP Small BitVector Image](SmallBitVector.png "Small BitVector")
 
 It looks pretty straightforward.  However, there are several pitfalls which befell me, and many of them could very well befall you if you do something similar.  But first, the most important function of this part of the project, BitSetPtr(): 
@@ -87,8 +88,11 @@ Once I had gotten this done, the speedups were generally quite high.
 
 ## The DataMap Reference Capability
 This is how a DataMap used to be structured:
+
 ![WIP DataMap Image](DataMap.png "DataMap")
+
 And this is how I have restructured it.
+
 ![WIP New DataMap Image](NewDataMap.png "New DataMap")
 
 Note that the size is determined by the size of Ptr -- if we are in memory tracking mode, then a Ptr will contain more than just a ptr.  
