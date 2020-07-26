@@ -26,14 +26,15 @@ author: Uma Sethuraman
     - **Offset map: ordered map**
       - We use the offset map for all keys that are not in the changelog. The key represents a position in the current genome. The value is the offset (how much that position has shifted from the parent genome to the current genome). 
       - When a key x isn’t in the changelog, we find the closest key in the offset map and subtract its offset from x to get the position in the parent. We can then access the correct value in the parent.
-    ![changelog structures]({{ site.baseurl }}/assets/uma-sethuraman/ChangeloggingDataStructures.png){:style="width: 100%"}
+![changelog structures](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/ChangeloggingDataStructures.png)
+
 - **Insertion, Deletion, and Overwrite Mutations:**
   - **Insertion mutation:** inserts value(s) at a certain position in current genome and changes genome size
-     ![insertion demo]({{ site.baseurl }}/assets/uma-sethuraman/InsertionDemo.gif){:style="width: 100%"}
+     ![insertion demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/InsertionDemo.gif)
   - **Deletion mutation:** deletes value(s) at a certain position in current genome and changes genome size
     - Deletion Animation
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
-    ![overwrite demo]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteDemo.gif){:style="width: 100%"}
+    ![overwrite demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/OverwriteDemo.gif)
       
 - **Random Access:**
   - To access position p in the current genome:
