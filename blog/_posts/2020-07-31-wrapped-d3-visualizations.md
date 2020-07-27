@@ -8,9 +8,14 @@ author: Elizabeth Carney
 
 ## Wrapping D3.js Visualizations
 ---
-Hello!
+![Elizabeth Carney headshot]({{ site.baseurl }}/assets/elizabethcarney/wrapped-d3-visualizations-ec-headshot.jpg)
+{:style="width: 15%;"}{:.headshot}
+  
+Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces:hammer_and_wrench:, doing nail art:nail_care:, and cooking:fried_egg:. To see some of my other projects, check out [my GitHub](https://github.com/elizabethcarney)!{.next-to-headshot}
 
-<p class="blue">A brief introductory blurb about the summer: WAVES and Empirical.
+This summer I got to join the WAVES team to develop tools for the next version of [Avida-ED](https://avida-ed.msu.edu/). 
+
+A brief introductory blurb about the summer: WAVES and Empirical.{:.blue}
 
 ### Empirical and the Internet
 An explanation of what Empirical can do and how it's often used.
