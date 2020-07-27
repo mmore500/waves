@@ -5,35 +5,33 @@ date: 2020-06-03
 author: Dylan Rainbow
 ---
 
-## Project Overview
+## Project Introduction
 
-The goal of this project is to build a framework that facilitates the creation of interactive user tutorials within Empirical web apps. 
-<br>
-<br>
+As web apps become bigger and more complex, it becomes more and more important to provide good learning resources for users. Simple text guides are great to have, but they have numerous shortcomings:
 
-#### What is an Interactive Tutorial?
+* They give you more information than you need.
+* It can be difficult to find the exact info you're looking for.
+* Users have to spend time and energy connecting what they see in the docs to the real app.
+* They're not interactive.
+* Navigating to the documentation disrupts the app experience.
 
-If you're reading this, you've probably followed many tutorials. And probably even some interactive ones.
+Well produced documentation can mitigate the first three issues, but even the best written docs can't solve the last two.
 
-But first, let's make sure we're on the same page about how we're using these terms. Wikipedia says this about "tutorial":
+This is where interactive tutorials come in.
 
-> A tutorial, in education, is a method of transferring knowledge and may be used as a part of a learning process. More interactive and specific than a book or a lecture, a tutorial seeks to teach by example and supply the information to complete a certain task.
+Interactive tutorials are becoming increasingly common. Big name apps like Photoshop, Slack, Discord, and many others provide interactive tutorials. I think we can safely say they're the gold standard when it comes to showing users the basics of your app, or even more!
 
-And what about the "interactive" part?
+However, creating an interactive tutorial can be a decent bit of extra work. Therefore, we've created this library to streamline the process for Empirical web apps. It's a flexible and extensible system for creating virtually any kind of interactive tutorial.
 
-> In computer science, interactive refers to software which accepts and responds to input from people—for example, data or commands.
-
-So if a tutorial teaches you how to do something, an _interactive_ tutorial is one that lets you "learn by doing". Interactive means that the system gives you real-time feedback about the actions you're taking.
-
-If you're building an Empirical web app, an interactive tutorial is a great way to teach users how to use your app. However, coding up such a tutorial from scratch isn't a trivial task. We've come up with this system and put it into a library to streamline the tutorial-making process. 
-
-So here we have a written tutorial... about how to create tutorials. Somewhat ironically, it's not an interactive one, but hopefully this page will serve as a useful startup guide for using the tutorial system.
+So here we have a tutorial... about how to create tutorials. Ironically, this is a written, non-interactive guide. But hopefully it will serve as a useful reference and introduction to the tutorial system.
 
 ## Conceptual Structure of a Tutorial
-In this system, a tutorial is conceptually made up of 3 things:
+In this framework, a tutorial is essentially made up of 3 things:
 * **states** - the different states your tutorial can move between.
 * **triggers** - events or actions that move the tutorial from one state to another.
 * **visualeffects** - any visual changes made to the web app as part of the tutorial.
+
+You'll need all 3 of these things to make a tutorial that does anything useful!
 
 You can think of triggers and visualeffects as being contained inside of states. However, they can also belong to multiple states at once. So there is a many-to-many relationship between states and triggers, and between states and visualeffects.
 
@@ -77,7 +75,7 @@ An active tutorial is always in a certain state. For example, you might have a s
 ### Creating States
 To create and add a state to the tutorial, simply call Addstate() and give your new state a unique string identifier:
 ```C++
-tut.Addstate("start_state");
+tut.AddState("start_state");
 ```
 
 We can now refer to this state in our other method calls.
@@ -93,7 +91,9 @@ A state that does not contain any triggers is called an end state. If an end sta
 
 ## Triggers
 
-triggers are things that move the tutorial from one state to another when they are fired. There are a few built-in trigger types, or you can define custom trigger types. The same trigger may be reused for multiple states.
+Triggers are things that move the tutorial from one state to another when they are "fired". 
+* There are a few built-in trigger types, or you can define custom trigger types. 
+* The same trigger may be reused for multiple states.
 
 <br>
 
@@ -185,7 +185,9 @@ Note that this will deactivate the trigger if it is active.
 
 ## VisualEffects
 
-A visualeffect is any visual change made to your web page within the context of the tutorial. This could be adding an element to the page, changing the CSS styling of an element, or anything you want via a custom visualeffect class. The same trigger may be added to multiple states.
+A visualeffect is any visual change made to your web page within the context of the tutorial. 
+* This could be adding an element to the page, changing the CSS styling of an element, or anything you want via a custom visualeffect class. 
+* The same trigger may be added to multiple states.
 
 <br>
 
@@ -249,7 +251,12 @@ class CustomVisualEffect : public VisualEffect {
 * Activate() is called every time a state containing the visualeffect is entered. It will also be called immediately if a visualeffect is added to the current state.
 * Deactivate() is called when a state containing the visualeffect is exited.
 
-(todo: adding custom visuals)
+### Adding Custom VisualEffects
+```C++
+tut.AddCustomVisualEffect(current_state, visual_id);
+```
+
+
 <br>
 
 ### Reusing VisualEffects
