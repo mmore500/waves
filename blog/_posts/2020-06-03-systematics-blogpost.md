@@ -259,7 +259,7 @@ After that, I took that data and ran it through a python script which created a 
 
 To incorporate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called if future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
 
-After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify my diversity. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. The expected results of doing this should return values in the 50th percentile  most of the time if I run it with a tree with no pressure to diversify but having mutations. However, if I add pressure for diversity, those values should lie in the 100th percentile range. 
+After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify my diversity. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. The expected results of doing this should return values in the 50th percentile  most of the time, if I run it with a tree with no pressure to diversify but having mutations. However, if I add pressure for diversity, those values should lie in the 100th percentile range. 
 
 
 ## **Results**
@@ -294,6 +294,8 @@ After I had this framework setup I decided to test its reliability. I ran my mod
 | 90 gens  |  99 | 96 |  99 |  99 |  98 |  98 | 86  | 99  | 99  |  99 |    97.2 |        4.049691346 |
 | 100 gens |  99 | 99 |  99 |  99 |  98 |  99 | 94  | 99  | 99  |  99 |    98.4 |        1.577621275 |
 
+These tables show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is also around the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
+
 **NEXT STEPS**
 
 Once I finalize my results next week I'll be able to add meaningful graphs and a conclusion section. 
@@ -318,5 +320,6 @@ _The following graphs are more of a proof of concept than actual results and wil
 
 This workshop was an incredible learning experience for me. I am so grateful to my mentors, Emily and Kate, for their patience and guidance. I came into this workshop looking to improve my scientific computing and programming skills, and I can safely say that this workshop has provided me with a unique and invaluable way to do so. Thank you WAVES for such an incredible opportunity! 
 
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 
