@@ -1,3 +1,11 @@
 .blue {
   color: blue;
 }
+
+.headshot {
+  float: left;
+}
+
+.next-to-headshot {
+  clear: right;
+}
