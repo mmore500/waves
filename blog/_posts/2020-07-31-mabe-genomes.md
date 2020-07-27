@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "MABE Blog Post - Uma Sethuraman"
-date: 2020-06-03
+title: "Advancing Genomes in MABE - Uma Sethuraman"
+date: 2020-07-31
 author: Uma Sethuraman
 ---
 
@@ -15,6 +15,7 @@ Genomes are currently represented as lists of values which can be read from, wri
 - Genomes are often very large, from hundreds of thousands of sites to millions of sites.
 - Genomes in MABE 1.0 are copied from parent to offspring, and the offspring will contain some mutations from the parent.
 - However, with large genome sizes and low mutation rates, the number of sites mutated in an offspring is usually significantly less than the number of sites which remain the same between parent and offspring. This makes the current genome class’s approach of directly copying genomes from parent to offspring very inefficient in terms of time and memory, much like the gif below!
+
 ![genome copies](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/GenomeCopies.gif)
 
 ## Change Logging as a Solution
@@ -47,10 +48,32 @@ Genomes are currently represented as lists of values which can be read from, wri
     ![overwrite demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/OverwriteDemo.gif)
       
 - **Random Access:**
-  - To access position p in the current genome:
-    - Check if p is in the changelog. If it is, that means it has been either inserted or modified since the parent, so we return p’s value from the changelog.
-    - If p is not in the changelog, then find the closest key to p in the offset map. Subtract this key’s offset from p, and return that position’s value from the parent. In this case, the value at position p was never changed but position p was offsetted since the parent genome.
-  - This implementation allows for fast random access, with time complexity of O(logn), where n is the number of elements in the changelog. This is because we always check if the requested position is in the changelog before returning the value directly from the changelog or from the parent.
+  - Pseudocode to access position pos in the current genome:
+    ``` C++
+    if (pos in changelog) {
+      /* pos is in changelog because it has been inserted 
+      or modified since the parent genome so return the value
+      from changelog. */
+      
+      return changelog[pos];
+    }
+    else {
+      /* pos isn't in changelog so find the offset of pos 
+      or the closest key less than pos in the offset map. */
+      
+      int offset = 0;
+      if (pos in offsetMap)
+        offset = offsetMap[pos]
+      else
+        offset = offsetMap[closest key less than pos];
+        
+      /* subtract offset from pos to get the position in the parent
+      before any shifting happened in the current genome. */
+      
+      return parentGenome[pos-offset]
+    }
+    ```
+  - This implementation allows for fast random access. In the case that the requested position is in the changelog, the time complexity is O(logn), where n is the number of elements in the changelog. This is because we check if the requested position is in the changelog before returning the value. In the case that the requested position is not in the changelog, the time complexity is O(log(mn)), where m is the number of elements in the offset map and n is the number of elements in the changelog. This is because we check if the requested position is in the changelog first (logn). Since it isn't in this case, we also check if the position is in the offset map (logm), and logm+logn = O(log(mn)).
   
 ## Results: 
   - Analysis of time and space complexity of my implementation
@@ -59,7 +82,7 @@ Genomes are currently represented as lists of values which can be read from, wri
   - Results not yet finalized
   
 ## Conclusion:
-- I’ve really enjoyed working on this project with a great team of participants and mentors. It’s been so helpful to have a team to collaborate with, debug with, bounce ideas off of, and learn from. Each participant in my team implemented a different algorithm to this problem in order to test out multiple diffferent solutions. I’m really excited to have contributed to advancing genomes in MABE through my project this summer. I can’t wait to see how not only genomes but all parts of MABE will continue to evolve ( pun intended😂 ) in the future! Thank you to my wonderful mentors and great teammates who I’ve listed below! Thank you also to the entire WAVES team who has made this summer program's experience so amazing!
+- I’ve really enjoyed working on this project with a great team of participants and mentors. It’s been so helpful to have a team to collaborate with, debug with, bounce ideas off of, and learn from. Each participant in my team implemented a different algorithm for this problem in order to test out multiple diffferent solutions. I’m really excited to have contributed to advancing genomes in MABE through my project this summer. I can’t wait to see how not only genomes but all parts of MABE will continue to evolve (pun intended😂) in the future! Thank you to my wonderful mentors and great teammates who I’ve listed below! Thank you also to the entire WAVES team who has made this summer program's experience so amazing!
 
 ## Team MABE 🎉
 - **Mentors:** Clifford Bohm, Jory Schossau, Jose Hernandez
