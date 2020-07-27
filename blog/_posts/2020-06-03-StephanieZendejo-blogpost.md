@@ -14,21 +14,29 @@ The purpose of MABE is twofold:
 2. Provide insight into evolution and evolutionary processes  
 
 
-## What are Genomes? We just don't know. 
+## What are Digital Organisms? We just don't know. 
 ![WHAT ARE BIRDS](https://i.imgur.com/LUSV3Kn.jpg)  
-I realized in order have a better understanding of the project at hand, I needed a refresher in biology. The last time I had taken a biology course was _nine_ years ago. The only thing I distinctly remembered was that _the mitochondria was the powerhouse of the cell_.
+I realized in order have a better understanding of the project, I needed a refresher in biology. The last time I had taken a biology course was nine years ago. The only thing I distinctly remembered was that _the mitochondria was the powerhouse of the cell_. I put myself through an evolutionary biology bootcamp. Once I had a good handle on terms and definitions, I worked on understanding how MABE works. 
 
-It was time for an evolutionary biology bootcamp.  
-
-I familiarized myself with terms such as fitness function, selection scheme, and mutation. Once I had a good handle on that, I worked on understanding how MABE works. 
 ![MABE Overview](https://raw.githubusercontent.com/wiki/Hintzelab/MABE/images/MABE_Overview.png)
-- **Digital organisms** contain a brain which determine how the organisms interact in   their environment (or world), and a genome, which provides a blueprint for the brain. A   collection of organisms make up a population.
+- **Digital organisms** contain a brain which determine how the organisms interact in their environment (or world), and a genome, which provides a blueprint for the brain. A collection of organisms make up a population.
 
-- **Archivist** is synonymous with a person who collects all data and decides what   data to be stored.
+- **Archivist** is synonymous with a person who collects all data and decides what data to be stored.
 
-- **Optimizer** is synonmyous with a person who decides which organisms will produce the next generation.
+- **Optimizer** is synonmyous with a person who decides which organisms in a population will produce the next generation of organisms.
 
 - A **Group** in MABE is made up of a population of digital organisms, an optimizer, and archivist.
+
+#### Mutations
+Mutations can occur in genomes. If an organism progresses to the next generation, mutations applied to the genome introduces new genetic variation into the population. There are three basic mutations that can occur:
+- **Overwrite:** changes the value of a single site in the genome
+- **Insert:** inserts sites to the genome, changing the genome size and causing offsets
+- **Remove:** removes sites from the genome, changing the genome size, and causing offsets
+
+
+
+
+
 ## Changelogging to the rescue!
 ### My Approach
 
