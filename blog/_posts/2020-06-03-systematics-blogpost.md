@@ -22,9 +22,6 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
  3. Creation of a tree which accounts for **pressure for diversity** and **mutation**
  4. Comparing trees from steps 3 and 4 with our null model 
 
-#### Process: 
-
-
  -------------------------------------------
 
 ### **Systematics** 
