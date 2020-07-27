@@ -16,7 +16,7 @@ Genomes are currently represented as lists of values which can be read from, wri
 - Genomes in MABE 1.0 are copied from parent to offspring, and the offspring will contain some mutations from the parent.
 - However, with large genome sizes and low mutation rates, the number of sites mutated in an offspring is usually significantly less than the number of sites which remain the same between parent and offspring. This makes the current genome class’s approach of directly copying genomes from parent to offspring very inefficient in terms of time and memory, much like the gif below!
 
-![genome copies](https://github.com/uma-sethuraman/waves/blob/uma_sethuraman_blogpost/assets/uma-sethuraman/GenomeCopies.gif)
+![genome copies]({{ site.baseurl }}/assets/uma-sethuraman/GenomeCopies.gif){:style="width: 100%;"}
 
 ## Change Logging as a Solution
 - With change logging, genomes will only store the differences between parent and offspring genomes. Each genome will keep track of a log of changes, documenting the mutations between the last saved “parent” genome and the current genome. The “parent” genome will be reset whenever the changelog becomes too large. 
@@ -36,19 +36,18 @@ Genomes are currently represented as lists of values which can be read from, wri
       - When a key x isn’t in the changelog, we find the closest key in the offset map and subtract its offset from x to get the position in the parent. We can then access the correct value in the parent.
       - The offset map will always begin with a single key-value pair (0,0) to indicate that all positions 0 onward have not been shifted/offsetted yet.
     
-    <img align="left" src="https://github.com/uma-sethuraman/waves/blob/uma_sethuraman_blogpost/assets/uma-sethuraman/ChangeloggingDataStructures.png">
-    <p>&nbsp<p>
+    ![changelog structures]({{ site.baseurl }}/assets/uma-sethuraman/ChangeloggingDataStructures.png){:style="width: 100%;"}
 
 - **Insert, Remove, and Overwrite Mutations:**
   - **Insert mutation:** inserts value(s) at a certain position in current genome and changes genome size
     - The demo below goes through all of the steps involved in an insertion:
-     ![insertion demo](https://github.com/uma-sethuraman/waves/blob/uma_sethuraman_blogpost/assets/uma-sethuraman/InsertionDemo.gif)
+     ![insertion demo]({{ site.baseurl }}/assets/uma-sethuraman/InsertionDemo.gif){:style="width: 100%;"}
   - **Remove mutation:** deletes value(s) at a certain position in current genome and changes genome size
     - The demo below goes through all of the steps involved in a deletion/remove:
-     ![remove demo](https://github.com/uma-sethuraman/waves/blob/uma_sethuraman_blogpost/assets/uma-sethuraman/RemoveDemo.gif)
+     ![remove demo]({{ site.baseurl }}/assets/uma-sethuraman/RemoveDemo.gif){:style="width: 100%;"}
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
     - The demo below goes through all of the steps involved in an overwrite:
-    ![overwrite demo](https://github.com/uma-sethuraman/waves/blob/uma_sethuraman_blogpost/assets/uma-sethuraman/OverwriteDemo.gif)
+    ![overwrite demo]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteDemo.gif){:style="width: 100%;"}
       
 - **Random Access:**
   - Pseudocode to access position pos in the current genome:
