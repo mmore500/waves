@@ -8,14 +8,15 @@ author: Elizabeth Carney
 
 ## Wrapping D3.js Visualizations
 ---
-![Elizabeth Carney headshot]({{ site.baseurl }}/assets/elizabethcarney/wrapped-d3-visualizations-ec-headshot.jpg)
+![Elizabeth Carney headshot]({{ site.baseurl }}/assets/elizabethcarney/wrapped-d3-visualizations-ec-headshot.jpg)  
 {:style="width: 15%;"}{:.headshot}
   
-Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces:hammer_and_wrench:, doing nail art:nail_care:, and cooking:fried_egg:. To see some of my other projects, check out [my GitHub](https://github.com/elizabethcarney)!{.next-to-headshot}
+_Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces :hammer_and_wrench:, doing nail art :nail_care:, and cooking :fried_egg:. To see some of my other projects, check out [my GitHub](https://github.com/elizabethcarney)!_  
+{.next-to-headshot}
 
-This summer I got to join the WAVES team to develop tools for the next version of [Avida-ED](https://avida-ed.msu.edu/). 
+This summer I got to join the WAVES team to develop tools for the next version of [Avida-ED](https://avida-ed.msu.edu/). It teaches students about evolution with visual, interactive experiments that run on Avida, a platform for digital evolution research. Avida creates digital organisms and lets them evolve based on various parameters like mutation rate; their survival is always dictated by natural selection, just like it is in the real world. Both softwares were created by the [Digital Evolution Lab](https://devolab.org/) at Michigan State University. 
 
-A brief introductory blurb about the summer: WAVES and Empirical.{:.blue}
+As WAVES participants, our job was to develop new features for Avida-ED, or reinforce the tools that it uses. For my project, I focused on the development of a mammoth library that Avida's built on: [Empirical](https://github.com/devosoft/Empirical).
 
 ### Empirical and the Internet
 An explanation of what Empirical can do and how it's often used.
@@ -31,7 +32,7 @@ var greeting = "wazzup";
 ```
 < And an image of the output here >
 
-Blurb that an older version had already been wrapped by Emily Dolson, but it needed to be updated and revamped.
+Blurb that an older version had already been wrapped by [Dr. Emily Dolson](#check-out-these-wonderful-people:), but it needed to be updated and revamped.
 
 ### Wrapping a Library
 Discuss the goals and methods of wrapping the library. Each D3 module has its own header file. Here's an example of how we want to be able to use D3.js through C++ to create the same simple graph:
@@ -79,14 +80,14 @@ Explanation here.
 ### Thank you!
 I am so thankful to have been a part of the 2020 WAVES team! Thank you to [Dr. Charles Ofria](https://ofria.com/) and [Matthew Andres Moreno](https://mmore500.com/) for organizing such an educational and well-thought-out workshop. My summer was looking bleak, but WAVES turned that upside down; I got to code and learn alongside so many incredible collaborators and mentors. Every single person I met (be it virtually) was welcoming. It was a fantastic experience!
 
-I especially want to thank the other three members of the d3-wrapper team: [**Oliver Baldwin Edwards**](#check-out-these-wonderful-people:), and my two wonderful mentors, [**Emily Dolson**](#check-out-these-wonderful-people:) and [**Alex Lalejini**](#check-out-these-wonderful-people:).
+I especially want to thank the other three members of the d3-wrapper team: [**Oliver Baldwin Edwards**](#check-out-these-wonderful-people:), and my two wonderful mentors, [**Dr. Emily Dolson**](#check-out-these-wonderful-people:) and [**Alex Lalejini**](#check-out-these-wonderful-people:).
 
 #### Check out these wonderful people:
 
 > **Oliver Baldwin Edwards** (collaborator), a senior at Amherst College studying Computer Science and Statistics. We worked on this wrapper project together, and he's an amazing programmer!  
 [Github](https://github.com/Oliver-BE) | [Twitter](https://twitter.com/oliver_be2)
 
-> **Emily Dolson** (mentor), an Assistant Professor in Computer Science at Michigan State University starting this fall with formal training in Computer Science, Evolutionary Biology, and Ecology. She creates mind-blowing web apps and visualizations for her research!  
+> **Dr. Emily Dolson** (mentor), an Assistant Professor in Computer Science at Michigan State University starting this fall with formal training in Computer Science, Evolutionary Biology, and Ecology. She creates mind-blowing web apps and visualizations for her research!  
 [Github](https://github.com/EmilyDolson) | [Twitter](https://twitter.com/emilyldolson) | [Website](https://cse.msu.edu/~dolsonem/)
 
 > **Alex Lalejini** (mentor), a fifth year PhD student working with Dr. Charles Ofria in Computer Science and Ecology, Evolutionary Biology, & Behavior at Michigan State University. He is a super welcoming researcher and a brilliant coder!  
