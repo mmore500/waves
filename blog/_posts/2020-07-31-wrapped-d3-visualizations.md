@@ -49,7 +49,7 @@ var greeting = "wazzup";
 {:style="width: 60%;"}    
 Here's the resulting line graph!
 
-D3.js had already been wrapped for Empirical a few years ago by [**Dr. Emily Dolson**](#check-out-people) at the devolab, but a new version came out since then and it needed to be **updated and revamped**. :star2:
+D3.js had already been wrapped for Empirical a few years ago by [**Dr. Emily Dolson**](#check-out-people) at the devolab, but a new version came out since then and it needed to be **revamped**. :star2: So, I took on the project of **updating the Empirical D3-wrapper** over the summer along with [**Oliver Baldwin Edwards**](#check-out-people) and my two amazing mentors, [**Dr. Emily Dolson**](#check-out-people) and [**Alex Lalejini**](#check-out-people)!
 
 ### Wrapping a Library
 :bellhop_bell: The number-one reason to wrap D3.js in C++ for Empirical was **convenience**. Many researchers want to be able to code data visualizations that integrate seamlessly into their C++-based experiments and web apps.   
@@ -72,18 +72,25 @@ In the process of wrapping D3.js for Empirical, we:
   - generally cleaned up the code and increased readability
 
 #### Wrapping Axis.h
-Things I ran into while re-wrapping a D3 module. I'll probably have code blocks in here:
+The D3-wrapper team took on the selection and transition modules together, but [**Oliver**](#check-out-people) and I each re-wrapped another module as well. I took on Axis! The major changes I've made from the old wrapper include:  
+  1. **Added a padding parameter** to the default constructor so that a value other than 60px can be specified (padding depends on the type of axis; e.g. for axisLeft, there is only padding between the axis line and the left side of the svg)  
+  2. **Added a constructor with shift_x and shift_y parameters** in order to set the initial location of the axis exactly  
+  3. **Modified the DrawAxes() convenience function** to take both axes' padding into account if it's specified; otherwise the padding is 60px   
+  4. **Added a version of SetTicks()** that takes both the number of ticks and the tick format to reflect common usage of the D3.js .ticks() method  
+  5. **Wrote three versions of Rescale()**, each one taking a different input type, since SetDomain() can take three different types of arguments   for the min and max of the new domain
+  6. **Created axis.cc**, a comprehensive testing file for axes and related their methods  
+  7. **Added emp_asserts** to methods that should not be called before Draw() for debugging since they'll be overwritten  
+  8. **Updated variable names and EM_ASM macros**, and generally kept to best practices  
+
+Here are some interesting parts of the code: TODO
 
 ```c++
-// another C++ code block to be filled in
+// another C++ code block to be filled in with lots of comments
 size_t my_num_again = 0;
 ```
 
-#### Web Testing
-Blurb about how we wanted a good testing framework, used Emily's Karma/Mocha/Chai system, Alex built TestRunner, etc.
-
 #### A Big Ol' Bug
-Info about Widgets and D3 incompatibility here.
+Unfortunately, [**Oliver**](#check-out-people) and I discovered a Big Ol' Bug:copyright: during the testing phase (with [**Dr. Emily Dolson's Karma/Mocha/Chai system**](https://devolab.org/javascript-testing-on-travis-ci-with-karma-and-mocha/) and [**Alex Lalejini's**](#check-out-people) new test-running framework). In a nutshell, the D3-wrapper is currently incompatible with the rest of Empirical's web tools. When you create an Empirical Document object, it needs to know exactly what it encompasses, because it redraws itself from time to time. Unfortunately, Documents currently have no way of knowing when you add a D3 object onto them, so all of the D3 disappears when they redraw. We will document this issue well in our hand-off notes!
 
 ### How to Make a Visualization with the Wrapper
 > Tip: Build something in regular D3.js first before jumping into the wrapper!
