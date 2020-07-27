@@ -1,15 +1,20 @@
 ---
 layout: post
-title: "Genome Changelog"
+title: "Designing A Genome Class in C++"
 date: 2020-07-26
 author: Stephanie Zendejo
 ---
 
-## Introduction
+## Introduction to MABE :abacus:
+During the Summer of 2020, I had the pleasure of participating in the WAVES workshop. 
 
-## The Genome Problem
+## What are Genomes? We just don't know :dna:
 
-## The Solution
+## Changelogging to the rescue! :bookmark_tabs:
 
-## Acknowledgements
+## Lessons Learned :triumph:
+
+## Conclusion :heavy_check_mark:
+
+## Acknowledgements :partying_face:
 
