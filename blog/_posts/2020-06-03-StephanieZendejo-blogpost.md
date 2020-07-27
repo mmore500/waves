@@ -1,8 +1,15 @@
 ---
 layout: post
-title: "MABE"
-date: 2020-06-03
+title: "Genome Changelog"
+date: 2020-07-26
 author: Stephanie Zendejo
 ---
 
-My first blogpost!
+## Introduction
+
+## The Genome Problem
+
+## The Solution
+
+## Acknowledgements
+
