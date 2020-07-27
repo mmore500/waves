@@ -14,9 +14,9 @@ author: Elizabeth Carney
 _Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces :hammer_and_wrench:, doing nail art :nail_care:, and cooking :fried_egg:. To see some of my other projects, check out [my GitHub](https://github.com/elizabethcarney)!_  
 {:class="next-to-headshot"}
 
-This summer I got to join the WAVES team to develop tools for the next version of [Avida-ED](https://avida-ed.msu.edu/). It teaches students about evolution with visual, interactive experiments that run on Avida, a platform for digital evolution research. Avida creates digital organisms and lets them evolve based on various parameters like mutation rate; their survival is always dictated by natural selection, just like it is in the real world. Both softwares were created by the [Digital Evolution Lab](https://devolab.org/) at Michigan State University. 
+**This summer I got to join the WAVES team to develop tools for the next version of [Avida-ED](https://avida-ed.msu.edu/).** It teaches students about evolution with visual, interactive experiments that run on Avida, a platform for digital evolution research. Avida creates digital organisms and lets them evolve based on various parameters like mutation rate; their survival is always dictated by natural selection, just like it is in the real world. Both softwares were created by the [Digital Evolution Lab](https://devolab.org/) at Michigan State University. 
 
-As WAVES participants, our job was to develop new features for Avida-ED, or reinforce the tools that it uses. For my project, I focused on the development of a **mammoth** library that Avida is built on: [Empirical](https://github.com/devosoft/Empirical).
+As WAVES participants, our job was to develop new features for Avida-ED, or reinforce the tools that it uses. For my project, I focused on the development of a **mammoth** library that Avida is built on: [**Empirical**](https://github.com/devosoft/Empirical).
 
 ### Empirical and the Internet
 [Empirical](https://github.com/devosoft/Empirical)—which was also built by the MSU devolab—is a C++ library for scientific software development. It especially facilitates building evolutionary computation tools, because you can easily create digital organisms and worlds for them to evolve in. [Here's an example](http://mmore500.com/dishtiny/53vgh/) of a web app built with Empirical that illustrates evolutionary computation in action!
@@ -30,24 +30,46 @@ As you can see, **creating a web app is an amazing way to share and showcase you
 Data visualization is particularly important to researchers trying to share their results. Incorporating colors and graphics into a report catches the reader's eye and definitely helps them understand the content better. That's why (in my opinion) one of the coolest web tools in Empirical's collection is the **C++-wrapped version of D3.js**, a JavaScript data visualization library!
 
 ### What Does "Data-Driven Documents" Mean?
-Blurb about what D3 is; no built-in visualizations. Here's an example of how you could use D3 to create a simple graph:
+The "D3" in D3.js stands for **Data-Driven Documents**, meaning that **D3.js allows you to bind data to actual HTML document elements** (like circles or lines) instead of abstracting the data binding through some toolkit. Because of that, using the library is an exceptionally transparent process. As a bonus, all of the visualizations you create with D3.js are SVGs; that means they're scalable and won't get "fuzzy" because the graphics are based on equations instead of pixels.
+
+![D3.js visualization examples]({{ site.baseurl }}/assets/elizabethcarney/wrapped-d3-visualizations-d3-examples.jpg)  
+{:style="width: 80%;"}   
+Here are some examples of the different visualizations you can create with D3.js!
+
+One downside to D3.js is that _it doesn't come with any pre-packaged visualizations_ out of the box. Whether you want a line graph, histogram, scatterplot, or something entirely different—**you have to build it yourself** out of axes, circles, and other simple elements. There's a beauty to this system, though. The D3.js community is huge and very active, so there are **tons** of examples of building all types of visualizations online ([see this gallery to start!](https://www.d3-graph-gallery.com/index.html)). And, if you want, you can customize your graph endlessly until it's exactly how you want it.
+
+Here's an example of how you could use D3.js to create a simple line graph: TODO
 
 ```js
-// JavaScript code block to be filled in
+// JavaScript code block to be filled in with lots of comments
 var greeting = "wazzup";
 ```
-< And an image of the output here >
+< Add an image of the resulting line graph here >  TODO  
+![D3.js line graph]({{ site.baseurl }}/assets/elizabethcarney/wrapped-d3-visualizations-d3-line-graph.jpg)  
+{:style="width: 60%;"}    
+Here's the resulting line graph!
 
-Blurb that an older version had already been wrapped by [Dr. Emily Dolson](#check-out-people), but it needed to be updated and revamped.
+D3.js had already been wrapped for Empirical a few years ago by [**Dr. Emily Dolson**](#check-out-people) at the devolab, but a new version came out since then and it needed to be **updated and revamped**. :star2:
 
 ### Wrapping a Library
-Discuss the goals and methods of wrapping the library. Each D3 module has its own header file. Here's an example of how we want to be able to use D3.js through C++ to create the same simple graph:
+:bellhop_bell: The number-one reason to wrap D3.js in C++ for Empirical was **convenience**. Many researchers want to be able to code data visualizations that integrate seamlessly into their C++-based experiments and web apps.   
+:bangbang: And, if the original library goes through frequent changes, then having a wrapper can make it **easier to update** things on your end (you only have to change the code inside the wrapper).   
+:zap: Moreover, using Emscripten to compile C++ into JavaScript results in **wicked-fast** (near-native!) code on the web side.   
+:mag_right: However, it's important to note that we definitely wanted the wrapper to be **recognizable** to people who'd used D3 in JavaScript before. We needed to strike a balance between convenience in C++ and similarity to JavaScript.
+
+**Basic D3-wrapper structure:** Each D3.js module (e.g. selection, transition, axis, scale, etc.) has its own header file in `Empirical/source/web/d3`. Some modules, like scales, contain a base class for shared methods as well as other classes that build off of it. **Each D3.js method has a wrapped equivalent**, though a method might be templated or have multiple versions in the C++ code because its corresponding D3.js method could take several different types of input or return several different types of output. 
+
+Here's an example of how we want to be able to use the C++ version of D3.js to create the same simple line graph: TODO  
 
 ```c++
-// C++ code block to be filled in
+// C++ code block to be filled in with lots of comments
 size_t my_num = 0;
 ```
-Blurb that in wrapping we updated functions to match current D3, cleaned stuff up, added helpful functions to make the switching between C++ and JS easier, etc.
+In the process of wrapping D3.js for Empirical, we:
+  - rewrote function calls to match the current version of D3.js
+  - added functionality to make using the library from C++ even easier
+  - wrote new functions to help us pass data between C++ and JS cleanly
+  - generally cleaned up the code and increased readability
 
 #### Wrapping Axis.h
 Things I ran into while re-wrapping a D3 module. I'll probably have code blocks in here:
