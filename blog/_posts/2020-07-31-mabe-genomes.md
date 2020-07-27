@@ -24,7 +24,7 @@ Genomes are currently represented as lists of values which can be read from, wri
 - Any random site in the current genome can also be accessed without having to store a full copy of the current genome. 
 - Thus, change logging can save significant time and memory, especially for larger genomes. 
 
-## My Algorithm for Change Logging
+## My Algorithm for Genomes with Change Logging
 - **Data Structures:**
   - Each genome stores a changelog and an offset map.
     - **Changelog: ordered map**
@@ -32,7 +32,9 @@ Genomes are currently represented as lists of values which can be read from, wri
       - Everything in the changelog will be values that aren’t in the parent genome, that have either been inserted or changed in the current genome through mutations.
     - **Offset map: ordered map**
       - We use the offset map for all keys that are not in the changelog. The key represents a position in the current genome. The value is the offset (how much that position has shifted from the parent genome to the current genome). 
+      - The offset map can be viewed in ranges, where keys between key A and B have the offset of key A (the lower bound).
       - When a key x isn’t in the changelog, we find the closest key in the offset map and subtract its offset from x to get the position in the parent. We can then access the correct value in the parent.
+      - The offset map will always begin with a single key-value pair (0,0) to indicate that all positions 0 onward have not been shifted/offsetted yet.
     
     <img align="left" src="https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/ChangeloggingDataStructures.png">
     <p>&nbsp<p>
@@ -42,7 +44,8 @@ Genomes are currently represented as lists of values which can be read from, wri
     - The demo below goes through all of the steps involved in an insertion:
      ![insertion demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/InsertionDemo.gif)
   - **Remove mutation:** deletes value(s) at a certain position in current genome and changes genome size
-    - Remove animation to be inserted
+    - The demo below goes through all of the steps involved in a deletion/remove:
+     ![remove demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/RemoveDemo.gif)
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
     - The demo below goes through all of the steps involved in an overwrite:
     ![overwrite demo](https://github.com/uma-sethuraman/waves/blob/umasethuraman-blogpost/assets/uma-sethuraman/OverwriteDemo.gif)
@@ -73,7 +76,7 @@ Genomes are currently represented as lists of values which can be read from, wri
       return parentGenome[pos-offset]
     }
     ```
-  - This implementation allows for fast random access. In the case that the requested position is in the changelog, the time complexity is O(logn), where n is the number of elements in the changelog. This is because we check if the requested position is in the changelog before returning the value. In the case that the requested position is not in the changelog, the time complexity is O(log(mn)), where m is the number of elements in the offset map and n is the number of elements in the changelog. This is because we check if the requested position is in the changelog first (logn). Since it isn't in this case, we also check if the position is in the offset map (logm), and logm+logn = O(log(mn)).
+  - This implementation allows for fast random access. In the case that the requested position is in the changelog, the time complexity is `O(logn)`, where `n` is the number of elements in the changelog. This is because we check if the requested position is in the changelog before returning the value. In the case that the requested position is not in the changelog, the time complexity is `O(log(mn))`, where `m` is the number of elements in the offset map and `n` is the number of elements in the changelog. This is because we check if the requested position is in the changelog first (`logn`). Since it isn't in this case, we also check if the position is in the offset map (`logm`), and `logm+logn = O(log(mn))`.
   
 ## Results: 
   - Analysis of time and space complexity of my implementation
