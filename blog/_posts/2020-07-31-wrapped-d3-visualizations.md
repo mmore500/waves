@@ -10,7 +10,7 @@ author: Elizabeth Carney
 ---
 Hello!
 
-<p style="color:blue;">A brief introductory blurb about the summer: WAVES and Empirical.
+<p class="blue">A brief introductory blurb about the summer: WAVES and Empirical.
 
 ### Empirical and the Internet
 An explanation of what Empirical can do and how it's often used.
