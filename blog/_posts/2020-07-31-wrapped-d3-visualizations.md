@@ -137,6 +137,8 @@ I am so thankful to have been a part of the 2020 WAVES team! Thank you to [Dr. C
 
 I especially want to thank the other three members of the d3-wrapper team: [**Oliver Baldwin Edwards**](#check-out-people), and my two wonderful mentors, [**Dr. Emily Dolson**](#check-out-people) and [**Alex Lalejini**](#check-out-people).
 
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.  
+
 #### Check out these wonderful people: 
 {:id="check-out-people"}
 
