@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Advancing Genomes in MABE - Uma Sethuraman"
+title: "Advancing Genomes in MABE"
 date: 2020-07-31
 author: Uma Sethuraman
 ---
