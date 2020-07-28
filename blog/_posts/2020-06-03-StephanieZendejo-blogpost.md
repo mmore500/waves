@@ -17,7 +17,7 @@ The purpose of MABE is twofold:
 
 # What are Digital Organisms? We just don't know. 
 ![WHAT ARE BIRDS](https://i.imgur.com/LUSV3Kn.jpg)  
-I realized in order have a better understanding of the project, I needed a refresher in biology. The last time I had taken a biology course was _nine_ years ago. The only thing I distinctly remembered was that _the mitochondria was the powerhouse of the cell_. I put myself through an evolutionary biology bootcamp. Once I had a good handle on terms and definitions, I worked on understanding how MABE works. 
+I realized in order to have a better understanding of the project, I needed a refresher in biology. The last time I had taken a biology course was _nine_ years ago. The only thing I distinctly remembered was that _the mitochondria was the powerhouse of the cell_. I put myself through an evolutionary biology bootcamp. Once I had a good handle on terms and definitions, I worked on understanding how MABE works. 
 
 ![MABE Overview](https://i.imgur.com/WwKJYt4.png)  
 **Figure MABE Structure.** _A broad overview of how MABE is structured, synonymous with how organisms evolve in the real world_  
@@ -55,25 +55,39 @@ We can think of the parent genome as a vector of sites, where each site contains
 A changelog consists of the location of the site in the parent genome as the key, and the site affected as the value. The site affected is represented as a data structure, and helps identify what type of mutation has been applied to the site.
 ```c++
 struct Site {
-	size_t insertOffset;    // insert mutation at site
-	size_t removeOffset;    // remove mutation at site
-	std::byte value;        // mutated number value
-};
+	size_t insertOffset;  	  // insert mutation at site
+	size_t removeOffset;   	  // remove mutation at site
+	std::byte value;       	  // mutated number value
+};	
 std::map<size_t, Site> changelog; // key is index of site in the parent genome
                                   // value is Site structure
 std::vector<std::byte> sites;     // parent genome
 ```
+### Mutation Functions
+The overwrite and insert signatures accept overwriting or inserting multiple sites into the parent genome.
+```c++
+virtual void overwrite(size_t index, const std::vector<std::byte>& segment); 
+		// Ex. At index 5, overwrite 3 sites with the values 11, 22, 33
+
+virtual void insert(size_t index, const std::vector<std::byte>& segment);    
+		// Ex. At index 5, insert 3 new sites with the values 44, 55, 66
+
+virtual void remove(size_t index, size_t segmentSize) override; 	     
+		// Ex. At index 5, remove 3 sites
+```
+
+
 ### Adding Entries In The Changelog
 Let's apply some basic mutations to the parent genome.  
 
-#### 1. Overwrite site at index 2 with a value of 44  
+1. Overwrite site at index 2 with a new value of 44  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  2  |     44     |       0        |       0       |  
 
    _Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert   offset are both set to zero._  
 
-#### 2. Remove 2 sites at index 4  
+2. Remove 2 sites at index 4  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  2  |     44     |       0        |       0       |  
@@ -81,7 +95,7 @@ Let's apply some basic mutations to the parent genome.
 
    _Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed._  
 
-#### 3. Insert 1 site at index 1 with a value of 66  
+3. Insert 1 site at index 1 with a new site value of 66  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  1  |     66     |       0        |       1       |  
