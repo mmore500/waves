@@ -161,6 +161,7 @@ This work is supported through Active LENS: Learning Evolution and the Nature of
 - **Emscripten** [docs](https://emscripten.org/docs/getting_started/Tutorial.html) (compiles C and C++ into JavaScript to run on the web)
 - **D3.js** [docs](https://github.com/d3/d3/wiki) and [Graph Gallery](https://www.d3-graph-gallery.com/index.html)
 - [Javascript Testing on Travis CI with Karma and Mocha](https://devolab.org/javascript-testing-on-travis-ci-with-karma-and-mocha/) (by Emily Dolson) - this is how our **web testing** is set up!
+- [**NYTime's svg crowbar**](https://github.com/NYTimes/svg-crowbar), which allows you to extract svg elements with their styling, meaning you can download the D3.js visualizations you create!
 - [The Curiously Recurring Template Pattern (CRTP)](https://www.fluentcpp.com/2017/05/12/curiously-recurring-template-pattern/) - this is used in our wrapper's `selection.h`!
 - [Salmon Run](http://avida-ed-mirror1.beacon-center.org/SalmonRun/game/), a fun game—or is it an evolutionary playground?
 - If you'd like to take a look at some of my other projects, please [click here to go to **my GitHub**](https://github.com/elizabethcarney)!
