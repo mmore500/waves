@@ -7,32 +7,11 @@ author: Edwin Flores
 
 
 ##Introduction to Symbiosis in AvidaEd
-  - **Symbiosis
-    - Symbiosis is the interaction between two organisms(Host and symbiont).
-    - The types of interactions: mutalism, parasitism, and commensalism.
-    - Note: Organisms are Avida genomes(Intsructions) to be able to implement in Avida-ED 5.
-  - **Progress
-    - Setting up organisms' genomes for Avida World.
-    - Symbiont mutating along with Host.
+  This summer I have focus on simulating symbulation. Symbiosis is the interaction between two organisms(Host and symbiont). Some types of interactions between these organisms are mutalism, parasitism, and commensalism. To be able to make this project work using Empiricals' library, I have used Avida genomes that are included in this library for the project to be implemented with Avida-Ed 5 in the future.
+  The progress made this summer with the help of my mentor Anya has been exicting. Setting up files for classes, declaring and defining functions and solving problems that came with doing these tasks.
 ##Project
-  - **Empirical Library
-    - Retrieved files to be inhertied for Header files for Symbiosis project.
-    - Study Avida-Ed related files.
-  - **Symbiosis Project
-    - Header files for Host, Symbionts and Symbiosis world.
-    - Declare and Define file functions to be used.
-    - Make AvidaSymGP.cc file for Symbulation world.
-    - **AvidaSymGP.cc 
-      - Populate World with random number of hosts and symbionts.
-      - Define fitness function for Host organisms.
-      - Update World with given number of updates, default is 100 updates.
+  When first starting to work on this big project, I tried to skim and learn the whoel library. That was my first mistake but later on i just focused on files I really needed to inhert from to build a world filled with Hosts and Symbionts. While making header files for each organism, and the symbulation world source code file I was guided by my mentor and the examples of silimar projects in the Empirical library. 
+  Working with the world file, Setting up functions such as a fitness one. The world needed to be populated with hosts and each host with a symbiont. After this step we need to update the world any number of times given. Aslo within each update, the best fitness organism needed to be found and kept. The rest of the hosts would move to the next genertion by a tournament function which could kill them or move them onto the next update.
 ##Conclusion 
-  - **Tips for future collaborators:
-    - Do not try to skim through every file in the Empirical library!
-  - **Biology side of symbulation
-    - Learn the basics of the kinds of interactions between the organisms.
-    - Experiment with evolution on Avida to get a sense of visualizing the the problem to be worked on.
-  - **Evolution
-    - The evolution side of this project is very intriguing because trying to recreate two organisms' interaction with each other is  
-  - **To be worked on by future collaborators
-    - Regularly check in with Anya to collaborate ideas for next steps on project.
+  Apporaching the end of this internship I have gain valuable skills such as analyzing files, working with others, among other tasks. Passing this project on to other future collaborators I have commented on the file i have worked on. My advice to others working on this project is that I would only focus only on files are used in similar project examples in Empirical. Trying to learn every single file in this library is time consuming and you might use all of the cool features the library has to offer. The biology side of this project was also a tough side this summer since I came in with little to no knowledge of symbulation. But researching and having Anyas' research paper has helped me understand the scientific process to try and recreate something similar with this project. Any future questions on concerning next steps to head towards, can be asked to Anya since she has a better understanding and how to closely recreate this evolution symbulation process.
+
