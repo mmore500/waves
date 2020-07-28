@@ -38,7 +38,8 @@ Mutations can occur in genomes. If an organism progresses to the next generation
 
 ### Genome Class in MABE
 Genomes are often large, and undergo several mutations. The genome class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated.  
-Could this Genome Class be improved? What it could save time and memory? Hmmmmm :thinking:  
+Could this Genome Class be improved? What if it could save time and memory?  
+![Loading Cat](https://i.imgur.com/6CLU31c.gif)  
 
 
 
