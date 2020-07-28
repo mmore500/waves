@@ -37,8 +37,8 @@ Mutations can occur in genomes. If an organism progresses to the next generation
 - **Remove:** removes sites from the genome, changing the genome size, and causing offsets
 
 ### Genome Class in MABE
-Genomes are often large, and undergo several mutations. For the organisms that progress to the next generation - the genome class in MABE sets aside a chunk of contiguous memory for every genome. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated.  
-Could this method be improved? What it could save time and memory? :thinking:  
+Genomes are often large, and undergo several mutations. The genome class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated.  
+Could this Genome Class be improved? What it could save time and memory? Hmmmmm :thinking:  
 
 
 
@@ -47,7 +47,7 @@ The idea for a changelog is to record the mutations that a genome has undergone.
 
 ### My Approach
 We can think of the parent genome as a vector of sites, where each site contains a number. 
-> ![Parent genome it all its glory](https://i.imgur.com/HVdyKVO.png)  
+> Insert Parent Genome Here
 
 A changelog consists of the location of the site in the parent genome as the key, and the site affected as the value. The site affected is represented as a data structure, and helps identify what type of mutation has been applied to the site.
 ```c++
@@ -61,7 +61,22 @@ std::map<size_t, Site> changelog; // key is index of site in the parent genome
 std::vector<std::byte> sites;     // parent genome
 ```
 
+**Let's apply some basic mutations to the parent genome.**  
 
+Overwrite site at index 2 with a value of 44
+> **Changelog**  
+> <table><tbody><tr><td>Key</td><td>Site Value</td><td>Remove Offset</td><td>Insert Offset</td></tr><tr><td>2</td><td>44</td>   <td>0</td><td>0</td></tr></tbody></table>
+> Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert offset are both set to zero.
+
+Remove 2 sites at index 4
+> **Changelog**  
+> <table><tbody><tr><td>Key</td><td>Site Value</td><td>Remove Offset</td><td>Insert Offset</td></tr><tr><td>2</td><td>44</td>   <td>0</td><td>0</td></tr><tr><td>4</td><td>0</td><td>2</td><td>0</td></tr></tbody></table>
+> Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed.
+
+Insert 1 site at index 1 with a value of 66
+> **Changelog**  
+> <table><tbody><tr><td>Key</td><td>Site Value</td><td>Remove Offset</td><td>Insert Offset</td></tr><tr><td>1</td><td>66</td><td>0</td><td>1</td></tr><tr><td>2</td><td>44</td><td>0</td><td>0</td></tr><tr><td>4</td><td>0</td><td>2</td><td>0</td></tr></tbody></table>
+> Add entry to Changelog map at key 1. Site Value is set to 66. Insert Offset is set to 1, the number of sites inserted.
 ## Lessons Learned
 
 ## Conclusion
@@ -69,5 +84,6 @@ std::vector<std::byte> sites;     // parent genome
 ## Acknowledgements
 **Mentors:** Clifford Bohm, Jory Schossau, Jose Hernandez  
 **Team Members:** Jamell Dacon, Tetiana Dadakova, Victoria Cao, Uma Sethuraman  
+
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
