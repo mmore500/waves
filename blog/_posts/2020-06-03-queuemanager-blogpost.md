@@ -34,6 +34,7 @@ Tools/technologies used:
 - HTML5/CSS3 - testing visualizations
 - JavaScript - browser capabilities from C++
 
+(Overview of how these were used in QueueManager)
 (Add in a code walkthrough)
 
 ## Project challenges
