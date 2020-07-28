@@ -73,8 +73,7 @@ Let's apply some basic mutations to the parent genome.
 
    _Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert   offset are both set to zero._  
 
-
-2. Remove 2 sites at index 4  
+#### 2. Remove 2 sites at index 4  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  2  |     44     |       0        |       0       |  
@@ -82,8 +81,7 @@ Let's apply some basic mutations to the parent genome.
 
    _Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed._  
 
-
-3. Insert 1 site at index 1 with a value of 66  
+#### 3. Insert 1 site at index 1 with a value of 66  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  1  |     66     |       0        |       1       |  
@@ -92,7 +90,6 @@ Let's apply some basic mutations to the parent genome.
 
    _Add entry to Changelog map at key 1. Site Value is set to 66. Insert Offset is set to 1, the number of sites inserted. Shift all remaining sites in changelog to the right by one._  
    
-
 
 # Lessons Learned
 
