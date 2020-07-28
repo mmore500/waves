@@ -65,13 +65,14 @@ std::map<size_t, Site> changelog; // key is index of site in the parent genome
 std::vector<std::byte> sites;     // parent genome
 ```
 ### Mutation Signatures
-Here's a basic idea of what each of the functions do. I followed the mantra of _when in doubt, shift it out_.
+Here's a basic idea of what each of the functions do. I followed the mantra of _when in doubt, shift it out_.  
 **Overwrite**  
   * Loops through segment vector
   * Adds overwrite mutations to the changelog  
   
 Insert Overwrite Mutation Gif here  
 <!-- ![OverWrite Example](https://i.imgur.com/wu7gBxK.gif) -->
+
 **Insert**  
   * Shift sites in the changelog to the right by size of the segment vector
   * Loops through segment vector
@@ -79,6 +80,7 @@ Insert Overwrite Mutation Gif here
   
 Insert Insert Mutation Gif here  
 <!-- ![Insert Example](https://i.imgur.com/0rZ4Bai.gif) -->
+
 **Remove**  
   * Removes sites in the changelog if they exist
      * Takes into account if sites removed in the changelog had insert or remove mutations
@@ -87,6 +89,7 @@ Insert Insert Mutation Gif here
   
 Insert Remove Mutation Gif here   
 <!-- ![Remove Example](https://i.imgur.com/tus7plB.gif) -->
+
  
 The overwrite and insert signatures contain a segment vector as an argument. The segment vector is a collection of mutations that will be added to the changelog starting at the given index. 
 > _insert(6, {44, 55, 66}) is the equivalent of inserting the following mutations to the changelog:_   
