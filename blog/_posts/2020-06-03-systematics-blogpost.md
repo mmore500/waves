@@ -296,6 +296,8 @@ After I had this framework setup I decided to test its reliability. I ran my mod
 
 These tables show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is also around the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
 
+![PercentileGraph](PercentileGraph.jpg)
+
 **NEXT STEPS**
 
 Once I finalize my results next week I'll be able to add meaningful graphs and a conclusion section. 
