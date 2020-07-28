@@ -51,4 +51,7 @@ Because this was only intended to be used for the Prisoners Dilemma, this tool i
 - How this project specifically further improved my understanding of C++, HTML5, CSS3
 - My experiences with working with a mentor and other developers and how they impacted not only my project experience, but my overall experience as a waves participant
 
+Mentor: Emily Dolson
+[Emily Dolson]({{ site.baseurl }}/assets/headshots/square-EmilyDolson.png){:style="width: 130px; align: center;"}
+
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
