@@ -37,8 +37,7 @@ Mutations can occur in genomes. If an organism progresses to the next generation
 - **Remove:** removes sites from the genome, changing the genome size, and causing offsets
 
 ### Genome Class in MABE
-Genomes are often large, and undergo several mutations. The genome class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated.  
-Contiguous memory for genomes is assigned and written to at every generation, for every genome in a new generation. If the frequency of generating offspring genomes was reduced, would it could save time and memory?  
+Genomes are often large, and undergo _several_ mutations. The Genome Class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated. Contiguous memory for genomes is assigned and written to at every next generation. If the frequency of generating offspring genomes was reduced, could save **time** and **memory**?  
 ![Loading Cat](https://i.imgur.com/6CLU31c.gif)  
 
 
