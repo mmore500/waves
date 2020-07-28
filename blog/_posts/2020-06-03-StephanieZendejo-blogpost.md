@@ -64,7 +64,7 @@ std::map<size_t, Site> changelog; // key is index of site in the parent genome
 std::vector<std::byte> sites;     // parent genome
 ```
 ### Mutation Functions
-The overwrite and insert signatures accept overwriting or inserting multiple sites into the parent genome.
+The overwrite and insert signatures accept mutating multiple sites into the parent genome, starting at index.
 ```c++
 virtual void overwrite(size_t index, const std::vector<std::byte>& segment); 
 		// Ex. At index 5, overwrite 3 sites with the values 11, 22, 33
@@ -75,7 +75,12 @@ virtual void insert(size_t index, const std::vector<std::byte>& segment);
 virtual void remove(size_t index, size_t segmentSize) override; 	     
 		// Ex. At index 5, remove 3 sites
 ```
-
+* Overwrite
+  * Loops through overwrite values and adds them to the changelog 
+* Insert
+  * Shift sites in changelog to the right
+* Remove
+  * Removes sites in changelog
 
 ### Adding Entries In The Changelog
 Let's apply some basic mutations to the parent genome.  
