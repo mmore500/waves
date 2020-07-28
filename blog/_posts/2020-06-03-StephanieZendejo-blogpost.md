@@ -65,28 +65,28 @@ std::vector<std::byte> sites;     // parent genome
 **Let's apply some basic mutations to the parent genome.**  
 
 Overwrite site at index 2 with a value of 44
-> **Changelog**  
+**Changelog**  
 > | Key | Site Value | Remove Offset  | Insert Offset |
 > | --- |:----------:|:--------------:| -------------:|
 > |  2  |     44     |       0        |       0       |  
-> Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert offset are both set to zero.
+Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert offset are both set to zero.
 
 Remove 2 sites at index 4  
-> **Changelog** 
+**Changelog** 
 > | Key | Site Value | Remove Offset  | Insert Offset |
 > | --- |:----------:|:--------------:| -------------:|
 > |  2  |     44     |       0        |       0       |  
 > |  4  |      0     |       2        |       0       |  
-> Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed.
+Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed.
 
 Insert 1 site at index 1 with a value of 66
-> **Changelog** 
+**Changelog** 
 > | Key | Site Value | Remove Offset  | Insert Offset |
 > | --- |:----------:|:--------------:| -------------:|
 > |  1  |     66     |       0        |       1       |  
 > |  3  |     44     |       0        |       0       |  
 > |  5  |      0     |       2        |       0       |  
-> Add entry to Changelog map at key 1. Site Value is set to 66. Insert Offset is set to 1, the number of sites inserted. Shift all remaining sites in changelog to the right by one.
+Add entry to Changelog map at key 1. Site Value is set to 66. Insert Offset is set to 1, the number of sites inserted. Shift all remaining sites in changelog to the right by one.
 
 
 ## Lessons Learned
