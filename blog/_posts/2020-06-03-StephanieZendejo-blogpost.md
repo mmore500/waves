@@ -50,7 +50,7 @@ The idea for a changelog is to record the mutations that a genome has undergone.
 
 ## My Approach
 We can think of the parent genome as a vector of sites, where each site contains a number. 
-> Insert Parent Genome Here
+> ![Parent Genome in all its glory](https://i.imgur.com/mekOG1s.png)
 
 A changelog is represented as a map of key size_t and value Site. The location of the site in the parent genome is the key, and the details of the site affected is the value. The site affected, represented as a Site struct, helps identify what type of mutation has been applied to the site.
 ```c++
@@ -67,18 +67,24 @@ std::vector<std::byte> sites;     // parent genome
 **Overwrite**  
   * Loops through segment vector
   * Adds overwrite mutations to the changelog 
+  
+![OverWrite Example](https://i.imgur.com/wu7gBxK.gif)  
 
 **Insert**  
   * Shift sites in the changelog to the right by size of the segment vector
   * Loops through segment vector
-  * Adds insert mutations to the changelog  
+  * Adds insert mutations to the changelog 
+  
+![Insert Example](https://i.imgur.com/0rZ4Bai.gif)  
 
 **Remove**  
   * Removes sites in the changelog if they exist
      * Takes into account if sites removed in the changelog had insert or remove mutations
   * Shift sites in the changelog to the left
-  * Adds remove mutation to the changelog  
+  * Adds remove mutation to the changelog 
   
+![Remove Example](https://i.imgur.com/tus7plB.gif)  
+ 
 The overwrite and insert signatures contain a segment vector as an argument. The segment vector is a collection of mutations that will be added to the changelog starting at the given index. 
 > _insert(6, {44, 55, 66}) is the equivalent of inserting the following mutations to the changelog:_   
 > _site at index 6 with a value of 44_  
