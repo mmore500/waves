@@ -65,7 +65,7 @@ std::map<size_t, Site> changelog; // key is index of site in the parent genome
 std::vector<std::byte> sites;     // parent genome
 ```
 ### Mutation Signatures
-Here's a basic idea of what each of the functions do.  
+Here's a basic idea of what each of the functions do. I followed the mantra of _when in doubt, shift it out_.
 **Overwrite**  
   * Loops through segment vector
   * Adds overwrite mutations to the changelog  
@@ -136,16 +136,27 @@ Great! All mutations have been recorded. Much like this rendition of Celine Dion
 <!--- https://www.youtube.com/watch?v=X2WH8mHJnhM -->
 this genome~~'s heart~~ will go on to the next generation. We're going to use the changelog on the parent genome to generate the offspring genome. 
 
-### Generating The Offspring Genome
+### Generating The Offspring Genome  
+Talk about how the generateNewGenome() function works to create a new genome.  
 
+# Time vs. Memory  
+## Benchmarking  
+Talk about benchmarks  
+Insert Graphs
+## Optimization  
+Talk about improving the code itself
 
-# Lessons Learned
+## Verdict  
+Talk about how the Test Genome is ultimately faster ;__;
 
-# Conclusion
+# Lessons Learned  
+Talk about lessons learned  
 
-# Acknowledgements
+# Conclusion and Acknowledgements
 **Mentors:** Clifford Bohm, Jory Schossau, Jose Hernandez  
 **Team Members:** Jamell Dacon, Tetiana Dadakova, Victoria Cao, Uma Sethuraman  
 
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+# Links
 
