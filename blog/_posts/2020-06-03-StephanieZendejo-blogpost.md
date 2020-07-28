@@ -155,11 +155,11 @@ Talk about how the Test Genome is ultimately faster ;__;
 # Lessons Learned  
 Talk about lessons learned  
 
-# Conclusion and Acknowledgements
+# Acknowledgements
 **Mentors:** Clifford Bohm, Jory Schossau, Jose Hernandez  
 **Team Members:** Jamell Dacon, Tetiana Dadakova, Victoria Cao, Uma Sethuraman  
 
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
-# Links
+# Resources
 
