@@ -20,6 +20,7 @@ The purpose of MABE is twofold:
 I realized in order have a better understanding of the project, I needed a refresher in biology. The last time I had taken a biology course was _nine_ years ago. The only thing I distinctly remembered was that _the mitochondria was the powerhouse of the cell_. I put myself through an evolutionary biology bootcamp. Once I had a good handle on terms and definitions, I worked on understanding how MABE works. 
 
 ![MABE Overview](https://i.imgur.com/jZvYNYb.png)
+This is a broad overview of how MABE is structured. It is synonymous with how organisms evolve in the real world.  
 - **Digital organisms** contain a brain which determine how the organisms interact in their environment (or world), and a genome, which provides a blueprint for the brain. A collection of organisms make up a population.
 
 - **Archivist** is synonymous with a person who collects all data and decides what data to be stored.
@@ -37,7 +38,9 @@ Mutations can occur in genomes. If an organism progresses to the next generation
 - **Remove:** removes sites from the genome, changing the genome size, and causing offsets
 
 ## Genome Class in MABE
-Genomes are often large, and undergo _several_ mutations. The Genome Class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated. Contiguous memory for genomes is assigned and written to at every next generation. If the frequency of generating offspring genomes was reduced, could save **time** and **memory**?  
+> Genomes are often large, and undergo _several_ mutations.  
+
+The Genome Class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated. Contiguous memory for genomes is assigned and written to at every next generation. If the frequency of generating offspring genomes was reduced, could save **time** and **memory**?  
 ![Loading Cat](https://i.imgur.com/6CLU31c.gif)  
 
 
