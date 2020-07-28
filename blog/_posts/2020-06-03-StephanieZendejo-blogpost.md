@@ -52,7 +52,7 @@ The idea for a changelog is to record the mutations that a genome has undergone.
 We can think of the parent genome as a vector of sites, where each site contains a number. 
 > Insert Parent Genome Here
 
-A changelog consists of the location of the site in the parent genome as the key, and the site affected as the value. The site affected is represented as a data structure, and helps identify what type of mutation has been applied to the site.
+A changelog is represented as a map of key size_t and value Site.The location of the site in the parent genome is the key, and the details of the site affected is the value. The site affected, represented as a Site struct, helps identify what type of mutation has been applied to the site.
 ```c++
 struct Site {
 	size_t insertOffset;  	  // insert mutation at site
@@ -63,23 +63,31 @@ std::map<size_t, Site> changelog; // key is index of site in the parent genome
                                   // value is Site structure
 std::vector<std::byte> sites;     // parent genome
 ```
-### Mutation Functions
-The overwrite and insert signatures accept mutating multiple sites into the parent genome, starting at index.
-* Overwrite
-  * Loops through overwrite values and adds them to the changelog 
-* Insert
-  * Shift sites in changelog to the right
-* Remove
-  * Removes sites in changelog
+### Mutation Signatures
+The overwrite and insert signatures contain a segment vector. The segment vector allows for mutations to multiple sites. 
+**Overwrite**  
+  * Loops through segment vector
+  * Adds overwrite mutations to the changelog 
+
+**Insert**  
+  * Shift sites in the changelog to the right by size of the segment vector
+  * Loops through segment vector
+  * Adds insert mutations to the changelog  
+
+**Remove**  
+  * Removes sites in the changelog if they exist
+     * Takes into account if sites removed in the changelog had insert or remove mutations
+  * Shift sites in the changelog to the left
+  * Adds remove mutation to the changelog
 ```c++
 virtual void overwrite(size_t index, const std::vector<std::byte>& segment); 
-		// Ex. At index 5, overwrite 3 sites with the values 11, 22, 33
+		// Ex. Starting at index 5, overwrite 3 sites with the values 11, 22, 33
 
 virtual void insert(size_t index, const std::vector<std::byte>& segment);    
-		// Ex. At index 5, insert 3 new sites with the values 44, 55, 66
+		// Ex. Starting at index 6, insert 3 new sites with the values 44, 55, 66
 
 virtual void remove(size_t index, size_t segmentSize) override; 	     
-		// Ex. At index 5, remove 3 sites
+		// Ex. At index 7, remove 3 sites
 ```
 
 ### Adding Entries In The Changelog
