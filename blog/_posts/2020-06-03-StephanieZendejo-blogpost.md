@@ -38,7 +38,7 @@ Mutations can occur in genomes. If an organism progresses to the next generation
 
 ### Genome Class in MABE
 Genomes are often large, and undergo several mutations. The genome class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! Offspring genomes are generated.  
-Could this Genome Class be improved? What if it could save time and memory?  
+Contiguous memory for genomes is assigned and written to at every generation, for every genome in a new generation. If the frequency of generating offspring genomes was reduced, would it could save time and memory?  
 ![Loading Cat](https://i.imgur.com/6CLU31c.gif)  
 
 
@@ -66,11 +66,9 @@ std::vector<std::byte> sites;     // parent genome
 
 Overwrite site at index 2 with a value of 44
 > **Changelog**  
-> **Changelog** 
 > | Key | Site Value | Remove Offset  | Insert Offset |
 > | --- |:----------:|:--------------:| -------------:|
 > |  2  |     44     |       0        |       0       |  
-
 > Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert offset are both set to zero.
 
 Remove 2 sites at index 4  
@@ -79,7 +77,6 @@ Remove 2 sites at index 4
 > | --- |:----------:|:--------------:| -------------:|
 > |  2  |     44     |       0        |       0       |  
 > |  4  |      0     |       2        |       0       |  
-
 > Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed.
 
 Insert 1 site at index 1 with a value of 66
@@ -89,7 +86,6 @@ Insert 1 site at index 1 with a value of 66
 > |  1  |     66     |       0        |       1       |  
 > |  3  |     44     |       0        |       0       |  
 > |  5  |      0     |       2        |       0       |  
-
 > Add entry to Changelog map at key 1. Site Value is set to 66. Insert Offset is set to 1, the number of sites inserted. Shift all remaining sites in changelog to the right by one.
 
 
