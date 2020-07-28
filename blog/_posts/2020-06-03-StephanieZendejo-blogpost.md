@@ -63,17 +63,17 @@ std::map<size_t, Site> changelog; // key is index of site in the parent genome
                                   // value is Site structure
 std::vector<std::byte> sites;     // parent genome
 ```
+### Adding Entries In The Changelog
+Let's apply some basic mutations to the parent genome.  
 
-Let's apply some basic mutations to the parent genome and record them in the changelog.
-
-1. **Overwrite site at index 2 with a value of 44**  
+1. Overwrite site at index 2 with a value of 44  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  2  |     44     |       0        |       0       |  
 
    Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert   offset are both set to zero.
 
-2. **Remove 2 sites at index 4**  
+2. Remove 2 sites at index 4  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  2  |     44     |       0        |       0       |  
@@ -81,7 +81,7 @@ Let's apply some basic mutations to the parent genome and record them in the cha
 
    Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed.
 
-3. **Insert 1 site at index 1 with a value of 66**  
+3. Insert 1 site at index 1 with a value of 66  
    | Key | Site Value | Remove Offset  | Insert Offset |  
    | --- |:----------:|:--------------:| -------------:|  
    |  1  |     66     |       0        |       1       |  
