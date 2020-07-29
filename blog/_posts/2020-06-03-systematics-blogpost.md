@@ -128,6 +128,10 @@ Within systematics and my models, phylogenetic diversity is defined as the numbe
 
 As tree depth increases, the overall phylogenetic diversity also increases. This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
+![Average Phylogenetic Diversity Over Time for All Three Models](DiversityOverTime.jpg)
+
+As seen in the graph above, the average phylogenetic diversity increases for all three models as the depth of the tree (number of generations) increases. 
+
 ### **The Null Model**
 
 A null model is a randomly generated model of an object or structure that is not constrained by its typical characteristics, and is instead based on the randomization of data and structure. A null model attempts to achieve the most unbiased model possible. 
@@ -310,24 +314,6 @@ When I used this process on the tree with mutations but with no pressure for div
 These tables show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is also around the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
 
 ![PercentileGraph](PercentileGraph.jpg)
-
-**NEXT STEPS**
-
-**_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
-
-_The following graphs are more of a proof of concept than actual results and will be altered with the addition of new info. They do, however, show that phylogenetic diversity increases with more generations._
-
-**Results from the Null Model**
-
-![Graph](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBPrXshSy5Dit31HWM6bmwbx0yWDu82Hz94AKyXjmBPxQWFqjf7yubgIOvAU9JCqO2Nzr4BFgjyjPD/pubchart?oid=346498229&format=image)
-
-**Results from the model using mutations but no pressure for diversity**
-
-![Graph 2](https://docs.google.com/spreadsheets/d/e/2PACX-1vQFSakq0kOodANU8RMiW4e3n5uL_nk3Zxo94GBWk4bqg8poVSMjLxYfMsGAKASOE9pAidTGyWxurR7s/pubchart?oid=841877077&format=image)
-
-**Results from the model with mutations and pressure for diversity**
-
-![Graph 3](https://docs.google.com/spreadsheets/d/e/2PACX-1vQS5lZwN6VlbDKRTm065_bZyIMHc-vlmjm3EF7TPtwL8DHo8eghiOE_ud6_Il99L7EFNpQ6cdjcKz6E/pubchart?oid=835426055&format=image)
 
 ## **Conclusion**
 
