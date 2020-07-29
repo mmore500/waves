@@ -126,9 +126,11 @@ We decided that I would use phylogenetic diversity as our metric for comparison.
 
 Within systematics and my models, phylogenetic diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. 
 
+As tree depth increases, the overall phylogenetic diversity also increases. This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
+
 ### **The Null Model**
 
-A null model is a randomly generated model of an object or structure that is not constrained by its typical constraints, and is instead based on the randomization of data and structure, in an attempt to achieve the most unbiased model possible. 
+A null model is a randomly generated model of an object or structure that is not constrained by its typical characteristics, and is instead based on the randomization of data and structure. A null model attempts to achieve the most unbiased model possible. 
 
 Coming up with a null model of a tree was not the most intuitive, but we decided that having the most randomly generated model was the best option. 
 
@@ -154,15 +156,15 @@ In the null model, each time a new organism was created it represented its own c
 
 The trees we used for comparison were trees with mutations and pressure for diversity. 
 
-The mutation rate used for all of the trees was 0.05, which is a typical value for tree modeling. In these models, each organism had a genotype as an attribute. 
+The mutation rate used for all of the trees was 0.05, which is a typical value for tree modeling in Empirical. In these models, each organism had a genotype as an attribute. 
 
-Mutation was determined randomly. The population generated in the first round of the tree all had a genotype of integer 0. A random double between 0 and 1 was generated with each creation of an organism following this generation. If the value generated was less than 0.05, the genotype would mutate. If a mutation was required, a new random number would be generate between -3 and 3. That genotype would then be subtracted from the original genotype. 
+Mutation was determined randomly. The population generated in the first round of the tree all had a genotype of integer 0. A random double between 0 and 1 was generated with each creation of an organism following this generation. If the value generated was less than 0.05, the genotype would mutate. If a mutation was required, a new random number would be generated between -3 and 3. That genotype would then be subtracted from the original genotype. 
 
 For example, if the organism had a genotype of 2, and was chosen to mutate, and the mutated genotype generated was -3, the new genotype for that organism would be 2 - (-3), which is 5. 
 
 Mutations are also heritable, meaning that the child of an organism would inherit the same mutated or not mutated genotype as its parent. Once an organism mutated, it would create a branch in the tree. 
 
-The following code shows how the organism class handles mutations. In the model that just used mutations but did not account for any pressure to diversify uses this organism class, but has no fitness calculations and still uses random choice for the creation of child organisms.  
+The following code shows how the organism class handles mutations. In the model that just used mutations but did not account for any pressure to diversify, this code is used as the organism class, but has no fitness calculations and still uses random choice for the creation of child organisms.  
 
 ```c++
 class Organism {
@@ -195,7 +197,9 @@ public:
 
 **Pressure for Diversity**
 
-In the model that used pressure for diversity and mutations, genotypes that were rarer were favored for reproduction over more common genotypes. When rarer genotypes are chosen, diversity increases throughout the tree. We referred to this as fitness which was calculated in the following code: 
+A goal of this project was to show that when we added a constraint that would incentivize the tree to branch more frequently, the overall diversity would increase. The way that this was accomplished was by adding a pressure for the tree to diversify by favoring rarer genotypes. 
+
+In the model that uses pressure for diversity and mutations, genotypes that are rarer are favored for reproduction over more common genotypes. When rarer genotypes are chosen, diversity increases throughout the tree. We referred to this as fitness which was calculated in the following code: 
 
 ```c++
 void calcFitness(vector<Organism> &currentGen, vector<double> &fitnessVect, emp::Random &randNum) {
@@ -259,16 +263,17 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 
 ## **Method**
 
-With each of the three models, I ran each one 1000 times for every 10 generations and collected the Phylogenetic Diversity values at the end of each run.
+With each of the three models, I ran each one 1000 times for every 10 generations and collected the phylogenetic diversity values at the end of each run.
 
 For example, I would set the number of generations in the null model to 10. Then, I would run it 1000 times, and at the end of each run, record the final diversity. I would then do 20 generations, and so forth, all the way through 100 generations. 
 
-After that, I took that data and ran it through a python script which created a percentile range, by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
+After the initial data collection, I took that data and ran it through a python script which created a percentile range. It did this by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
 
-To incorporate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called if future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
+To incorporate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called in future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
 
-After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify my diversity. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. The expected results of doing this should return values in the 50th percentile  most of the time, if I run it with a tree with no pressure to diversify but having mutations. However, if I add pressure for diversity, those values should lie in the 100th percentile range. 
+After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify each tree's final phylogenetic diversity after each set of generations. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. 
 
+When I used this process on the tree with mutations but with no pressure for diversity, I would expect to see values in the 50th percentile range. However, if repeated for the tree with a pressure for diversity, I would then expect values near the 100th percentile. 
 
 ## **Results**
 
@@ -288,7 +293,7 @@ After I had this framework setup I decided to test its reliability. I ran my mod
 | 100 gens | 12 | 70 |  1 | 39 | 39 | 56 | 98 | 25 | 70 | 39 |    44.9 |        29.27437256 |
 
 
-**The table below contains the percentile values for a tree with pressure for diversity.**
+**The table below contains the percentile values for a tree _with_ pressure for diversity.**
 |          |     |    |     |     |     |     |     |     |     |     | Average | Standard Deviation |
 |----------|-----|----|-----|-----|-----|-----|-----|-----|-----|-----|---------|--------------------|
 | 10 gens  |  37 | 80 |  80 |  61 |  99 |  61 | 98  | 91  | 61  |  91 |    75.9 |         20.2509259 |
@@ -307,8 +312,6 @@ These tables show that the tree with no pressure for diversity outputs values th
 ![PercentileGraph](PercentileGraph.jpg)
 
 **NEXT STEPS**
-
-Once I finalize my results next week I'll be able to add meaningful graphs and a conclusion section. 
 
 **_In the graphs below, I have taken the average phylogenetic diversity achieved from each generation and plotted it over time (generations)._**
 
