@@ -5,13 +5,21 @@ date: 2020-07-17
 author: Oliver Baldwin Edwards
 ---
 
-Empirical's web tools allow developers to easily deisgn a web page using C++ (and the Emscripten compiler). 
-This allows research code written in C++ to be easily visualized on the web without having to port the code into JavaScript (and who wants to write research code in JavaScript?). 
+# Writing D3.js code in C++
+
+TODO: My actual web app (or at least part of it) will be added to the webpage here
+
+Although it's embedded here (on the web!) the above visualization was written entirely in C++ using [Empirical](https://github.com/devosoft/Empirical)!
+
+
+Empirical's web tools allow developers to easily deisgn a web page using C++ (and the [Emscripten](https://emscripten.org/) compiler). 
+This allows research code written in C++ to be visualized on the web without having to port the code into JavaScript (and who wants to write research code in JavaScript?). 
 Plus, using the Emscripten compiler means that the JavaScript code produced will be optimized to work on the web with minimal slowdowns.
 
-The project I worked on this summer—along with the wonderful Elizabeth, Emily, and Alex—was to revamp Empirical's support for web visualizations.  
+This summer I was a [WAVES](https://mmore500.com/waves/index.html) participant and helped to revamp Empirical's support for web visualizations in hopes of both making the Empirical library more complete and for use in the next version of [Avida-ED](https://avida-ed.msu.edu/).
 
-Specifcally, this meant replacing the old Empirical D3 wrapper (built on D3 version 3) with one that supports the newest version of D3 (version 5).
+Specifcally, this meant replacing the old Empirical D3-wrapper (built on D3 version 3) with one that supports the newest version of D3 (version 5). I tackled this project with the wonderful Elizabeth, Emily, and Alex.
+TODO: include links to Elizabeth, Emily, and Alex's names
 
 ## Why D3?
 [D3](https://d3js.org/) (_Data Driven Documents_) is a JavaScript library that allows for all sorts of custom-made, interactive visualizations. 
@@ -20,49 +28,88 @@ Some cool examples include:
 * [An animation](https://observablehq.com/@d3/world-tour) of the world globe
 * [A chord diagram](https://observablehq.com/@d3/chord-diagram) of consumer's smartphone brand loyalty
 * [An interactive cartogram](https://observablehq.com/@d3/non-contiguous-cartogram) displaying obesity in the US
+* [A phylogeny tree](https://observablehq.com/@mbostock/tree-of-life?collection=@observablehq/visualization) 
 
-_(talk more about motivation for choosing D3 over other visualization libraries such as its flexibility, creative allowance, and interactivity)_
+![D3 Examples row 1](https://ibb.co/1Z3HzX0)  
+![D3 Examples row 2](https://ibb.co/sbjGVYj)  
 
-## How Does the Wrapper Work?
-(_Here talk briefly about the big picture of how this wrapper works in tandem with Emscripten: mention the `library_d3.js` file, how everything is stored as an object on the JS side that we can access based on an ID on the C++ side, how we call all of the D3 functions within macros, and a few other details._)
+Although it has a steep learning curve, D3 provides complete control over all aspects of a visualization, leading to all sorts of creative, interactive creations.  
 
-(_Also mention the biggest struggles in creating the wrapper such as how we often have to deal with messiness of going between JS and C++ e.g. creating a Date struct on the C++ side in order to properly use ScaleTime._) 
+## Writing web code with Empirical and Emscripten
+While creating the D3-wrapper, we relied heavily on writing JavaScript code from inside C++. 
+We were able to do so by uing both Emscripten's built-in functionality (which covers basics) and Empirical's web tools (which deal with more advanced features).
 
-(_The point here is to provide a high-level picture of how it works so it doesn't seem like magic._)
+The Emscripten compiler gives you access to [C++ functions](https://emscripten.org/docs/api_reference/emscripten.h.html#calling-javascript-from-c-c) that can be used to hop into JavaScript and return values to C++. 
+For example, the following `EM_ASM_INT({})` function will return the integer value 22 from JavaScript and save it to the `cpp_x` variable in C++: 
+```c++ 
+int cpp_x = EM_ASM_INT({
+                const js_x = 11 * 2;
+                return js_x;
+            });
+```
 
-## Writing Web Code with Empirical
-Before diving into the D3 wrapper, I figured it would be helpful to give a whirlwind overview of writing web code using Empirical and Empscripten. (_Talk about built in Emscripten macros, helpful Empirical web utils/functions that a user might want to use, etc. (but keep it brief)_) 
+While Emscripten allows you to return integers and doubles (as well as write raw JavaScript without returning anything), it does not allow you to easily return more complicated data types such as strings and arrays.
+Empirical's web tools cover these holes and allow you to pass more complicated data types back and forth from C++ to JavaScript.
 
-(_Include a few code chunks as examples and link to the full `enrichment.cc` file that Elizabeth and I made to demonstrate all of the functionality I discuss here._)
+For a list of things that are possible with Emscripten and Empirical, see this attached file. (TODO: attach the enrichment.cc file)
 
-## Creating a Demo of the D3 Wrapper
-As a way to test the user-friendliness of the new wrapper, I deicded to create an Empirical web-app from scratch that focused on harnessing the power of D3. 
-(_Talk about the specific visualizations I ended up making for different sorting algorithms here._)
+## How does the wrapper work?
+The D3-wrapper works by taking advantage of Emscripten and Empirical's web tools to expose D3.js functionality to C++. 
+We created a custom JavaScript library (which is accessible through an Emscripten compiler tag) that—among other things—holds a reference to different D3 objects (such as a selection or scale). The C++ wrapper hops into JavaScript, accesses the proper D3 object (each object has a unique ID), and calls the desired D3.js function on the object.  
 
-(_A large portion of my blogpost will be in this section, I plan to lay out step by step how I created the visualization with informative code snippets and images as well as talk through my motivation for each step_)
+While this workflow is concise for many D3 functions, the challenges of creating this wrapper included the messiness of having to constantly jump between C++ and JavaScript. For example, the main code that I worked on this summer was the `scales.h` file, which wraps the large majority of the [d3-scales module](https://github.com/d3/d3-scale). In d3-scales, there's a scale called `d3.scaleTime()` which takes JavaScript `Date` objects as an input. But since there's no notion of a Date object on the C++ side, I had to create a custom `Date` struct that mimicked a JavaScript `Date` as well as deal with the unpleasantness of passing a C++ `Date` into JavaScript (and vice versa).
 
-(_The point of this section is to give the reader a useful example of how one would create something from scratch using the D3 wrapper_)
+The goal of the D3-wrapper is to do all of this messy C++/Javascript work behind the scenes so that users can focus on making awesome visualizations!
 
-(_Likely section headers here would be:_)
+We were able to test the wrapper using [Emily's Karma/Mocha/Chai system](https://devolab.org/javascript-testing-on-travis-ci-with-karma-and-mocha/) and [Alex's `TestRunner`](https://mmore500.com/waves/enrichment/week5.html) (which deals with the complexity of JavaScript code running out of sync with C++ code during testing). 
 
-### A Brief Intro to D3
-(_Keep this to a few sentences_)
+## How to use the D3-wrapper
+As a way to show off the new D3-wrapper, I deicded to create an Empirical web app that visualized how different sorting algorithms work. 
+A portion of the web app is at the top of this post, but the link to the full one is [here](https://github.com/Oliver-BE/sorting-algorithms-d3).
 
-### Getting Set Up
-(_Outline important set up steps, such as Emscripten compiler set up (I can link to the existing WAVES tutorial), getting the HTML in order, and how to layout the C++ code_)
+Below I'm going to explain the steps I took to create my web app.  
+TODO: better transition sentence above
 
-### Visualizing
-(_Here's where the code I wrote when making my visualizations (and motivations behind each step) will go_)
+###  How to use the D3-wrapper without knowing D3
+Before I get started, it's worth mentioning that part of our goal for this summer was to create stand alone visualizations that users without D3 knowledge could use. 
+While we ultimately ran out of time to do so (D3 is __huge__), we hope that [my](https://github.com/Oliver-BE/sorting-algorithms-d3) and [Elizabeth's](insert_link_here) web apps will provide a good foundation for the next person to pick up the project. 
 
-(_I'll walk the reader through any particular weirdness or trickiness with using the wrapper or D3 in general_)
+### A (super) brief intro to D3
+Even when pre-packaged visualizations are built into the D3-wrapper, the best way to have complete control is to start learning D3 (since the D3-wrapper attempts to mimic the syntax of D3.js).
+While I won't go in to any details here, below is a list of the most helpful resources I used to learn D3:
+* [A useful, brief intro](https://bost.ocks.org/mike/circles/) written by the creator of D3
+* [A multi-step tutorial](https://alignedleft.com/tutorials/d3/fundamentals) that walks you through everything D3 from the ground up
+  * Although slightly outdated, it's a great tutorial with useful motivation behind confusing steps that many others leave out
+* [An in depth guide to D3](https://www.d3indepth.com/) that dives into some of the D3 details and explains concepts with easy to understand examples 
+* [A gallery of D3 viualizations](https://www.d3-graph-gallery.com/index.html) that provides the step-by-step code needed to recreate each one
+  * I used this site religiously over the summer and it's a fantastic resource
+  * There's also [a good intro to D3](https://www.d3-graph-gallery.com/intro_d3js.html) hidden away here
 
-## How to Use the D3 Wrapper Without Knowing D3
-(_Here I'm going to talk about how to use the prepackaged barplot and/or scatterplot class that I created in making this web-app._) 
-(_These classes allow users who don't know D3 to avoid the messiness of figuring it all out, they can just pass in their data and go._)
 
-(_Include a point how in the future we hope to have more and more visualizations pre-packaged and ready to go, but that the best way to have complete control is to start learning D3_)
 
-(_Links for places to get started with learning D3 go here_)
+### Getting set up
+Getting set up with an Empirical project can be tricky at first, but luckily there are some great resources to make this as easy as possible.
 
-## Conclusion
-(_I'll rename this header later, but I figure I should include some sort of concluding paragraph/section_)
+I used this [cookiecutter](https://github.com/devosoft/cookiecutter-empirical-project) outline to build my project on top of Empirical. If you don't want all of the extra bells and whistles that come along with the cookiecutter outline, you can follow [this tutorial](https://mmore500.com/waves/tutorials/lesson04.html) that gets you set up with all the basics needed to write Empirical web code.  
+
+### Visualizing!!
+It's finally time to use the D3-wrapper and create a visualization! I started by... TODO: copy and paste code from web app here
+```c++
+// insert relevant code chunks here
+```
+
+## Next steps
+TODO:  
+Explain the priority of wrapping more modules  
+Explain how we need more tests for current modules (selection/transition/data)  
+Reiterate how nice it would be to have prepackaged visualizations (look at d3-old/visualizations.cc for inspiration)
+
+## Thank You!
+I'm so greatful to have been a WAVES participant this summer! 
+It was an incredible experience and I've learned a tremendous amount over such a short 10 weeks (I came in with no C++ and minimal web development knowledge).
+Everyone I interacted with was extremely welcoming and willing to help explain difficult C++ concepts and/or debug messy code. 
+
+TODO: Add a special shoutout to the other members of the D3-wrapper team (the wonderful Elizabeth, Emily, and Alex)
+
+>_This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). 
+Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation._
