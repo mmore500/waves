@@ -133,7 +133,7 @@ Within systematics and my models, phylogenetic diversity is defined as the numbe
 
 As tree depth increases, the overall phylogenetic diversity also increases. This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
-![Average Phylogenetic Diversity Over Time for All Three Models](DiversityOverTime.jpg)
+![Average Phylogenetic Diversity Over Time for All Three Models](/assets/BlogImages/DiversityOverTime.jpg)
 
 As seen in the graph above, the average phylogenetic diversity increases for all three models as the depth of the tree (number of generations) increases. 
 
@@ -318,7 +318,8 @@ When I used this process on the tree with mutations but with no pressure for div
 
 These tables show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is also around the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
 
-![PercentileGraph](PercentileGraph.jpg)
+
+![PercentileGraph](/assets/BlogImages/PercentileGraph.jpg)
 
 ## **Conclusion**
 
