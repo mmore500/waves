@@ -109,18 +109,21 @@ virtual void remove(size_t index, size_t segmentSize) override;
 ```
 
 ### Adding Entries In The Changelog
-Let's apply some basic mutations to the parent genome.  
+Let's apply some basic mutations to a parent genome.  
+> Insert Parent Genome picture here
 
 1. Overwrite mutation to site at index 2. The overwritten sites will have values of 11, 22, 33.  
+
 | Key | Site Value | Remove Offset  | Insert Offset |  
 | --- |:----------:|:--------------:| -------------:|  
 |  2  |     11     |       0        |       0       |    
 |  3  |     22     |       0        |       0       |    
 |  4  |     33     |       0        |       0       |  
 
-_Segment vector contains 3 site values. Starting at index 2, each site value will either be inserted in the Changelog or edited if it exists. Index key 2 does not exist, so it is inserted in the Changelog. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert offset are both set to zero. The steps are repeated for each site value in the segment vector._    
+> _Segment vector contains 3 site values. Starting at index 2, each site value will be either added in the Changelog or edited if it exists. Index key 2 does not exist, so it's inserted in the Changelog. Site Value is set to 44. Since this is an overwrite mutation, the size of the offspring genome is not affected. Remove Offset and Insert offset are both set to zero. The steps are repeated for each site value in the segment vector._    
 
 2. Insert mutation to site at index 1. The inserted site will have values of 44, 55, 66.  
+
 | Key | Site Value | Remove Offset  | Insert Offset |   
 | --- |:----------:|:--------------:| -------------:|  
 |  1  |     44     |       0        |       1       |    
@@ -130,20 +133,19 @@ _Segment vector contains 3 site values. Starting at index 2, each site value wil
 |  6  |     22     |       0        |       0       |    
 |  7  |     33     |       0        |       0       |  
 
-_Shift all sites in the Changelog to the right by 3, the number of sites inserted. Add entries to the Changelog map starting at key 1 with their res 
-_Add entry to Changelog map at key 1. Site Value is set to 55. Insert Offset is set to 1. Shift all remaining sites in changelog to the right by one._  
+_Shift all sites in the Changelog to the right by 3, the number of sites inserted. Site at key 2 becomes site at key 5. Add entries to the Changelog map starting at index 1 with their values. Because these are insert mutations, Insert Offset is set to 1. Offspring genome size increases by 3._  
  
-3. Remove mutation to site at index 4. Remove 2 sites.  
-| Key | Site Value | Remove Offset  | Insert Offset |  
-| --- |:----------:|:--------------:| -------------:|  
-|  1  |     55     |       0        |       1       |  
-|  3  |     11     |       0        |       1       |  
-|  4  |     22     |       0        |       1       |  
-|  5  |     33     |       0        |       1       |    
-|  6  |     44     |       0        |       0       |    
-|  7  |      0     |       2        |       0       |    
+3. Remove mutation to site at index 6. Remove 3 sites.   
 
-_Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed._  
+| Key | Site Value | Remove Offset  | Insert Offset |   
+| --- |:----------:|:--------------:| -------------:|  
+|  1  |     44     |       0        |       1       |    
+|  2  |     55     |       0        |       1       |    
+|  3  |     66     |       0        |       1       |   
+|  5  |     11     |       0        |       0       |    
+|  6  |      0     |       3        |       0       |   
+
+_Starting at index 6, sites 6 7 and 8 will be removed. Sites 6 and 7 exist in the Changelog. They are not insert or remove mutations so they can be easily removed. A new entry is added at site 6, with a Remove Offset of 3.
 
 Great! All mutations have been recorded. Much like this rendition of Celine Dion's _My Heart Will Go On_, 
 > Insert youtube video here
@@ -152,8 +154,9 @@ this genome~~'s heart~~ will go on to the next generation. We're going to use th
 
 ### Generating The Offspring Genome  
 A vector named modifiedSites contains the offspring genome. An iterator will loop through modifiedSites and populate the sites from either the changelog if they exist, or from the parent genome. 
-
-Talk about how the generateNewGenome() function works to create a new genome.  
+Talk about the changelog insert and remove offsets and how that affects the index in the parent genome
+> Insert code
+> Insert gif about reading changelog and the index in parent genome and offset genome
 
 # Time vs. Memory  
 ## Benchmarking  
