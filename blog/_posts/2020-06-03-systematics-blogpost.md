@@ -33,7 +33,7 @@ A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees ar
 
 _This is a diagram of a basic phylogenetic tree. In this diagram, the tree mutated 4 times (as shown by each divergence of the tree at each node). The final 5 populations each have unique genotypes._ 
 
-![Phylogenetic Tree Diagram](../../assets/BlogImages/PhylogeneticTreeCorrect.jpg)
+![Phylogenetic Tree Diagram](/assets/BlogImages/PhylogeneticTreeCorrect.jpg)
 
 --------------------------------------------------------------------------
 
