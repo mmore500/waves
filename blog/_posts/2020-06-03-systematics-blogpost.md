@@ -7,7 +7,8 @@ author: Abigail Wilson
 
 
 # Systematics Normalization
-I collaborated on this project with my mentors, Emily Dolson and Kate Skocelas. 
+I collaborated on this project with my mentors, Emily Dolson and Kate Skocelas.
+ 
 
 ## Goal: 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
