@@ -317,8 +317,14 @@ These tables show that the tree with no pressure for diversity outputs values th
 
 ## **Conclusion**
 
-This workshop was an incredible learning experience for me. I am so grateful to my mentors, Emily and Kate, for their patience and guidance. I came into this workshop looking to improve my scientific computing and programming skills, and I can safely say that this workshop has provided me with a unique and invaluable way to do so. Thank you WAVES for such an incredible opportunity! 
+Based on the results shown above, the current function in the systematics manager, FindPhyloMultipleGens(), is able to accurately return the percentile value of a given tree with a relatively high accuracy rate.
 
-This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+Considering the size of this project, the standard deviation observed in our findings does not raise much concern for validity. The results seen, being that tree with no pressure for diversity result in an average classification of **56.37** and trees with pressure to diversify have an average classification of **93.7**, we can conclude that this function provides an accurate classification of phylogenetic trees. 
+
+If I were to continue this. I would write several more tests to improve the validity of these findings. I would also find percentile classifications for a much larger sample size for a more accurate data set. 
+
+This workshop was an incredible learning experience for me and I am very excited that I was able to generate meaningful data and tools for the Empirical library. I came into this workshop looking to improve my scientific computing and programming skills, and I can safely say that this workshop has provided me with a unique and invaluable way to do so. I am so grateful to my mentors, Emily and Kate, for their patience and guidance throughout this process. Thank you to the entire WAVES team for their flexibility and commitment to this program and to their participants, especially in such an unprecedented situation. Thank you WAVES for such an incredible opportunity! 
+
+###### This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 
