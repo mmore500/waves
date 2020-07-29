@@ -40,7 +40,8 @@ Mutations can occur in genomes. If an organism progresses to the next generation
 ### Genome Class
 > Genomes are often large, and undergo _several_ mutations.  
 
-The Genome Class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! :tada: Offspring genomes are generated. Contiguous memory for genomes is assigned and written to at every next generation. If the frequency of generating offspring genomes was reduced, could the proposed method save **time** and **memory**?  
+The Genome Class in MABE sets aside a chunk of contiguous memory for every genome for the organisms that progress to the next generation. It then copies the parent genome over to the contiguous memory, applies the mutations, and voila! :tada: Offspring genomes are generated. Contiguous memory for genomes is assigned and written to at every next generation. If the frequency of generating offspring genomes was reduced, could the proposed method save  
+**time** and **memory**?  
 ![Loading Cat](https://i.imgur.com/6CLU31c.gif)  
 
 
@@ -110,36 +111,48 @@ virtual void remove(size_t index, size_t segmentSize) override;
 ### Adding Entries In The Changelog
 Let's apply some basic mutations to the parent genome.  
 
-1. Overwrite mutation to site at index 2. Site has a new value of 44.
-   | Key | Site Value | Remove Offset  | Insert Offset |  
-   | --- |:----------:|:--------------:| -------------:|  
-   |  2  |     44     |       0        |       0       |  
+1. Overwrite mutation to site at index 2. The overwritten sites will have values of 11, 22, 33.  
+| Key | Site Value | Remove Offset  | Insert Offset |  
+| --- |:----------:|:--------------:| -------------:|  
+|  2  |     11     |       0        |       0       |    
+|  3  |     22     |       0        |       0       |    
+|  4  |     33     |       0        |       0       |  
 
-   _Add entry to Changelog map at key 2. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert   offset are both set to zero._  
+_Segment vector contains 3 site values. Starting at index 2, each site value will either be inserted in the Changelog or edited if it exists. Index key 2 does not exist, so it is inserted in the Changelog. Site Value is set to 44. Since this is an overwrite mutation, the size of the parent genome is not affected. Remove Offset and Insert offset are both set to zero. The steps are repeated for each site value in the segment vector._    
 
-2. Remove mutation to site at index 4. Remove 2 sites.  
-   | Key | Site Value | Remove Offset  | Insert Offset |  
-   | --- |:----------:|:--------------:| -------------:|  
-   |  2  |     44     |       0        |       0       |  
-   |  4  |      0     |       2        |       0       |  
+2. Insert mutation to site at index 1. The inserted site will have values of 44, 55, 66.  
+| Key | Site Value | Remove Offset  | Insert Offset |   
+| --- |:----------:|:--------------:| -------------:|  
+|  1  |     44     |       0        |       1       |    
+|  2  |     55     |       0        |       1       |    
+|  3  |     66     |       0        |       1       |   
+|  5  |     11     |       0        |       0       |    
+|  6  |     22     |       0        |       0       |    
+|  7  |     33     |       0        |       0       |  
 
-   _Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed._  
+_Shift all sites in the Changelog to the right by 3, the number of sites inserted. Add entries to the Changelog map starting at key 1 with their res 
+_Add entry to Changelog map at key 1. Site Value is set to 55. Insert Offset is set to 1. Shift all remaining sites in changelog to the right by one._  
+ 
+3. Remove mutation to site at index 4. Remove 2 sites.  
+| Key | Site Value | Remove Offset  | Insert Offset |  
+| --- |:----------:|:--------------:| -------------:|  
+|  1  |     55     |       0        |       1       |  
+|  3  |     11     |       0        |       1       |  
+|  4  |     22     |       0        |       1       |  
+|  5  |     33     |       0        |       1       |    
+|  6  |     44     |       0        |       0       |    
+|  7  |      0     |       2        |       0       |    
 
-3. Insert mutation to site at index 1. The inserted site will have a value of 66  
-   | Key | Site Value | Remove Offset  | Insert Offset |  
-   | --- |:----------:|:--------------:| -------------:|  
-   |  1  |     66     |       0        |       1       |  
-   |  3  |     44     |       0        |       0       |  
-   |  5  |      0     |       2        |       0       |  
+_Add entry to Changelog map at key 4. Site Value remains empty, since this is a remove mutation. Remove Offset is set to 2, the number of sites removed._  
 
-   _Add entry to Changelog map at key 1. Site Value is set to 66. Insert Offset is set to 1, the number of sites inserted. Shift all remaining sites in changelog to the right by one._  
-   
 Great! All mutations have been recorded. Much like this rendition of Celine Dion's _My Heart Will Go On_, 
 > Insert youtube video here
 <!--- https://www.youtube.com/watch?v=X2WH8mHJnhM -->
 this genome~~'s heart~~ will go on to the next generation. We're going to use the changelog on the parent genome to generate the offspring genome. 
 
 ### Generating The Offspring Genome  
+A vector named modifiedSites contains the offspring genome. An iterator will loop through modifiedSites and populate the sites from either the changelog if they exist, or from the parent genome. 
+
 Talk about how the generateNewGenome() function works to create a new genome.  
 
 # Time vs. Memory  
