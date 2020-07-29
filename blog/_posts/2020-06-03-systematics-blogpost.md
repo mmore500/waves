@@ -7,7 +7,7 @@ author: Abigail Wilson
 
 
 # Systematics Normalization
-I collaborated on this project with my mentors Emily Dolson and Kate Skocelas. 
+I collaborated on this project with my mentors, Emily Dolson and Kate Skocelas. 
 
 ## Goal: 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
@@ -20,9 +20,17 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
 
  2. Creation of a tree that **mutates** and diverges in a non-random way
  3. Creation of a tree which accounts for **pressure for diversity** and **mutation**
- 4. Comparing trees from steps 3 and 4 with our null model 
+ 4. Comparing trees from steps 3 and 4 with each other and our null model 
 
  -------------------------------------------
+
+## Background
+
+### Phylogenetic Trees
+
+A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees are used to show evolutionary relationships between organisms. The tree begins with a single population and branches when a portion of the population mutates. Because of this, phylogenetic trees are a great way to show how a population has evolved from a single individual or group.
+
+--------------------------------------------------------------------------
 
 ### **Systematics** 
 
