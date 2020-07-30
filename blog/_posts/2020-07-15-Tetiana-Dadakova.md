@@ -7,13 +7,13 @@ author: Tetiana
 
 # Genome change logging using range map  
 
-MABE (Modular Agent-Based Evolution platform) [link to the introduction]
+For more information about MABE (Modular Agent-Based Evolution platform) see [this introduction](https://szendejo.github.io/waves/blog/Team-MABE.html).
 
 ## Genome Class
 
 ### Naïve Implementation
 
-The naïve implementation of the genome is using a vector data structure from teh standard library. The overwrite, insert and remove operations are, therefore, implemented using the standard library algorithms, for example:
+The naïve implementation of the genome is using a vector data structure from the standard library. The overwrite, insert and remove operations are, therefore, implemented using the standard library algorithms, specifically:
 ```cpp
 std::vector<std::byte> sites{std::byte(1), std::byte(2), std::byte(3)}; // this genome consists of three sites with values 1, 2 and 3
 
@@ -41,28 +41,29 @@ The advantages of such approach include:
 * Use of C++ standard library data structures -> code is simple, readable, expressive and optimized for performance  
   
 However, there are also disadvantages:  
-* Every generation, the whole genome (the whole sites vector) is copied and then the mutations are applied to it -> In a common situation of large genome and low mutation rates, it means copying a lot of values that didn't change  
-* The `insert()` and `erase()` algorithms gave linear time complexity with the lengh of the vector -> inefficient time  
+* Every generation, the whole genome (the whole `sites` vector) is copied and then the mutations are applied to it -> In a common situation of large genome and low mutation rates, it means copying a lot of values that didn't change  
+* The `insert()` and `erase()` algorithms have linear time complexity -> inefficient time  
   
+  **The goal of this project was to investigate if storing only the mutations (as opposed to storing the whole genome) would provide a better time and memory performance.**
 
 ### Optimized Implementation Using Change Log  
 
-One of the ways to improve the time complexity as well as optimize for memory use is to have a change log. The change log will keep track of the mutations that occurred between the parent and the offsprings over generations. This means only storing the differences between parent genome and it's offsprings as opposed to storing the whole genome for every offspring. This should be beneficial for the memory use and ideally 
+One of the ways to improve the time complexity as well as optimize for memory use is to have a change log. The change log will keep track of the mutations that occurred between the parent and the offsprings over generations. This means only storing the differences between parent genome and it's offsprings as opposed to storing the whole genome for every offspring. 
 
 As we've seen above, the algorithm has to support the following mutations:
 * Overwrite - the values at one or more sites is overwritten by a new value
 * Insert - one or more sites are inserted into at specific location
 * Remove - one or more sites are removed at specific location
 
-
 My implementation consists of two maps from the standard library:
-* **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between the site in teh offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
-* **segments_log** is implemented as std::unordered_map and it stores the segments that were inserted into the map dusing mutation
+* **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
+* **segments_log** is implemented as std::unordered_map and stores the segments that were inserted into the map dusing mutation
 
-Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory chunch of necessary sites.
+Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory block of necessary sites.
 
-One important detail of the change_log is that it doesn't store every every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion. I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
-For example, a change_log with entries `{3, -2}, {5, 3}` corresponds to the following mapping (this will be replace by a pretty figure):
+One important detail of the change_log is that it doesn't store every every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion (see example below). I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
+  
+For example, a change_log with entries `{3 : -2}, {5 : 3}` corresponds to the following mapping (this will be replace by a figure):
 ```
 3 : -2
 4 : -2
@@ -71,25 +72,30 @@ For example, a change_log with entries `{3, -2}, {5, 3}` corresponds to the foll
 7 : 3
 ...
 ```
+  
 To access any index, the following code can be used:
 ```cpp
---map.upper_bound(index); // upper bound returns the key, which is higher than index, -- moves to the previous key
+--map.upper_bound(index); // "upper_bound" returns the key, which is higher than the index, "--" moves to the previous key
 ```
+  
 In the case of the change_log above,  `--map.upper_bound(7);` will return 5, which is a key in the change_log map before 7
 
-Range map stores all the information about insertion and removal of sites, specifically, for each key it stores how many sites were removed and inserted up until this key. 
+For each key change_log stores how many sites were removed and inserted up until this key. 
 
+  
 #### Deletion mutaiton :hammer:
-For example, the following element in the change_log (all the examples below will be replaced by pretty gifs)
+For example, the following element in the change_log (all the examples below will be replaced by gifs)
 ```
 {3 : -2}
 ```
-would correspond to deletion of two sites at index 5. This element mean that all the values at indexes < 5 are at the same locations as in the parent genome; all the values at indexes >= 5 were shifted by two to the left due to the mutation, which deleted two sites. Therefore, in order to access the values at index 5 or above, we need to shift two sites to the right in parent genome / the index in the offspring genome would correspond to the (index + 2) in parent genome.
-Each key is the accumulation of all the changes up to corresponding index, for example, if two elements were removed at index 5 and then three elements were removed at index 10, the accumulated shift at index >= 10 will be -5:
+would correspond to deletion of two sites at index 5. This element means that all the values at indexes < 5 are at the same locations as in the parent genome; all the values at indexes >= 5 were shifted by two to the left due to the mutation, which deleted two sites. Therefore, in order to access the values at index 5 or above, we need to shift two sites to the right in the parent genome, specifically the index in the offspring genome would correspond to the (index + 2) in parent genome.
+
+Each key is the accumulation of all the changes up to corresponding index, for example, if **two** elements were removed at index 5 and then **three** elements were removed at index 10, the accumulated shift at index >= 10 will be -5:
 ```
 {3 : -2}
 {5 : -5}
 ```
+
 Using this change log and the parent genome, it is possible to reconstruct the offspring genome by relating a specific index in the offspring genome to the index in the parent genome, e.g. for deletion mutation
 ```
 parent genome:    {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
@@ -101,10 +107,12 @@ change_log:       {{3 : -2}} // deletion of two sites at index 5 and three sites
 // Can reconstruct the following offspring using the parent genome and change_log
 offspring genome: {0, 1, 2, 5, 6, 7, 8, 9, 10, 11}
 ```
-As you can see, the sites at indexes <3 are the same as in parent genome; to find the value at indexes >=3:
+
+As you can see, the values at indices <3 are the same as in parent genome; to find the value at indices >=3:
 ```
 offspring[index] = parent[index + 2]
 ```
+
 Now let's delete three sites at index 5:
 
 ```
@@ -118,6 +126,7 @@ change_log:       {{3 : -2}, {5 : -5}} // deletion of two sites at index 5 and t
 // Can reconstruct the following offspring using the parent genome and change_log
 offspring genome: {0, 1, 2, 5, 6, 10, 11}
 ```
+
 Now, for indexes:
 * < 3: same value as in the parent genome
 * \>= 3 && <5: offspring[index] = parent[index + 2]
@@ -136,6 +145,7 @@ E.g. updating our previous map with an insertion of 3 elements {20, 21, 22} at i
 {5 : {-5, false}
 {7 : {0, true}}
 ```
+
 Now we see that starting from index 7 there are no values in the parent genome, we need to store inserted values somewhere else. In addition to range map, another data structure is needed to store the inserted segments. I decided to use the std::unordered_map, as it allows constant time access by key. Let's see an example of how change_log and segments_log will work together to store mutations.
 ```
 // Change log (std::map)
@@ -146,6 +156,7 @@ Now we see that starting from index 7 there are no values in the parent genome, 
 // Segments log (std::unordered_map)
 {7 :  {20, 21, 22}}
 ```
+
 To figure out where the insertion ends, we could also store the shift, which corresponds to the indexes after the insertion (size of the segment can be used insted), e.g.:
 ```
 // change_log (std::map)
@@ -157,6 +168,7 @@ To figure out where the insertion ends, we could also store the shift, which cor
 // segments_log (std::unordered_map)
 {7 :  {20, 21, 22}}
 ```
+
 For index 10 and above, there had been accumulated 2 sites removals (two sites removal at index 3 and 3 sites removal at index 5 and 2 sites insertion ar index 10 => (-2) + (-3) + 3 = -2). To reconstruct the offspring genome now:
 ```
 parent genome:    {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
@@ -170,24 +182,32 @@ ind > 7: offspring[index] = parent[index + 2]
 offspring genome:    {0, 1, 2, 6, 7, 10, 11, 20, 21, 22, 12}
 ```
 
-#### Deletions and insertion mutation combined
+#### Overwrite mutation :hammer: :wrench:
+(Need to change the algorithm - will add description later)
+
+#### All mutations combined
+
+The algorithms for `overwrite()`, `insert()` and `remove()`,  are designed in a way to keep the change_log and insertions_log correct after every mutation, si that we can have randon access to a genome site and can reconstruct the offspring genome.
+
+(Here I will add pseudo code fot the above three methods)
 
 To sum up, change log consists of two data structures:
-* change_log - keeps track of shifts in indexes when the insertions or deletions happen -> std::map -> keping the keys in sorted order allows updating only the keys > current key; searching for key takes logarithmic time
-* segments_log - stores inserted segments -> std::unordered_map -> accessing a segment by key is constant time
+* change_log: keeps track of shifts in indexes when the insertions or deletions happen
+  * Implemented as std::map: keping the keys in sorted order allows updating only the keys > current key; searching for key takes logarithmic time
+* segments_log: stores inserted segments
+  * std::unordered_map: accessing a segment by key is constant time
 
-If we keep both change_log and segments_log updated after every insertion, we can have randon access to a genome site and can reconstruct the offspring genome.
-
-[Gif with algo example will go here]
 
 ### Algorithm performance
-The following figures will be updated with prettier ones, but the data will be mostly the same  
+(The following figures will be updated with prettier ones, the data might change, but my genome will still be slower)
 ![Comparison of performance for insert() method](/assets/TetianaBlogFigs/Insert.png){:style="width: 50%"}
 ![Comparison of performance for remove() method](/assets/TetianaBlogFigs/Remove.png){:style="width: 50%"}
 
 This section will include more figures and text regarding comparison with naive approach.
 This section will also include the analysis of time complexities in comparison with original algorithm. And memory calculation in comparison with original algorithm. 
 
+### Conclusion
+The naive algorithm is faster. (This section will also include more discussion on the calculations in previous section, when I finich them.)
 
 ### A brainstorm of potential improvements and optimizations :thinking:
 There are multiple things in the algorithm that could be optimized, from both algorithms and code perspective. Aome of them are:
@@ -200,14 +220,12 @@ There are multiple things in the algorithm that could be optimized, from both al
 I would like to thank my mentors:  
 [Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
 [Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}
-
+[Jose]
 as well as team members:
 [Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}
 [Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}
 [Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}
 [Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}
-
-
 
 ---
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
