@@ -181,9 +181,9 @@ If we keep both change_log and segments_log updated after every insertion, we ca
 [Gif with algo example will go here]
 
 ### Algorithm performance
-The following figures will be updated with prettier ones, but the data will be mostly the same
-![alt text]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 100%"}
-![alt text]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 100%"}
+The following figures will be updated with prettier ones, but the data will be mostly the same  
+![Comparison of performance for insert() method](/assets/TetianaBlogFigs/Insert.png)
+![Comparison of performance for remove() method](/assets/TetianaBlogFigs/Remove.png)
 
 This section will include more figures and text regarding comparison with naive approach.
 This section will also include the analysis of time complexities in comparison with original algorithm. And memory calculation in comparison with original algorithm. 
@@ -197,7 +197,7 @@ There are multiple things in the algorithm that could be optimized, from both al
   * Use change_log to check if there was a mutation within the requested sites. If not - return a pointer to the requested index in the parent genome
 
 ## Acknowlegements
-I would like to thank my mentors:
+I would like to thank my mentors:  
 [Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
 [Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}
 
