@@ -12,6 +12,8 @@ author: Elizabeth Carney
 _Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces :hammer_and_wrench:, doing nail art :nail_care:, and cooking :fried_egg:. To see some of my other projects, check out [my GitHub](https://github.com/elizabethcarney)!_
 {:class="next-to-headshot"}
 
+<hr/>
+
 **This summer I got to join the WAVES team to develop tools for the next version of [Avida-ED](https://avida-ed.msu.edu/).** It teaches students about evolution with visual, interactive experiments that run on Avida, a platform for digital evolution research. Avida creates digital organisms and lets them evolve based on various parameters like mutation rate; their survival is always dictated by natural selection, just like it is in the real world. Both softwares were created by the [Digital Evolution Lab](https://devolab.org/) at Michigan State University.
 
 As WAVES participants, our job was to develop new features for Avida-ED, or reinforce the tools that it uses. For my project, I focused on the development of a **mammoth** library that Avida is built on: [**Empirical**](https://github.com/devosoft/Empirical).
@@ -142,20 +144,28 @@ This work is supported through Active LENS: Learning Evolution and the Nature of
 ### Check out these wonderful people:
 {:id="check-out-people"}
 
+<hr/>
+
 ![Oliver Baldwin Edwards headshot]({{ site.baseurl }}/assets/elizabethcarney/square-Oliver-BE.png){:class="headshot"}
 **Oliver Baldwin Edwards** (collaborator), a senior at Amherst College studying Computer Science and Statistics. We worked on this wrapper project together, and he's an amazing programmer!  
 [Github](https://github.com/Oliver-BE) | [Twitter](https://twitter.com/oliver_be2)
 {:class="next-to-headshot"}
+
+<hr/>
 
 ![Emily Dolson headshot]({{ site.baseurl }}/assets/headshots/square-EmilyDolson.png){:class="headshot"}
 **Dr. Emily Dolson** (mentor), an Assistant Professor in Computer Science at Michigan State University starting this fall with formal training in Computer Science, Evolutionary Biology, and Ecology. She creates mind-blowing web apps and visualizations for her research!  
 [Github](https://github.com/EmilyDolson) | [Twitter](https://twitter.com/emilyldolson) | [Website](https://cse.msu.edu/~dolsonem/)
 {:class="next-to-headshot"}
 
+<hr/>
+
 ![Alex Lalejini headshot]({{ site.baseurl }}/assets/headshots/square-amlalejini.png){:class="headshot"}
 **Alex Lalejini** (mentor), a fifth year PhD student working with Dr. Charles Ofria in Computer Science and Ecology, Evolutionary Biology, & Behavior at Michigan State University. He is a super welcoming researcher and a brilliant coder!  
 [Github](https://github.com/amlalejini) | [Twitter](https://twitter.com/amlalejini) | [Website](https://lalejini.com/)
 {:class="next-to-headshot"}
+
+<hr/>
 
 ## Other resources to peruse:
 
