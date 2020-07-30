@@ -365,3 +365,13 @@
   href:
   role: other
   institution: Michigan State University
+
+- github: DanielJunghans
+  twitter:
+  nick: Daniel
+  first: Daniel
+  last: Junghans
+  bio: I am a undergraduate finance student in the Eli Broad College of Business. My research revolves around using novel machine learning techniques to better understand the invisible forces that influence the free market.
+  href: http://danieljunghans.com/
+  role: other
+  institution: Michigan State University
