@@ -182,8 +182,8 @@ If we keep both change_log and segments_log updated after every insertion, we ca
 
 ### Algorithm performance
 The following figures will be updated with prettier ones, but the data will be mostly the same  
-![Comparison of performance for insert() method](/assets/TetianaBlogFigs/Insert.png)
-![Comparison of performance for remove() method](/assets/TetianaBlogFigs/Remove.png)
+![Comparison of performance for insert() method](/assets/TetianaBlogFigs/Insert.png){:style="width: 50%"}
+![Comparison of performance for remove() method](/assets/TetianaBlogFigs/Remove.png){:style="width: 50%"}
 
 This section will include more figures and text regarding comparison with naive approach.
 This section will also include the analysis of time complexities in comparison with original algorithm. And memory calculation in comparison with original algorithm. 
