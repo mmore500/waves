@@ -179,7 +179,7 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 
 In all three of these models, phylogenetic diversity increases with tree depth (number of generations). This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
-![Average Phylogenetic Diversity Over Time for All Three Models]({{ site.baseurl }}/assets/BlogImages/DiversityOverTime.jpg){:style="width:100%;"}
+![Average Phylogenetic Diversity Over Time for All Three Models](/assets/BlogImages/DiversityOverTime.jpg)
 
 ### **Systematics** 
 
