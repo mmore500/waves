@@ -29,7 +29,7 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
 
 ### **Phylogenetic Trees**
 
-A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees are used to show evolutionary relationships between organisms. The tree begins with a single population and branches when a portion of the population mutates. Because of this, phylogenetic trees are a great way to show how a population has evolved from a single individual or group.
+A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees are used to show evolutionary relationships between organisms. The tree begins with a single population and branches when a portion of the population mutates. Because of this, phylogenetic trees are a great way to show how various species have evolved from a single individual or group.
 
 _This is a diagram of a basic phylogenetic tree. In this diagram, the tree mutated 4 times (as shown by each divergence of the tree at each node). The final 5 populations each have unique genotypes._ 
 
