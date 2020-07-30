@@ -64,7 +64,7 @@ int chooseOrg(vector<Organism> &currentGen, emp::Random &randNum){
 }
 ```
 
-Here the Empirical random number generator was utilized to ensure that results were actually random. Here, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
+Here the Empirical random number generator was utilized to ensure that results were actually random. First, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
 
 In the null model, each time a new organism was created it represented its own clade or taxon to ensure maximum diversity. 
 
@@ -316,10 +316,9 @@ When I used this process on the tree with mutations but with no pressure for div
 | 90 gens  |  99 | 96 |  99 |  99 |  98 |  98 | 86  | 99  | 99  |  99 |    97.2 |        4.049691346 |
 | 100 gens |  99 | 99 |  99 |  99 |  98 |  99 | 94  | 99  | 99  |  99 |    98.4 |        1.577621275 |
 
-These tables show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is also around the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
-
-
 ![Percentile Graph](/assets/BlogImages/PercentileGraph.jpg)
+
+These tables and graph show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is very close to the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
 
 ## **Conclusion**
 
