@@ -4,3 +4,5 @@ source 'https://rubygems.org'
 gem 'jemoji'
 
 gemspec
+
+gem 'jemoji'

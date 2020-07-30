@@ -101,7 +101,7 @@ As part of their work, participants will make contributions directly to existing
 
 We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Digital Evolution Laboratory](https://devolab.org/) at Michigan State University.
 
-![group headshot collage]({{ site.baseurl }}/assets/headshot-collage.jpg){:width="100%"}
+![group headshot collage]({{ site.baseurl }}/assets/headshot-collage.jpg){:style="width:100%;"}
 
 ### Primary Investigators
 
@@ -110,7 +110,7 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
   * Ecology, Evolutionary Biology and Behavior
   * Director, BEACON Center for the Study of Evolution in Action
   * President, International Society for Artificial Life
-  * [ofria@msu.edu](ofria@msu.edu)
+  * [ofria@msu.edu](mailto:ofria@msu.edu)
   * Github: [https://github.com/mercere99](https://github.com/mercere99)
 * [Dr. Robert T. Pennock](https://msu.edu/~pennock5/)
   * Professor
@@ -127,7 +127,7 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
   * Graduate Student
   * Computer Science and Engineering
   * Ecology, Evolutionary Biology, and Behavior
-  * [mmore500@msu.edu](mmore500@msu.edu)
+  * [mmore500@msu.edu](mailto:mmore500@msu.edu)
   * Github: [https://github.com/mmore500](https://github.com/mmore500)
 
 ### Student Project Coordinators
@@ -147,4 +147,3 @@ We are members of the [Avida-ED Project](https://avida-ed.msu.edu/) and the [Dig
 * Jose Hernandez
 * Kate Skocelas
 * [Matthew Andres Moreno](https://mmore500.com)
-
