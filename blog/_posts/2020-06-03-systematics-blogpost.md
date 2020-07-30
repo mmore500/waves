@@ -46,12 +46,15 @@ Phylogenetic diversity is a measure of biodiversity in a population or set of sp
 
 We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness, however, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
 
+<<<<<<< HEAD
 As tree depth increases, the overall phylogenetic diversity also increases. This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
 ![Average Phylogenetic Diversity Over Time for All Three Models](/assets/BlogImages/DiversityOverTime.jpg)
 
 As seen in the graph above, the average phylogenetic diversity increases for all three models as the depth of the tree (number of generations) increases. 
 
+=======
+>>>>>>> 8138827dad31dfa462d93a462b17cc3ad6680861
 --------------------------------------------------------------------------
 
 ### **The Null Model**
