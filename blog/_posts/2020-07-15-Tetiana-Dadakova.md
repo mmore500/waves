@@ -7,28 +7,45 @@ author: Tetiana
 
 # Genome change logging using range map  
 
-(Short introduction to the MABE and Genomes)
+MABE (Modular Agent-Based Evolution platform) [link to the introduction]
 
-## Current Genome Class
+## Genome Class
 
-(Description of Genome class methods will be added here)
+### Naïve Implementation
 
-### How it is implemented
-The Genome class is implemented as a vector of values, where the insert and remove mutations are using the corresponding standard library algorithms on vector.
+The naïve implementation of the genome is using a vector data structure from teh standard library. The overwrite, insert and remove operations are, therefore, implemented using the standard library algorithms, for example:
+```cpp
+std::vector<std::byte> sites{std::byte(1), std::byte(2), std::byte(3)}; // this genome consists of three sites with values 1, 2 and 3
 
-### Advantages and disadvantages of current implementation  
+// Insert mutation: a segment is inserted at index
+virtual void insert(size_t index, const std::vector<std::byte>& segment) override {
+    sites.insert(sites.begin() + index, segment.begin(), segment.end());
+}
+
+// Remove mutation: segmentSize sites are removed atarting at index 
+virtual void remove(size_t index, size_t segmentSize) override {
+    sites.erase(sites.begin() + index, sites.begin() + index + segmentSize);
+}
+
+virtual void overwrite(size_t index, const std::vector<std::byte>& segment) override {
+    for (size_t i(0); i < segment.size(); i++) {
+        sites[index + i] = segment[i];
+    }
+}
+```
+
+The advantages of such approach include:
+* All the sites are in contiguous memory -> fast operations due to cache-friendliness (e.g. random access or iterations)  
+* Use of C++ standard library data structures -> code is simple, readable, expressive and optimized for performance  
   
-Advantages:
-* Simple, readable, safe code
-* Contiguous in memory - cache-friendly
-* Site access time complexity is constant    
+However, there are also disadvantages:  
+* Every generation, the whole genome (the whole sites vector) is copied and then the mutations are applied to it -> In a common situation of large genome and low mutation rates, it means copying a lot of values that didn't change  
+* The `insert()` and `erase()` algorithms gave linear time complexity with the lengh of the vector -> inefficient time  
+  
 
-Disadvantages:
-* The whole genome is copied each generation. In a common situation of large genome and low mutation rates, it means copying a lot of values that didn't change
-* Insertion and deletion are slow (linear time complexity), because new memory has to be allocated
+### Optimized Implementation Using Change Log  
 
-## New Genome 1.0 Class
-One of the ways to improve the time complexity as well as optimize for memory use is to have a change log. The change log will keep track of the mutations that occurred between the parent and the offsprings over generations. This means only storing the differences between parent genome and it's offsprings as opposed to storing the whole genome for every offspring
+One of the ways to improve the time complexity as well as optimize for memory use is to have a change log. The change log will keep track of the mutations that occurred between the parent and the offsprings over generations. This means only storing the differences between parent genome and it's offsprings as opposed to storing the whole genome for every offspring.  
 
 The algorithm has to support the following mutations:
 * overwrite - the values at one or more sites is overwritten by a new value
@@ -94,8 +111,8 @@ offspring genome: {0, 1, 2, 5, 6, 10, 11}
 ```
 Now, for indexes:
 * < 3: same value as in the parent genome
-* >= 3 && <5: offspring[index] = parent[index + 2]
-* >= 5: offspring[index] = parent[index + 5]
+* \>= 3 && <5: offspring[index] = parent[index + 2]
+* \>= 5: offspring[index] = parent[index + 5]
 
 
 
@@ -153,6 +170,7 @@ To sum up, change log consists of two data structures:
 
 If we keep both change_log and segments_log updated after every insertion, we can have randon access to a genome site and can reconstruct the offspring genome.
 
+[Gif with algo example will go here]
 
 ### Algorithm details
 More details will be added on how the overwrite, insert, remove methods are implemented. This section will also include the analysis of time complexities and comparison with original algorithm. This section will also include animated explanation.
