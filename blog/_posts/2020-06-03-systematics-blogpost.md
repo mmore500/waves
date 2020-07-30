@@ -42,9 +42,9 @@ A null model is a randomly generated model of an object or structure that is not
 
 ### **Phylogenetic Diversity**
 
-We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness, however, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
+Phylogenetic diversity is a measure of biodiversity in a population or set of species. In this project, phylogenetic diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. Extant taxa are groups of organisms that are still present in the tree, and have not died out (become extinct). 
 
-Within systematics and my models, phylogenetic diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. 
+We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness, however, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
 
 As tree depth increases, the overall phylogenetic diversity also increases. This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
@@ -182,6 +182,10 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
     return parentNum;
 }
 ```
+
+In all three of these models, phylogenetic diversity increases with tree depth (number of generations). This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
+
+![Average Phylogenetic Diversity Over Time for All Three Models]({{ site.baseurl }}/assets/BlogImages/DiversityOverTime.jpg){:style="width:100%;"}
 
 ### **Systematics** 
 
