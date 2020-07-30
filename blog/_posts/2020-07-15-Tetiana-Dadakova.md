@@ -59,7 +59,7 @@ My implementation consists of two maps from the standard library:
 * **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between the site in teh offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
 * **segments_log** is implemented as std::unordered_map and it stores the segments that were inserted into the map dusing mutation
 
-Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it
+Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory chunch of necessary sites.
 
 One important detail of the change_log is that it doesn't store every every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion. I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
 For example, a change_log with entries `{3, -2}, {5, 3}` corresponds to the following mapping (this will be replace by a pretty figure):
@@ -79,7 +79,7 @@ In the case of the change_log above,  `--map.upper_bound(7);` will return 5, whi
 
 Range map stores all the information about insertion and removal of sites, specifically, for each key it stores how many sites were removed and inserted up until this key. 
 
-#### Deletion mutaiton and change_log
+#### Deletion mutaiton :hammer:
 For example, the following element in the change_log (all the examples below will be replaced by pretty gifs)
 ```
 {3 : -2}
@@ -124,7 +124,7 @@ Now, for indexes:
 * \>= 5: offspring[index] = parent[index + 5]
 
 
-#### Insertion mutation and change_log
+#### Insertion mutation :wrench:
 Each value in the change_log map corresponds to the index shift relative to the parent genome. The values of the newly inserted sites do not have any relation to the parent genome, therefore, the values for such keys could be arbitrary, as long as it can't be confused with shift. In order to not confuse it with shift, an additional variable can be added to the map, a boolean, which specifies whether key is an insertion:
 ```
 {key : {val, inseet}}
@@ -170,7 +170,7 @@ ind > 7: offspring[index] = parent[index + 2]
 offspring genome:    {0, 1, 2, 6, 7, 10, 11, 20, 21, 22, 12}
 ```
 
-#### Deletions and insertion mutation and change_log
+#### Deletions and insertion mutation combined
 
 To sum up, change log consists of two data structures:
 * change_log - keeps track of shifts in indexes when the insertions or deletions happen -> std::map -> keping the keys in sorted order allows updating only the keys > current key; searching for key takes logarithmic time
@@ -180,13 +180,21 @@ If we keep both change_log and segments_log updated after every insertion, we ca
 
 [Gif with algo example will go here]
 
-### Algorithm details
-More details will be added on how the overwrite, insert, remove methods are implemented. This section will also include the analysis of time complexities and comparison with original algorithm. This section will also include animated explanation.
+### Algorithm performance
+The following figures will be updated with prettier ones, but the data will be mostly the same
+![alt text]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 100%"}
+![alt text]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 100%"}
 
-### Benchmarking compared with current Genome
-Benchmarking was performed using Catch2 testing framework. The performance results will be shown here
-Calucate memory use.
+This section will include more figures and text regarding comparison with naive approach.
+This section will also include the analysis of time complexities in comparison with original algorithm. And memory calculation in comparison with original algorithm. 
 
+
+### A brainstorm of potential improvements and optimizations :thinking:
+There are multiple things in the algorithm that could be optimized, from both algorithms and code perspective. Aome of them are:
+* As the benchmarking graph shows, `insert()` function is currently the bottleneck
+* Currelty, the reconstruction algorithm will always reconstruct a full offspring genome, which is very inefficient, as sometimes only a part of genome is needed. Couple of improvement could be dome here:
+  * Reconstruct only the sites that are requested
+  * Use change_log to check if there was a mutation within the requested sites. If not - return a pointer to the requested index in the parent genome
 
 ## Acknowlegements
 I would like to thank my mentors:
