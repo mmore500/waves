@@ -7,16 +7,15 @@ author: Abigail Wilson
 
 
 # Systematics Normalization
-I collaborated on this project with my mentors, Emily Dolson and Kate Skocelas.
-
+I collaborated on this project with my mentors, Emily Dolson (emilyldolson.com) and Kate Skocelas (https://github.com/kgskocelas). 
 
 ## Goal: 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
 
 #### Motivation: 
-Within Empirical as it is now, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically significant data in terms of comparison. This project aims to solve this. 
+Within the Empirical library (C++ tools for the Avida-ED project) and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically significant data in terms of comparison. This project aims to solve this. _why is it hard to compare?_ 
 
-#### Steps: 
+#### Experiment Outline 
  1. Creation of a **null model** of a phylogenetic tree 
 
  2. Creation of a tree that **mutates** and diverges in a non-random way
@@ -29,11 +28,11 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
 
 ### **Phylogenetic Trees**
 
-A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees are used to show evolutionary relationships between organisms. The tree begins with a single population and branches when a portion of the population mutates. Because of this, phylogenetic trees are a great way to show how various species have evolved from a single individual or group.
+A phylogenetic tree is a commonly used abstraction or way of thinking about evolutionary relationships in biology. Phylogenetic trees are used to show evolutionary relationships between organisms. The tree begins with a single population and branches when a portion of the population mutates. Because of this, phylogenetic trees are a great way to show how various species have evolved from a single individual or group.
 
-_This is a diagram of a basic phylogenetic tree. In this diagram, the tree mutated 4 times (as shown by each divergence of the tree at each node). The final 5 populations each have unique genotypes._ 
+_This is a diagram of a basic phylogenetic tree. In this diagram, the population mutated 4 times (as shown by each divergence of the tree at each node). The final 5 taxa at the end of the tree each have unique genotypes and are considered distinct from one another._ 
 
-![Phylo Tree Diagram](/assets/BlogImages/PhylogeneticTreeCorrect.jpg)
+![Phylo Tree Diagram](/assets/BlogImages/PhyloTreeDiagram.jpg)
 
 ### **Null Models**
 
@@ -87,16 +86,16 @@ The following code shows how the organism class handles mutations. In the model 
 ```c++
 class Organism {
 public:
-    int genotype = 0;
+    int genotype = 0; //default genotype is 0
 
     Organism() {
     }
 
-    Organism(int _genotype) {
+    Organism(int _genotype) { //genotype is inherited 
         genotype = _genotype;
     }
 
-    int MutateGenotype(emp::Random &RandNum) {
+    int MutateGenotype(emp::Random &RandNum) { //determines if genotype will mutate
 
         double randMutation = RandNum.GetDouble(0, 1);
 
@@ -115,21 +114,19 @@ public:
 
 **Pressure for Diversity**
 
-A goal of this project was to show that when we added a constraint that would incentivize the tree to branch more frequently, the overall diversity would increase. The way that this was accomplished was by adding a pressure for the tree to diversify by favoring rarer genotypes. 
+A goal of this project was to show that when we added a constraint that would incentivize the tree to branch more frequently, the overall diversity would increase. This goal arose from a need to show that our normalization technique could correctly and consistently identify situations in which there were selective pressures placed on the tree, unlike our mutated or null models. The way that this was accomplished was by adding a pressure for the tree to diversify by favoring rarer genotypes. 
 
 In the model that uses pressure for diversity and mutations, genotypes that are rarer are favored for reproduction over more common genotypes. When rarer genotypes are chosen, diversity increases throughout the tree. We referred to this as fitness which was calculated in the following code: 
 
 ```c++
 void calcFitness(vector<Organism> &currentGen, vector<double> &fitnessVect, emp::Random &randNum) {
     fitnessVect.resize(0);
-
     vector<int> fitnessCalc;
-
     fitnessCalc.reserve(currentGen.size());
+
     for (int i = 0; i < currentGen.size(); i++) {
         fitnessCalc.push_back(currentGen[i].genotype);
     }
-
     map<int, int> CountMap;
 
     for (int j = 0; j < fitnessCalc.size(); j++) {
@@ -137,12 +134,10 @@ void calcFitness(vector<Organism> &currentGen, vector<double> &fitnessVect, emp:
             CountMap[fitnessCalc[j]]++;
         } else {
             CountMap[fitnessCalc[j]] = 1;
-
         }
     }
-
     for(int k = 0; k < fitnessCalc.size(); k++){
-        fitnessVect.push_back(1.0/CountMap[fitnessCalc[k]]);
+        fitnessVect.push_back(1.0/CountMap[fitnessCalc[k]]); //calculates fitness by using 1/genotype occurrence
     }
 }
 ```
@@ -162,15 +157,10 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
     const double fit_pos = randNum.GetDouble(fitness_index.GetWeight());
     size_t parent_id = fitness_index.Index(fit_pos);
 
-    //cout << "FITNESS VECTOR VALUES: " << endl;
-
     for(int pos = 0; pos < fitnessVect.size(); pos++){
         //cout << fitnessVect[pos] << " " << endl;
     }
-
     parentNum = parent_id;
-
-    cout << "PARENT NUM AFTER CHOOSEORGDIVERSITY: " << parentNum << endl;
     cout << "fitness val at parent_id: " << fitnessVect[parent_id] << endl;
 
     return parentNum;
@@ -183,7 +173,7 @@ In all three of these models, phylogenetic diversity increases with tree depth (
 
 ### **Systematics** 
 
-Systematics.h is file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction -- using genotypes, phenotypes, etc, to keep track of lineage. 
+Systematics.h is a file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction -- using genotypes, phenotypes, etc, to keep track of lineage. 
 
 This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could find out how their own trees compare. 
 
@@ -191,7 +181,20 @@ Within the systematics manager, I added two functions to use when calculating ph
 
 The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. 
 
-**_in the final draft the included code will be simplified and commented more_**
+tree_percentiles.csv contains data that looks like this:
+
+0, 19.0
+1, 22.960000000000036
+2, 27.0
+3, 32.0
+4, 36.0
+5, 39.0
+...
+98, 160.0
+99, 168.0
+100, 201.0
+
+The leftmost number refers to the percentile. The second number is the corresponding phylogenetic diversity value. 
 
 ```c++
   int FindPhyloData(){
@@ -206,8 +209,8 @@ The first function, ```FindPhyloData()```, can be used if a user wants to compar
     for (int i = 0; i < percentile_data.size() - 1; i++){ 
 
         if( (PhyloDiversity >= percentile_data[i][1]) && (PhyloDiversity < percentile_data[i + 1][1])){ 
-           std::cout << "Phylogenetic Diversity (recorded in systematics): " << PhyloDiversity << std::endl; 
-           std::cout << "phylo diversity is in between: " << percentile_data[i][1] << " and " << percentile_data[i + 1][1] << std::endl; 
+           //std::cout << "Phylogenetic Diversity: " << PhyloDiversity << std::endl; 
+           //std::cout << "phylo diversity is in between: " << percentile_data[i][1] << " and " << percentile_data[i + 1][1] << std::endl; 
            std::cout << PhyloDiversity << " is in percentile: " << percentile_data[i][0] << std::endl;       
 
            percentile = percentile_data[i][0];
@@ -217,57 +220,52 @@ The first function, ```FindPhyloData()```, can be used if a user wants to compar
       }
       return percentile; 
     }
+
 ```
 
-The following function is used for trees that contain pressure for diversity or mutations. It can also be used for multiple generations (10 through 100 gens). When called, it takes an argument of the number of generations. This corresponds to a line in OrgGenotypePercentiles.csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
+The following function, ``GetPhylogeneticDiversityNormalize()``, is used for trees that contain pressure for diversity or just mutations. It can also be used for multiple generations (10 through 100 gens). When called, it takes an argument for the number of generations and filename. This corresponds to a line in the specified csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
 
-_Right now, this function is used for testing our findings and prints the data to PercentileDataFullNoPressure.csv. This will probably be changed in the final product._
+If this function is used with no arguments, it will only return the phylogenetic diversity value where it is called. If you want to find the percentile value associated with your phylogenetic diversity, you need to add two arguments -- the number of generations in your tree and the filename that you want to compare with. If you want to receive a percentile value from the file without pressure for diversity, the filename argument should be replaced with ``"TensChooseOrgGenotype.csv"``. If you want to compare with pressure for diversity values, you can use ``TensChooseOrgDiversityGenotype.csv``. You can use either file, regardless of tree type.
+
 
 ```c++
-    void FindPhyloMultipleGens(int GenValueRaw){ 
-      int GenValue = ((GenValueRaw / 10) - 1); 
-      int percentile; 
-      bool percentFound = false; 
+  int GetPhylogeneticDiversityNormalize(int Generation = 0, std::string filename = ""){ 
+    int GenValue = ((Generation / 10) - 1); //indexes from 0, 100 generations would correspond to the 10th line in the csv
+    //int percentile; 
+    bool percentFound = false; 
+    int PhylogeneticDiversity = ancestor_taxa.size() + active_taxa.size() - 1; 
 
-        emp::File generation_percentiles("OrgGenotypePercentiles.csv");
-        emp::vector< emp::vector<double> >percentile_data2 = generation_percentiles.ToData<double>(',');
+    if(filename == ""){ 
+      //std::cout << "Phylogenetic Diversity is " << PhylogeneticDiversity << std::endl; 
+      return PhylogeneticDiversity; 
+    } else{ 
 
-      int PhyloDiversity = GetPhylogeneticDiversity(); 
-      int lastval = size(percentile_data2[GenValue]) - 1; 
-      std::cout << "Last element of array is: " << percentile_data2[GenValue][lastval] << std::endl;
+      emp::File generation_percentiles(filename); //opens file
+      emp::vector< emp::vector<double> >percentile_data = generation_percentiles.ToData<double>(','); //turns file contents into vector
 
-      std::fstream fs; 
-      fs.open("PercentileDataFullNoPressure.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+          for(int j = 0; j <= percentile_data[GenValue].size() - 2; j++){ //searches through vector for slot where phylo diversity fits 
 
-        //for(int i = 0; i < percentile_data2.size() - 1; i++){ 
-          for(int j = 0; j <= percentile_data2[GenValue].size() - 2; j++){
-          
-          if((percentile_data2[GenValue][j] <= PhyloDiversity) && (percentile_data2[GenValue][j + 1] > PhyloDiversity)){
-            std::cout << "phylo diversity is in between: " << percentile_data2[GenValue][j] << "and " << percentile_data2[GenValue][j+1] << std::endl;
-            std::cout << "I is equal to: " << GenValue << std::endl; 
-            std::cout << "J is equal to: " << j << std::endl;
-
-            std::cout << "The Phylogentic diversity value " << PhyloDiversity << " is in the " << j << " percentile, in the " << ((GenValue + 1)* 10) << " generation" << std::endl;  
-
-            fs << ((GenValue + 1)* 10) << "," << j << std::endl; 
+          if((percentile_data[GenValue][j] <= PhylogeneticDiversity) && (percentile_data[GenValue][j + 1] > PhylogeneticDiversity)){
+            std::cout << "phylogenetic diversity is in between: " << percentile_data[GenValue][j] << "and " << percentile_data[GenValue][j+1] << std::endl;
+            std::cout << "The phylogenetic diversity value " << PhylogeneticDiversity << " is in the " << j << " percentile, in the " << ((GenValue + 1)* 10) << " generation" << std::endl;
+            return j;   
 
             percentFound = true; 
           }
-          
-          if(PhyloDiversity >= percentile_data2[GenValue][lastval]){ 
-              fs << ((GenValue + 1) * 10) << "," << 100 << std::endl; 
-              fs.close(); 
-            }
-
-        if(percentFound == true){ 
+          if(percentFound == true){ 
             break; 
           }
-          }
-          if(percentFound == false){ 
-            std::cout << "PHYLO DIVERSITY IS IN 100TH PERCENTILE" << std::endl; 
-           }
         }
+      }
+      return 100; 
+   }
 ```
+
+### Using this function: 
+1. Call ``GetPhylogeneticDiversityNormalize()`` in your tree-generating program. 
+2. Use an argument for the number of generations your tree has.
+3. Choose a file for comparison: ``"TensChooseOrgGenotype.csv"`` or ``TensChooseOrgDiversityGenotype.csv``.
+4. Your function call should look something like this: ``sys.GetPhylogeneticDiversityNormalize(10, "TensChooseOrgGenotype.csv");``
 
 ------------------------- 
 ## **Method**
@@ -282,7 +280,7 @@ To incorporate this data into the systematics manager, I imported the percentile
 
 After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify each tree's final phylogenetic diversity after each set of generations. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. 
 
-When I used this process on the tree with mutations but with no pressure for diversity, I would expect to see values in the 50th percentile range. However, if repeated for the tree with a pressure for diversity, I would then expect values near the 100th percentile. 
+When I used this process on the tree with mutations but with no pressure for diversity, I would expect to see values in the 50th percentile range. However, if repeated for the tree with a pressure for diversity, I would then expect to see values significantly higher than the 50th percentile. 
 
 ## **Results**
 
@@ -318,11 +316,13 @@ When I used this process on the tree with mutations but with no pressure for div
 
 ![Percentile Graph](/assets/BlogImages/PercentileGraph.jpg)
 
-These tables and graph show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is very close to the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
+_This graph displays the average percentile classification and the standard deviation for each point (the error bars)._
+
+These tables and graph show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is very close to the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees.
 
 ## **Conclusion**
 
-Based on the results shown above, the current function in the systematics manager, FindPhyloMultipleGens(), is able to accurately return the percentile value of a given tree with a relatively high accuracy rate.
+Based on the results shown above, the current function in the systematics manager, GetPhylogeneticDiversityNormalize(), is able to correct for the effect of tree size and return the percentile value of a given tree. 
 
 Considering the size of this project, the standard deviation observed in our findings does not raise much concern for validity. The results seen, being that tree with no pressure for diversity result in an average classification of **56.37** and trees with pressure to diversify have an average classification of **93.7**, we can conclude that this function provides an accurate classification of phylogenetic trees. 
 
