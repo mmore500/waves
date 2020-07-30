@@ -17,6 +17,13 @@ The naïve implementation of the genome is using a vector data structure from te
 ```cpp
 std::vector<std::byte> sites{std::byte(1), std::byte(2), std::byte(3)}; // this genome consists of three sites with values 1, 2 and 3
 
+// Overwrite sites startin at index with values from segment
+virtual void overwrite(size_t index, const std::vector<std::byte>& segment) override {
+    for (size_t i(0); i < segment.size(); i++) {
+        sites[index + i] = segment[i];
+    }
+}
+
 // Insert mutation: a segment is inserted at index
 virtual void insert(size_t index, const std::vector<std::byte>& segment) override {
     sites.insert(sites.begin() + index, segment.begin(), segment.end());
@@ -27,11 +34,6 @@ virtual void remove(size_t index, size_t segmentSize) override {
     sites.erase(sites.begin() + index, sites.begin() + index + segmentSize);
 }
 
-virtual void overwrite(size_t index, const std::vector<std::byte>& segment) override {
-    for (size_t i(0); i < segment.size(); i++) {
-        sites[index + i] = segment[i];
-    }
-}
 ```
 
 The advantages of such approach include:
@@ -45,16 +47,22 @@ However, there are also disadvantages:
 
 ### Optimized Implementation Using Change Log  
 
-One of the ways to improve the time complexity as well as optimize for memory use is to have a change log. The change log will keep track of the mutations that occurred between the parent and the offsprings over generations. This means only storing the differences between parent genome and it's offsprings as opposed to storing the whole genome for every offspring.  
+One of the ways to improve the time complexity as well as optimize for memory use is to have a change log. The change log will keep track of the mutations that occurred between the parent and the offsprings over generations. This means only storing the differences between parent genome and it's offsprings as opposed to storing the whole genome for every offspring. This should be beneficial for the memory use and ideally 
 
-The algorithm has to support the following mutations:
-* overwrite - the values at one or more sites is overwritten by a new value
-* insert - one or more sites are inserted into at specific location
-* remove - one or more sites are removed at specific location
+As we've seen above, the algorithm has to support the following mutations:
+* Overwrite - the values at one or more sites is overwritten by a new value
+* Insert - one or more sites are inserted into at specific location
+* Remove - one or more sites are removed at specific location
 
-### Change logging using range map
-Range map is implemented based on std::map data structure. It allows mapping the site index in current genome to the site index in parent genome by storing the changes during mutations. Each key in the range map represents all the keys in the range from the current key until the nex key. This allows decreasing the memory footprint of changes log.
-E.g. range map with entries `{3, -2}, {5, 3}` corresponds to the following mapping:
+
+My implementation consists of two maps from the standard library:
+* **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between the site in teh offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
+* **segments_log** is implemented as std::unordered_map and it stores the segments that were inserted into the map dusing mutation
+
+Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it
+
+One important detail of the change_log is that it doesn't store every every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion. I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
+For example, a change_log with entries `{3, -2}, {5, 3}` corresponds to the following mapping (this will be replace by a pretty figure):
 ```
 3 : -2
 4 : -2
@@ -63,15 +71,16 @@ E.g. range map with entries `{3, -2}, {5, 3}` corresponds to the following mappi
 7 : 3
 ...
 ```
-To access any key, the following code can be used:
+To access any index, the following code can be used:
+```cpp
+--map.upper_bound(index); // upper bound returns the key, which is higher than index, -- moves to the previous key
 ```
---map.upper_bound(key);
-```
+In the case of the change_log above,  `--map.upper_bound(7);` will return 5, which is a key in the change_log map before 7
 
 Range map stores all the information about insertion and removal of sites, specifically, for each key it stores how many sites were removed and inserted up until this key. 
 
 #### Deletion mutaiton and change_log
-For example, the following element in the change_log
+For example, the following element in the change_log (all the examples below will be replaced by pretty gifs)
 ```
 {3 : -2}
 ```
@@ -113,7 +122,6 @@ Now, for indexes:
 * < 3: same value as in the parent genome
 * \>= 3 && <5: offspring[index] = parent[index + 2]
 * \>= 5: offspring[index] = parent[index + 5]
-
 
 
 #### Insertion mutation and change_log
@@ -177,4 +185,22 @@ More details will be added on how the overwrite, insert, remove methods are impl
 
 ### Benchmarking compared with current Genome
 Benchmarking was performed using Catch2 testing framework. The performance results will be shown here
+Calucate memory use.
+
+
+## Acknowlegements
+I would like to thank my mentors:
+[Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
+[Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}
+
+as well as team members:
+[Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}
+[Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}
+[Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}
+[Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}
+
+
+
+---
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
