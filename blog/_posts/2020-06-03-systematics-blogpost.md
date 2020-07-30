@@ -21,13 +21,13 @@ Within Empirical as it is now, there is not a good way to compare phylogenetic t
 
  2. Creation of a tree that **mutates** and diverges in a non-random way
  3. Creation of a tree which accounts for **pressure for diversity** and **mutation**
- 4. Comparing trees from steps 3 and 4 with each other and our null model 
+ 4. Comparing trees from steps 2 and 3 with each other and the null model 
 
  -------------------------------------------
 
-## Background
+## Background and Definitions 
 
-### Phylogenetic Trees
+### **Phylogenetic Trees**
 
 A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees are used to show evolutionary relationships between organisms. The tree begins with a single population and branches when a portion of the population mutates. Because of this, phylogenetic trees are a great way to show how a population has evolved from a single individual or group.
 
@@ -35,95 +35,10 @@ _This is a diagram of a basic phylogenetic tree. In this diagram, the tree mutat
 
 ![Phylo Tree Diagram]({{ site.baseurl }}/assets/BlogImages/PhylogeneticTreeCorrect.jpg){:style="width:100%;"}
 
---------------------------------------------------------------------------
+### **Null Models**
 
-### **Systematics** 
+A null model is a randomly generated model of an object or structure that is not constrained by its typical characteristics, and is instead based on the randomization of data and structure. A null model attempts to achieve the most unbiased model possible. 
 
-Systematics.h is file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics allows a user to create phylogenetic trees with various levels of abstraction -- using genotypes, phenotypes, etc, to keep track of lineage. 
-
-This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could find out how their own trees compare. 
-
-Within the systematics manager, I added two functions to use when calculating phylogenetic diversity. 
-
-The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. 
-
-**_in the final draft the included code will be simplified and commented more_**
-
-```c++
-  int FindPhyloData(){
-    int percentile; 
-
-    emp::File tree_percentiles("tree_percentiles.csv"); //loading file
-
-    emp::vector< emp::vector<double> > percentile_data = tree_percentiles.ToData<double>(','); //turns data into an array
-
-     int PhyloDiversity = GetPhylogeneticDiversity(); 
-
-    for (int i = 0; i < percentile_data.size() - 1; i++){ 
-
-        if( (PhyloDiversity >= percentile_data[i][1]) && (PhyloDiversity < percentile_data[i + 1][1])){ 
-           std::cout << "Phylogenetic Diversity (recorded in systematics): " << PhyloDiversity << std::endl; 
-           std::cout << "phylo diversity is in between: " << percentile_data[i][1] << " and " << percentile_data[i + 1][1] << std::endl; 
-           std::cout << PhyloDiversity << " is in percentile: " << percentile_data[i][0] << std::endl;       
-
-           percentile = percentile_data[i][0];
-
-           std::cout << percentile << std::endl; 
-           }
-      }
-      return percentile; 
-    }
-```
-
-The following function is used for trees that contain pressure for diversity or mutations. It can also be used for multiple generations (10 through 100 gens). When called, it takes an argument of the number of generations. This corresponds to a line in OrgGenotypePercentiles.csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
-
-_Right now, this function is used for testing our findings and prints the data to PercentileDataFullNoPressure.csv. This will probably be changed in the final product._
-
-```c++
-    void FindPhyloMultipleGens(int GenValueRaw){ 
-      int GenValue = ((GenValueRaw / 10) - 1); 
-      int percentile; 
-      bool percentFound = false; 
-
-        emp::File generation_percentiles("OrgGenotypePercentiles.csv");
-        emp::vector< emp::vector<double> >percentile_data2 = generation_percentiles.ToData<double>(',');
-
-      int PhyloDiversity = GetPhylogeneticDiversity(); 
-      int lastval = size(percentile_data2[GenValue]) - 1; 
-      std::cout << "Last element of array is: " << percentile_data2[GenValue][lastval] << std::endl;
-
-      std::fstream fs; 
-      fs.open("PercentileDataFullNoPressure.csv", std::fstream::in | std::fstream::out | std::fstream::app);
-
-        //for(int i = 0; i < percentile_data2.size() - 1; i++){ 
-          for(int j = 0; j <= percentile_data2[GenValue].size() - 2; j++){
-          
-          if((percentile_data2[GenValue][j] <= PhyloDiversity) && (percentile_data2[GenValue][j + 1] > PhyloDiversity)){
-            std::cout << "phylo diversity is in between: " << percentile_data2[GenValue][j] << "and " << percentile_data2[GenValue][j+1] << std::endl;
-            std::cout << "I is equal to: " << GenValue << std::endl; 
-            std::cout << "J is equal to: " << j << std::endl;
-
-            std::cout << "The Phylogentic diversity value " << PhyloDiversity << " is in the " << j << " percentile, in the " << ((GenValue + 1)* 10) << " generation" << std::endl;  
-
-            fs << ((GenValue + 1)* 10) << "," << j << std::endl; 
-
-            percentFound = true; 
-          }
-          
-          if(PhyloDiversity >= percentile_data2[GenValue][lastval]){ 
-              fs << ((GenValue + 1) * 10) << "," << 100 << std::endl; 
-              fs.close(); 
-            }
-
-        if(percentFound == true){ 
-            break; 
-          }
-          }
-          if(percentFound == false){ 
-            std::cout << "PHYLO DIVERSITY IS IN 100TH PERCENTILE" << std::endl; 
-           }
-        }
-```
 
 ### **Phylogenetic Diversity**
 
@@ -137,9 +52,9 @@ As tree depth increases, the overall phylogenetic diversity also increases. This
 
 As seen in the graph above, the average phylogenetic diversity increases for all three models as the depth of the tree (number of generations) increases. 
 
-### **The Null Model**
+--------------------------------------------------------------------------
 
-A null model is a randomly generated model of an object or structure that is not constrained by its typical characteristics, and is instead based on the randomization of data and structure. A null model attempts to achieve the most unbiased model possible. 
+### **The Null Model**
 
 Coming up with a null model of a tree was not the most intuitive, but we decided that having the most randomly generated model was the best option. 
 
@@ -268,8 +183,95 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 }
 ```
 
-------------------------- 
+### **Systematics** 
 
+Systematics.h is file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction -- using genotypes, phenotypes, etc, to keep track of lineage. 
+
+This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could find out how their own trees compare. 
+
+Within the systematics manager, I added two functions to use when calculating phylogenetic diversity and finding the percentile associated with that diversity. 
+
+The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. 
+
+**_in the final draft the included code will be simplified and commented more_**
+
+```c++
+  int FindPhyloData(){
+    int percentile; 
+
+    emp::File tree_percentiles("tree_percentiles.csv"); //loading file
+
+    emp::vector< emp::vector<double> > percentile_data = tree_percentiles.ToData<double>(','); //turns data into an array
+
+     int PhyloDiversity = GetPhylogeneticDiversity(); 
+
+    for (int i = 0; i < percentile_data.size() - 1; i++){ 
+
+        if( (PhyloDiversity >= percentile_data[i][1]) && (PhyloDiversity < percentile_data[i + 1][1])){ 
+           std::cout << "Phylogenetic Diversity (recorded in systematics): " << PhyloDiversity << std::endl; 
+           std::cout << "phylo diversity is in between: " << percentile_data[i][1] << " and " << percentile_data[i + 1][1] << std::endl; 
+           std::cout << PhyloDiversity << " is in percentile: " << percentile_data[i][0] << std::endl;       
+
+           percentile = percentile_data[i][0];
+
+           std::cout << percentile << std::endl; 
+           }
+      }
+      return percentile; 
+    }
+```
+
+The following function is used for trees that contain pressure for diversity or mutations. It can also be used for multiple generations (10 through 100 gens). When called, it takes an argument of the number of generations. This corresponds to a line in OrgGenotypePercentiles.csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
+
+_Right now, this function is used for testing our findings and prints the data to PercentileDataFullNoPressure.csv. This will probably be changed in the final product._
+
+```c++
+    void FindPhyloMultipleGens(int GenValueRaw){ 
+      int GenValue = ((GenValueRaw / 10) - 1); 
+      int percentile; 
+      bool percentFound = false; 
+
+        emp::File generation_percentiles("OrgGenotypePercentiles.csv");
+        emp::vector< emp::vector<double> >percentile_data2 = generation_percentiles.ToData<double>(',');
+
+      int PhyloDiversity = GetPhylogeneticDiversity(); 
+      int lastval = size(percentile_data2[GenValue]) - 1; 
+      std::cout << "Last element of array is: " << percentile_data2[GenValue][lastval] << std::endl;
+
+      std::fstream fs; 
+      fs.open("PercentileDataFullNoPressure.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+
+        //for(int i = 0; i < percentile_data2.size() - 1; i++){ 
+          for(int j = 0; j <= percentile_data2[GenValue].size() - 2; j++){
+          
+          if((percentile_data2[GenValue][j] <= PhyloDiversity) && (percentile_data2[GenValue][j + 1] > PhyloDiversity)){
+            std::cout << "phylo diversity is in between: " << percentile_data2[GenValue][j] << "and " << percentile_data2[GenValue][j+1] << std::endl;
+            std::cout << "I is equal to: " << GenValue << std::endl; 
+            std::cout << "J is equal to: " << j << std::endl;
+
+            std::cout << "The Phylogentic diversity value " << PhyloDiversity << " is in the " << j << " percentile, in the " << ((GenValue + 1)* 10) << " generation" << std::endl;  
+
+            fs << ((GenValue + 1)* 10) << "," << j << std::endl; 
+
+            percentFound = true; 
+          }
+          
+          if(PhyloDiversity >= percentile_data2[GenValue][lastval]){ 
+              fs << ((GenValue + 1) * 10) << "," << 100 << std::endl; 
+              fs.close(); 
+            }
+
+        if(percentFound == true){ 
+            break; 
+          }
+          }
+          if(percentFound == false){ 
+            std::cout << "PHYLO DIVERSITY IS IN 100TH PERCENTILE" << std::endl; 
+           }
+        }
+```
+
+------------------------- 
 ## **Method**
 
 With each of the three models, I ran each one 1000 times for every 10 generations and collected the phylogenetic diversity values at the end of each run.
