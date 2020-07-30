@@ -3,9 +3,14 @@
 }
 
 .headshot {
+  height: 130px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  clear: left;
   float: left;
 }
 
-.next-to-headshot {
-  clear: right;
+.myheadshot {
+  margin-bottom: 0;
 }
