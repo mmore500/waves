@@ -33,7 +33,7 @@ A phylogenetic tree is a commonly used diagram in biology. Phylogenetic trees ar
 
 _This is a diagram of a basic phylogenetic tree. In this diagram, the tree mutated 4 times (as shown by each divergence of the tree at each node). The final 5 populations each have unique genotypes._ 
 
-![Phylo Tree Diagram]({{ site.baseurl }}/assets/BlogImages/PhylogeneticTreeCorrect.jpg){:style="width:100%;"}
+![Phylo Tree Diagram](/assets/BlogImages/PhylogeneticTreeCorrect.jpg)
 
 ### **Null Models**
 
@@ -48,7 +48,7 @@ Within systematics and my models, phylogenetic diversity is defined as the numbe
 
 As tree depth increases, the overall phylogenetic diversity also increases. This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
-![Average Phylogenetic Diversity Over Time for All Three Models]({{ site.baseurl }}/assets/BlogImages/DiversityOverTime.jpg){:style="width:100%;"}
+![Average Phylogenetic Diversity Over Time for All Three Models](/assets/BlogImages/DiversityOverTime.jpg)
 
 As seen in the graph above, the average phylogenetic diversity increases for all three models as the depth of the tree (number of generations) increases. 
 
@@ -321,7 +321,7 @@ When I used this process on the tree with mutations but with no pressure for div
 These tables show that the tree with no pressure for diversity outputs values that average at 56.37, around what we would expect for this model. The trees with pressure for diversity, regardless of tree depth, also average at 93.7, which is also around the expected outcome. These results illustrate that the percentile data collected can be used to classify future trees between 10 and 100 generations. 
 
 
-![Percentile Graph]({{ site.baseurl }}/assets/BlogImages/PercentileGraph.jpg){:style="width:100%;"}
+![Percentile Graph](/assets/BlogImages/PercentileGraph.jpg)
 
 ## **Conclusion**
 
