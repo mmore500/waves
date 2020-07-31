@@ -148,7 +148,7 @@ If the issue has been closed by the time you click the link, hopefully they have
 Yay! :tada: :tada: :tada:
 
 Now that the summer is over, I am sad to leave the WAVES program and everyone at MSU. 
-I want to say a huge thanks to my mentor, [Matthew Andres Moreno](mmore500.com), who has helped me every step of the way.
+I want to say a huge thanks to my mentor, [Matthew Andres Moreno](http://mmore500.com), who has helped me every step of the way.
 
 ## Acknowledgements
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
