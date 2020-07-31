@@ -59,21 +59,16 @@ My implementation consists of two maps from the standard library:
 * **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
 * **segments_log** is implemented as std::unordered_map and stores the segments that were inserted into the map dusing mutation  
   
-![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 100%; align: center;"}  
+![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 75%; align: center;"}  
   
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory block of necessary sites.
 
-One important detail of the change_log is that it doesn't store every every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion (see example below). I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
+One important detail of the change_log is that it doesn't store every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion (see example below). I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
   
-For example, a change_log with entries `{3 : -2}, {5 : 3}` corresponds to the following mapping (this will be replace by a figure):
-```
-3 : -2
-4 : -2
-5 : 3
-6 : 3
-7 : 3
-...
-```
+For example, a change_log with entries `{3 : -2}, {5 : 3}` corresponds to the following mapping (this will be replace by a figure):  
+
+![Ranges of indexes are encoded into the change_log map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map_cut.png){:style="width: 75%; align: center;"}  
+
   
 To access any index, the following code can be used:
 ```cpp
