@@ -13,7 +13,7 @@ A very visually detailed video explaing this simulation is here:
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=t9Lo2fgxWHw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Simple PD World application
+## Simple Prisoners Dilemma World application
 
 Within Empirical, there exists a tool that allows users to simulate the Prisoners Dilemma through there browser (SpatialCoop17). In this tool, users are easily able to manipulate certain variables within the world; epochs (period of time simulation is running), population size, cost/benefit ratio, and radius (neighborhood radius). Once the user is satisfied with the configurations, they then have the option to run this simulation for a period of time (number of epochs). While this simulation is running, a figure displaying the simulation shows how the organisms are interacting with each other in real-time. Furthermore, the user also has an option to establish a queue of runs onto a table. While a run is in progress, along with the figure, the table is updated to show how the organisms are interacting with each other. Because the user can establish multiple runs within the queue, as soon as one run is finished, the next run automatically starts, resetting the table and restarting the simulation, as well as displaying the new results onto the table as well.
 
@@ -27,15 +27,15 @@ Queue Manager is a project desinged to address the versatility constraints prese
 
 Tools/technologies used:
 
-- Cookiecutter template
+- CookieCutter template
+- Emscripten compiler
 - Empirical math tools
 - Empirical web tools
 - C++17
 - HTML5/CSS3 - testing visualizations
 - JavaScript - browser capabilities from C++
 
-(Overview of how these were used in QueueManager)
-(Add in a code walkthrough)
+The CookieCutter was used to initiate all of necessary directories/files required in order to compile my software with the Emscripten compiler. Queue Manager is implemented as a header-only library in C++17. Its comprised of multiple classes, the primary one being the actual Queue Manager class. In this class, an STL Queue is the primary structure that the Queue Manager tool utilizes. Within this class, several member functions utilize Empricals web/math tools. This allows for the tool to be displayable for users onto a browser. Once the user configurs this class to their preference, visuals are rendered by the Emscripten compiler onto a browser.
 
 ## Project challenges
 
@@ -58,6 +58,5 @@ Tools/technologies used:
 - My experiences with working with a mentor and other developers and how they impacted not only my project experience, but my overall experience as a waves participant
 
 Mentor: Emily Dolson
-[Emily Dolson]({{ site.baseurl }}/assets/headshots/square-EmilyDolson.png){:style="width: 130px; align: center;"}
 
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
