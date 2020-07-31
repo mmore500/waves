@@ -11,7 +11,7 @@ MABE, or Modular Agent Based Evolution Framework, is a platform which allows use
 If you would like to learn more about the MABE framework, take a look at this *[Introduction to MABE](https://szendejo.github.io/waves/blog/Team-MABE.html)* blogpost co-written by my teammates and I!
 
 ## Genomes in MABE 1.0 ##
-In biology, genomes are an organism's entire set of DNA and allow organisms to maintain themselves and function properly. Similarly, in MABE, the genomes of digital organisms are represented as lists of values which can be read from, written to, and mutated from parent to offspring. Every genome has a contiguous piece of memory to store its values.
+In biology, genomes are an organism's entire set of DNA and allow organisms to maintain themselves and function properly. Similarly, in MABE, the genomes of digital organisms are represented as lists of values which can be read from, written to, and mutated from parent to offspring. Every genome has a contiguous piece of memory to store its values. Genome classes in MABE are written using C++.
 
 ## Naive Genome Class Implementation ##
 The naive implementation of the genome class uses a vector of bytes to store its values. As a result, it uses standard library vector functions to perform the mutations.
@@ -42,7 +42,6 @@ The naive implementation allows for quick random access because it uses contiguo
 
 ## Drawbacks of the Naive Implementation ##
 - Genomes are often very large, from **hundreds of thousands** of sites to **millions** of sites.
-- So copying very large genomes from generation to generation can be expensive and time-consuming.
 - With large genome sizes and low mutation rates, the number of sites mutated in an offspring is significantly less than the number of sites which remain the same between parent and offspring. 
 - This makes the naive genome class’s approach of directly copying genomes from parent to offspring very inefficient in terms of time and memory, much like the gif below!
 
@@ -84,8 +83,8 @@ Theoretically, change logging can save significant time and memory, especially f
     - When an offspring genome is created through cloning, the offspring's shared pointer is set equal to the parent's shared pointer. 
     
     #### Advantages of using a shared pointer: ####
-    - Compared to the naive implementation which copies over the entire sites vector from parent to offspring, only resetting the parent shared pointer is more efficient.
-    - Using a shared pointer automatically cleans up any parent which has no offspring pointing at it.
+    - A standard library **shared pointer** in C++ keeps track of a pointer to an object (vector of bytes in this case) and a count of the number of shared pointers pointing to this object. Each shared pointer owns its object, so once the count becomes 0, the shared pointer deletes its object and deallocates the object's memory. Thus, in this implementation, the shared pointer automatically cleans up any parent which has no offspring pointing at it.
+    - Resetting the parent shared pointer is more efficient than the naive implementation's approach of copying over the entire parent vector.
 
 ### Insert, Remove, and Overwrite Mutations: ###
   - **Insert mutation:** inserts value(s) at a certain position in current genome and changes genome size
@@ -102,7 +101,7 @@ Theoretically, change logging can save significant time and memory, especially f
   - The `getCurrentGenomeAt` function below shows how to access position (pos) in the current genome.
   
     ``` c++
-    std::byte UmaGenome::getCurrentGenomeAt(int pos) {
+    std::byte getCurrentGenomeAt(int pos) {
     
         /* create an iterator for the changelog
            and check if the changelog contains pos */
@@ -144,7 +143,8 @@ Theoretically, change logging can save significant time and memory, especially f
         return parent->at(pos-pos_offset);
     }
     ```
-  - This implementation allows for fast random access. In the case that the requested position is in the changelog, the time complexity is `O(logn)`, where `n` is the number of elements in the changelog. This is because we check if the requested position is in the changelog before returning the value. In the case that the requested position is not in the changelog, the time complexity is `O(log(mn))`, where `m` is the number of elements in the offset map and `n` is the number of elements in the changelog. This is because we check if the requested position is in the changelog first (`logn`). Since it isn't in this case, we also check if the position is in the offset map (`logm`), and `logm+logn = O(log(mn))`.
+  - If the requested position **is** in the changelog, the time complexity of random access is `O(logn)`, where `n` is the number of elements in the changelog. Searching through an ordered map has time complexity `O(log(size of map))`. So in this case, since we search through the changelog with `find()` to check if the requested position is there, the time complexity is `O(logn)`.
+  - If the requested position is **not** in the changelog, the time complexity is `O(log(mn))`, where `m` is the number of elements in the offset map and `n` is the number of elements in the changelog. This is because we first search for the position in the changelog with `find()` which is `logn`. Since it isn't in the changelog, we also search for the position in the offset map using `find()` which is `logm`. Therefore, `logm+logn = O(log(mn))`.
   
 ## Results: ##
   - Talk about how test genome is still better
@@ -156,7 +156,7 @@ Theoretically, change logging can save significant time and memory, especially f
   - Make collapsing the changelog more efficient
   - Determine better way to decide when to collapse the changelog, don't want to collapse it for too small of a size
   
-## Conclusion: ##
+## Closing: ##
 - I’ve really enjoyed working on this project with a great team of participants and mentors. It’s been so helpful to have a team to collaborate with, debug with, bounce ideas off of, and learn from. Each participant in my team implemented a different algorithm for this problem in order to test out multiple diffferent solutions. I’m really excited to have contributed to advancing genomes in MABE through my project this summer. I can’t wait to see how not only genomes but all parts of MABE will continue to evolve (pun intended😂) in the future! Thank you to my wonderful mentors and great teammates who I’ve listed below! Thank you also to the entire WAVES team who has made this summer program's experience so amazing!
 
 ## Team MABE 🎉 ##
