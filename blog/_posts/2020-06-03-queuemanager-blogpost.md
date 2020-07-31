@@ -19,11 +19,11 @@ Within Empirical, there exists a tool that allows users to simulate the Prisoner
 
 Because this was only intended to be used for the Prisoners Dilemma, this tool is not functional for other simulations. The task of my project was to take the fundamental structure of this current application in Empirical but allow for more user versatility. The user would not only be able to change the configurations for the Prisoners Dilemma simulation, but to also choose to run any simulation they choose, should they meet the configuration requirements, allowing for a more versatile tool.
 
-(Add visual of PD App)
-
-## QueueManager Implementation
+## Queue Manager Implementation
 
 Queue Manager is a project desinged to address the versatility constraints presenet within the Prisoners Dilemma application. Queue Manager not only allows users to run the Prisoners Dilemma simlation while displaying real-time statistics of the runs, but it also gives flexibility to run any other simulation they so chose, as long as they fill in the current configuration requirements within QueueManager.
+
+![alt text]({{ site.baseurl }}/assets/chavez-ju/PDWorldGraph.png){:style="width: 100%"}
 
 Tools/technologies used:
 
