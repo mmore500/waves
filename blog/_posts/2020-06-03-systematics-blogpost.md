@@ -7,15 +7,15 @@ author: Abigail Wilson
 
 
 # Systematics Normalization
-I collaborated on this project with my mentors, Emily Dolson (emilyldolson.com) and Kate Skocelas (https://github.com/kgskocelas). 
+I collaborated on this project with my mentors, Emily Dolson (www.emilyldolson.com) and Kate Skocelas (https://github.com/kgskocelas). 
 
-## Goal: 
+### **Goal:** 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
 
-#### Motivation: 
+### **Motivation:** 
 Within the Empirical library (C++ tools for the Avida-ED project) and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically useful data in terms of comparison. This project aims to solve this. _why is it hard to compare?_ 
 
-#### Experiment Outline 
+#### **Experiment Outline** 
  1. Creation of a **null model** of a phylogenetic tree 
 
  2. Creation of a tree that **mutates** and diverges in a non-random way
@@ -24,7 +24,7 @@ Within the Empirical library (C++ tools for the Avida-ED project) and the field 
 
  -------------------------------------------
 
-## Background and Definitions 
+## **Background and Definitions** 
 
 ### **Phylogenetic Trees**
 
@@ -36,7 +36,7 @@ _This is a diagram of a basic phylogenetic tree. In this diagram, the population
 
 ### **Null Models**
 
-A null model is a randomly generated model of an object or structure that is not constrained by its typical characteristics, and is instead based on the randomization of data and structure. A null model attempts to achieve the most unbiased model possible. 
+A null model is a randomly generated model of an object or structure that is not constrained by its typical characteristics. It is instead based on the randomization of data and structure. A null model attempts to achieve the most unbiased model possible. 
 
 
 ### **Phylogenetic Diversity**
@@ -62,7 +62,7 @@ You can find a percentile range by ordering it from least to greatest. The 20th 
 
 --------------------------------------------------------------------------
 
-### **The Null Model**
+## **The Null Model**
 
 Coming up with a null model of a tree was not the most intuitive, but we decided that having the most randomly generated model was the best option. 
 
@@ -78,17 +78,17 @@ int chooseOrg(vector<Organism> &currentGen, emp::Random &randNum){
 }
 ```
 
-Here the Empirical random number generator was utilized to ensure that results were actually random. First, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
+In the code above, the Empirical random number generator was utilized to ensure that results were actually random. First, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
 
-In the null model, each time a new organism was created it represented its own clade or taxon to ensure maximum diversity. 
+In the null model, each time a new organism was created, it represented its own clade or taxon to ensure maximum diversity. 
 
-### **Mutation and Pressure for Diversity** 
+## **Mutation and Pressure for Diversity** 
 
-**Mutation**
+### **Mutation**
 
 The trees we used for comparison were trees with mutations and pressure for diversity. 
 
-The mutation rate used for all of the trees was 0.05, which is a typical value for tree modeling in Empirical. In these models, each organism had a genotype as an attribute. 
+The mutation rate used for all of the trees was 0.05, which is a typical value for tree modeling within Empirical. In these models, each organism had a genotype as an attribute. 
 
 Mutation was determined randomly. The population generated in the first round of the tree all had a genotype of integer 0. A random double between 0 and 1 was generated with each creation of an organism following this generation. If the value generated was less than 0.05, the genotype would mutate. If a mutation was required, a new random number would be generated between -3 and 3. That genotype would then be subtracted from the original genotype. 
 
@@ -96,7 +96,7 @@ For example, if the organism had a genotype of 2, and was chosen to mutate, and 
 
 Mutations are also heritable, meaning that the child of an organism would inherit the same mutated or not mutated genotype as its parent. Once an organism mutated, it would create a branch in the tree. 
 
-The following code shows how the organism class handles mutations. In the model that just used mutations but did not account for any pressure to diversify, this code is used as the organism class, but has no fitness calculations and still uses random choice for the creation of child organisms.  
+The following code shows how the organism class handles mutations. In the model that just used mutations (no pressure for diversity), this code is used as the organism class.   
 
 ```c++
 class Organism {
@@ -127,9 +127,9 @@ public:
 };
 ```
 
-**Pressure for Diversity**
+### **Pressure for Diversity**
 
-A goal of this project was to show that when we added a constraint that would incentivize the tree to branch more frequently, the overall diversity would increase. This goal arose from a need to show that our normalization technique could correctly and consistently identify situations in which there were selective pressures placed on the tree, unlike our mutated or null models. The way that this was accomplished was by adding a pressure for the tree to diversify by favoring rarer genotypes. 
+A goal of this project was to show that when we added a constraint that would incentivize the tree to branch more frequently, the overall diversity would increase. This goal arose from a need to show that our normalization technique could correctly and consistently identify situations in which there were selective pressures placed on the tree, unlike our mutated or null models. The way that this was accomplished was by adding a pressure for the tree to diversify by favoring rarer genotypes. Rarer genotypes are genotypes that are possessed by fewer organisms than other more common genotypes. 
 
 In the model that uses pressure for diversity and mutations, genotypes that are rarer are favored for reproduction over more common genotypes. When rarer genotypes are chosen, diversity increases throughout the tree. We referred to this as fitness which was calculated in the following code: 
 
@@ -183,11 +183,11 @@ In all three of these models, phylogenetic diversity increases with tree depth (
 
 ![Average Phylogenetic Diversity Over Time for All Three Models](/assets/BlogImages/DiversityOverTime.jpg)
 
-### **Systematics** 
+## **Systematics** 
 
-Systematics.h is a file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction -- using genotypes, phenotypes, etc, to keep track of lineage. 
+Systematics.h is a file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction by using genotypes, phenotypes, etc, to keep track of lineage. 
 
-This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could find out how their own trees compare. 
+This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could see how their own trees compare. 
 
 Within the systematics manager, I added two functions to use when calculating phylogenetic diversity and finding the percentile associated with that diversity. 
 
@@ -195,20 +195,19 @@ The first function, ```FindPhyloData()```, can be used if a user wants to compar
 
 tree_percentiles.csv contains data that looks like this:
 
+_The leftmost number refers to the percentile. The second number is the corresponding phylogenetic diversity value._
+
 |   Percentile 	| Diversity |
 |----:	|------:	|
 |   0   |    19     |
 |   1 	| 22.96 	|
 |   2 	|    27 	|
 |   3 	|    32 	|
-|   4 	|    36 	|
-|   5 	|    39 	|
 | ... 	|       	|
 |  98 	|   160 	|
 |  99 	|   168 	| 
 | 100 	|   201 	|
 
-The leftmost number refers to the percentile. The second number is the corresponding phylogenetic diversity value. 
 
 ```c++
   int FindPhyloData(){
@@ -237,7 +236,7 @@ The leftmost number refers to the percentile. The second number is the correspon
 
 ```
 
-The following function, ``GetPhylogeneticDiversityNormalize()``, is used for trees that contain pressure for diversity or just mutations. It can also be used for multiple generations (10 through 100 gens). When called, it takes an argument for the number of generations and filename. This corresponds to a line in the specified csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
+The following function, ``GetPhylogeneticDiversityNormalize()``, is used for trees that contain pressure for diversity or just mutations. It can also be used for multiple generations (10 through 100 generations). When called, it takes an argument for the number of generations and filename. This corresponds to a line in the specified csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
 
 If this function is used with no arguments, it will only return the phylogenetic diversity value where it is called. If you want to find the percentile value associated with your phylogenetic diversity, you need to add two arguments -- the number of generations in your tree and the filename that you want to compare with. If you want to receive a percentile value from the file without pressure for diversity, the filename argument should be replaced with ``"TensChooseOrgGenotype.csv"``. If you want to compare with pressure for diversity values, you can use ``TensChooseOrgDiversityGenotype.csv``. You can use either file, regardless of tree type.
 
@@ -275,7 +274,7 @@ If this function is used with no arguments, it will only return the phylogenetic
    }
 ```
 
-### Using this function: 
+#### **Using this function:** 
 1. Call ``GetPhylogeneticDiversityNormalize()`` in your tree-generating program. 
 2. Use an argument for the number of generations your tree has.
 3. Choose a file for comparison: ``"TensChooseOrgGenotype.csv"`` or ``TensChooseOrgDiversityGenotype.csv``.
@@ -284,17 +283,25 @@ If this function is used with no arguments, it will only return the phylogenetic
 ------------------------- 
 ## **Method**
 
+**1. Collect data for each model 1000 times.**
+
 With each of the three models, I ran each one 1000 times for every 10 generations and collected the phylogenetic diversity values at the end of each run.
 
-For example, I would set the number of generations in the null model to 10. Then, I would run it 1000 times, and at the end of each run, record the final diversity. I would then do 20 generations, and so forth, all the way through 100 generations. 
+For example, I would set the number of generations in the null model to 10. Then, I would run it 1000 times and at the end of each run, record the final diversity. I would then do 20 generations and so forth, all the way through 100 generations. 
+
+**2. Create a percentile range for each model.**
 
 After the initial data collection, I took that data and ran it through a python script which created a percentile range. It did this by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
 
-To incorporate this data into the systematics manager, I imported the percentile csv files into the two functions described in the systematics section. Wherever these functions are called in future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
+**3. Incorporate percentile files into Systematics.h**
+
+To incorporate this data into the systematics manager, I imported the percentile csv files (output of the python script) into the two functions described in the systematics section. Wherever these functions are called in future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
+
+**4. Test Systematics.h classifications**
 
 After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify each tree's final phylogenetic diversity after each set of generations. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. 
 
-When I used this process on the tree with mutations but with no pressure for diversity, I would expect to see values in the 50th percentile range. However, if repeated for the tree with a pressure for diversity, I would then expect to see values significantly higher than the 50th percentile. 
+When I used this process on the tree with mutations but with no pressure for diversity, I would expect to see values in the 50th percentile range. However, if repeated for the tree with pressure for diversity, I would then expect to see values significantly higher than the 50th percentile. 
 
 ## **Results**
 
@@ -338,7 +345,7 @@ These tables and graph show that the tree with no pressure for diversity outputs
 
 Based on the results shown above, the current function in the systematics manager, GetPhylogeneticDiversityNormalize(), is able to correct for the effect of tree size and return the percentile value of a given tree. 
 
-Considering the size of this project, the standard deviation observed in our findings does not raise much concern for validity. The results seen, being that tree with no pressure for diversity result in an average classification of **56.37** and trees with pressure to diversify have an average classification of **93.7**, we can conclude that this function provides an accurate classification of phylogenetic trees. 
+Considering the size of this project, the standard deviation observed in our findings does not raise much concern for validity. The results seen, being that tree with no pressure for diversity result in an average classification of **56.37** and trees with pressure to diversify have an average classification of **93.7**, we can conclude that this function provides a useful classification of phylogenetic trees. 
 
 If I were to continue this. I would write several more tests to improve the validity of these findings. I would also find percentile classifications for a much larger sample size for a more accurate data set. 
 
