@@ -9,11 +9,13 @@ author: Juan Eduardo Chavez
 
 The Prisoner's Dilemna is an example of decision analysis within game theory. In this example, we take two individuals (prisoners) who are given choices that will not only ultimately impact their own self, but the other party as well. Each individual is given the option to either stay silent in when being questioned (cooperate), or betray the other prisoner by admitting the other's crimes (defect). If both prisoners stay silent, both only have a one-year sentence. If one betrays and the other stays silent, the betrayer becomes free and the silent prisoner is sentenced to three years. If both prisoners betray each other, then each are sentenced to two years. This simulation analyzis why individuals may not want to work together, even if it's beneficial to do so.
 
+![PD Choice Image](/assets/chavez-ju/PDDecisionChart.png "PrisonerChart")
+Chart representing each prisoners choices with the respective consequences
+
 A very visually detailed video explaing this simulation is here:
+https://www.youtube.com/watch?v=t9Lo2fgxWHw
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=t9Lo2fgxWHw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Simple Prisoners Dilemma World application
+## Simple Prisoners Dilemma World Application
 
 Within Empirical, there exists a tool that allows users to simulate the Prisoners Dilemma through there browser (SpatialCoop17). In this tool, users are easily able to manipulate certain variables within the world; epochs (period of time simulation is running), population size, cost/benefit ratio, and radius (neighborhood radius). Once the user is satisfied with the configurations, they then have the option to run this simulation for a period of time (number of epochs). While this simulation is running, a figure displaying the simulation shows how the organisms are interacting with each other in real-time. Furthermore, the user also has an option to establish a queue of runs onto a table. While a run is in progress, along with the figure, the table is updated to show how the organisms are interacting with each other. Because the user can establish multiple runs within the queue, as soon as one run is finished, the next run automatically starts, resetting the table and restarting the simulation, as well as displaying the new results onto the table as well.
 
@@ -31,13 +33,14 @@ Tools/technologies used:
 - Emscripten compiler
 - Empirical math tools
 - Empirical web tools
+- Empirical SettingConfig Library
 - C++17
 - HTML5/CSS3 - testing visualizations
 - JavaScript - browser capabilities from C++
 
-The CookieCutter was used to initiate all of necessary directories/files required in order to compile my software with the Emscripten compiler. Queue Manager is implemented as a header-only library in C++17. Its comprised of multiple classes, the primary one being the actual Queue Manager class. In this class, an STL Queue is the primary structure that the Queue Manager tool utilizes. Within this class, several member functions utilize Empricals web/math tools. This allows for the tool to be displayable for users onto a browser. Once the user configurs this class to their preference, visuals are rendered by the Emscripten compiler onto a browser.
+The CookieCutter was used to initiate all of necessary directories/files required in order to compile my software with the Emscripten compiler. Queue Manager is implemented as a header-only library in C++17. Its comprised of multiple classes, the primary one being the actual Queue Manager class. In this class, an STL Queue is the primary structure that the Queue Manager tool utilizes. Within this class, several member functions utilize Empricals web/math tools. This allows for the tool to be displayable for users onto a browser. Once the user configurs this class to their preference, using the imbedded SettingConfig Library, visuals are rendered by the Emscripten compiler onto a browser.
 
-## Project challenges
+## Project Challenges
 
 - First using regular Config library from Empirical
   - Discuss big challenges with using that (Ugly Macros)
@@ -45,17 +48,21 @@ The CookieCutter was used to initiate all of necessary directories/files require
 - Scoping issues
 - Not-yet created SettingConfig features that were just implemented
 
-## Project improvements
+## Project Improvements
 
 - Discuss how QueueManager could be improved
 
   - Additonal features that would be cool to have
 
-## WAVES take-away/conclusion
+## WAVES Take-away/Conclusion
+
+This workshop/project has enlightened me on not only the complexity of the Empirical Library, but also on the different capabilities different software tools have when using together.
 
 - Describe how all of these experiences benefited my development, teamwork, and communication skills
 - How this project specifically further improved my understanding of C++, HTML5, CSS3
 - My experiences with working with a mentor and other developers and how they impacted not only my project experience, but my overall experience as a waves participant
+
+## Extra
 
 Mentor: Emily Dolson
 
