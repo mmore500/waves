@@ -43,7 +43,7 @@ You can think of triggers and visualeffects as being contained inside of states.
 
 The code for a very simple tutorial might look something like this (method arguments are omitted for now):
 ```C++
-tutorialManager tut();
+Tutorial tut();
 
 tut.AddState(...);
 tut.AddState(...);
@@ -59,15 +59,16 @@ tut.AddPopoverEffect(...);
 tut.StartAtState(...);
 ```
 
-As you can see, the **TutorialManager** class provides the entire programming interface for the tutorial. Everything you do to manage your tutorial will be done via method calls on this object.
+As you can see, the **Tutorial** class provides the entire programming interface for the tutorial. Everything you do to manage your tutorial will be done via method calls on this object.
 
 Now let's take a closer look at how this all works.
 
-## TutorialManager
-To start creating a tutorial, first you must instantiate a TutorialManager. This is simple:
+## Tutorial Class
+To start creating a tutorial, you must instantiate a Tutorial object. This is simple:
 ```C++
-TutorialManager tut;
+Tutorial tut;
 ```
+
 
 ## States
 
@@ -332,8 +333,8 @@ tut.SetTriggerCallback(trigger_id, callback);
 ### Difficulties and Future Directions
 
 
-### Thanks!
+### Acknowledgements
 
-In closing, I'd like to give credit to Austin Ferguson (@FergusonAJ) for being an excellent mentor on this project. He came up with the rough outline for this system, and contributed to every aspect of its design, as well as some of the code itself. Thanks also to everyone on the WAVES team who helped with advice, tips, and feedback.
+I'd like to give credit to Austin Ferguson (@FergusonAJ) for being an excellent mentor on this project. He came up with the rough outline for this system, and contributed to every aspect of its design, as well as some of the code itself. Thanks also to everyone on the WAVES team who helped with advice, tips, and feedback.
 
 This project gave me the opportunity to learn a lot about web development, the Empirical library, and contributing to real-life distributed software. I hope that our contribution will prove to be a valuable addition to the library. 
