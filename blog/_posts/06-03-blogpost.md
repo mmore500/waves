@@ -35,11 +35,11 @@ However, as I said before, this rigidity poses a bit of a flaw.  What if you add
 ## The Small BitVector Optimizations.
 This is how a BitVector used to be structured:
 
-![WIP BitVector Image](BitVector.png "BitVector")
+![WIP BitVector Image](/assets/schmi710/BitVector.png "BitVector")
 
 And this is how I have restructured it for small BitVectors.
 
-![WIP Small BitVector Image](SmallBitVector.png "Small BitVector")
+![WIP Small BitVector Image](/assets/schmi710/SmallBitVector.png "Small BitVector")
 
 It looks pretty straightforward.  However, there are several pitfalls which befell me, and many of them could very well befall you if you do something similar.  But first, the most important function of this part of the project, BitSetPtr(): 
 ``` c++
@@ -80,20 +80,20 @@ So what could go wrong with this?  Well, the fact that we are messing with point
 
 Once I had gotten this done, the speedups were generally quite high.
 
-![WIP BitVector Speedups All](BitVectorSpeedupsAll.png "BitVector Speedups All")
+![WIP BitVector Speedups All](/assets/schmi710/BitVectorSpeedupsAll.png "BitVector Speedups All")
 
-![WIP BitVector Speedups](BitVectorSpeedups.png "BitVector Speedups")
+![WIP BitVector Speedups](/assets/schmi710/BitVectorSpeedups.png "BitVector Speedups")
 
 \<\<\<Section where I talk about the results in more detail\>\>\>
 
 ## The DataMap Reference Capability
 This is how a DataMap used to be structured:
 
-![WIP DataMap Image](DataMap.png "DataMap")
+![WIP DataMap Image](/assets/schmi710/DataMap.png "DataMap")
 
 And this is how I have restructured it.
 
-![WIP New DataMap Image](NewDataMap.png "New DataMap")
+![WIP New DataMap Image](/assets/schmi710/NewDataMap.png "New DataMap")
 
 Note that the size is determined by the size of Ptr -- if we are in memory tracking mode, then a Ptr will contain more than just a ptr.  
 
@@ -147,7 +147,7 @@ The chars worked perfectly after a while, and so (it seemed) did the BitVectors.
 
 Once I had gotten this done, there wasn't any speedup (as expected), and some methods were slowed down noticeably.  In particular, adding a char took far, far longer in this new version (which requires nine bytes of memory) than the old (which required only one).
 
-![WIP DataMap Speedups](DataMapSpeedups.png "DataMap Speedups")
+![WIP DataMap Speedups](/assets/schmi710/DataMapSpeedups.png "DataMap Speedups")
 
 \<\<\<Section where I talk about the results in more detail\>\>\>
 
