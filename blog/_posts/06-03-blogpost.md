@@ -70,13 +70,15 @@ which is the Get function.
 
 So what could go wrong with this?  Well, the fact that we are messing with pointers means that there will inevitably be some memory errors.  Memory leaks, accidental dereferences, that sort of thing.  And so there were, mainly with earlier versions of BitSetPtr and the move and copy constructors.  Resize also posed a bit of an issue, since it is possible to cross 64 bits and go from long to short or from short to long, which requires some adjustment of how things are stored.  
 
-Once I had gotten this done, the speedups were generally quite high.
+Once I had gotten this done, the speedups were generally quite high, but I encountered several issues in determining how high they were.  My original plan was to run all of my tests on a dedicated node on MSU's HPCC, but unfortunately that proved far more difficult than expected due to the absence of several necessary libraries.  As such, I had to run my tests on my personal laptop overnight, which necessarily caused the variance in my results to be much, much higher.  This variance was so high for my generalized BitVector tests, in fact, that I have no confidence in them.  While the mean times of my trials do largely correlate with my predictions (with speedups for small BitVectors and (rarely) a slight slowdown for big BitVectors), I cannot in good confidence showcase them.
 
-![WIP BitVector Speedups All](/assets/schmi710/BitVectorSpeedupsAll.png "BitVector Speedups All")
+However, I did run a successful test on the most important methods: Get and Set.
 
-![WIP BitVector Speedups](/assets/schmi710/BitVectorSpeedups.png "BitVector Speedups")
+![BitVector Speedups](/assets/schmi710/BitVectorSpeedups.png "BitVector Speedups")
 
-\<\<\<Section where I talk about the results in more detail\>\>\>
+In this graph, the green is my 95% confidence margin of error.  The vertical axis is the mean in milliseconds of the time it took to run an individual trial, which consideted of randomly selecting a random BitVector/BitMap/array and then a random element in them several hundred million times.  
+
+As you can see, there is a considerable improvement with the small BitVector approximation which comes quite close to the `std::BitSet` time, while the previous times were closer to accessing an array of bools.  Given that Gets and Sets are by far the bulk of calls to BitVectors, this equates to a considerable speedup.
 
 ## DataMap
 
@@ -151,9 +153,19 @@ Just seeing where the segfaults occurred was useless, since that didn't tell us 
 
 Once I had gotten this done, there wasn't any speedup (as expected), and some methods were slowed down noticeably.  In particular, adding a char took far, far longer in this new version (which requires nine bytes of memory) than the old (which required only one).
 
-![WIP DataMap Speedups](/assets/schmi710/DataMapSpeedups.png "DataMap Speedups")
+Testing the DataMap unfortunately was as difficult with the BitVector, and the variance was still far greater than I would like.  So I once again focused on the most important methods and tested those.
 
-\<\<\<Section where I talk about the results in more detail\>\>\>
+![DataMap Char Speedups](/assets/schmi710/DataMapCharSpeedups.png "DataMap Char Speedups")
+
+This test showed a considerable slowdown, which makes sense as the new char allocation requires 9 bytes while the previous required just one. 
+
+![DataMap BitVector Speedups](/assets/schmi710/DataMapBitVectorSpeedups.png "DataMap BitVector Speedups")
+
+This test showed a more minor slowdown, which also makes sense for the same reasons as above.
+
+![DataMap Speedups](/assets/schmi710/DataMapSpeedups.png "DataMap Speedups")
+
+This section is somewhat more chaotic. On the plus side, at least we don't see a drastic slowdown. In addition, we do see the expected slowdown from crossing over from a reference to a value and vice versa, and we also see that BitVector gets and sets are slower than char gets and sets. We also see that getting a reference is slower than getting a value, which is also to be expected.  The main takeaway is that there is unlikely to be a noticeable slowdown from the reference feature. 
 
 ## Conclusion
 
@@ -163,6 +175,4 @@ I also learned a great deal about many advanced C++ topics (and was able to put 
 
 ## Further Work
 
-After this workshop is over, I intend to stay on longer and finish my work on BitVector and DataMap.  With unions, my mentor Dr. Ofria and I suspect that we can make both of them far simpler and, perhaps, faster.  We also suspect that we can get a 128-bit small BitVector optimization with unions by adding a control byte, which would greatly improve performance for the 100 bit-long BitVectors often used with MABE.  Also, we believe that we can fix a possible allignment error which could theoretically cause issues in certain unlikely circumstances.
-
-For DataMap, I intend to use unions to streamline the logic of referencing, which could make the code faster and would definitely make it easier to read.
+After this workshop is over, I intend to stay on longer and finish my work on BitVector and DataMap.  With unions, my mentor Dr. Ofria and I suspect that we can make both of them far simpler and, perhaps, faster.  We also suspect that we can get a 128-bit small BitVector optimization with unions by adding a control byte, which would greatly improve performance for the 100 bit-long BitVectors often used with MABE.  Also, we believe that we can fix a possible allignment error which could theoretically cause issues in certain unlikely circumstances.  For DataMap, I intend to use unions to streamline the logic of referencing, which could make the code faster and would definitely make it easier to read.
