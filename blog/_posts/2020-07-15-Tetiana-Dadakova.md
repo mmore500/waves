@@ -57,10 +57,10 @@ As we've seen above, the algorithm has to support the following mutations:
 
 My implementation consists of two maps from the standard library:
 * **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
-* **segments_log** is implemented as std::unordered_map and stores the segments that were inserted into the map dusing mutation
-
-![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 20%; align: center;"}  
-
+* **segments_log** is implemented as std::unordered_map and stores the segments that were inserted into the map dusing mutation  
+  
+![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 100%; align: center;"}  
+  
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory block of necessary sites.
 
 One important detail of the change_log is that it doesn't store every every deleted or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of deletion (see example below). I.e. each key in the cahnge_log represents all the keys in the range from the current key until the nex key. 
