@@ -6,28 +6,30 @@ author: Sara Boyd
 ---
 
 Phylogeny, convergent evolution, the genetic code. 
-What is this? DNA, genome, fitness function. 
+What is this? 
+DNA, genome, fitness function. 
 Okay, these are sounding slightly more familiar. 
 Pointers, (OOP) inheritance, responsive web design. 
 Whew, finally topics that are in my comfort zone.
 
-A neat aspect of working in the Digital Evolution Lab is the wide range of topics that you can explore, from biological evolution to application development tools. 
+A neat aspect of working in the [Digital Evolution Lab](https://debolab.org) is the wide range of topics that you can explore, from biological evolution to application development tools. 
 For me, creating font-end web tools was the most intriguing. 
-I’ve worked on web applications before, but I was interested to see how to implement them with [Empirical](https://github.com/devosoft/Empirical), a C++ based “library of tools for scientific software development”[^1].
+I’ve worked on web applications before, but I was interested to see how to implement them with [Empirical](https://github.com/devosoft/Empirical), a C++ based “library of tools for scientific software development” [^1].
 
 # Goals
 The goal of this project was to provide an easy way for developers to add an interactive and dynamic configuration panel to their web app.
-By allowing the user to change configuration settings we aim to provide a better overall user experience.
+Users would be able to experiment with configuration settings.
+It is our hope that by providing a platform for users to interact more meaningfully with data and conduct their own experiments, they will be more engaged and make new connections.
 
-Before this summer, there was a tool in Empirical that would read through a configuration file abstract data, and create a form to display in a web application. One application using this config panel is Emily Dolson’s [Model of cancer evolution along an oxygen gradient](https://emilydolson.github.io/memic_model/web/memic_model.html)[^2].
+Before this summer, there was a tool in Empirical that would read through a configuration file abstract data and create a form to display in a web application. One application using this config panel is [Emily Dolson’s](emilyldolson.com) *Model of cancer evolution along an oxygen gradient* [^2].
 
 ![Model of cancer evolution along an oxygen gradient]({{ site.baseurl }}/assets/kayakingCellist/original_config_panel.png)
 
 
 <table>
   <tr>
-    <td><b>Features we like:</b></td>
-    <td><b>New Features:</b></td>
+    <td><b>Features We Like:</b></td>
+    <td><b>New Feature Ideas:</b></td>
   </tr>
   <tr>
     <td>
@@ -46,10 +48,13 @@ Before this summer, there was a tool in Empirical that would read through a conf
   </tr>
 </table>
 
+During the development process, we thought of more features to add to our list (:bulb:).
+Though we came up with more ideas than we could finish in one summer (more on that later), the ones that made the cut are mentioned throughout this article and are ready to use!
+
 # Revamping the Configuration Panel
 The first step in creating the new config panel was to create a mockup.
 This provided a handy framework to base our Empirical web tool off of.
-The mockup was also useful for sending out polls to ask for feedback and recomendations on design decisions.
+The mockup was also useful for sending out polls to ask for feedback and recommendations on design decisions.
 
 For the mockup, I set aside Empirical and focused on creating a visually appealing and responsive layout with what I know best, HTML, CSS, and JavaScript. 
 Thanks to Bootstrap, this was not too challenging. 
@@ -57,7 +62,7 @@ Thanks to Bootstrap, this was not too challenging.
 :bulb: **New feature idea:** Show the input slider in a dropdown box on mobile devices so the panel will look less crowded.
 
 Because of the power of GitHub web hosting, I was able to create web pages with multiple design options.
-Then, I sent out links to these web pages to get feedback from WAVES other workshop particpiants.
+Then, I sent out links to these web pages to get feedback from WAVES other workshop participants.
 Huge thanks to them! 
 These polls helped decide which [glyphs](https://kayakingcellist.github.io/ControlPanelDemo/toggle_options.html) to add to the ConfigPanel and the most intuitive way to indicate that a [Bootstrap card](https://kayakingcellist.github.io/ControlPanelDemo/card_demo.html) is collapsible.
 
@@ -68,7 +73,7 @@ These polls helped decide which [glyphs](https://kayakingcellist.github.io/Contr
 # Adding Config Panel to Empirical
 Once we had a design we were happy with, the next step was to recreate it in Empirical. 
 Using the existing config panel class as a base, I set out to add the styling from the mockup. 
-Luckily, there were already web tools in Empirical to customize and add web elements to the config panel such as Divs and Input types. 
+Luckily, there were already web tools in Empirical to customize and add web elements to the config panel such as `Div` and `Input` types. 
 
 One feature that was tricky to implement was synchronizing the three inputs for a config setting: slider that appears in the desktop version, slider that appears in the mobile version, and the input box to typing the number. 
 The key was ensuring the callback function for the changed input “notified” the other inputs of the change. 
@@ -81,9 +86,9 @@ Then others would have to sift through the class to change a style they don’t 
 But, I guess that wouldn’t be very nice ...
 
 Instead, by placing default style settings in a separate CSS file, app developers can simply create their own CSS file that overrides the default styles. 
-We use [jsDelivr](https://www.jsdelivr.com/?docs=gh), a content delivery network to provide an easy way to link to our default style guide.
+We use [jsDelivr](https://www.jsdelivr.com/?docs=gh), a content delivery network, to provide an easy way to link to our default style guide.
 
-:bulb: **New feature idea:** Breakdown the ConfigPanel into reusable components.
+:bulb: **New feature idea:** Break the ConfigPanel implementation down into reusable sub components.
 
 While developing the ConfigPanel, it became clear many features could be reused in other applications for different purposes.
 As a result, we broadened our project goals to include developing new prefabricated web tools.
@@ -93,7 +98,10 @@ In designing and developing these prefab elements, we decided we wanted them to 
 This way, developers who are familiar with web tools can easily use prefab tools too. 
 For example, prefab elements can be streamed into other web elements with the `<<` operator and add styling with `SetAttr()` and `SetCSS()`.
 
-# Additions to the Empirial Library
+# Prefab Tools Demo
+You can see all the new prefabricated tools in action [**here**](https://devosoft.github.io/empirical-prefab-demo/empirical-prefab-demo).
+
+# Additions to the Empirical Library
 
 While developing the ConfigPanel and other prefabricated tools, I encountered cases where I found it would have been nice to have some new functionality. 
 
@@ -107,15 +115,13 @@ This is handy if you want to add multiple classes to a web element.
 
 - Before, these characters would render as special HTML characters on a web page, not string literals.
 - Now, the `to_web_safe_string()` method replaces special HTML characters with a character entity so the symbol will appear as expected.
-- More detailed explination of special HTML characters [here](https://www.w3schools.com/html/html_symbols.asp)
+- More detailed explanation of special HTML characters [here](https://www.w3schools.com/html/html_symbols.asp)
     
 # Testing New Prefabricated Web Tools
 I often hear developers complain about testing. 
 It’s too tedious. 
 It’s slowing down progress. 
-I’m guilty of this too. 
-Though, after working on Empirical, I think these statements are true and false. 
-Is this even possible?
+While I think there is some truth in these statements, my experience working with Empirical has shown me that they don't paint the whole picture.
 
 When I was developing unit tests for the prefab elements, it definitely felt tedious enumerating exactly how the HTML for each element should be laid out. 
 I spent the last several weeks of the summer mainly focusing on writing tests. 
@@ -125,13 +131,13 @@ On the flip side, as I was writing tests, I realized some major flaws in my code
 Who knows how long they would have lasted if I had chosen to skip testing. 
 Being able to patch up these issues now, counts as progress in my book. 
 
-Additionally, [TravisCI](https://travis-ci.com) (continuous integration) tests were set up for Empirical before I came to the project. 
+In the same vein, [TravisCI](https://travis-ci.com) (continuous integration) tests were set up for Empirical before I came to the project. 
 These tests run automatically when we push new code to GitHub. 
 They check that the new code added doesn't break or conflict with the existing code. 
 I can imagine the tests took some time to set up. 
 However, they have helped me on numerous occasions to quickly identify and locate a bug I unintentionally added to Empirical.
 
-I suppose the benefits of testing are most appreciated in the long term, but they can prove meaningful during the testing process as well. 
+I suppose the benefits of testing are most appreciated in the long term, but they can prove meaningful during the testing process as well.
 
 
 # Conclusion
@@ -141,12 +147,11 @@ A list of some ideas we could think of at the moment are listed in [issue 334](h
 If the issue has been closed by the time you click the link, hopefully they have been added already.
 Yay! :tada: :tada: :tada:
 
-Now that the summer is over, I am sad to leave the program and everyone at MSU. 
-I want to say a huge thanks to my mentor, Matthew Andres Moreno, who has helped me every step of the way.
+Now that the summer is over, I am sad to leave the WAVES program and everyone at MSU. 
+I want to say a huge thanks to my mentor, [Matthew Andres Moreno](mmore500.com), who has helped me every step of the way.
 
-# Prefab Tools Demo
-Congradulations! You made it to the end!
-You can see all the new prefabricated tools in action [**here**](https://devosoft.github.io/empirical-prefab-demo/empirical-prefab-demo).
+## Acknowledgements
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 ## Sources
 [^1]: [Empirical GitHub](https://github.com/devosoft/Empirical)
