@@ -132,7 +132,8 @@ var dra = dragula(arr, {  // By passing in arr i make all divs in array Drag/Dro
 
 ```
 
-Now that things can are drag/dropable i make sure everything works how i want it to
+Now that things can are drag/dropable i make sure everything works how i want it to<br>
+Using the 'drop' event listener i make changes to the custom data values i have set for the .item object that is being moved
 
 ```JavaScript
 
@@ -143,8 +144,9 @@ dra.on('drop', function(el){  // A Dragula event that happens anytime an item is
   var organismNumber = el.getAttribute("data-OrganismNumber")
   var value = el.getAttribute("data-value")
   
-
-
+```
+These lines help tell where the .item object is being dropped in and change specific data values based on which drop valid container it is dropped in
+```JavaScript
   if (el.parentElement.className == 'trashMove') {  
       el.remove();  // Deletes .item object that is dropped in trash
     }else{
@@ -162,31 +164,26 @@ dra.on('drop', function(el){  // A Dragula event that happens anytime an item is
 
       if (el.parentElement.className=='freezerMove') {
         el.setAttribute("data-location", -1);
-        el.setAttribute("data-value", newValue()) //  ****************************************************
+        // Using newValue function it updates the name of the orginism differentiating it from its parent organism it was originally copied from
+        el.setAttribute("data-value", newValue()) 
         el.innerText = el.getAttribute("data-value")
 
       }
 
 
     }
+```
 
-    objectsInCanvas=[]
-    for (var i = 0; i < $(".space .item").length; i++) {
-      objectsInCanvas.push($(".space .item")[i])
-    }
-
-
-
-
-    console.log(objectsInCanvas)
-    returnObjectsInCanvas()
-
+These were all custome functions i made to help update the varibales i set at the top of the drop function<br>
+they help organize what happens when things get dropped into drop valid containers
+```JavaScript
+  // takes in the location that .item object was placed in and updates the custom location data
   function newLocation(NEW_LOCATION){
     el.setAttribute("data-location",NEW_LOCATION);
     location = el.getAttribute("data-location");
   }
  
-  // helps keep track of individual organism in each group Ex: shows fisrt intance of cool organism placed 
+  // helps keep track of individual organism in each group Ex: shows fisrt intance of 'cool org' placed on canvas 
   function newOrganismNumber(){
     var number=0;
 
@@ -197,7 +194,7 @@ dra.on('drop', function(el){  // A Dragula event that happens anytime an item is
       }
     }
     
-    return number-2; //subtract mirror and org in freezer
+    return number-2; //subtract mirror and original org in freezer
   }
 
  
@@ -217,5 +214,15 @@ dra.on('drop', function(el){  // A Dragula event that happens anytime an item is
 
 
 ```
+this is also inside of the drop function and keeps track of all the objects in the canvas
 
+```JavaScript
+    objectsInCanvas=[] // empties objectsInCanvas arr so there are no copies
+    for (var i = 0; i < $(".space .item").length; i++) {
+      objectsInCanvas.push($(".space .item")[i])    // populates all array with all objects currently on canvas
+    }
+
+    console.log(objectsInCanvas)    
+    returnObjectsInCanvas() // shows information about all objects in canvas in console
+```
 
