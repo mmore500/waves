@@ -313,7 +313,7 @@ After the initial data collection, I took that data and ran it through a [python
 
 To incorporate this data into the systematics manager, I imported the percentile csv files (output of the python script) into the two functions described in the systematics section. Wherever these functions are called in future code, they will calculate the phylogenetic diversity of the tree and return the percentile value for how the tree compares to the models. 
 
-**4. Test Systematics.h classifications**
+**4. Test Systematics classifications**
 
 After I had this framework setup I decided to test its reliability. I ran my models once again and had the systematics manager classify each tree's final phylogenetic diversity after each set of generations. I used the file containing percentiles for the tree that used mutations but had no pressure for diversity. 
 
