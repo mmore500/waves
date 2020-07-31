@@ -194,7 +194,7 @@ Within the systematics manager, I added two functions to use when calculating ph
 
 The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. However, if you use this particular function, you can't choose the number of generations. This set of data also accounts for all of the possible phylogenetic diversity values that were found in the model, not just final values. This means there is data for 10 generations through 100 generations with no clear distinction. 
 
-tree_percentiles.csv contains data that looks like this:
+[tree_percentiles.csv](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/tree_percentiles.csv) contains data that looks like this:
 
 _The leftmost number refers to the percentile. The second number is the corresponding phylogenetic diversity value._
 
