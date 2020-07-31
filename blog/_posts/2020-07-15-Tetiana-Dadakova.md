@@ -203,8 +203,8 @@ To sum up, change log consists of two data structures:
 
 Check out my [cool cool source file]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png).
 
-![Comparison of performance for insert() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 70%; align: center;"}  
-![Comparison of performance for remove() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 70%; align: center;"}  
+![Comparison of performance for insert() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 20%; align: center;"}  
+![Comparison of performance for remove() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 20%; align: center;"}  
 
 
 This section will include more figures and text regarding comparison with naive approach.
@@ -222,14 +222,14 @@ There are multiple things in the algorithm that could be optimized, from both al
 
 ## Acknowlegements
 I would like to thank my mentors:    
-[Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}  
-[Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
-[Jose]  
-as well as team members:
-[Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}  
-[Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}  
-[Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}  
-[Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}  
+![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}  
+![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
+![Jose]  
+as well as team members:  
+![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}  
+![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}  
+![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}  
+![Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}  
 
 ---
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
