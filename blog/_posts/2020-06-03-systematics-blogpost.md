@@ -15,7 +15,7 @@ The purpose of this project is to develop a way to compare phylogenetic trees of
 ### **Motivation:** 
 Within the Empirical library and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different tree sizes and characteristics make it hard to obtain statistically useful data in terms of comparison. The work done in digital evolution has made this particularly apparent. While other projects have aimed to solve this problem, there isn't currently a good method that accounts for a variety of constraints such as tree depth, different pressures for diversity, etc. This project aims to solve this.
 
-#### **Experiment Outline** 
+### **Experiment Outline** 
  1. Creation of a **null model** of a phylogenetic tree 
 
  2. Creation of a tree that **mutates** and diverges in a non-random way
@@ -192,7 +192,7 @@ This project focused on two topics -- creating models to establish the possible 
 
 Within the systematics manager, I added two functions to use when calculating phylogenetic diversity and finding the percentile associated with that diversity. 
 
-The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. 
+The first function, ```FindPhyloData()```, can be used if a user wants to compare results with the null model. It will calculate the phylogenetic diversity wherever the function is called and return the percentile corresponding to that value based on the data from the null model, which is stored in tree_percentiles.csv. However, if you use this particular function, you can't choose the number of generations. This set of data also accounts for all of the possible phylogenetic diversity values that were found in the model, not just final values. This means there is data for 10 generations through 100 generations with no clear distinction. 
 
 tree_percentiles.csv contains data that looks like this:
 
@@ -237,9 +237,9 @@ _The leftmost number refers to the percentile. The second number is the correspo
 
 ```
 
-The following function, ``GetPhylogeneticDiversityNormalize()``, is used for trees that contain pressure for diversity or just mutations. It can also be used for multiple generations (10 through 100 generations). When called, it takes an argument for the number of generations and filename. This corresponds to a line in the specified csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
+The following function, ``GetPhylogeneticDiversityNormalize()``, can be used for trees that contain pressure for diversity, just mutations, or a random tree like the null model. It can also be used for multiple generations (10 through 100 generations). When called, it takes an argument for the number of generations and filename. This corresponds to a line in the specified csv, each containing percentiles for different numbers of generations. This function only allows users to use multiples of 10 for the generation numbers though. For example, 10, 20, 30, ... 100 generations. 
 
-If this function is used with no arguments, it will only return the phylogenetic diversity value where it is called. If you want to find the percentile value associated with your phylogenetic diversity, you need to add two arguments -- the number of generations in your tree and the filename that you want to compare with. If you want to receive a percentile value from the file without pressure for diversity, the filename argument should be replaced with ``"TensChooseOrgGenotype.csv"``. If you want to compare with pressure for diversity values, you can use ``TensChooseOrgDiversityGenotype.csv``. You can use either file, regardless of tree type.
+If this function is used with no arguments, it will only return the phylogenetic diversity value where it is called. If you want to find the percentile value associated with your phylogenetic diversity, you need to add two arguments -- the number of generations in your tree and the filename that you want to compare with. If you want to receive a percentile value from the file without pressure for diversity, the filename argument should be replaced with ``"TensChooseOrgGenotype.csv"``. If you want to compare with pressure for diversity values, you can use ``TensChooseOrgDiversityGenotype.csv``. If you want to compare with the null model and specify generations, you can use ``TensCladeMultiGen.csv``. You can use any of these files, regardless of tree type.
 
 
 ```c++
