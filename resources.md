@@ -11,7 +11,7 @@ description: Workshop resources
 ## Learning & Exploring C++
 
 * [HackerRank C++ Practice](https://www.hackerrank.com/domains/cpp)
-* Lipman, Lajoie, and Moo's [C++ Primer](https://www.amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113) textbook
+* Lipman, Lajoie, and Moo's [C++ Primer](http://www.worldcat.org/oclc/1105800812) textbook
 * Anthony Calandra's [list of modern C++ features, with examples](https://github.com/AnthonyCalandra/modern-cpp-features)
 * the [CppCon youtube channel](https://www.youtube.com/user/CppCon)
 * The Cherno's [C++ youtube series](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
