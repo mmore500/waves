@@ -43,15 +43,12 @@ A null model is a randomly generated model of an object or structure that is not
 
 Phylogenetic diversity is a measure of biodiversity in a population or set of species. In this project, phylogenetic diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. Extant taxa are groups of organisms that are still present in the tree, and have not died out (become extinct). 
 
-We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness. However, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
+In this project, phylogenetic diversity was used as the metric for comparison. Evolutionary distinctiveness could have also been used. However, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
 
 ### **Synchronous vs. Asynchronous Populations**
-A synchronous population is a population in which each generation is a discrete time point 
-and a completely new set of individual organisms is created for each generation. This means that
-an organism and its parent can never exist at the same time. 
+A synchronous population is a population in which each generation is a discrete time point and a completely new set of individual organisms is created for each generation. This means that an organism and its parent can never exist at the same time. 
 
-An asynchronous population is the opposite, where generations overlap and organisms reproduce 
-when they are ready. 
+An asynchronous population is the opposite, where generations overlap and organisms reproduce when they are ready. 
 
 This project exclusively uses synchronous populations. 
 
@@ -63,6 +60,8 @@ You can find a percentile range by ordering your data from least to greatest. Th
 --------------------------------------------------------------------------
 
 ## **The Null Model**
+
+##### [GitHub Null Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/main.cpp)
 
 Coming up with a null model of a tree was not the most intuitive, but we decided that having the most randomly generated model was the best option. 
 
@@ -78,13 +77,13 @@ int chooseOrg(vector<Organism> &currentGen, emp::Random &randNum){
 }
 ```
 
-In the code above, the Empirical random number generator was utilized to ensure that results were actually random. First, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
+In the code above, the [Empirical random number generator](https://github.com/devosoft/Empirical/blob/master/source/tools/Random.h) was utilized to ensure that results were actually random. First, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
 
 In the null model, each time a new organism was created, it represented its own clade or taxon to ensure maximum diversity. 
 
-##### [GitHub Null Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/main.cpp)
-
 ## **Mutation and Pressure for Diversity** 
+
+##### [GitHub Pressure for Diversity and Mutation Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/main.cpp)
 
 ### **Mutation**
 
@@ -184,8 +183,6 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 In all three of these models, phylogenetic diversity increases with tree depth (number of generations). This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
 ![Average Phylogenetic Diversity Over Time for All Three Models]({{ site.baseurl }}/assets/abbywlsn/DiversityOverTime.jpg)
-
-##### [GitHub Pressure for Diversity and Mutation Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/main.cpp)
 
 ## **Systematics** 
 
