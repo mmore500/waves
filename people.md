@@ -4,20 +4,6 @@ title: People
 description: Workshop folks
 ---
 
-<style>
-.img-holder {
-  width: 20%;
-  position: relative;
-  min-width:100px;
-  max-width:150px;
-  padding: 10px;
-}
-.img-holder img {
-  top: 0;
-  left: 0;
-}
-</style>
-
 {% assign mentors = site.data.people | where:'role', 'mentor' | sort: "nick" %}
 {% assign participants = site.data.people | where:'role', 'participant' | sort: "nick" %}
 {% assign friends = site.data.people | where:'role', 'other'  | sort: "nick" %}
@@ -29,7 +15,10 @@ description: Workshop folks
 
   <div class="img-holder">
     <a href="#{{ person.github | replace: "-", "_" }}">
-      <img src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png">
+      <img
+        src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png"
+        alt="{{ person.first }} {{ person.last }}"
+      >
     </a>
   </div>
 {% endfor %}
@@ -37,7 +26,7 @@ description: Workshop folks
 
 # Participants
 
-![clouds]({{ site.baseurl }}/assets/gifcities-clouds.gif){:width="100%"}
+![clouds]({{ site.baseurl }}/assets/gifcities-clouds.gif){:style="width:100%;"}
 
 {% for person in participants %}
 
@@ -47,7 +36,7 @@ description: Workshop folks
 
 # Mentors
 
-![twisting]({{ site.baseurl }}/assets/gifcities-twist.gif){:width="100%"}
+![twisting]({{ site.baseurl }}/assets/gifcities-twist.gif){:style="width:100%;"}
 
 {% for person in mentors %}
 
@@ -57,7 +46,7 @@ description: Workshop folks
 
 # Friends
 
-![sheep]({{ site.baseurl }}/assets/gifcities-sheep.gif){:width="100%"}
+![sheep]({{ site.baseurl }}/assets/gifcities-sheep.gif){:style="width:100%;"}
 
 {% for person in friends %}
 
