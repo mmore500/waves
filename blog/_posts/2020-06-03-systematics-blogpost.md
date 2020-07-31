@@ -58,7 +58,7 @@ This project exclusively uses synchronous populations.
 ### **Percentiles** 
 A percentile is a range of values split into 100 equal groups. Each group corresponds to a number between 0 and 100, this value is known as the percentile. 
 
-You can find a percentile range by ordering it from least to greatest. The 20th percentile would be all of the values in the first 20% of your data.
+You can find a percentile range by ordering your data from least to greatest. The 20th percentile would be all of the values in the first 20% of your data.
 
 --------------------------------------------------------------------------
 
