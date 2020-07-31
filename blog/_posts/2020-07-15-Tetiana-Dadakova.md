@@ -121,7 +121,7 @@ parent genome:    {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 delete(3, 2) // delete two sites at index 3
 delete(5, 3) // delete three sites at index 5
 
-change_log:       {{3 : -2}, {5 : -5}} // deletion of two sites at index 5 and three sites at index 8
+change_log:       {{3 : -2}}, {{5 : -5}} // deletion of two sites at index 5 and three sites at index 8
 
 // Can reconstruct the following offspring using the parent genome and change_log
 offspring genome: {0, 1, 2, 5, 6, 10, 11}
@@ -142,7 +142,7 @@ Each value in the change_log map corresponds to the index shift relative to the 
 E.g. updating our previous map with an insertion of 3 elements {20, 21, 22} at index 7:
 ```
 {3 : {-2, false}}
-{5 : {-5, false}
+{5 : {-5, false}}
 {7 : {0, true}}
 ```
 
