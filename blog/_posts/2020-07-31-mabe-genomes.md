@@ -58,7 +58,7 @@ The naive implementation allows for quick random access because it uses contiguo
 Theoretically, change logging can save significant time and memory, especially for larger genomes. This project aims to examine how a change logging genome implementation performs compared to the naive genome implementation.
 
 ## My Algorithm for Change Logging
-- **Data Structures:**
+  ### Data Structures:
   - Each genome stores a **changelog** and an **offset map**.
     - **Changelog: standard library ordered map**
       - The **key** represents the **position** in the current genome.
@@ -74,7 +74,7 @@ Theoretically, change logging can save significant time and memory, especially f
     
     ![changelog structures]({{ site.baseurl }}/assets/uma-sethuraman/ChangeloggingDataStructures.png){:style="width: 100%;"}
 
-- **Parent Genome:**
+  ### Parent Genome:
   - The parent genome is represented as a **shared pointer to a vector of bytes**. The vector of bytes contains the parent's values.
   ``` c++
       std::shared_ptr<std::vector<std::byte>> parent;
@@ -83,11 +83,11 @@ Theoretically, change logging can save significant time and memory, especially f
   - **Cloning** a genome creates an offspring for that genome with identical genome values. The offspring is then mutated.
     - When an offspring genome is created through cloning, the offspring's shared pointer is set equal to the parent's shared pointer. 
     
-  - **Advantages of shared pointer: **
+    #### Advantages of using a shared pointer:
     - Compared to the naive implementation which copies over the entire sites vector from parent to offspring, only resetting the parent shared pointer is more efficient.
     - Using a shared pointer automatically cleans up any parent which has no offspring pointing at it.
 
-- **Insert, Remove, and Overwrite Mutations:**
+  ### Insert, Remove, and Overwrite Mutations:
   - **Insert mutation:** inserts value(s) at a certain position in current genome and changes genome size
     - The demo below goes through all of the steps involved in an insertion:
      ![insertion demo]({{ site.baseurl }}/assets/uma-sethuraman/InsertionDemo.gif){:style="width: 100%;"}
@@ -98,7 +98,7 @@ Theoretically, change logging can save significant time and memory, especially f
     - The demo below goes through all of the steps involved in an overwrite:
     ![overwrite demo]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteDemo.gif){:style="width: 100%;"}
 
-- **Random Access:**
+  ### Random Access:
   - The `getCurrentGenomeAt` function below shows how to access position (pos) in the current genome.
   
     ``` c++
