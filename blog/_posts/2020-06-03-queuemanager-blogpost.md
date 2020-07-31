@@ -5,14 +5,14 @@ date: 2020-06-03
 author: Juan Eduardo Chavez
 ---
 
-## Introduction to Prisoners Dilemna World
+## Introduction to Prisoners Dilemma World
 
-The Prisoner's Dilemna is an example of decision analysis within game theory. In this example, we take two individuals (prisoners) who are given choices that will not only ultimately impact their own self, but the other party as well. Each individual is given the option to either stay silent in when being questioned (cooperate), or betray the other prisoner by admitting the other's crimes (defect). If both prisoners stay silent, both only have a one-year sentence. If one betrays and the other stays silent, the betrayer becomes free and the silent prisoner is sentenced to three years. If both prisoners betray each other, then each are sentenced to two years. This simulation analyzis why individuals may not want to work together, even if it's beneficial to do so.
+The Prisoner's Dilemma is an example of decision analysis within game theory. In this example, we take two individuals (prisoners) who are given choices that will not only ultimately impact their own self, but the other party as well. Each individual is given the option to either stay silent in when being questioned (cooperate), or betray the other prisoner by admitting the other's crimes (defect). If both prisoners stay silent, both only have a one-year sentence. If one betrays and the other stays silent, the betrayer becomes free and the silent prisoner is sentenced to three years. If both prisoners betray each other, then each are sentenced to two years. This simulation analyzes why individuals may not want to work together, even if it's beneficial to do so.
 
 ![PD Choice Image](/assets/chavez-ju/PDDecisionChart.png "PrisonerChart")
-(Chart representing each prisoners choices with the respective consequences)
+(Chart representing each prisoners choice with the respective consequences)
 
-A very visually detailed video explaing this simulation is here:
+A very visually detailed video explaining this simulation is here:
 https://www.youtube.com/watch?v=t9Lo2fgxWHw
 
 ## Simple Prisoners Dilemma World Application
@@ -23,7 +23,7 @@ Because this was only intended to be used for the Prisoners Dilemma, this tool i
 
 ## Queue Manager Implementation
 
-Queue Manager is a project desinged to address the versatility constraints presenet within the Prisoners Dilemma application. Queue Manager not only allows users to run the Prisoners Dilemma simlation while displaying real-time statistics of the runs, but it also gives flexibility to run any other simulation they so chose, as long as they fill in the current configuration requirements within QueueManager.
+Queue Manager is a project designed to address the versatility constraints present within the Prisoners Dilemma application. Queue Manager not only allows users to run the Prisoners Dilemma simulation while displaying real-time statistics of the runs, but it also gives flexibility to run any other simulation they so choose, as long as they fill in the current configuration requirements within Queue Manager.
 
 ![PD World Image](/assets/chavez-ju/PDWorldGraph.png "PDWorld")
 
@@ -38,27 +38,19 @@ Tools/technologies used:
 - HTML5/CSS3 - testing visualizations
 - JavaScript - browser capabilities from C++
 
-The CookieCutter was used to initiate all of necessary directories/files required in order to compile my software with the Emscripten compiler. Queue Manager is implemented as a header-only library in C++17. Its comprised of multiple classes, the primary one being the actual Queue Manager class. In this class, an STL Queue is the primary structure that the Queue Manager tool utilizes. Within this class, several member functions utilize Empricals web/math tools. This allows for the tool to be displayable for users onto a browser. Once the user configurs this class to their preference, using the imbedded SettingConfig Library, visuals are rendered by the Emscripten compiler onto a browser.
-
-## Project Challenges
-
-- First using regular Config library from Empirical
-  - Discuss big challenges with using that (Ugly Macros)
-- Switching to SettingConfig library and how that solved primary issues with using regular Config Library
-- Scoping issues
-- Not-yet created SettingConfig features that were just implemented
+The CookieCutter was used to initiate all of necessary directories/files required in order to compile my software with the Emscripten compiler. Queue Manager is implemented as a header-only library in C++17. It’s comprised of multiple classes, the primary one being the actual Queue Manager class. In this class, an STL Queue is the primary structure that the Queue Manager tool utilizes. Within this class, several member functions utilize Empirical’s web/math tools. This allows for the tool to be displayable for users onto a browser. Once the user configures this class to their preference, using the imbedded SettingConfig Library, visuals are rendered by the Emscripten compiler onto a browser.
 
 ## Project Improvements
 
-- Discuss how QueueManager could be improved
+- Allow Queue Manager to be more optimized for Command Line use. Users should be allowed to configer the the settings for their runs through the command line, instead of having to enter the files and change it from there.
 
-  - Additonal features that would be cool to have
+- Make the tool more presentable by better styling the HTML/CSS elements
 
 ## WAVES Take-away/Conclusion
 
-This workshop/project has enlightened me not only on the complexity of the Empirical Library, but also on the different capabilities different software tools have when used together, particularily C++17 with Empirical's web tools. Aside from this project, the WAVES seminars helped further my understanding in a variety of areas such as web develpment/testing, C++, and software design to name a few. The friendly and very knowledgable team working on Avida-ED and Empirical made my experience one to remmeber, and I am ever so greatful for everthing they've taught me!
+This workshop/project has enlightened me not only on the complexity of the Empirical Library, but also on the different capabilities different software tools have when used together, particularly C++17 with Empirical's web tools. Aside from this project, the WAVES seminars helped further my understanding in a variety of areas such as web development/testing, C++, and software design to name a few. The friendly and very knowledgeable team working on Avida-ED and Empirical made my experience one to remember, and I am ever so grateful for everything they've taught me!
 
-## Additional Information
+## Acknowledgements
 
 Mentor: Emily Dolson
 
