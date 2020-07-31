@@ -23,7 +23,7 @@ Because this was only intended to be used for the Prisoners Dilemma, this tool i
 
 Queue Manager is a project desinged to address the versatility constraints presenet within the Prisoners Dilemma application. Queue Manager not only allows users to run the Prisoners Dilemma simlation while displaying real-time statistics of the runs, but it also gives flexibility to run any other simulation they so chose, as long as they fill in the current configuration requirements within QueueManager.
 
-![alt text]({{ site.baseurl }}/assets/chavez-ju/PDWorldGraph.png){:style="width: 100%"}
+![PD World Image](/assets/chavez-ju/PDWorldGraph.png "PDWorld")
 
 Tools/technologies used:
 
