@@ -7,13 +7,13 @@ author: Abigail Wilson
 
 
 # Systematics Normalization
-I collaborated on this project with my mentors, Emily Dolson (www.emilyldolson.com) and Kate Skocelas (https://github.com/kgskocelas). 
+I collaborated on this project with my mentors, Emily Dolson (www.emilyldolson.com) and Kate Skocelas (https://github.com/kgskocelas). This project is part of [Empirical](https://github.com/devosoft/Empirical). Empirical is a library of C++ tools for developing scientific software. 
 
 ### **Goal:** 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
 
 ### **Motivation:** 
-Within the Empirical library (C++ tools for the Avida-ED project) and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically useful data in terms of comparison. This project aims to solve this. _why is it hard to compare?_ 
+Within the Empirical library and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different tree sizes and characteristics make it hard to obtain statistically useful data in terms of comparison. The work done in digital evolution has made this particularly apparent. While other projects have aimed to solve this problem, there isn't currently a good method that accounts for a variety of constraints such as tree depth, different pressures for diversity, etc. This project aims to solve this.
 
 #### **Experiment Outline** 
  1. Creation of a **null model** of a phylogenetic tree 
@@ -81,6 +81,8 @@ int chooseOrg(vector<Organism> &currentGen, emp::Random &randNum){
 In the code above, the Empirical random number generator was utilized to ensure that results were actually random. First, a random number was generated based on the size of the parent generation. That spot in the array was then set as the parent of the next generation. 
 
 In the null model, each time a new organism was created, it represented its own clade or taxon to ensure maximum diversity. 
+
+##### [GitHub Null Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/main.cpp)
 
 ## **Mutation and Pressure for Diversity** 
 
@@ -183,9 +185,11 @@ In all three of these models, phylogenetic diversity increases with tree depth (
 
 ![Average Phylogenetic Diversity Over Time for All Three Models]({{ site.baseurl }}/assets/abbywlsn/DiversityOverTime.jpg)
 
+##### [GitHub Pressure for Diversity and Mutation Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/main.cpp)
+
 ## **Systematics** 
 
-Systematics.h is a file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction by using genotypes, phenotypes, etc, to keep track of lineage. 
+[Systematics.h](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/Systematics.h) is a file manager in Empirical. It is used to track genotypes, species, clades, or lineages of organisms. Systematics.h allows a user to create phylogenetic trees with various levels of abstraction by using genotypes, phenotypes, etc, to keep track of lineage. 
 
 This project focused on two topics -- creating models to establish the possible range of phylogenetic diversity, then testing those models, and lastly, incorporating these percentiles into systematics so that a user could see how their own trees compare. 
 
@@ -289,9 +293,21 @@ With each of the three models, I ran each one 1000 times for every 10 generation
 
 For example, I would set the number of generations in the null model to 10. Then, I would run it 1000 times and at the end of each run, record the final diversity. I would then do 20 generations and so forth, all the way through 100 generations. 
 
+[Null Model Raw Data](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/CladeMultiGen.csv)
+
+[No Pressure for Diversity Raw Data](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/ChooseOrgGenotype.csv)
+
+[Pressure for Diversity Raw Data](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/ChooseOrgDiversityGenotype1000.csv)
+
 **2. Create a percentile range for each model.**
 
-After the initial data collection, I took that data and ran it through a python script which created a percentile range. It did this by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
+After the initial data collection, I took that data and ran it through a [python script](https://github.com/abbywlsn/PythonProjects/blob/master/phylo_script/phylo_percentiles.py) which created a percentile range. It did this by sorting all of the data from least to greatest. It would then take every 10th value in the dataset, to output 100 final diversity values, each corresponding to a percentile value from 0 to 100. For each of the different models, I repeated the same process.
+
+[Percentile Data Null Model](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/TensCladeMultiGen.csv)
+
+[Percentile Data No Pressure for Diversity](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/TensChooseOrgGenotype.csv)
+
+[Percentile Data Pressure for Diversity](https://github.com/abbywlsn/Empirical/blob/systematics-normalization/source/Evolve/miniphylotrees/GenTrees/TensChooseOrgDiversityGenotype.csv)
 
 **3. Incorporate percentile files into Systematics.h**
 
@@ -343,7 +359,7 @@ These tables and graph show that the tree with no pressure for diversity outputs
 
 ## **Conclusion**
 
-Based on the results shown above, the current function in the systematics manager, GetPhylogeneticDiversityNormalize(), is able to correct for the effect of tree size and return the percentile value of a given tree. 
+Based on the results shown above, the current function in the systematics manager, ``GetPhylogeneticDiversityNormalize()``, is able to correct for the effect of tree size and return the percentile value of a given tree. 
 
 Considering the size of this project, the standard deviation observed in our findings does not raise much concern for validity. The results seen, being that tree with no pressure for diversity result in an average classification of **56.37** and trees with pressure to diversify have an average classification of **93.7**, we can conclude that this function provides a useful classification of phylogenetic trees. 
 
