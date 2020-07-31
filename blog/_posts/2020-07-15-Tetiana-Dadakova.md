@@ -199,10 +199,12 @@ To sum up, change log consists of two data structures:
 
 
 ### Algorithm performance
-(The following figures will be updated with prettier ones, the data might change, but my genome will still be slower)
+(The following figures will be updated with prettier ones, the data might change, but my genome will still be slower)  
 
-![Comparison of performance for insert() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 100%"}
-![Comparison of performance for remove() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 100%"}
+Check out my [cool cool source file]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png).
+
+![Comparison of performance for insert() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 100%"}  
+![Comparison of performance for remove() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 100%"}  
 
 
 This section will include more figures and text regarding comparison with naive approach.
