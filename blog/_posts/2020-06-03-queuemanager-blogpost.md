@@ -56,13 +56,9 @@ The CookieCutter was used to initiate all of necessary directories/files require
 
 ## WAVES Take-away/Conclusion
 
-This workshop/project has enlightened me on not only the complexity of the Empirical Library, but also on the different capabilities different software tools have when using together.
+This workshop/project has enlightened me not only on the complexity of the Empirical Library, but also on the different capabilities different software tools have when used together, particularily C++17 with Empirical's web tools. Aside from this project, the WAVES seminars helped further my understanding in a variety of areas such as web develpment/testing, C++, and software design to name a few. The friendly and very knowledgable team working on Avida-ED and Empirical made my experience one to remmeber, and I am ever so greatful for everthing they've taught me!
 
-- Describe how all of these experiences benefited my development, teamwork, and communication skills
-- How this project specifically further improved my understanding of C++, HTML5, CSS3
-- My experiences with working with a mentor and other developers and how they impacted not only my project experience, but my overall experience as a waves participant
-
-## Extra
+## Additional Information
 
 Mentor: Emily Dolson
 
