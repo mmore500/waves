@@ -5,15 +5,15 @@ date: 2020-07-31
 author: Uma Sethuraman
 ---
 
-## Project Introduction
+## Project Introduction ##
 MABE, or Modular Agent Based Evolution Framework, is a platform which allows users to create populations of digital organisms and analyze the effects of virtually evolving these populations. One of the key components of MABE is the genome class, which represents genomes for digital organisms in the population. The goal of this project is to advance the genome class in MABE by optimizing its memory consumption and runtime.
 
 If you would like to learn more about the MABE framework, take a look at this *[Introduction to MABE](https://szendejo.github.io/waves/blog/Team-MABE.html)* blogpost co-written by my teammates and I!
 
-## Genomes in MABE 1.0
+## Genomes in MABE 1.0 ##
 In biology, genomes are an organism's entire set of DNA and allow organisms to maintain themselves and function properly. Similarly, in MABE, the genomes of digital organisms are represented as lists of values which can be read from, written to, and mutated from parent to offspring. Every genome has a contiguous piece of memory to store its values.
 
-## Naive Genome Class Implementation
+## Naive Genome Class Implementation ##
 The naive implementation of the genome class uses a vector of bytes to store its values. As a result, it uses standard library vector functions to perform the mutations.
 ``` c++
     std::vector<std::byte> sites;
@@ -40,7 +40,7 @@ When cloning genomes from generation to generation, the parent genome sites vect
 
 The naive implementation allows for quick random access because it uses contiguous memory. It may also initially seem like the easier or cleaner solution to implement, since it uses familiar standard library functions.
 
-## Drawbacks of the Naive Implementation
+## Drawbacks of the Naive Implementation ##
 - Genomes are often very large, from **hundreds of thousands** of sites to **millions** of sites.
 - So copying very large genomes from generation to generation can be expensive and time-consuming.
 - With large genome sizes and low mutation rates, the number of sites mutated in an offspring is significantly less than the number of sites which remain the same between parent and offspring. 
@@ -48,7 +48,7 @@ The naive implementation allows for quick random access because it uses contiguo
 
 ![genome copies]({{ site.baseurl }}/assets/uma-sethuraman/GenomeCopies.gif){:style="width: 100%;"}
 
-## Change Logging as a Solution
+## Change Logging as a Solution ##
 - Change logging's goal is to eliminate excess copying of genomes from parent to offspring.
 - With change logging, genomes will only store the differences between parent and offspring genomes. 
 - Each genome will keep track of a log of changes, documenting the mutations between the last saved **parent** genome and the current genome. The parent genome should be reset whenever the changelog becomes too large. 
@@ -57,8 +57,8 @@ The naive implementation allows for quick random access because it uses contiguo
 
 Theoretically, change logging can save significant time and memory, especially for larger genomes. This project aims to examine how a change logging genome implementation performs compared to the naive genome implementation.
 
-## My Algorithm for Change Logging
-  ### Data Structures:
+## My Algorithm for Change Logging ##
+### Data Structures: ###
   - Each genome stores a **changelog** and an **offset map**.
     - **Changelog: standard library ordered map**
       - The **key** represents the **position** in the current genome.
@@ -74,7 +74,7 @@ Theoretically, change logging can save significant time and memory, especially f
     
     ![changelog structures]({{ site.baseurl }}/assets/uma-sethuraman/ChangeloggingDataStructures.png){:style="width: 100%;"}
 
-  ### Parent Genome:
+### Parent Genome: ###
   - The parent genome is represented as a **shared pointer to a vector of bytes**. The vector of bytes contains the parent's values.
   ``` c++
       std::shared_ptr<std::vector<std::byte>> parent;
@@ -83,11 +83,11 @@ Theoretically, change logging can save significant time and memory, especially f
   - **Cloning** a genome creates an offspring for that genome with identical genome values. The offspring is then mutated.
     - When an offspring genome is created through cloning, the offspring's shared pointer is set equal to the parent's shared pointer. 
     
-    #### Advantages of using a shared pointer:
+    #### Advantages of using a shared pointer: ####
     - Compared to the naive implementation which copies over the entire sites vector from parent to offspring, only resetting the parent shared pointer is more efficient.
     - Using a shared pointer automatically cleans up any parent which has no offspring pointing at it.
 
-  ### Insert, Remove, and Overwrite Mutations:
+### Insert, Remove, and Overwrite Mutations: ###
   - **Insert mutation:** inserts value(s) at a certain position in current genome and changes genome size
     - The demo below goes through all of the steps involved in an insertion:
      ![insertion demo]({{ site.baseurl }}/assets/uma-sethuraman/InsertionDemo.gif){:style="width: 100%;"}
@@ -98,7 +98,7 @@ Theoretically, change logging can save significant time and memory, especially f
     - The demo below goes through all of the steps involved in an overwrite:
     ![overwrite demo]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteDemo.gif){:style="width: 100%;"}
 
-  ### Random Access:
+### Random Access: ###
   - The `getCurrentGenomeAt` function below shows how to access position (pos) in the current genome.
   
     ``` c++
@@ -146,20 +146,20 @@ Theoretically, change logging can save significant time and memory, especially f
     ```
   - This implementation allows for fast random access. In the case that the requested position is in the changelog, the time complexity is `O(logn)`, where `n` is the number of elements in the changelog. This is because we check if the requested position is in the changelog before returning the value. In the case that the requested position is not in the changelog, the time complexity is `O(log(mn))`, where `m` is the number of elements in the offset map and `n` is the number of elements in the changelog. This is because we check if the requested position is in the changelog first (`logn`). Since it isn't in this case, we also check if the position is in the offset map (`logm`), and `logm+logn = O(log(mn))`.
   
-## Results: 
+## Results: ##
   - Talk about how test genome is still better
   - Insert graphs here
   - Benchmarking of the different implementations is done through catch2.
   - Results not yet finalized
   
-## Future Optimizations:
+## Future Optimizations: ##
   - Make collapsing the changelog more efficient
   - Determine better way to decide when to collapse the changelog, don't want to collapse it for too small of a size
   
-## Conclusion:
+## Conclusion: ##
 - I’ve really enjoyed working on this project with a great team of participants and mentors. It’s been so helpful to have a team to collaborate with, debug with, bounce ideas off of, and learn from. Each participant in my team implemented a different algorithm for this problem in order to test out multiple diffferent solutions. I’m really excited to have contributed to advancing genomes in MABE through my project this summer. I can’t wait to see how not only genomes but all parts of MABE will continue to evolve (pun intended😂) in the future! Thank you to my wonderful mentors and great teammates who I’ve listed below! Thank you also to the entire WAVES team who has made this summer program's experience so amazing!
 
-## Team MABE 🎉
+## Team MABE 🎉 ##
 - **Mentors:** Clifford Bohm, Jory Schossau, Jose Hernandez
 - **Teammates:** Stephanie Zendejo, Tetiana Dadakova, Victoria Cao, Jamell Dacon
 
