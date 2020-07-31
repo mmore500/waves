@@ -13,7 +13,7 @@ I collaborated on this project with my mentors, Emily Dolson (emilyldolson.com) 
 The purpose of this project is to develop a way to compare phylogenetic trees of different sizes and characteristics in a standardized way. 
 
 #### Motivation: 
-Within the Empirical library (C++ tools for the Avida-ED project) and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically significant data in terms of comparison. This project aims to solve this. _why is it hard to compare?_ 
+Within the Empirical library (C++ tools for the Avida-ED project) and the field of evolutionary biology in general, there is not a good way to compare phylogenetic trees with one another. Different generational sizes and characteristics make it hard to obtain statistically useful data in terms of comparison. This project aims to solve this. _why is it hard to compare?_ 
 
 #### Experiment Outline 
  1. Creation of a **null model** of a phylogenetic tree 
@@ -43,7 +43,22 @@ A null model is a randomly generated model of an object or structure that is not
 
 Phylogenetic diversity is a measure of biodiversity in a population or set of species. In this project, phylogenetic diversity is defined as the number of internal nodes in the tree plus the number of extant taxa, minus one. This metric assumes that all branches from parent to child have a length of one. Extant taxa are groups of organisms that are still present in the tree, and have not died out (become extinct). 
 
-We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness, however, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
+We decided that I would use phylogenetic diversity as our metric for comparison. I could have also used evolutionary distinctiveness. However, phylogenetic diversity is a highly applicable trait among trees, and it is easy to calculate, making it a desirable metric for comparison. 
+
+### **Synchronous vs. Asynchronous Populations**
+A synchronous population is a population in which each generation is a discrete time point 
+and a completely new set of individual organisms is created for each generation. This means that
+an organism and its parent can never exist at the same time. 
+
+An asynchronous population is the opposite, where generations overlap and organisms reproduce 
+when they are ready. 
+
+This project exclusively uses synchronous populations. 
+
+### **Percentiles** 
+A percentile is a range of values split into 100 equal groups. Each group corresponds to a number between 0 and 100, this value is known as the percentile. 
+
+You can find a percentile range by ordering it from least to greatest. The 20th percentile would be all of the values in the first 20% of your data.
 
 --------------------------------------------------------------------------
 
@@ -141,9 +156,6 @@ void calcFitness(vector<Organism> &currentGen, vector<double> &fitnessVect, emp:
     }
 }
 ```
-
-**_THIS CODE NEEDS COMMENTING AND EXPLANATION_**
-
 After fitness was calculated, the organisms with rarer fitness were chosen for reproduction. For this, I used the following ChooseOrgDiversity function. 
 
 ```c++
@@ -183,16 +195,18 @@ The first function, ```FindPhyloData()```, can be used if a user wants to compar
 
 tree_percentiles.csv contains data that looks like this:
 
-0, 19.0
-1, 22.960000000000036
-2, 27.0
-3, 32.0
-4, 36.0
-5, 39.0
-...
-98, 160.0
-99, 168.0
-100, 201.0
+|   Percentile 	| Diversity |
+|----:	|------:	|
+|   0   |    19     |
+|   1 	| 22.96 	|
+|   2 	|    27 	|
+|   3 	|    32 	|
+|   4 	|    36 	|
+|   5 	|    39 	|
+| ... 	|       	|
+|  98 	|   160 	|
+|  99 	|   168 	| 
+| 100 	|   201 	|
 
 The leftmost number refers to the percentile. The second number is the corresponding phylogenetic diversity value. 
 
