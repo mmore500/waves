@@ -4,6 +4,7 @@ title: "Onboarding Checklist"
 date: 2020-05-16
 author: Grace Whipple
 ---
+![Photo]({{ site.baseurl }}/assets/GraceWhipple/WAVESIntroPhoto.jpg)
 
 _Hello! My name is Grace Whipple and I am a junior at Michigan State University. I am studying Human Biology with a minor in health Promotions. This last year I switched my major from Secondary Education to Human Biology on the Pre-Med track. This was a huge change that I was not expecting: But hey, college is where you're supposed to figure this stuff out right? Some of my interests include doing Bob Ross paint alongs, boxing, and spending time with friends._
 
