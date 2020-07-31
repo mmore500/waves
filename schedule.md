@@ -107,11 +107,13 @@ description: Workshop schedule
 ## Week 9
 * July 27: group check-in meeting
   * 2:30 to 4pm EST
+  * participants each briefly (1 to 2 min.) overview project wrap-up/hand-off plans
 * July 29: [enrichment seminar 9]({{ site.baseurl }}/enrichment/week9.html)
   * 2:30 to 4pm EST
-  * participants each briefly (1 to 2 min.) overview project wrap-up/hand-off plans
 * July 29: virtual social games hour
   * 7 to 8pm EST
 * July 29: **blog post peer feedback due**
+* July 31: WAVES closing celebration
+  * 1pm to 2pm EST
 * July 31: **final draft blog post due**
 * July 31: *stipend installment 5 mailed*
