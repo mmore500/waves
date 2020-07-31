@@ -44,7 +44,7 @@ However, there are also disadvantages:
 * Every generation, the whole genome (the whole `sites` vector) is copied and then the mutations are applied to it -> In a common situation of large genome and low mutation rates, it means copying a lot of values that didn't change  
 * The `insert()` and `erase()` algorithms have linear time complexity -> inefficient time  
   
-  **The goal of this project was to investigate if storing only the mutations (as opposed to storing the whole genome) would provide a better time and memory performance.**
+**The goal of this project was to investigate if storing only the mutations (as opposed to storing the whole genome) would provide a better time and memory performance.**
 
 ### Optimized Implementation Using Change Log  
 
@@ -58,6 +58,8 @@ As we've seen above, the algorithm has to support the following mutations:
 My implementation consists of two maps from the standard library:
 * **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
 * **segments_log** is implemented as std::unordered_map and stores the segments that were inserted into the map dusing mutation
+
+![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 20%; align: center;"}  
 
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory block of necessary sites.
 
@@ -201,8 +203,6 @@ To sum up, change log consists of two data structures:
 ### Algorithm performance
 (The following figures will be updated with prettier ones, the data might change, but my genome will still be slower)  
 
-Check out my [cool cool source file]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png).
-
 ![Comparison of performance for insert() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Insert.png){:style="width: 20%; align: center;"}  
 ![Comparison of performance for remove() method]({{ site.baseurl }}/assets/TetianaBlogFigs/Remove.png){:style="width: 20%; align: center;"}  
 
@@ -222,7 +222,8 @@ There are multiple things in the algorithm that could be optimized, from both al
 
 ## Acknowlegements
 I would like to thank my mentors:    
-![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}  
+
+![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
 ![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
 ![Jose]  
 as well as team members:  
@@ -230,7 +231,7 @@ as well as team members:
 ![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}  
 ![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}  
 ![Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}  
-
+  
 ---
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
