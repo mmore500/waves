@@ -32,7 +32,7 @@ A phylogenetic tree is a commonly used abstraction or way of thinking about evol
 
 _This is a diagram of a basic phylogenetic tree. In this diagram, the population mutated 4 times (as shown by each divergence of the tree at each node). The final 5 taxa at the end of the tree each have unique genotypes and are considered distinct from one another._ 
 
-![Phylo Tree Diagram](/assets/BlogImages/PhyloTreeDiagram.jpg)
+![Phylo Tree Diagram]({{ site.baseurl }}/assets/abbywlsn/PhyloTreeDiagram.jpg)
 
 ### **Null Models**
 
@@ -181,7 +181,7 @@ int chooseOrgDiversity(vector<double> &fitnessVect, emp::Random &randNum){
 
 In all three of these models, phylogenetic diversity increases with tree depth (number of generations). This is very clearly illustrated in all 3 of my models and is shown in the graph below. 
 
-![Average Phylogenetic Diversity Over Time for All Three Models](/assets/BlogImages/DiversityOverTime.jpg)
+![Average Phylogenetic Diversity Over Time for All Three Models]({{ site.baseurl }}/assets/abbywlsn/DiversityOverTime.jpg)
 
 ## **Systematics** 
 
@@ -335,7 +335,7 @@ When I used this process on the tree with mutations but with no pressure for div
 | 90 gens  |  99 | 96 |  99 |  99 |  98 |  98 | 86  | 99  | 99  |  99 |    97.2 |        4.049691346 |
 | 100 gens |  99 | 99 |  99 |  99 |  98 |  99 | 94  | 99  | 99  |  99 |    98.4 |        1.577621275 |
 
-![Percentile Graph](/assets/BlogImages/PercentileGraph.jpg)
+![Percentile Graph]({{ site.baseurl }}/assets/abbywlsn/PercentileGraph.jpg)
 
 _This graph displays the average percentile classification and the standard deviation for each point (the error bars)._
 
