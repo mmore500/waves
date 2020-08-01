@@ -19,17 +19,6 @@ I'd recommend giving something like this a go for anyone facilitating a virtual 
 
 Here's a recap of some of the wholesome fun.
 
-<style>
-.celebration-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  height: auto;
-  max-height: 256px;
-}
-</style>
-
 ## Abby
 
 ![cat drinking from a sink]({{ site.baseurl}}/assets/mmore500/celebration-abbywlsn.gif){:class="celebration-image"}
