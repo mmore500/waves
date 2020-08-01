@@ -210,6 +210,7 @@ _The leftmost number refers to the percentile. The second number is the correspo
 | 100 	|   201 	|
 
 
+
 ```c++
   int FindPhyloData(){
     int percentile; 
@@ -335,6 +336,7 @@ When I used this process on the tree with mutations but with no pressure for div
 
 
 **The table below contains the percentile values for a tree _with_ pressure for diversity.**
+
 |          |     |    |     |     |     |     |     |     |     |     | Average | Standard Deviation |
 |----------|-----|----|-----|-----|-----|-----|-----|-----|-----|-----|---------|--------------------|
 | 10 gens  |  37 | 80 |  80 |  61 |  99 |  61 | 98  | 91  | 61  |  91 |    75.9 |         20.2509259 |
