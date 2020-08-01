@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Wrapped D3.js Visualizations"
-date: 2020-06-31 //TODO
+date: 2020-07-31
 author: Elizabeth Carney
 ---
 <link rel="stylesheet" type="text/css" media="all" href="{{ site.baseurl }}/assets/elizabethcarney/wrapped-d3-visualizations-styles.css"/>
