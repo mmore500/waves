@@ -2,5 +2,8 @@ language: ruby
 cache: bundler
 rvm: 2.6
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y ca-certificates
 install: script/bootstrap
 script: script/cibuild

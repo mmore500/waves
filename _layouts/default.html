@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <meta charset="UTF-8">
     {% include gifscroll.html %}
     {% include gifdisable.html %}
     {% include mathjax.html %}
@@ -8,7 +9,6 @@
     {% if jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
-    <meta charset="UTF-8">
 
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +21,8 @@
     <a
       style="float: left; padding: 5px; position: relative;"
       href="javascript:GifDisable();"
-      alt="Disable Animations"
     >
+      <span style="display:none"> Disable Animations </span>
       <span
         style="position:absolute; opacity: 0.2;"
       >
@@ -51,7 +51,7 @@
       <a href="{{ site.baseurl }}/index.html" class="btn">Call for Participants</a>
       <a href="{{ site.baseurl }}/schedule.html" class="btn">Schedule</a>
       <a href="{{ site.baseurl }}/tutorials.html" class="btn">Tutorials</a>
-      <a href="{{ site.baseurl }}/discussion.html" class="btn">Discussion Materials</a>
+      <a href="{{ site.baseurl }}/enrichment.html" class="btn">Enrichment</a>
       <a href="{{ site.baseurl }}/resources.html" class="btn">Resources</a>
     </header>
 
