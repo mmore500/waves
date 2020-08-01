@@ -149,11 +149,17 @@ Theoretically, change logging can save significant time and memory, especially f
 ## Results: ##
  The graphs below show the performance of the naive implementation compared to my genome implementation for randomly generated mutations. These tests have been performed on size 5000, 20000, 50000, 75000, 100000, 250000, and 500000 genomes. All of these tests have been performed with the same mutation rate, 0.005.
   
+  ### Overwrite Results: ###
+  The graph below shows that my genome and the naive genome perform almost identically until size 5K. However, after this, though the two genomes are still very close in time, the naive genome is slightly faster.
   ![overwrite graph]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteGraph.png){:style="width: 100%;"}
-  [**Overwrite Graph Analysis:**]*This graph shows that my genome and the naive genome perform almost identically until size 5K.
-                      However, after this, though the two genomes are still very close in time, the naive genome is slightly faster.*
+  
+  ### Insert Results: ###
   ![insert graph]({{ site.baseurl }}/assets/uma-sethuraman/InsertGraph.png){:style="width: 100%;"}
+  
+  ### Remove Results: ###
   ![remove graph]({{ site.baseurl }}/assets/uma-sethuraman/RemoveGraph.png){:style="width: 100%;"}
+  
+  ### Multiple Mutations Results: ###
   ![multi graph]({{ site.baseurl }}/assets/uma-sethuraman/MultiGraph.png){:style="width: 100%;"}
   
 ## Performance Analysis: ##
