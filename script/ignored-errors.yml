@@ -1,2 +1,3 @@
 ---
 - The “frameborder” attribute on the “iframe” element is obsolete. Use CSS instead.
+- SRI and CORS not provided in: https://platform.twitter.com/widgets.js
