@@ -1,7 +1,7 @@
 title: WAVES
 description: Workshop for Avida-ED Software Development
 show_downloads: false
-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
 markdown: kramdown
 plugins_dir:
   - jemoji
