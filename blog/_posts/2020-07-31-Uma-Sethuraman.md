@@ -147,7 +147,7 @@ Theoretically, change logging can save significant time and memory, especially f
   - If the requested position is **not** in the changelog, the time complexity is `O(log(mn))`, where `m` is the number of elements in the offset map and `n` is the number of elements in the changelog. This is because we first search for the position in the changelog with `find()` which is `logn`. Since it isn't in the changelog, we also search for the position in the offset map using `find()` which is `logm`. Therefore, `logm+logn = O(log(mn))`.
   
 ## Results: ##
- The graphs below show the performance of the naive implementation compared to my genome implementation for randomly generated mutations. These tests have been performed on size 5000, 20000, 50000, 75000, 100000, 250000, and 500000 genomes. All of these tests have been performed with the same mutation rate, 0.005.
+The graphs below show the performance of the naive implementation compared to my genome implementation for randomly generated mutations. These tests have been performed on size 5000, 20000, 50000, 75000, 100000, 250000, and 500000 genomes. All of these tests have been performed with the same mutation rate, 0.005.
   
 ### Overwrite Results: ###
 The graph below shows that my genome and the naive genome perform almost identically until size 5K. However, after this, though the two genomes are still very close in time, the naive genome is slightly faster.
