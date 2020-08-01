@@ -86,13 +86,12 @@ For example, the following element in the change_log (all the examples below wil
 ```
 would correspond to deletion of two sites at index 5. This element means that all the values at indexes < 5 are at the same locations as in the parent genome; all the values at indexes >= 5 were shifted by two to the left due to the mutation, which deleted two sites. Therefore, in order to access the values at index 5 or above, we need to shift two sites to the right in the parent genome, specifically the index in the offspring genome would correspond to the (index + 2) in parent genome.
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation.gif){:style="width: 70%; align: center;"}  
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1.gif){:style="width: 100%; align: center;"}  
 
-Each key is the accumulation of all the changes up to corresponding index, for example, if **two** elements were removed at index 5 and then **three** elements were removed at index 10, the accumulated shift at index >= 10 will be -5:
-```
-{3 : -2}
-{5 : -5}
-```
+Each key is the accumulation of all the changes up to corresponding index, for example, if **two** elements were removed at index 3 and then **three** elements were removed at index 5, the accumulated shift at index >= 5 will be -5:
+
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2.gif){:style="width: 100%; align: center;"}  
+
 
 Using this change log and the parent genome, it is possible to reconstruct the offspring genome by relating a specific index in the offspring genome to the index in the parent genome, e.g. for deletion mutation
 ```
@@ -143,6 +142,9 @@ E.g. updating our previous map with an insertion of 3 elements {20, 21, 22} at i
 {5 : {-5, false}}
 {7 : {0, true}}
 ```
+
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; align: center;"}  
+
 
 Now we see that starting from index 7 there are no values in the parent genome, we need to store inserted values somewhere else. In addition to range map, another data structure is needed to store the inserted segments. I decided to use the std::unordered_map, as it allows constant time access by key. Let's see an example of how change_log and segments_log will work together to store mutations.
 ```
