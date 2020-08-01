@@ -18,13 +18,12 @@ Find Library
 This involved looking at several JavaScript libraries and determining which ones would best serve my purposes
 |Libraries |Descriprion|
 |---|---|
-|BootStrap | |
-|Dragula   ||
-|Sortable  |   |
-|Draggable |   |
-|Interactjs|   |
+|BootStrap | The current library that Avida-ed 4 heavily relies on. while it has good uses as a framework and in setting up the Avida-ed's layout it has no drag and drop features that were made for mobile or touchscreen devices|
+|Dragula   | I chose tho use this library for a couple of reasons, it is :Dependency-free, works with touch devices, uses DOM elements for drag and drop, customizable settings that allowed drag and drop functions to work differently when being taken and/or dropped from different contianers. |
+|Sortable  |Another Javascript library that allows for drag and drop features with mobile/touchscreen devices. Better with animations and styling (Bootstap compatable) however I chose Dragula because it had better information in manipulating DOM and dropping into divs|
 
-After choosing Dragula as the main library i would use to implement drag and drop features i worked in code pin and began creating a mock Avida-ed 4 webpage
+
+After choosing Dragula as the main library I would use to implement drag and drop features I worked in code pin and began creating a mock Avida-ed 4 webpage. I also used JQuerey to help with DOM manipulation/selection.
 
 Implementing Features
 --
@@ -44,9 +43,7 @@ First i created a simple Document that mocks Avida-ed's layout Using Html and CS
         <div class="item" style="background-color: orange;"  data-OrganismType="hotOrg" data-location="-1" data-OrginismNumber="0" data-value="Hot Org"> Hot Org</div>
       </div>
     </div>
-
     <div class="canvas">
-      
     </div>
     <div class="deadZone">
       <b>deadZone</b>
@@ -54,20 +51,17 @@ First i created a simple Document that mocks Avida-ed's layout Using Html and CS
     <div class="trash">
       <p> Trash</p>
       <div class="trashMove">  <!--Drag/Drop Valid Container-->
-    
       </div>
     </div>
   <div class="area">
       <p> Area</p>
-      
     <div class="areaMove">   <!--Drag/Drop Valid Container-->
-    
     </div>
   </div>
     <script src="DnD.js"></script>
-</body>
+
 ```
-Builds important Grid layouts
+Then i build the important Grid layouts for both the display as a whole an the cnavas which will be populated through javascript
 ```CSS
 .canvas {
   grid-area: canvas ;
@@ -95,13 +89,13 @@ body {
 }
 ```
 
-After i have the layout and DOM set up i populate the canvas with divs, using the grid layout i established for it
+After I have the layout set up I populate the canvas with divs, using the grid layout I established earlier I fill it with 400 small '.space' divs 
 ```JavaScript
 function createCanvas(){
   var numOfCanvasSpots = 0; // keeps track of each .space div and gives them a unique id
   for(x=0;x<400;x+=20){ // creates enough boxes for the grid 
     for(i=0;i<400;i+=20){
-      $(".canvas").append("<div class=\"space\" id=\""+(numOfCanvasSpots)+"\">  </div>")  //creates new ".space" div inside canvas
+      $(".canvas").append("<div class=\"space\" id=\""+(numOfCanvasSpots)+"\">  </div>");  //creates new ".space" div inside canvas
       arr.push($(".space")[numOfCanvasSpots]); // pushes each new div to array that contains all valid drag/drop divs (will be explained soon)
       numOfCanvasSpots++; 
     }
@@ -109,15 +103,15 @@ function createCanvas(){
 }
 ```
 
-these divs will make up the grid that i will be allowed to drag objects into<br>
-in order to do that i use the Dragula calls to create a Drag/Drop vailid objects<br>
-I also make Objects in Freezer to where they create copies of themselves to be dragged
+These divs will make up the grid that I will be allowed to drag objects into<br>
+In order to do that I use the Dragula calls to create Drag/Drop vailid objects<br>
+I also make objects in Freezer to where they create copies of themselves to be dragged
 
 ```JavaScript
 // Populates an array that holds all the containers that will allow drag and drop
 var arr = [$(".freezerMove")[0],
            $(".trashMove")[0],
-           $(".areaMove")[0]] // Along with every div in canvas that was pushed in
+           $(".areaMove")[0]]; // Along with every div in canvas that was pushed in
 
 var dra = dragula(arr, {  // By passing in arr i make all divs in array Drag/Drop Valid
  //..
@@ -131,42 +125,64 @@ var dra = dragula(arr, {  // By passing in arr i make all divs in array Drag/Dro
 });
 
 ```
+* #### Step 2: Control screen so that drag and drop can work correctly 
+Now that the you are able to drag and drop items, depending on the size of the screen or how you want to look at the layout it may be helpful to be able to scroll and zoom. Scrolling and zooming however interfers when you are trying to drag things so this function makes it so that you cant scroll or zoom on certain objects while only using one finger. This allows everything else to stay stationary as you drag things.
+```JavaScript
+function controlMovment(){
+  // makes sure that 1 finger touch wont move the screen in the canvas
+    $(".canvas")[0].addEventListener('touchmove', function(e) {
+          // screen wont move with one touch
+            if (e.touches.length==1){
+              e.preventDefault();
+            }
+    }, false);
 
-Now that things can are drag/dropable i make sure everything works how i want it to<br>
-Using the 'drop' event listener i make changes to the custom data values i have set for the .item object that is being moved
+    for (var i = 0; i < $(".item").length; i++) {
+      $(".item")[i].addEventListener('touchmove', function(e) {
+            // screen wont move with one touch
+              if (e.touches.length==1){
+                e.preventDefault();
+              }
+      }, false);
+    }
+}
+```
+* #### Step 3: Creating functions to achieve goals
+Now that things can are drag/dropable I make sure everything works how I want it to<br>
+Using the 'drop' event listener I make changes to the custom data values I have set for the '.item' object that is being moved
 
 ```JavaScript
 
 dra.on('drop', function(el){  // A Dragula event that happens anytime an item is dropped into a valid droppable object (other than itself)
   controlMovment(); 
   // Variables that will be changed depending on where el is dropped
-  var location = el.getAttribute("data-location") // getAttribute returns the value of the given custom attribute
-  var organismNumber = el.getAttribute("data-OrganismNumber")
-  var value = el.getAttribute("data-value")
+  var location = el.getAttribute("data-location"); // getAttribute returns the value of the given custom attribute
+  var organismNumber = el.getAttribute("data-OrganismNumber");
+  var value = el.getAttribute("data-value");
   
 ```
-These lines help tell where the .item object is being dropped in and change specific data values based on which drop valid container it is dropped in
+These lines help tell where the .item object is being dropped into and change specific data values based on which drop valid container it is dropped in
 ```JavaScript
   if (el.parentElement.className == 'trashMove') {  
       el.remove();  // Deletes .item object that is dropped in trash
     }else{
       if (el.parentElement.className=='space') {
-        newLocation(el.parentElement.id)  // updates custom data "data-location" on element using function
+        newLocation(el.parentElement.id);  // updates custom data "data-location" on element using function
         // .setAttribute sets data of given custom data in element
-        el.setAttribute("data-OrganismNumber",newOrganismNumber()) // newOrganismNumber() calculates a number to set as the newOrganismNumber in data
+        el.setAttribute("data-OrganismNumber",newOrganismNumber()); // newOrganismNumber() calculates a number to set as the newOrganismNumber in data
         el.innerText = null;  // Makes text dissapear if in canvas
       }
 
       if (el.parentElement.className=='areaMove') {
         el.setAttribute("data-location", -1); // updates loctation to -1 if not in canvas
-        el.innerText = el.getAttribute("data-value")  // Sets text to the "data-value" so text shows up when outside of canvas
+        el.innerText = el.getAttribute("data-value");  // Sets text to the "data-value" so text shows up when outside of canvas
       }
 
       if (el.parentElement.className=='freezerMove') {
         el.setAttribute("data-location", -1);
         // Using newValue function it updates the name of the orginism differentiating it from its parent organism it was originally copied from
-        el.setAttribute("data-value", newValue()) 
-        el.innerText = el.getAttribute("data-value")
+        el.setAttribute("data-value", newValue()); 
+        el.innerText = el.getAttribute("data-value");
 
       }
 
@@ -174,15 +190,14 @@ These lines help tell where the .item object is being dropped in and change spec
     }
 ```
 
-These were all custome functions i made to help update the varibales i set at the top of the drop function<br>
-they help organize what happens when things get dropped into drop valid containers
+These were all custom functions I made to help update the varibales I set at the top of the drop function<br>
+They help organize what happens when things get dropped into drop valid containers
 ```JavaScript
   // takes in the location that .item object was placed in and updates the custom location data
   function newLocation(NEW_LOCATION){
     el.setAttribute("data-location",NEW_LOCATION);
     location = el.getAttribute("data-location");
   }
- 
   // helps keep track of individual organism in each group Ex: shows fisrt intance of 'cool org' placed on canvas 
   function newOrganismNumber(){
     var number=0;
@@ -190,10 +205,9 @@ they help organize what happens when things get dropped into drop valid containe
     for(i=0;i<$(".item").length;i++){
       if ($(".item")[i].getAttribute("data-value")==el.getAttribute("data-value")){
         number++;
-        //console.log($(".item")[i])
+        //console.log($(".item")[i]);
       }
     }
-    
     return number-2; //subtract mirror and original org in freezer
   }
 
@@ -206,23 +220,27 @@ they help organize what happens when things get dropped into drop valid containe
       }
     }
     return el.getAttribute("data-value").substring(0,8)+" "+numOfItemInFreezer
-
-    
   }
-  
 })
 
 
 ```
-this is also inside of the drop function and keeps track of all the objects in the canvas
+This is also inside of the drop function and keeps track of all the objects in the canvas
 
 ```JavaScript
     objectsInCanvas=[] // empties objectsInCanvas arr so there are no copies
     for (var i = 0; i < $(".space .item").length; i++) {
-      objectsInCanvas.push($(".space .item")[i])    // populates all array with all objects currently on canvas
+      objectsInCanvas.push($(".space .item")[i]);    // populates all array with all objects currently on canvas
     }
-
     console.log(objectsInCanvas)    
-    returnObjectsInCanvas() // shows information about all objects in canvas in console
+    returnObjectsInCanvas(); // shows information about all objects in canvas in console
 ```
+
+Moving forward
+--
+The initial goal for this project was to make Avida-ed drag/drop features work on any device. I did not exactly meet that goal, while it looks nice and everything functions properly in the example on apple devices such as Iphones and Ipads the Scroll bar wont show up and the shadow that appears when dragging has an offset. Im sure theyre are more bugs when using different device/browser combinations but i have been able to test it on Chrome( MacOs & Windows) & FireFox( MacOs & Windows) and Safari( MacOS) and it seems to work fine there. it also works on android tablets in Chrome.
+
+Acknowledgements
+--
+I would like to thank Diane and Wesley Blackwood for there help in compelting this project, Diane was an exelent mentor and helped guide the project and Wesley helped set it up on a server where it could be tested. It was a joy to work with them and all the people at the Waves Workshop.
 
