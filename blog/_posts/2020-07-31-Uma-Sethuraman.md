@@ -147,10 +147,10 @@ Theoretically, change logging can save significant time and memory, especially f
   - If the requested position is **not** in the changelog, the time complexity is `O(log(mn))`, where `m` is the number of elements in the offset map and `n` is the number of elements in the changelog. This is because we first search for the position in the changelog with `find()` which is `logn`. Since it isn't in the changelog, we also search for the position in the offset map using `find()` which is `logm`. Therefore, `logm+logn = O(log(mn))`.
   
 ## Results: ##
-  - Talk about how test genome is still better
-  - Insert graphs here
-  - Benchmarking of the different implementations is done through catch2.
-  - Results not yet finalized
+  ![overwrite graph]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteGraph.png){:style="width: 100%;"}
+  ![insert graph]({{ site.baseurl }}/assets/uma-sethuraman/InsertGraph.png){:style="width: 100%;"}
+  ![remove graph]({{ site.baseurl }}/assets/uma-sethuraman/RemoveGraph.png){:style="width: 100%;"}
+  ![multi graph]({{ site.baseurl }}/assets/uma-sethuraman/MultiGraph.png){:style="width: 100%;"}
   
 ## Future Optimizations: ##
   - Make collapsing the changelog more efficient
