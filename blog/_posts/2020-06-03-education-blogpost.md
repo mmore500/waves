@@ -20,7 +20,7 @@ Our case study is still in progress- in fact, there will be more interviews to c
 ## **Hindsight is 20/20.** :bulb:
 
 During this case study, we asked our interviewees to talk about “lightbulb moment” realizations they’ve had about their time in STEM. The response to this question was consistent- “lightbulb moments” weren’t as realistic as slow-burning realizations. Some realized the importance of the people you do science with; others, what they needed to be happy in a career; still others, how one’s approach to mentorship and teaching has roots in one’s own personal experiences.
-Reflecting on one’s experiences allows a chance for self-reflection: necessary to grow both as a scientist and as a person. and use your skills to help others as well as you can.
+Self-reflection is necessary to grow both as a scientist and as a person. It allows one to use their skills to help others as well as possible.
 
 
 
