@@ -8,7 +8,7 @@ author: Uma Sethuraman
 ## Project Introduction ##
 MABE, or Modular Agent Based Evolution Framework, is a platform which allows users to create populations of digital organisms and analyze the effects of virtually evolving these populations. One of the key components of MABE is the genome class, which represents genomes for digital organisms in the population. The goal of this project is to advance the genome class in MABE by optimizing its memory consumption and runtime.
 
-If you would like to learn more about the MABE framework, take a look at this *[Introduction to MABE](https://mmore500.com/waves/blog/Team-MABE.html)* blogpost co-written by my teammates and I!
+If you would like to learn more about the MABE framework, take a look at this *[Introduction to MABE](https://mmore500.com/waves/blog/Team-MABE.html)* blogpost from my team!
 
 ## Genomes in MABE 1.0 ##
 In biology, genomes are an organism's entire set of DNA and allow organisms to maintain themselves and function properly. Similarly, in MABE, the genomes of digital organisms are represented as lists of values which can be read from, written to, and mutated from parent to offspring. Every genome has a contiguous piece of memory to store its values. Genome classes in MABE are written using C++.
