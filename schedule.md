@@ -113,5 +113,7 @@ description: Workshop schedule
 * July 29: virtual social games hour
   * 7 to 8pm EST
 * July 29: **blog post peer feedback due**
+* July 31: WAVES closing celebration
+  * 1pm to 2pm EST
 * July 31: **final draft blog post due**
 * July 31: *stipend installment 5 mailed*
