@@ -11,12 +11,13 @@ As I was applying for summer research programs in January, I pictured myself pou
 
 My mentor- Acacia- and I both have an interest in pedagogy. This led us to conduct a case study involving both participants and mentors in WAVES. (I know, very meta!) Using surveys and Zoom interviews, I got to know a group of brilliant scientists- learning how everyone’s unique backgrounds and identities led them to their career path, and being given valuable advice along the way.
 
-Our case study is still in progress- in fact, there will be more interviews to conduct and audio to transcribe come next week. For now, I’d like to share some nuggets of wisdom I’ve learned from interviewing the wonderful people involved in WAVES.
+Our case study is still in progress- in fact, there will be more interviews to conduct and audio to transcribe come next week. For now, I’d like to share some nuggets of wisdom I’ve learned from interviewing the wonderful people involved in WAVES.        
 
 
 
 
-**Hindsight is 20/20.** :bulb:
+
+## **Hindsight is 20/20.** :bulb:
 
 During this case study, we asked our interviewees to talk about “lightbulb moment” realizations they’ve had about their time in STEM. The response to this question was consistent- “lightbulb moments” weren’t as realistic as slow-burning realizations. Some realized the importance of the people you do science with; others, what they needed to be happy in a career; still others, how one’s approach to mentorship and teaching has roots in one’s own personal experiences.
 Reflecting on one’s experiences allows a chance for self-reflection: necessary to grow both as a scientist and as a person. and use your skills to help others as well as you can.
@@ -27,14 +28,14 @@ Reflecting on one’s experiences allows a chance for self-reflection: necessary
 
 
 
-**Your career path may not be linear- and that’s okay.** :world_map: :compass:
+## **Your career path may not be linear- and that’s okay.** :world_map:   :compass:
 
 As an undergraduate, it can be easy to feel the pressure to be certain- of your major, of your post-grad plans, and of your career as a whole. Some people do find their “dream job” right away and stick with it. Others, however, do not. Everyone’s path is different. If a career decision has made you unhappy, you don’t have to stick with it- as one interviewee said of their own experience, “...you can just stop what you’re doing and you can be something else.”
 
 
 
 
-**Science cannot be separated from issues of social injustice.** :exclamation:
+## **Science cannot be separated from issues of social injustice.** :exclamation:
 
 The effects of structural inequities are not as abstract as some may think. They’re present in our everyday lives: in our classrooms, labs, workplaces, and more. 
 
@@ -59,7 +60,7 @@ This case study has been an enriching experience- in more ways that I could’ve
 
 
 
-**Acknowledgements**
+## **Acknowledgements**  :star2:
 
 I would like to thank my mentor, Acacia Ackles, for her continued support, understanding, and kindness. [Her mentor profile is here.](http://mmore500.com/waves/people.html#alackles) 
 
