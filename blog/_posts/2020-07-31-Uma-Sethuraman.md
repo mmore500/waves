@@ -78,7 +78,7 @@ Theoretically, change logging can save significant time and memory, especially f
   ``` c++
       std::shared_ptr<std::vector<std::byte>> parent;
   ```
-  - When a genome is created from scratch, its shared pointer's vector is populated. The mutations after this are store in the changelog and offset map, and the parent is not modified. 
+  - When a genome is created from scratch, its shared pointer's vector is populated. The mutations after this are stored in the changelog and offset map, and the parent is not modified. 
   - **Cloning** a genome creates an offspring for that genome with identical genome values. The offspring is then mutated.
     - When an offspring genome is created through cloning, the offspring's shared pointer is set equal to the parent's shared pointer. 
     
