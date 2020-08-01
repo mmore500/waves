@@ -8,7 +8,7 @@ author: Uma Sethuraman
 ## Project Introduction ##
 MABE, or Modular Agent Based Evolution Framework, is a platform which allows users to create populations of digital organisms and analyze the effects of virtually evolving these populations. One of the key components of MABE is the genome class, which represents genomes for digital organisms in the population. The goal of this project is to advance the genome class in MABE by optimizing its memory consumption and runtime.
 
-If you would like to learn more about the MABE framework, take a look at this *[Introduction to MABE](https://szendejo.github.io/waves/blog/Team-MABE.html)* blogpost co-written by my teammates and I!
+If you would like to learn more about the MABE framework, take a look at this *[Introduction to MABE](https://mmore500.com/waves/blog/Team-MABE.html)* blogpost co-written by my teammates and I!
 
 ## Genomes in MABE 1.0 ##
 In biology, genomes are an organism's entire set of DNA and allow organisms to maintain themselves and function properly. Similarly, in MABE, the genomes of digital organisms are represented as lists of values which can be read from, written to, and mutated from parent to offspring. Every genome has a contiguous piece of memory to store its values. Genome classes in MABE are written using C++.
@@ -150,31 +150,30 @@ Theoretically, change logging can save significant time and memory, especially f
 The graphs below show the performance of the naive implementation compared to my genome implementation for randomly generated mutations. These tests have been performed on size 5000, 20000, 50000, 75000, 100000, 250000, and 500000 genomes. All of these tests have been performed with the same mutation rate, 0.005.
   
 ### Overwrite Results: ###
-The graph below shows that my genome and the naive genome perform almost identically for overwrite mutations until size 5K. However, after this, the two genomes are still very close in time, but the naive genome is slightly faster.
+The graph below shows that my genome and the naive genome perform almost identically for overwrite mutations until size 20K. However, after this, the two genomes are still very close in time, but the naive genome is slightly faster.
 ![overwrite graph]({{ site.baseurl }}/assets/uma-sethuraman/GraphOverwrite.png){:style="width: 100%;"}
   
 ### Insert Results: ###
-The graph below shows that my genome and the naive genome perform almost identically for insert mutations until size 100K. After this, the naive genome performs faster. In the graph, it may look like the naive genome is consistently at 0 seconds but that is not true. It only appears that way because it is faster than my genome for larger genome sizes. 
+The graph below shows that my genome and the naive genome perform almost identically for insert mutations until size 100K. After this, the naive genome performs faster with times closer to 0. 
 ![insert graph]({{ site.baseurl }}/assets/uma-sethuraman/GraphInsert.png){:style="width: 100%;"}
   
 ### Remove Results: ###
-The graph below shows that my genome and the naive genome perform almost identically for remove mutations until size 100K. After this, the naive genome performs faster. In the graph, it may look like the naive genome is consistently at 0 seconds but that is not true. It only appears that way because it is faster than my genome for larger genome sizes. 
+The graph below shows that my genome and the naive genome perform almost identically for remove mutations until size 100K. After this, the naive genome performs faster with times closer to 0. 
 ![remove graph]({{ site.baseurl }}/assets/uma-sethuraman/GraphRemove.png){:style="width: 100%;"}
   
 ### Multiple Mutations Results: ###
-This graph shows the performance of both genomes for random multi-mutations, which consist of overwrite, insert, and remove mutations. Both genomes perform almost identically until size 100K. After this, the naive genome performs faster. In the graph, it may look like the naive genome is consistently at 0 seconds but that is not true. It only appears that way because it is faster than my genome for larger genome sizes. 
+This graph shows the performance of both genomes for random multi-mutations, which consist of overwrite, insert, and remove mutations. Both genomes perform almost identically until size 100K. After this, the naive genome performs faster with times closer to 0. 
 ![multi graph]({{ site.baseurl }}/assets/uma-sethuraman/GraphMulti.png){:style="width: 100%;"}
   
 ## Performance Analysis: ##
-As seen in the graphs above, my genome implementation performs very closely to the naive implementation in terms of time until size 100K. After this size, the naive implementation becomes faster for all of the mutation types. However, my implementation should save memory compared to the naive implementation because it does not store the entire genome for every genome. Instead, it only stores a shared pointer to the parent genome and the changelogging structures (changelog and offset map). 
+As seen in the graphs above, my genome implementation performs very closely to the naive implementation in terms of time until size 100K. After this size, the naive implementation becomes faster for all of the mutation types. However, my implementation should save memory compared to the naive implementation because it does not store all values for every genome. Instead, it only stores a shared pointer to the parent genome and the changelogging structures (changelog and offset map). 
   
 ## Future Optimizations: ##
-  - To **"reset"** a genome in my implementation:
+  - To **"reset"** a genome in my current implementation:
     - The current genome values are reconstructed from the changelogging structures, and the parent now points to the current genome.
     - The changelog and offset map need to be cleared.
-  - The performance of the reset implementation explained above is quite slow, because it needs to reconstruct the entire current genome.
-  - Because the reset performance is slow, reset is not called very often in my current genome implementation. This leads to changelogs and offset maps eventually becoming extremely large and causing significant overhead.
-  - As a result, potential optimizations could include creating a faster method to reset the genome and deciding when the best time is to reset the genome while minimizing overhead.
+  - Because reconstructing the entire genome takes a long time, reset is not called very often currently. This leads to changelogs and offset maps eventually becoming extremely large and causing significant overhead.
+  - As a result, potential optimizations could include creating a faster method to reset the genome.
   
 ## Closing: ##
 - This summer, in addition to learning a lot about C++, I have also gotten the opportunity to explore how cross-disciplinary computer science really is. This project has given me a great opportunity to expand my software development skills by creating digital genomes for organisms in an artificial life platform.
@@ -185,4 +184,4 @@ As seen in the graphs above, my genome implementation performs very closely to t
 - **Teammates:** Stephanie Zendejo, Tetiana Dadakova, Victoria Cao, Jamell Dacon
 
 
-###### This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+###### This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. ###### 
