@@ -335,7 +335,10 @@ When I used this process on the tree with mutations but with no pressure for div
 | 100 gens | 12 | 70 |  1 | 39 | 39 | 56 | 98 | 25 | 70 | 39 |    44.9 |        29.27437256 |
 
 
+
 **The table below contains the percentile values for a tree _with_ pressure for diversity.**
+
+
 
 |          |     |    |     |     |     |     |     |     |     |     | Average | Standard Deviation |
 |----------|-----|----|-----|-----|-----|-----|-----|-----|-----|-----|---------|--------------------|
