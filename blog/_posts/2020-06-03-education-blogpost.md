@@ -24,6 +24,9 @@ Reflecting on one’s experiences allows a chance for self-reflection: necessary
 
 
 
+
+
+
 **Your career path may not be linear- and that’s okay.** :world_map: :compass:
 
 As an undergraduate, it can be easy to feel the pressure to be certain- of your major, of your post-grad plans, and of your career as a whole. Some people do find their “dream job” right away and stick with it. Others, however, do not. Everyone’s path is different. If a career decision has made you unhappy, you don’t have to stick with it- as one interviewee said of their own experience, “...you can just stop what you’re doing and you can be something else.”
@@ -58,6 +61,6 @@ This case study has been an enriching experience- in more ways that I could’ve
 
 **Acknowledgements**
 
-I would like to thank my mentor, Acacia Ackles, for her continued support, understanding, and kindness. [Her WAVES profile is here.](http://mmore500.com/waves/people.html#alackles) 
+I would like to thank my mentor, Acacia Ackles, for her continued support, understanding, and kindness. [Her mentor profile is here.](http://mmore500.com/waves/people.html#alackles) 
 
 I would also like to thank the (unnamed) people of WAVES who were interviewed over the course of the workshop, and whose quotes are used in this post.
