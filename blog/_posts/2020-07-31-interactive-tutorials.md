@@ -145,7 +145,7 @@ All methods for adding triggers use the following parameters:
 
 * current_state - name of the state that this trigger should be activated for.
 * next_state - name of the state that the tutorial should move to when this trigger fires.
-* trigger_id - (optional for all but custom triggers) a unique string ID for this trigger.
+* trigger_id - (optional except for custom/manual triggers) a unique string ID for this trigger.
 * callback - (optional) a callback function to be called when this trigger fires. The function must return void and have no parameters.
 
 <br>
@@ -156,8 +156,10 @@ All methods for adding triggers use the following parameters:
 The simplest type of trigger is the ManualTrigger. It only fires when you fire it manually from your code. Amazing, right?
 
 ```C++
-tut.AddEventManualtrigger(state, next_state, trigger_id, callback);
+tut.AddEventManualTrigger(state, next_state, trigger_id, callback);
 ```
+
+* The trigger_id is required for ManualTrigger.
 
 <br>
 
