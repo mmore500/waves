@@ -7,7 +7,7 @@ author: Juan Eduardo Chavez
 
 ## Introduction to Prisoners Dilemma World
 
-The Prisoner's Dilemma is an example of decision analysis within game theory. In this example, we take two individuals (prisoners) who are given choices that will not only ultimately impact their own self, but the other party as well. Each individual is given the option to either stay silent in when being questioned (cooperate), or betray the other prisoner by admitting the other's crimes (defect). If both prisoners stay silent, both only have a one-year sentence. If one betrays and the other stays silent, the betrayer becomes free and the silent prisoner is sentenced to three years. If both prisoners betray each other, then each are sentenced to two years. This simulation analyzes why individuals may not want to work together, even if it's beneficial to do so.
+The Prisoner's Dilemma is an example of decision analysis within game theory. In this example, we take two individuals (prisoners) who are given choices that will not only ultimately impact their own self, but the other party as well. Each individual is given the option to either stay silent when being questioned (cooperate), or betray the other prisoner by admitting the other's crimes (defect). If both prisoners stay silent, both only have a one-year sentence. If one betrays and the other stays silent, the betrayer becomes free and the silent prisoner is sentenced to three years. If both prisoners betray each other, then each are sentenced to two years. This simulation analyzes why individuals may not want to work together, even if it's beneficial to do so.
 
 ![PD Choice Image](/assets/chavez-ju/PDDecisionChart.png "PrisonerChart")
 (Chart representing each prisoners choice with the respective consequences)
