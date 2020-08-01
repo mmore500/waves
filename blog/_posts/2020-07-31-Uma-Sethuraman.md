@@ -88,13 +88,13 @@ Theoretically, change logging can save significant time and memory, especially f
 
 ### Insert, Remove, and Overwrite Mutations: ###
   - **Insert mutation:** inserts value(s) at a certain position in current genome and changes genome size
-    - The demo below goes through all of the steps involved in an insertion:
+    - The demo below goes through all of the steps involved in an insertion. To replay, scroll over the gif again.
      ![insertion demo]({{ site.baseurl }}/assets/uma-sethuraman/InsertionDemo.gif){:style="width: 100%;"}
   - **Remove mutation:** deletes value(s) at a certain position in current genome and changes genome size
-    - The demo below goes through all of the steps involved in a deletion/remove:
+    - The demo below goes through all of the steps involved in a deletion/remove. To replay, scroll over the gif again.
      ![remove demo]({{ site.baseurl }}/assets/uma-sethuraman/RemoveDemo.gif){:style="width: 100%;"}
   - **Overwrite mutation:** change the value of a single or multiple sites in the genome
-    - The demo below goes through all of the steps involved in an overwrite:
+    - The demo below goes through all of the steps involved in an overwrite. To replay, scroll over the gif again.
     ![overwrite demo]({{ site.baseurl }}/assets/uma-sethuraman/OverwriteDemo.gif){:style="width: 100%;"}
 
 ### Random Access: ###
