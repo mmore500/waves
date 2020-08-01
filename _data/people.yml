@@ -206,7 +206,7 @@
   role: participant
   institution: Bard College
 
-- github: chavezju1
+- github: chavez-ju
   twitter:
   nick: Juan
   first: Juan
@@ -221,7 +221,7 @@
   nick: Tetiana
   first: Tetiana
   last: Dadakova
-  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  bio: Hi! I’m an imaging scientist and I’ve been developing algorithms for medical imaging most of my career. Currently I work on transitioning from academia into industry, where I can code full-time. In my free time I like playing piano, reading and cuddling with my cats.
   href:
   role: participant
   institution: UC Berkeley, Human Longevity Inc.
@@ -311,7 +311,7 @@
   nick: Nadine
   first: Nadine
   last: Strasser
-  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  bio: My name is Nadine Strasser and I am pursuing my master's degree in Information Engineering and Management at the University of Applied Sciences Upper Austria. Since February 2020, I have been working on my master thesis project in cooperation with the Digital Evolution Lab under Dr. Charles Ofria at Michigan State University. While I am not busy studying, I enjoy cooking, ballroom dancing, and going on hikes with my dog.
   href:
   role: other
   institution: University of Applied Sciences Upper Austria
@@ -363,5 +363,15 @@
   last: Rodriguez-Papa
   bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   href:
+  role: other
+  institution: Michigan State University
+
+- github: DanielJunghans
+  twitter:
+  nick: Daniel
+  first: Daniel
+  last: Junghans
+  bio: I am a undergraduate finance student in the Eli Broad College of Business. My research revolves around using novel machine learning techniques to better understand the invisible forces that influence the free market.
+  href: http://danieljunghans.com/
   role: other
   institution: Michigan State University

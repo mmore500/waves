@@ -1,0 +1,2 @@
+---
+- The “frameborder” attribute on the “iframe” element is obsolete. Use CSS instead.

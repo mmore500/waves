@@ -8,3 +8,4 @@ plugins_dir:
 plugins:
   - jemoji
 permalink: /:categories/:title:output_ext
+future: true
