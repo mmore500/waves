@@ -1,90 +1,63 @@
 ---
 layout: post
-title: "Education Blogpost"
-date: 2020-07-20
+title: "The Wisdom of WAVES"
+date: 2020-07-31
 author: Maria Berry
 ---
 
-Outline
+No one could have predicted the way 2020 would go. 
 
-When Life Interferes
+As I was applying for summer research programs in January, I pictured myself pouring over my research in some lab or office, exploring an unfamiliar college town, and spending time with new colleagues and mentors. While a physically immersive summer research experience wasn’t possible this year, enriching research experiences still were. As a participant in a (virtual) WAVES, I had the opportunity to work on an exciting project and broaden my skill set- all while a pandemic raged and protests against injustice were held worldwide.
 
-These are not the circumstances under which I expected to be completing my first summer research experience.
+My mentor- Acacia- and I both have an interest in pedagogy. This led us to conduct a case study involving both participants and mentors in WAVES. (I know, very meta!) Using surveys and Zoom interviews, I got to know a group of brilliant scientists- learning how everyone’s unique backgrounds and identities led them to their career path, and being given valuable advice along the way.
 
-COVID shut down my university March 11.
+Our case study is still in progress- in fact, there will be more interviews to conduct and audio to transcribe come next week. For now, I’d like to share some nuggets of wisdom I’ve learned from interviewing the wonderful people involved in WAVES.
 
-(insert bulleted list of generally how school and research have functioned since then)
 
-Rise in BLM protests across the world sparked by the death of George Floyd
 
-As a society, we’ve shifted our focus onto the identities others hold, and how these identities have affected their life experiences.
 
-In this workshop, we’ve talked to both participants (meta!) and mentors about their own identities.
+**Hindsight is 20/20.** :bulb:
 
-How do they think of themselves as scientists or programmers?
+During this case study, we asked our interviewees to talk about “lightbulb moment” realizations they’ve had about their time in STEM. The response to this question was consistent- “lightbulb moments” weren’t as realistic as slow-burning realizations. Some realized the importance of the people you do science with; others, what they needed to be happy in a career; still others, how one’s approach to mentorship and teaching has roots in one’s own personal experiences.
+Reflecting on one’s experiences allows a chance for self-reflection: necessary to grow both as a scientist and as a person. and use your skills to help others as well as you can.
 
-How do they feel about their specific research?
 
-How has their background affected their career goals?
 
-Our Process
 
-Outlines the specific steps we took in research.
+**Your career path may not be linear- and that’s okay.** :world_map: :compass:
 
-  Consent Survey
-  
-Initial Interviews
+As an undergraduate, it can be easy to feel the pressure to be certain- of your major, of your post-grad plans, and of your career as a whole. Some people do find their “dream job” right away and stick with it. Others, however, do not. Everyone’s path is different. If a career decision has made you unhappy, you don’t have to stick with it- as one interviewee said of their own experience, “...you can just stop what you’re doing and you can be something else.”
 
-Background information
 
-What their parents did
 
-Interests as a child
 
-Middle school/high school/undergraduate STEM experiences
+**Science cannot be separated from issues of social injustice.** :exclamation:
 
-Inequities faced in life, in school, and in work
+The effects of structural inequities are not as abstract as some may think. They’re present in our everyday lives: in our classrooms, labs, workplaces, and more. 
 
-PITTS Midpoint Survey
+We begin to become aware of these injustices at different points of our lives. Regarding this topic, one interviewee remembered asking themselves: “What do the people look like around me? Does that match what the general population looks like?”
 
-How are you feeling about your research?
+These are questions we should be asking ourselves throughout our lives.
 
-What is your confidence as a scientist or researcher?
+As scientists, programmers, and engineers, it can be easy to feel like our research is distanced from these topics, or isn’t as meaningful as the work of those directly involved in the fight for justice. However, we have the power to create meaningful change. Regardless of your career, or even field, you can use your voice and talents to work towards a better world.
 
-How do you view yourself as a scientist overall?
+*“Even within the context of science, you can pause what you’re doing and do something that will have a clear, tangible benefit.”*
 
-Exit Interviews
 
-How was your WAVES experience?
 
-What People Are Saying
 
-A section of my blog post where I’ll put common themes of interviews, plus things of interest that stood out… (potential examples below)
+Many of today’s conversations revolve around the inherent power- or lack thereof- of certain identities. At this point in my life, I am beginning to think more about my own identities, the ways in which they intersect, and the ways I can use them to help those with less privilege. The conversations I have had through WAVES have been especially poignant for this reason. 
+This case study has been an enriching experience- in more ways that I could’ve expected. It’s been eye-opening to learn how others approach the intersection of their identities, how this is intertwined with their experiences in STEM, and how others are using their identities to fight for the greater good.
 
-(any kind of graph or visual representation of survey results)
+ I will carry their wisdom with me as I grow as a scientist and as a human being.
 
-How mentors’ science backgrounds were impacted by their geographical and socioeconomic backgrounds
 
-A Fish Out of Water
 
-I am an aspiring microbiologist and STEM education researcher- not a computer scientist. My experience working with others (mostly) from a different discipline:
 
-We had more in common than I thought, evolution education being a big focus of this lab.
 
-I was able to learn about the perspectives of those in a different discipline.
 
-In small group discussions, I was able to discuss and explain microbiological concepts (related to the novel coronavirus) to others in my group- virtually all older peers/coworkers.
+**Acknowledgements**
 
-Their experiences as humans growing up to be scientists or programmers had common elements.
+I would like to thank my mentor, Acacia Ackles, for her continued support, understanding, and kindness. [Her WAVES profile is here.](http://mmore500.com/waves/people.html#alackles) 
 
-Sense of curiosity, family members studying the same thing, or a positive undergraduate experience.
-
-This experience reminded me how interdisciplinary science is.
-
-Even though this field is alien to me, I felt like I could connect due to our shared passions and characteristics that draw us to STEM in the first place.
-
-Conclusions
-
-Social barriers can exist in any field and at any level of education.
-
-Despite these varying barriers, similar elements drive people to study STEM.
+I would also like to thank the (unnamed) people of WAVES who were interviewed over the course of the workshop, and whose quotes are used in this post.
