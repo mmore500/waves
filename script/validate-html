@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'w3c_validators'
+require 'yaml'
 
 def validator(file)
   extension = File.extname(file)
@@ -12,17 +13,49 @@ def validator(file)
   end
 end
 
+def warn_known_errors(known_errors)
+  puts 'Ignored errors...' if known_errors.any?
+  known_errors.each { |err| puts err.to_s }
+end
+
+def get_known_errors(results)
+  ignorables = YAML.safe_load(File.read('script/ignored-errors.yml'))
+  known_errors = results.errors.select do |err|
+    ignorables.any? { |s| err.to_s.include? s }
+  end
+
+  warn_known_errors(known_errors)
+  known_errors
+end
+
+def get_unknown_errors(results, known_errors)
+  (results.errors - known_errors | results.errors - known_errors)
+end
+
+def parse_errors(results)
+  known_errors = get_known_errors(results)
+  warn_known_errors(known_errors)
+  get_unknown_errors(results, known_errors)
+end
+
 def validate(file)
   puts "Checking #{file}..."
 
   path = File.expand_path "../_site/#{file}", __dir__
   results = validator(file).validate_file(path)
 
-  return puts 'Valid!' if results.errors.empty?
+  errors = parse_errors(results)
 
-  results.errors.each { |err| puts err.to_s }
+  return puts 'Valid!' if errors.empty?
+
+  puts 'Breaking errors...'
+  errors.each { |err| puts err.to_s }
   exit 1
 end
 
-validate 'index.html'
+def get_relative(filename)
+  Pathname.new(filename).relative_path_from(Pathname.new('_site'))
+end
+
+Dir.glob('_site/**/*.html').each { |filename| validate get_relative(filename).to_s }
 validate File.join 'assets', 'css', 'style.css'

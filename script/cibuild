@@ -3,7 +3,8 @@
 set -e
 
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --check-html --check-sri
+bundle exec htmlproofer ./_site --check-html --check-sri \
+  --url-ignore "/https://platform.twitter.com/widgets.js/, /localhost:8000/" --http-status-ignore "0,429"
 bundle exec rubocop -D
 bundle exec script/validate-html
 gem build jekyll-theme-cayman.gemspec
