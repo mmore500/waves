@@ -59,7 +59,7 @@ My implementation consists of two maps from the standard library:
 * **change_log** is implemeted as std::map and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
 * **segments_log** is implemented as std::unordered_map and stores the segments that were inserted into the map dusing mutation  
   
-![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 75%; align: center;"}  
+![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 50%; align: center;"}  
   
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offsping genome or a part of it as a contiguous memory block of necessary sites.
 
@@ -67,9 +67,8 @@ One important detail of the change_log is that it doesn't store every deleted or
   
 For example, a change_log with entries `{3 : -2}, {5 : 3}` corresponds to the following mapping (this will be replace by a figure):  
 
-![Ranges of indexes are encoded into the change_log map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map_cut.png){:style="width: 75%; align: center;"}  
+![Ranges of indexes are encoded into the change_log map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map_cut.png){:style="width: 50%; align: center;"}  
 
-  
 To access any index, the following code can be used:
 ```cpp
 --map.upper_bound(index); // "upper_bound" returns the key, which is higher than the index, "--" moves to the previous key
@@ -86,6 +85,8 @@ For example, the following element in the change_log (all the examples below wil
 {3 : -2}
 ```
 would correspond to deletion of two sites at index 5. This element means that all the values at indexes < 5 are at the same locations as in the parent genome; all the values at indexes >= 5 were shifted by two to the left due to the mutation, which deleted two sites. Therefore, in order to access the values at index 5 or above, we need to shift two sites to the right in the parent genome, specifically the index in the offspring genome would correspond to the (index + 2) in parent genome.
+
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation.gif){:style="width: 70%; align: center;"}  
 
 Each key is the accumulation of all the changes up to corresponding index, for example, if **two** elements were removed at index 5 and then **three** elements were removed at index 10, the accumulated shift at index >= 10 will be -5:
 ```
