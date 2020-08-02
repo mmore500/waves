@@ -17,11 +17,11 @@ Plus, using the Emscripten compiler means that the JavaScript code produced runs
 
 This summer I was a [WAVES](https://mmore500.com/waves/index.html) participant and helped to revamp Empirical's support for web visualizations for use in the next version of [Avida-ED](https://avida-ed.msu.edu/).
 
-Specifically, this meant replacing the old Empirical D3-wrapper (built on D3 version 3) with one that supports the newest version of D3 (version 5). I tackled this project with the wonderful [Elizabeth Carney]("https://github.com/elizabethcarney), [Alex Lalejini](https://lalejini.com/), and [Emily Dolson](https://cse.msu.edu/~dolsonem/).
+Specifically, this meant replacing the old Empirical D3-wrapper (built on D3 version 3) with one that supports the newest version of D3 (version 5). I tackled this project with the wonderful [Elizabeth Carney](https://github.com/elizabethcarney), [Alex Lalejini](https://lalejini.com/), and [Emily Dolson](https://cse.msu.edu/~dolsonem/).
 
 
 ## What is D3?
-[D3](https://d3js.org/) (_Data Driven Documents_) is a JavaScript library that allows for all sorts of custom-made, interactive visualizations. 
+[D3](https://d3js.org/) (_Data-Driven Documents_) is a JavaScript library that allows for all sorts of custom-made, interactive visualizations. 
 Some cool examples include:  
 * [An interactive graph](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/20/movies/among-the-oscar-contenders-a-host-of-connections.html) highlighting the connections between Oscar contenders in 2013
 * [An animation](https://observablehq.com/@d3/world-tour) of the world globe
@@ -36,14 +36,14 @@ Although it has a steep learning curve, D3 provides complete control over all as
 
 ## How does the wrapper work?
 The D3-wrapper works by taking advantage of Emscripten and Empirical's web tools to expose D3.js functionality through C++. 
-We created a custom JavaScript library (which is accessible through an Emscripten compiler tag) that—among other things—holds a reference to different D3 objects (such as a selection or scale).
+We created [a custom JavaScript library](https://github.com/devosoft/Empirical/blob/d3-wrapper/source/web/d3/library_d3.js) (which is accessible through an Emscripten compiler tag) that—among other things—holds a reference to different D3 objects (such as a selection or scale).
 
 When called upon to create a D3 object, the C++ wrapper hops into JavaScript, accesses the proper D3 object (each object has a unique ID), and calls the desired D3.js function on that object. 
 While this workflow is concise for many D3 functions, the challenges of creating this wrapper included the messiness of having to constantly jump between C++ and JavaScript. 
 
 For example, the `d3.scaleTime` function takes JavaScript `Date` objects as an input. 
-But since there's no notion of a Date object on the C++ side, I had to create a custom `Date` struct that mimicked a JavaScript `Date`.
-I also had to deal with the unpleasantness of passing a C++ `Date` into JavaScript (which meant manually passing in each of the `Date` member variables into JavaScript manually, and then recreating the `Date` using JavaScript's `Date` constructor).
+But since there's no notion of a `Date` object on the C++ side, I had to create a custom `Date` struct that mimicked a JavaScript `Date`.
+I also had to deal with the unpleasantness of passing a C++ `Date` into JavaScript (which meant manually passing in each of the `Date` member variables into JavaScript, and then recreating the `Date` using JavaScript's `Date` constructor).
 
 > For reference, the `Date` struct that I created looks like this:
 > ```c++
@@ -91,14 +91,14 @@ I worked on the [`scales.h` file](https://github.com/devosoft/Empirical/blob/d3-
 3. Support for almost all helper functions for each of the 25 scales
 4. Support for `Date` objects (specifically to be used with `d3.scaleTime`)
 5. A comprehensive set of web tests (for details see the file [here](https://github.com/devosoft/Empirical/blob/d3-wrapper/tests/web/d3/scales.cc))  
-6. Support for passing maps from C++ to JavaScript: I added two `emp::pass_map_to_javascript` functions in [js_utils.h](https://github.com/devosoft/Empirical/blob/master/source/web/js_utils.h) as well as appropriate [tests](https://github.com/devosoft/Empirical/blob/master/tests/web/js_utils.cc) (see more about this in the [this `web-code-demo.cc` file](({{ site.baseurl }}/assets/Oliver-BE/web-code-demo.cc)))
+6. Support for passing maps from C++ to JavaScript: I added two `emp::pass_map_to_javascript` functions in [js_utils.h](https://github.com/devosoft/Empirical/blob/master/source/web/js_utils.h) as well as appropriate [tests](https://github.com/devosoft/Empirical/blob/master/tests/web/js_utils.cc) (see more about this in [this `web-code-demo.cc` file](({{ site.baseurl }}/assets/Oliver-BE/web-code-demo.cc)))
 
 We were able to test the wrapper using [Emily's Karma/Mocha/Chai system](https://devolab.org/javascript-testing-on-travis-ci-with-karma-and-mocha/) and [Alex's `TestRunner`](https://mmore500.com/waves/enrichment/week5.html) (which deals with the complexity of JavaScript code running out of sync with C++ code during testing). 
 This testing framework is now being adopted as the web testing framework across Empirical.
 
 
 ## Writing web code with Empirical and Emscripten
-While creating the D3-wrapper, we relied heavily on writing JavaScript code from inside C++. 
+While creating the D3-wrapper, we relied heavily on writing JavaScript code from C++. 
 We were able to do so by using both Emscripten's built-in functionality (which covers basic features) and Empirical's web tools (which deal with more advanced features).
 
 The Emscripten compiler gives you access to [C++ functions](https://emscripten.org/docs/api_reference/emscripten.h.html#calling-javascript-from-c-c) that can be used to hop into JavaScript and return values to C++. 
@@ -141,9 +141,9 @@ Getting set up with an Empirical project can be tricky at first, but luckily the
 I used this [cookiecutter](https://github.com/devosoft/cookiecutter-empirical-project) outline to build my project on top of Empirical. If you don't want all of the extra bells and whistles that come along with the cookiecutter outline, you can follow [this tutorial](https://mmore500.com/waves/tutorials/lesson04.html) that gets you set up with all the basics needed to write Empirical web code.  
 
 ### Visualizing!!
-**It's finally time to use the D3-wrapper and create a visualization!**
+It's finally time to use the D3-wrapper and create a visualization!
 
-First, lets explore how I created the sortable bar chart. I structured all of my code inside of a struct, and started by declaring the necessary member variables:
+First, lets explore how I created the sortable bar chart. I laid out all of my code inside of a struct, and started by declaring the necessary member variables:
 ```c++
 struct BarPlot {
   ///////////////////////////////
@@ -173,7 +173,7 @@ struct BarPlot {
   // ...
 }
 ```
-I decided to represent the bars I was sorting in an array of length 25 named `data`, where the values 1 through 25 would be held. I did so in the constructor:
+I decided to represent the bars I was sorting in an array of length 25 named `data`, where the values 1 through 25 would be held. I initialized `data` in the constructor of the struct:
 
 ```c++
 BarPlot() {
@@ -236,6 +236,8 @@ void Init() {
         .SetAttr("fill", barColor);
   }
 ```
+> _Note that the `svg` gets added to the `emp_d3_wrapper` div, which has already been created in my `index.html` file: `<div id="emp_d3_wrapper"></div>`_
+
 And now all we have to do to draw the initial bar plot is call `Init()` from `main()`:
 ```c++
 BarPlot barChart{};
@@ -246,19 +248,19 @@ int main() {
 ```
 
 ### How does the data update?
-While I won't go in to too much detail on how the play button and slider work, I'll explain the core functionality as to how updating the `data` array will update the bar chart itself. 
+While I won't go in to detail on how the play button and slider work, I'll explain the core functionality as to how updating the `data` array will update the bar chart itself. 
 > Getting the play button to work was quite tricky due to how hard it is to do JavaScript timeouts from C++. If you're not careful, C++ code will always run before the JavaScript code due to JavaScript's asynchronous nature. In short, I had to create a custom JavaScript event that triggers itself if the data hasn't been fully sorted yet.
 
-To update my visualization, I created a function called `UpdateViz()` which takes an array of size 25 as its only argument. This function is called whenever the Bubble Sort slider or Shuffle Array button are changed/clicked. When these buttons are activated, the underlying `data` array is changed, and passed into `UpdateViz()`:
+To update my visualization, I created a function called `UpdateViz()` which takes an array of 25 integers as its only argument. This function is called whenever the Bubble Sort slider or Shuffle Array button are changed/clicked. When these buttons are activated, the underlying `data` array is changed, and passed into `UpdateViz()`:
 ```c++
 /// An update function that should be called when the data is changed (sorted or shuffled)
-  void UpdateViz(emp::array<int, 25> newData) {
+void UpdateViz(emp::array<int, 25> newData) {
     // if the play button is currently active, make the transition faster
     if(isPlaying) {
-      transitionDuration = 50;
+        transitionDuration = 50;
     }
     else {
-      transitionDuration = 750;
+        transitionDuration = 750;
     } 
 
     // if the data is fully sorted, change barColor
@@ -277,9 +279,9 @@ To update my visualization, I created a function called `UpdateViz()` which take
         .SetAttr("y", [this](int d, int i, int j) { return yScale.ApplyScale<int, int>(d); }) 
         .SetAttr("height", [this](int d, int i, int j) { return height - margin["top"] - yScale.ApplyScale<int, int>(d); })
         .SetAttr("fill", barColor); 
-  }
+}
 ```
-Here, the `xScale` and `xAxis` must first be changed to display the change in the order of the `data`. Once this happens, we can update the actual bars themselves based on their new order (as well as apply a transition to show the change in position of each bar).
+Here, the `xScale` and `xAxis` must first be changed to display the change in the order of the `data`. Once this happens, we can update the actual bars themselves based on their new values (as well as apply a transition to show the change in position/height of each bar).
 
 **To see the full code, check out my [GitHub repo](https://github.com/Oliver-BE/sorting-algorithms-d3).**
 
@@ -299,10 +301,10 @@ In short, the wrapper needs:
 
 ## Thank You!
 I'm so grateful to have been a WAVES participant this summer! 
-It was an incredible experience and I've learned a tremendous amount over such a short 10 weeks (I came in with no C++ and minimal web development knowledge).
+It was an incredible experience and I've learned a tremendous amount over such a short 10 weeks (I came in with no prior C++ and minimal web development knowledge).
 Everyone I interacted with was extremely welcoming and willing to help explain difficult C++ concepts and/or debug messy code. 
 
-I want to give a special shoutout to [Elizabeth Carney]("https://github.com/elizabethcarney), [Alex Lalejini](https://lalejini.com/), and [Emily Dolson](https://cse.msu.edu/~dolsonem/) who were all incredible to work with this summer and without whom none of this would have been possible!
+I want to give a special shoutout to [Elizabeth Carney](https://github.com/elizabethcarney), [Alex Lalejini](https://lalejini.com/), and [Emily Dolson](https://cse.msu.edu/~dolsonem/) who are all incredible people and amazing to work with! Without them, none of this would have been possible.
 
 ---
 >_This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). 
