@@ -9,7 +9,7 @@ author: Elizabeth Carney
 <hr/>
 
 ![Elizabeth Carney headshot]({{ site.baseurl }}/assets/headshots/square-elizabethcarney.png){:class="headshot myheadshot"}
-_Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces :hammer_and_wrench:, doing nail art :nail_care:, and cooking :fried_egg:. To see some of my other projects, check out my [GitHub](https://github.com/elizabethcarney) or [LinkedIn](https://www.linkedin.com/in/elizabeth-kim-carney/)!_
+_Hi! I'm Elizabeth Carney, a senior at Smith College studying Computer Science and East Asian Languages with a concentration in Translation Studies. I'm especially interested in data visualization, robotics, and machine translation. In my free time, I love tinkering in makerspaces :hammer_and_wrench:, doing nail art :nail_care:, and cooking :fried_egg:. To see some of my other projects, check out my [GitHub](https://github.com/elizabethcarney)!_
 {:class="next-to-headshot"}
 
 <hr/>
