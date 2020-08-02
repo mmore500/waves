@@ -144,6 +144,8 @@ I used this [cookiecutter](https://github.com/devosoft/cookiecutter-empirical-pr
 It's finally time to use the D3-wrapper and create a visualization!
 
 First, lets explore how I created the sortable bar chart. I laid out all of my code inside of a struct, and started by declaring the necessary member variables:
+
+{% raw %}
 ```c++
 struct BarPlot {
   ///////////////////////////////
@@ -173,6 +175,8 @@ struct BarPlot {
   // ...
 }
 ```
+{% endraw %}
+
 I decided to represent the bars I was sorting in an array of length 25 named `data`, where the values 1 through 25 would be held. I initialized `data` in the constructor of the struct:
 
 ```c++
