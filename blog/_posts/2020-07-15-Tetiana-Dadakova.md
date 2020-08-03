@@ -15,7 +15,7 @@ For more information about MABE (Modular Agent-Based Evolution platform) as well
 
 Genome is a list of sites with specific values:
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 70%; align: center;"}  
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
 
 Genome can be naively implemented as a `std::vector`{:.cpp} data structure from the standard library.
 
@@ -73,7 +73,7 @@ My implementation consists of two maps, which, for each offspring genome, store 
 * **change_log** is implemented as `std::map` and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
 * **segments_log** is implemented as `std::unordered_map` and stores the segments that were inserted into the map during mutation  
   
-![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 70%; align: center;"}  
+![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 75%; align: center;"}  
   
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offspring genome or a part of it as a contiguous memory block of necessary sites.
 
@@ -83,7 +83,7 @@ One important detail of the change_log is that it doesn't store every removed or
 For example, a change_log with entries `{{3 : -2}, {5 : 3}}` corresponds to the following mapping:  
 {% endraw %}
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 50%; align: center;"}  
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; align: center;"}  
 
 To access any index, the following code can be used:
 ```cpp
@@ -169,16 +169,16 @@ To sum up, the change log consists of two data structures:
 The plots below show the performance of my approach compared to the naive one for the `overwrite()`, `remove()` and `insert()` mutations methods as well as multi-mutation, when all three methods are applied together. The performance is shown for a number of genome sizes, specifically (each site corresponds to one byte) 5kB, 20kB, 50kB, 75kB, 100kB, 250kB and 500kB. The mutation rate is 0.1%, which corresponds to the 5, 20, 50, 75, 100, 250 and 500 mutations respectively for each genome size.
 
 The performance of the `overwrite()` mutation of my approach is very similar to the naive approach:
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 50%; align: center;"}
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; align: center;"}
 
 The performance of the `remove()` mutation is very similar between two approaches too. In the naive approach, the this mutation has linear time complexity relative to the genome size. In my approach, the time complexity is linear with the change_log size (as I need to update all the keys, which follow current key). Normally, the genome would be much larger than the change_log, however, the `std::vector` data structure stores the values in the contiguous memory (as opposed to `std::map` data structure), which makes the iteration much fasted dues to the utilization of cache-friendliness.
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 50%; align: center;"}
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; align: center;"}
 
 The performance of the `insert()` mutation is very similar between two approaches for the smaller genomes (< 100kB), however, as the size of the genome increases, the plots start to diverge, showing the strengths of standard library. In this case both approaches still have the linear time complexity, however, my approach becomes more complicated with more edge cases and the necessity to update two maps, both not contiguos in the memory.
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 50%; align: center;"} 
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; align: center;"} 
 
 Finally, multi-mutation behaves similar to the `insert()` mutation, which mean that the performance is dominated by the `insert()` mutation in this case.
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 50%; align: center;"}  
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; align: center;"}  
 
 
 ### Conclusion
@@ -196,11 +196,11 @@ There are multiple things in the algorithm that could be optimized, from both al
 ## Acknowledgments
 I would like to thank the organizers of the WAVES workshop. It was extremely valuable experience for me and I learned so much I couldn't have imagined was possible 10 weeks ago. :exploding_head:
 
-In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop.
+In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop.<br\><br\>
 ![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
 ![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
 
-Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone sucess in their studies and career and I hope we will stay in touch! :tada::tada::tada:
+Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone sucess in their studies and career and I hope we will stay in touch! :tada::tada::tada: <br\><br\>
 ![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}
 ![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}
 ![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}
