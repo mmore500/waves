@@ -79,7 +79,7 @@ Each genome will have it's own change_log and segments_log, which in combination
 
 One important detail of the change_log is that it doesn't store every removed or inserted index. Instead, to optimize for memory use, it stores only one index for each range of a particular shift in indices due to insertion of removal (see example below). I.e. each key in the change_log represents all the keys in the range from the current key until the next key. 
   
-  For example, a change_log with entries `{{3 : -2}, {5 : 3}}` corresponds to the following mapping:  
+  For example, a change_log with entries `{{3 : -2}, {5 : 3}}`{:.cpp} corresponds to the following mapping:  
 
 ![]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 50%; align: center;"}  
 
