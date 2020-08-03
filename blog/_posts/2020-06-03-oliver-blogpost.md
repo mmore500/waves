@@ -91,7 +91,7 @@ I worked on the [`scales.h` file](https://github.com/devosoft/Empirical/blob/d3-
 3. Support for almost all helper functions for each of the 25 scales
 4. Support for `Date` objects (specifically to be used with `d3.scaleTime`)
 5. A comprehensive set of web tests (for details see the file [here](https://github.com/devosoft/Empirical/blob/d3-wrapper/tests/web/d3/scales.cc))  
-6. Support for passing maps from C++ to JavaScript: I added two `emp::pass_map_to_javascript` functions in [js_utils.h](https://github.com/devosoft/Empirical/blob/master/source/web/js_utils.h) as well as appropriate [tests](https://github.com/devosoft/Empirical/blob/master/tests/web/js_utils.cc) (see more about this in [this `web-code-demo.cc` file](({{ site.baseurl }}/assets/Oliver-BE/web-code-demo.cc)))
+6. Support for passing maps from C++ to JavaScript: I added two `emp::pass_map_to_javascript` functions in [js_utils.h](https://github.com/devosoft/Empirical/blob/master/source/web/js_utils.h) as well as appropriate [tests](https://github.com/devosoft/Empirical/blob/master/tests/web/js_utils.cc) (see more about this in [this `web-code-demo.cc` file]({{ site.baseurl }}/assets/Oliver-BE/web-code-demo.cc))
 
 We were able to test the wrapper using [Emily's Karma/Mocha/Chai system](https://devolab.org/javascript-testing-on-travis-ci-with-karma-and-mocha/) and [Alex's `TestRunner`](https://mmore500.com/waves/enrichment/week5.html) (which deals with the complexity of JavaScript code running out of sync with C++ code during testing). 
 This testing framework is now being adopted as the web testing framework across Empirical.
