@@ -22,7 +22,7 @@ std::map<size_t, Site> changelog; // Map key is index of site in the parent geno
                                   // Map value is Site structure
 std::vector<std::byte> sites;     // parent genome
 ```  
-![Parent Genome in all its glory](https://i.imgur.com/mekOG1s.png){:style="width: 600px; height: 65px; border: 10px";}  
+![Parent Genome in all its glory](https://i.imgur.com/mekOG1s.png){:style="width: 600; height: 65; border: 10";}  
 
 **Figure Parent Genome.** Parent Genome contains values at each of its sites.  
 
@@ -31,7 +31,7 @@ Here's a basic idea of what each of the functions do. To view the mutations in a
 **Overwrite**  
   * Loops through segment vector
   * Adds overwrite mutations to the changelog  
-![OverWrite Example](https://i.imgur.com/wu7gBxK.gif){:style="width: 400px; height: 180px; border: 10px;"}
+![OverWrite Example](https://i.imgur.com/wu7gBxK.gif){:style="width: 400; height: 180; border: 10;"}
 
 <!-- <a href="https://i.imgur.com/wu7gBxK.gif
 " target="_blank"><img src="https://i.imgur.com/B3HiqBW.jpg" 
@@ -41,7 +41,7 @@ alt="Overwrite Example Gif"  /></a> -->
   * Shift sites in the changelog to the right by size of the segment vector
   * Loops through segment vector
   * Adds insert mutations to the changelog  
-![Insert Example](https://i.imgur.com/0rZ4Bai.gif){:style="width: 500px; height: 180px; border: 10px;"}
+![Insert Example](https://i.imgur.com/0rZ4Bai.gif){:style="width: 500; height: 180; border: 10;"}
 
 <!-- <a href="https://i.imgur.com/0rZ4Bai.gif
 " target="_blank"><img src="https://i.imgur.com/0lcBnvV.jpg" 
@@ -52,7 +52,7 @@ alt="Overwrite Example Gif" width="500" height="180" border="10" /></a> -->
      * Takes into account if sites removed in the changelog had insert or remove mutations
   * Shift sites in the changelog to the left
   * Adds remove mutation to the changelog  
-![Remove Example](https://i.imgur.com/tus7plB.gif){:style="width: 400px; height: 180px; border: 10px;}
+![Remove Example](https://i.imgur.com/tus7plB.gif){:style="width: 400; height: 180; border: 10;"}
 
 <!-- <a href="https://i.imgur.com/tus7plB.gif
 " target="_blank"><img src="https://i.imgur.com/6EihJZ9.jpg" 
@@ -77,7 +77,7 @@ virtual void remove(size_t index, size_t segmentSize);
 
 ### Adding Entries In The Changelog
 Let's apply some basic mutations to a parent genome.  
-![Parent Genome Example](https://i.imgur.com/agc2bAi.png){:style="width: 600px; height: 45px; border: 10px;"}
+![Parent Genome Example](https://i.imgur.com/agc2bAi.png){:style="width: 600; height: 45; border: 10;"}
 
 
 1. Overwrite mutation to site at index 2. The overwritten sites will have values of 11, 22, 33.  
@@ -145,7 +145,7 @@ Great! All mutations have been recorded. Much like this rendition of Celine Dion
 
 <a href="https://www.youtube.com/watch?v=X2WH8mHJnhM
 " target="_blank"><img src="https://i.imgur.com/EntZNrV.png" 
-alt="Flute Rendition of My Heart Will Go On" width="450px" height="240px" border="10px" /></a>  
+alt="Flute Rendition of My Heart Will Go On" width="450" height="240" border="10" /></a>  
 
 this genome ~~heart~~ will go on to the next generation.
 
