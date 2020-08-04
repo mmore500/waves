@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ""
-date: 2020-07-29
+title: "Investigating MABE Genomes"
+date: 2020-07-31
 author: Stephanie Zendejo
 ---
 
