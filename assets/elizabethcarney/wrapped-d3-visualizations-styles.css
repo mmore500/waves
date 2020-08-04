@@ -1,0 +1,16 @@
+hr {
+  clear: both;
+}
+
+.headshot {
+  height: 130px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  clear: left;
+  float: left;
+}
+
+.myheadshot {
+  margin-bottom: 0;
+}
