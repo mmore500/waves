@@ -15,7 +15,7 @@ For more information about MABE (Modular Agent-Based Evolution platform) as well
 
 Genome is a list of sites with specific values:
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
+![genome example]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
 
 Genome can be naively implemented as a `std::vector` data structure from the standard library.
 
@@ -83,7 +83,7 @@ One important detail of the change_log is that it doesn't store every removed or
 For example, a change_log with entries `{{3 : -2}, {5 : 3}}` corresponds to the following mapping:  
 {% endraw %}
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; align: center;"}  
+![range map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; align: center;"}  
 
 To access any index, the following code can be used:
 ```cpp
@@ -99,7 +99,7 @@ For each key change_log stores how many sites were removed and inserted up until
 
 When one or more sites are removed from the genome, a new element is added in the change_log map: the map key corresponds to the index, at which the remove mutation starts and the map value corresponds to the number of sites that were removed. The following animation shows how the remove mutation is stored int eh change_log and how the change_log is then used to reconstruct the offspring genome:
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1.gif){:style="width: 100%; align: center;"}  
+![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1.gif){:style="width: 100%; align: center;"}  
 
 In the animation above, the remove(3, 2) method is called, which corresponds to removing two sites at index 3. The index and the number of removed sites are stored int eh change_log as map key and value.
 
@@ -110,7 +110,7 @@ offspring[index] = parent[index + 2]
 
 In the change_log map, each value is the the accumulation of all the changes up to corresponding key, for example, if **two** elements were removed at index 3 and then **three** elements were removed at index 5, the accumulated shift at index >= 5 will be -5:
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2.gif){:style="width: 100%; align: center;"}  
+![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2.gif){:style="width: 100%; align: center;"}  
 
 Using this change_log and the parent genome, it is possible to reconstruct the offspring genome by calculating a specific index in the offspring genome in relationship to the parent genome, i.e. for indices:
 * < 3: same value as in the parent genome
@@ -150,10 +150,10 @@ ind >= 5 && ind < 6: `offspring[index] = parent[index + 5]`
 ind >= 6 && ind < 9: segment from `segments_log.at(6)`
 ind > 9: `offspring[index] = parent[index + 2]`
 
-
+<!--
 #### Overwrite mutation :hammer: :wrench:
 (Need to change the algorithm - will add description later)
-
+-->
 
 #### All mutations combined
 
@@ -171,16 +171,16 @@ To sum up, the change log consists of two data structures:
 The plots below show the performance of my approach compared to the naive one for the `overwrite()`, `remove()` and `insert()` mutations methods as well as multi-mutation, when all three methods are applied together. The performance is shown for a number of genome sizes, specifically (each site corresponds to one byte) 5kB, 20kB, 50kB, 75kB, 100kB, 250kB and 500kB. The mutation rate is 0.1%, which corresponds to the 5, 20, 50, 75, 100, 250 and 500 mutations respectively for each genome size.
 
 The performance of the `overwrite()` mutation of my approach is very similar to the naive approach:
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; align: center;"}
+![overwrite benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; align: center;"}
 
 The performance of the `remove()` mutation is very similar between two approaches too. In the naive approach, the this mutation has linear time complexity relative to the genome size. In my approach, the time complexity is linear with the change_log size (as I need to update all the keys, which follow current key). Normally, the genome would be much larger than the change_log, however, the `std::vector` data structure stores the values in the contiguous memory (as opposed to `std::map` data structure), which makes the iteration much fasted dues to the utilization of cache-friendliness.
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; align: center;"}
+![remove benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; align: center;"}
 
 The performance of the `insert()` mutation is very similar between two approaches for the smaller genomes (< 100kB), however, as the size of the genome increases, the plots start to diverge, showing the strengths of standard library. In this case both approaches still have the linear time complexity, however, my approach becomes more complicated with more edge cases and the necessity to update two maps, both not contiguos in the memory.
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; align: center;"} 
+![insert benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; align: center;"} 
 
 Finally, multi-mutation behaves similar to the `insert()` mutation, which mean that the performance is dominated by the `insert()` mutation in this case.
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; align: center;"}  
+![multi benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; align: center;"}  
 
 
 ### Conclusion
