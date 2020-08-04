@@ -8,7 +8,7 @@ author: Stephanie Zendejo
 # Introduction
 I designed a genome class named StephanieGenome in MABE. The goal was to improve the time and memory taken to process genome mutations. Genomes in MABE were copied over from a parent genome to an offspring genome at every generation. The offspring genome at the last generation would contain a mutated parent genome. I implemented a way to reduce the number of copies at every generation by using a changelog. The changelog stores values, and offsets for multiple types of mutations. In order to generate a offspring genome, the changelog is referenced and applied to the parent genome. 
 
-> Changelog? Huh? An introduction to MABE and the problem can be found [here!](https://szendejo.github.io/waves/blog/Team-MABE.html)  
+> Changelog? Huh? An introduction to MABE and the problem can be found [here!]({{ site.baseurl }}{% post_url 2020-07-29-Team-MABE %})  
 
 # My Approach To The Changelog Problem  
 The parent genome is represented as a `std::vector` of sites. Each site in the parent genome contains a numeric value that is represented as a `std::byte` in memory. The position of the site in the parent genome is the `index`. A changelog is represented as an `ordered std::map<size_t, Site>`. `size_t` is the index of the site mutated, and Site is the struct to contain the mutated site's information. The `Site` struct identifies what type of mutation has been applied to the site, and what the new value is (if applicable).  
