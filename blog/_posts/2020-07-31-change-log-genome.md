@@ -15,7 +15,7 @@ For more information about MABE (Modular Agent-Based Evolution platform) as well
 
 Genome is a list of sites with specific values:
 
-![genome example]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
+![genome example]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; display: block; margin-left: auto; margin-right: auto;"}  
 
 Genome can be naively implemented as a `std::vector` data structure from the standard library.
 
