@@ -22,5 +22,8 @@ Soon it will be embedded into a longer web page as part of the wiki where it wil
 Much like how some web sites or blogs will have interactive demos embedded within their pages at certain points in the text.
 
 ## Results
+
+![widget screenshot]({{ site.baseurl }}/assets/daconjam/MABE-widget-screenshot.png){:style="width: 100%;"}
+
 The widgets are used to get a broader idea of the parts of MABE's Functional Overview.
 Here is the functional page: [https://daconjam.github.io/MABE-Widget/](https://daconjam.github.io/MABE-Widget/).
