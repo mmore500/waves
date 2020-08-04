@@ -99,7 +99,7 @@ For each key change_log stores how many sites were removed and inserted up until
 
 When one or more sites are removed from the genome, a new element is added in the change_log map: the map key corresponds to the index, at which the remove mutation starts and the map value corresponds to the number of sites that were removed. The following animation shows how the remove mutation is stored int eh change_log and how the change_log is then used to reconstruct the offspring genome:
 
-![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1.gif){:style="width: 100%; align: center;"}  
+![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1_small.gif){:style="width: 100%; align: center;"}  
 
 In the animation above, the remove(3, 2) method is called, which corresponds to removing two sites at index 3. The index and the number of removed sites are stored int eh change_log as map key and value.
 
@@ -110,7 +110,7 @@ offspring[index] = parent[index + 2]
 
 In the change_log map, each value is the the accumulation of all the changes up to corresponding key, for example, if **two** elements were removed at index 3 and then **three** elements were removed at index 5, the accumulated shift at index >= 5 will be -5:
 
-![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2.gif){:style="width: 100%; align: center;"}  
+![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2_small.gif){:style="width: 100%; align: center;"}  
 
 Using this change_log and the parent genome, it is possible to reconstruct the offspring genome by calculating a specific index in the offspring genome in relationship to the parent genome, i.e. for indices:
 * < 3: same value as in the parent genome
@@ -126,7 +126,6 @@ Each value in the change_log map corresponds to the index shift relative to the 
 
 The animation shows an example, where our previous change_log is updated with an insertion of 3 elements {20, 21, 22} at index 6:
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; align: center;"}  
 ![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; align: center;"}  
 
 
