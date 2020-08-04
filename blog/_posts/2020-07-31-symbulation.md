@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "symbulation blogpost"
-date: 2020-07-20
+title: "Symbulation GUI"
+date: 2020-07-31
 author: Molly Kammann, Yi Qin
 ---
 
