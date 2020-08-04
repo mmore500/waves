@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Empirical Queue Manager"
-date: 2020-06-03
+date: 2020-07-31
 author: Juan Eduardo Chavez
 ---
 
