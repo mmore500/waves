@@ -42,7 +42,7 @@ I wasn't sure what to expect when I began my R coding journey. I can gladly say 
 As I previously stated, I have never been particularly techy. It was a slow start, but I soon realized that coding R was something I enjoyed. The efficiency of being able to code the program to both create graphs and complete equations for me was so fulfilling- not to mention I didn't have to do the math myself 🤣. This was something entirely outside of my comfort zone that I feel I can use in my career in science going forward.
 Here is an example of a basic graph I created using R.
 
-![example graph]({{ site.baseurl }}/assets/GraceWhipple/BlogPostExample.png)  
+![example graph]({{ site.baseurl }}/assets/GraceWhipple/BlogGraphExample.png)  
 
 Here is the code I used to create this histogram:
 >hist(numberofgenes, main = "Number of Genes Regulated", breaks=37, col=c("yellow"))
