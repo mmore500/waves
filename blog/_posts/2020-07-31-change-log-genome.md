@@ -15,7 +15,7 @@ For more information about MABE (Modular Agent-Based Evolution platform) as well
 
 Genome is a list of sites with specific values:
 
-![genome example]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
+![genome example]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; display: block; margin-left: auto; margin-right: auto;"}  
 
 Genome can be naively implemented as a `std::vector` data structure from the standard library.
 
@@ -72,8 +72,9 @@ As we've seen above, the algorithm has to support the following mutations:
 My implementation consists of two maps, which, for each offspring genome, store all the necessary information on how this genome is different from the parent:
 * **change_log** is implemented as `std::map` and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and either the parent genome or the newly inserted values stored in the segments_log (see next)
 * **segments_log** is implemented as `std::unordered_map` and stores the segments that were inserted into the map during mutation  
-  
-![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 75%; align: center;"}  
+
+
+![Schematics of change_log and segments_log]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init_cut.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto; "}  
   
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offspring genome or a part of it as a contiguous memory block of necessary sites.
 
@@ -83,7 +84,7 @@ One important detail of the change_log is that it doesn't store every removed or
 For example, a change_log with entries `{{3 : -2}, {5 : 3}}` corresponds to the following mapping:  
 {% endraw %}
 
-![range map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; align: center;"}  
+![range map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}  
 
 To access any index, the following code can be used:
 ```cpp
@@ -99,7 +100,7 @@ For each key change_log stores how many sites were removed and inserted up until
 
 When one or more sites are removed from the genome, a new element is added in the change_log map: the map key corresponds to the index, at which the remove mutation starts and the map value corresponds to the number of sites that were removed. The following animation shows how the remove mutation is stored int eh change_log and how the change_log is then used to reconstruct the offspring genome:
 
-![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1.gif){:style="width: 100%; align: center;"}  
+![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
 
 In the animation above, the remove(3, 2) method is called, which corresponds to removing two sites at index 3. The index and the number of removed sites are stored int eh change_log as map key and value.
 
@@ -110,7 +111,7 @@ offspring[index] = parent[index + 2]
 
 In the change_log map, each value is the the accumulation of all the changes up to corresponding key, for example, if **two** elements were removed at index 3 and then **three** elements were removed at index 5, the accumulated shift at index >= 5 will be -5:
 
-![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2.gif){:style="width: 100%; align: center;"}  
+![remove animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
 
 Using this change_log and the parent genome, it is possible to reconstruct the offspring genome by calculating a specific index in the offspring genome in relationship to the parent genome, i.e. for indices:
 * < 3: same value as in the parent genome
@@ -126,8 +127,8 @@ Each value in the change_log map corresponds to the index shift relative to the 
 
 The animation shows an example, where our previous change_log is updated with an insertion of 3 elements {20, 21, 22} at index 6:
 
-![insert animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; align: center;"}  
-![small insert animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; align: center;"}  
+![insert animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
+![small insert animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
 
 
 In addition to change_log, we use `std::unordered_map`, called segments_log to store the inserted segments. The `std::unordered_map` allows constant time access by key. 
@@ -171,16 +172,16 @@ To sum up, the change log consists of two data structures:
 The plots below show the performance of my approach compared to the naive one for the `overwrite()`, `remove()` and `insert()` mutations methods as well as multi-mutation, when all three methods are applied together. The performance is shown for a number of genome sizes, specifically (each site corresponds to one byte) 5kB, 20kB, 50kB, 75kB, 100kB, 250kB and 500kB. The mutation rate is 0.1%, which corresponds to the 5, 20, 50, 75, 100, 250 and 500 mutations respectively for each genome size.
 
 The performance of the `overwrite()` mutation of my approach is very similar to the naive approach:
-![overwrite benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; align: center;"}
+![overwrite benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}
 
 The performance of the `remove()` mutation is very similar between two approaches too. In the naive approach, the this mutation has linear time complexity relative to the genome size. In my approach, the time complexity is linear with the change_log size (as I need to update all the keys, which follow current key). Normally, the genome would be much larger than the change_log, however, the `std::vector` data structure stores the values in the contiguous memory (as opposed to `std::map` data structure), which makes the iteration much fasted dues to the utilization of cache-friendliness.
-![remove benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; align: center;"}
+![remove benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}
 
 The performance of the `insert()` mutation is very similar between two approaches for the smaller genomes (< 100kB), however, as the size of the genome increases, the plots start to diverge, showing the strengths of standard library. In this case both approaches still have the linear time complexity, however, my approach becomes more complicated with more edge cases and the necessity to update two maps, both not contiguos in the memory.
-![insert benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; align: center;"} 
+![insert benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"} 
 
 Finally, multi-mutation behaves similar to the `insert()` mutation, which mean that the performance is dominated by the `insert()` mutation in this case.
-![multi benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; align: center;"}  
+![multi benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}  
 
 
 ### Conclusion
@@ -199,14 +200,14 @@ There are multiple things in the algorithm that could be optimized, from both al
 I would like to thank the organizers of the WAVES workshop. It was extremely valuable experience for me and I learned so much I couldn't have imagined was possible 10 weeks ago. :exploding_head:
 
 In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop. <br /><br />
-![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
-![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
+![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; display: block; margin-left: auto; margin-right: auto;"}
+![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; display: block; margin-left: auto; margin-right: auto;"}  
 
 Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone sucess in their studies and career and I hope we will stay in touch! :tada::tada::tada: <br /><br />
-![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}
-![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}
-![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}
-![Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}
+![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; display: block; margin-left: auto; margin-right: auto;"}
+![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; display: block; margin-left: auto; margin-right: auto;"}
+![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; display: block; margin-left: auto; margin-right: auto;"}
+![Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; display: block; margin-left: auto; margin-right: auto;"}
   
 ___________
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Onboarding Checklist"
-date: 2020-05-16
+date: 2020-07-31
 author: Grace Whipple
 ---
 ![Photo]({{ site.baseurl }}/assets/GraceWhipple/WAVESIntroPhoto.jpg)
