@@ -126,8 +126,8 @@ Each value in the change_log map corresponds to the index shift relative to the 
 
 The animation shows an example, where our previous change_log is updated with an insertion of 3 elements {20, 21, 22} at index 6:
 
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; align: center;"}  
-![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; align: center;"}  
+![insert animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; align: center;"}  
+![small insert animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; align: center;"}  
 
 
 In addition to change_log, we use `std::unordered_map`, called segments_log to store the inserted segments. The `std::unordered_map` allows constant time access by key. 
