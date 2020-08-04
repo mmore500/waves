@@ -1,15 +1,25 @@
 ---
 layout: post
-title: "Investigating use of change log for genome class"
+title: "Performance of Genome Class when Using Change Log"
 date: 2020-07-31
 author: Tetiana D
 ---
 
 # Introduction
 
-For more information about MABE (Modular Agent-Based Evolution platform) as well as other approaches for solving this problem see [this introduction](https://mmore500.com/waves/blog/Team-MABE.html).
+For a short introduction about MABE (Modular Agent-Based Evolution platform) as well as description and performance analysis of other approaches see [this post](https://mmore500.com/waves/blog/Team-MABE.html).
 
 ## Genome Class
+
+Genome is a source of heritable and mutable data. 
+Genome is a sequence of sites with data, which is used by other MABE modules (e.g., a genome could provide the data necessary to construct a brain in MABE).
+
+In biology, a genome is a sequence of four types of nucleotides (A, C, G, T). In MABE, the genome data could be any type, and for this project we will use std::byte as out data type.
+
+The genome class interface provides several mutation methods, which are used to create an offspring genome from a parent genome, specifically: 
+* **Overwrite** - the value at one or more sites is overwritten by a different value
+* **Insert** - one or  more sites are inserted into the genome
+* **Remove** - one or more sites are removed from the genome
 
 ### Naive Implementation
 
@@ -18,11 +28,6 @@ Genome is a list of sites with specific values:
 ![genome example]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
 
 Genome can be naively implemented as a `std::vector` data structure from the standard library.
-
-When the offspring is created from the parent genome, several mutations could take place: 
-* **Overwrite** - the value at one or more sites is overwritten by a different value
-* **Insert** - one or  more sites are inserted into the genome
-* **Remove** - one or more sites are removed from the genome
 
 In this naive implementation, there mutations can be implemented using the standard library algorithms on `std::vector`, specifically:
 
@@ -95,7 +100,7 @@ In the case of the change_log above,  `--map.upper_bound(7);` will return 5.
 For each key change_log stores how many sites were removed and inserted up until this key. 
 
   
-#### Remove mutaiton :hammer:
+#### Remove mutation :hammer:
 
 When one or more sites are removed from the genome, a new element is added in the change_log map: the map key corresponds to the index, at which the remove mutation starts and the map value corresponds to the number of sites that were removed. The following animation shows how the remove mutation is stored int eh change_log and how the change_log is then used to reconstruct the offspring genome:
 
@@ -198,15 +203,13 @@ There are multiple things in the algorithm that could be optimized, from both al
 I would like to thank the organizers of the WAVES workshop. It was extremely valuable experience for me and I learned so much I couldn't have imagined was possible 10 weeks ago. :exploding_head:
 
 In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop. <br /><br />
-![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
-![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
+
+![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"} ![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
 
 Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone sucess in their studies and career and I hope we will stay in touch! :tada::tada::tada: <br /><br />
-![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}
-![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}
-![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}
-![Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}
-  
+
+![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"} ![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"} ![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"} ![Victoria]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}
+
 ___________
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
