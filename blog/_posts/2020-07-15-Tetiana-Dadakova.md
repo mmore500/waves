@@ -17,7 +17,7 @@ Genome is a list of sites with specific values:
 
 ![]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
 
-Genome can be naively implemented as a `std::vector`{:.cpp} data structure from the standard library.
+Genome can be naively implemented as a `std::vector` data structure from the standard library.
 
 When the offspring is created from the parent genome, several mutations could take place: 
 * **Overwrite** - the value at one or more sites is overwritten by a different value
@@ -124,9 +124,11 @@ Each value in the change_log map corresponds to the index shift relative to the 
 {key : {val, insert}} // insert = true if there are sites inserted at this key
 ```
 
-The animation shows an example, where uou previous change_log is updated with an insertion of 3 elements {20, 21, 22} at index 6:
+The animation shows an example, where our previous change_log is updated with an insertion of 3 elements {20, 21, 22} at index 6:
 
 ![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation.gif){:style="width: 100%; align: center;"}  
+![]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; align: center;"}  
+
 
 In addition to change_log, we use `std::unordered_map`, called segments_log to store the inserted segments. The `std::unordered_map` allows constant time access by key. 
 
@@ -196,11 +198,11 @@ There are multiple things in the algorithm that could be optimized, from both al
 ## Acknowledgments
 I would like to thank the organizers of the WAVES workshop. It was extremely valuable experience for me and I learned so much I couldn't have imagined was possible 10 weeks ago. :exploding_head:
 
-In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop.<br\><br\>
+In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop. <br /><br />
 ![Cliff]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"}
 ![Jory]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
 
-Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone sucess in their studies and career and I hope we will stay in touch! :tada::tada::tada: <br\><br\>
+Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone sucess in their studies and career and I hope we will stay in touch! :tada::tada::tada: <br /><br />
 ![Jamell]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"}
 ![Stephanie]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"}
 ![Uma]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"}
