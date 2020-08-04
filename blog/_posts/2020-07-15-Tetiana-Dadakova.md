@@ -148,10 +148,10 @@ ind >= 5 && ind < 6: `offspring[index] = parent[index + 5]`
 ind >= 6 && ind < 9: segment from `segments_log.at(6)`
 ind > 9: `offspring[index] = parent[index + 2]`
 
-
+<!--
 #### Overwrite mutation :hammer: :wrench:
 (Need to change the algorithm - will add description later)
-
+-->
 
 #### All mutations combined
 
