@@ -13,28 +13,15 @@ My mentor- Acacia- and I both have an interest in pedagogy. This led us to condu
 
 Our case study is still in progress- in fact, there will be more interviews to conduct and audio to transcribe next week. For now, I’d like to share some nuggets of wisdom I’ve learned from interviewing the wonderful people involved in WAVES.        
 
-
-
-
-
 ## **Hindsight is 20/20.** :bulb:
 
 During this case study, we asked our interviewees to talk about “lightbulb moment” realizations they’ve had about their time in STEM. The response to this question was consistent: “lightbulb moments” rarely happened. Slow-burning realizations, however, did. 
 Some realized the importance of the people you do science with; others, what they needed to be happy in a career; still others, how one’s approach to teaching and mentorship has roots in one’s own personal experiences.
 Self-reflection is necessary to grow both as a scientist and as a person. It allows one to use their skills to help others as well as possible.
 
-
-
-
-
-
-
-## **Your career path may not be linear- and that’s okay.** :world_map:   :compass:
+## **Your career path may not be linear- and that’s okay.** :world_map:
 
 As an undergraduate, it can be easy to feel the pressure to be certain- of your major, of your post-grad plans, and of your career as a whole. Some people do find their “dream job” right away and never leave. Others, however, do not. Everyone’s path is different. If a career decision has made you unhappy, you don’t have to stick with it- as one interviewee said of their own experience, “...you can just stop what you’re doing and you can be something else.”
-
-
-
 
 ## **Science cannot be separated from issues of social injustice.** :exclamation:
 
@@ -48,18 +35,12 @@ As scientists, programmers, and engineers, it can be easy to feel like our resea
 
 *“Even within the context of science, you can pause what you’re doing and do something that will have a clear, tangible benefit.”*
 
+## **Many of today’s conversations revolve around the inherent power- or lack thereof- of certain identities.** :busts_in_silhouette:
 
-
-##
-Many of today’s conversations revolve around the inherent power- or lack thereof- of certain identities. At this point in my life, I am beginning to think more about my own identities, the ways in which they intersect, and the ways I can use them to help those with less privilege. The conversations I have had through WAVES have been especially poignant for this reason. 
+At this point in my life, I am beginning to think more about my own identities, the ways in which they intersect, and the ways I can use them to help those with less privilege. The conversations I have had through WAVES have been especially poignant for this reason. 
 This case study has been an enriching experience- in more ways than I could’ve expected. It’s been eye-opening to learn how others approach the intersection of their identities, how this is intertwined with their experiences in STEM, and how they are using their identities to fight for the greater good.
 
- I will carry their wisdom with me as I grow as a scientist and as a human being.
-
-
-
-
-
+I will carry their wisdom with me as I grow as a scientist and as a human being.
 
 ## **Acknowledgements**  :star2:
 
