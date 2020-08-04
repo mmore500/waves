@@ -11,7 +11,7 @@ I designed a genome class named StephanieGenome in MABE. The goal was to improve
 > Changelog? Huh? An introduction to MABE and the problem can be found [here!](https://szendejo.github.io/waves/blog/Team-MABE.html)  
 
 # My Approach To The Changelog Problem  
-The parent genome is represented as a **std::vector** of sites. Each site in the parent genome contains a numeric value that is represented as a **std::byte** in memory. The position of the site in the parent genome is the **index**. A changelog is represented as an **ordered std::map<size_t, Site>**. Size_t is the index of the site mutated, and Site is the struct to contain the mutated site's information. The Site struct identifies what type of mutation has been applied to the site, and what the new value is (if applicable).  
+The parent genome is represented as a `std::vector` of sites. Each site in the parent genome contains a numeric value that is represented as a `std::byte` in memory. The position of the site in the parent genome is the `index`. A changelog is represented as an `ordered std::map<size_t, Site>`. `size_t` is the index of the site mutated, and Site is the struct to contain the mutated site's information. The `Site` struct identifies what type of mutation has been applied to the site, and what the new value is (if applicable).  
 ```c++
 struct Site {
 	size_t insertOffset;  	  // Insert mutation at site
@@ -22,8 +22,7 @@ std::map<size_t, Site> changelog; // Map key is index of site in the parent geno
                                   // Map value is Site structure
 std::vector<std::byte> sites;     // parent genome
 ```  
-<!-- ![Parent Genome in all its glory](https://i.imgur.com/mekOG1s.png) -->
-<img src="https://i.imgur.com/mekOG1s.png" width="600" height="65" border="10" />  
+![Parent Genome in all its glory](https://i.imgur.com/mekOG1s.png){:style="width: 600; height: 65; border: 10";}  
 
 **Figure Parent Genome.** Parent Genome contains values at each of its sites.  
 
@@ -32,32 +31,34 @@ Here's a basic idea of what each of the functions do. To view the mutations in a
 **Overwrite**  
   * Loops through segment vector
   * Adds overwrite mutations to the changelog  
-<!--![OverWrite Example](https://i.imgur.com/wu7gBxK.gif) -->
-<a href="https://i.imgur.com/wu7gBxK.gif
+![OverWrite Example](https://i.imgur.com/wu7gBxK.gif){:style="width: 400; height: 180; border: 10;"}
+
+<!-- <a href="https://i.imgur.com/wu7gBxK.gif
 " target="_blank"><img src="https://i.imgur.com/B3HiqBW.jpg" 
-alt="Overwrite Example Gif" width="400" height="180" border="10" /></a>  
+alt="Overwrite Example Gif"  /></a> -->  
 
 **Insert**  
   * Shift sites in the changelog to the right by size of the segment vector
   * Loops through segment vector
   * Adds insert mutations to the changelog  
-<!--![Insert Example](https://i.imgur.com/0rZ4Bai.gif) -->
-<a href="https://i.imgur.com/0rZ4Bai.gif
+![Insert Example](https://i.imgur.com/0rZ4Bai.gif){:style="width: 500; height: 180; border: 10;"}
+
+<!-- <a href="https://i.imgur.com/0rZ4Bai.gif
 " target="_blank"><img src="https://i.imgur.com/0lcBnvV.jpg" 
-alt="Overwrite Example Gif" width="500" height="180" border="10" /></a>  
+alt="Overwrite Example Gif" width="500" height="180" border="10" /></a> -->  
 
 **Remove**  
   * Removes sites in the changelog if they exist
      * Takes into account if sites removed in the changelog had insert or remove mutations
   * Shift sites in the changelog to the left
   * Adds remove mutation to the changelog  
-<!-- ![Remove Example](https://i.imgur.com/tus7plB.gif) -->
-<a href="https://i.imgur.com/tus7plB.gif
-" target="_blank"><img src="https://i.imgur.com/6EihJZ9.jpg" 
-alt="Overwrite Example Gif" width="400" height="180" border="10" /></a>  
+![Remove Example](https://i.imgur.com/tus7plB.gif){:style="width: 400; height: 180; border: 10;"}
 
- 
-The overwrite and insert signatures contain a **segment std::vector** as an argument. The segment vector is a collection of mutations that will be added to the changelog starting at the given index. 
+<!-- <a href="https://i.imgur.com/tus7plB.gif
+" target="_blank"><img src="https://i.imgur.com/6EihJZ9.jpg" 
+alt="Overwrite Example Gif"  /></a> --> 
+
+The overwrite and insert signatures contain a `segment std::vector` as an argument. The segment vector is a collection of mutations that will be added to the changelog starting at the given index. 
 > _insert(6, {44, 55, 66}) is the equivalent of inserting the following mutations to the changelog:_   
 > _site at index 6 with a value of 44_  
 > _site at index 7 with a value of 55_  
@@ -76,8 +77,8 @@ virtual void remove(size_t index, size_t segmentSize);
 
 ### Adding Entries In The Changelog
 Let's apply some basic mutations to a parent genome.  
-<!--![Parent Genome Example](https://i.imgur.com/agc2bAi.png) -->
-<img src="https://i.imgur.com/agc2bAi.png" width="600" height="45" border="10" />  
+![Parent Genome Example](https://i.imgur.com/agc2bAi.png){:style="width: 600; height: 45; border: 10;"}
+
 
 1. Overwrite mutation to site at index 2. The overwritten sites will have values of 11, 22, 33.  
 
@@ -149,7 +150,7 @@ alt="Flute Rendition of My Heart Will Go On" width="450" height="240" border="10
 this genome ~~heart~~ will go on to the next generation.
 
 ### Generating The Offspring Genome  
-A **std::vector** named **modifiedSites** contains the offspring genome. Each position in the modifiedSites vector will be populated from either the changelog if an entry exists, or from the parent genome. Every insert mutation in the changelog increases the parent genome size by one. Every remove mutation in the changelog decreases the parent genome by the number of sites removed. **Offset** represented as an integer, keeps track of the position difference between the parent genome and the offspring genome.
+A `std::vector` named `modifiedSites` contains the offspring genome. Each position in the modifiedSites vector will be populated from either the changelog if an entry exists, or from the parent genome. Every insert mutation in the changelog increases the parent genome size by one. Every remove mutation in the changelog decreases the parent genome by the number of sites removed. `Offset` represented as an integer, keeps track of the position difference between the parent genome and the offspring genome.
 ```c
 void StephanieGenome::generateNewGenome() {
 	modifiedSites.resize(genomeSize);
