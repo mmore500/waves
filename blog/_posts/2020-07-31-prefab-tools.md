@@ -21,7 +21,7 @@ The goal of this project was to provide an easy way for developers to add an int
 Users would be able to experiment with configuration settings.
 It is our hope that by providing a platform for users to interact more meaningfully with data and conduct their own experiments, they will be more engaged and make new connections.
 
-Before this summer, there was a tool in Empirical that would read through a configuration file abstract data and create a form to display in a web application. One application using this config panel is [Emily Dolson’s](emilyldolson.com) *Model of cancer evolution along an oxygen gradient* [^2].
+Before this summer, there was a tool in Empirical that would read through a configuration file abstract data and create a form to display in a web application. One application using this config panel is [Emily Dolson’s](https://emilyldolson.com) *Model of cancer evolution along an oxygen gradient* [^2].
 
 ![Model of cancer evolution along an oxygen gradient]({{ site.baseurl }}/assets/kayakingCellist/original_config_panel.png)
 
@@ -148,7 +148,7 @@ If the issue has been closed by the time you click the link, hopefully they have
 Yay! :tada: :tada: :tada:
 
 Now that the summer is over, I am sad to leave the WAVES program and everyone at MSU. 
-I want to say a huge thanks to my mentor, [Matthew Andres Moreno](http://mmore500.com), who has helped me every step of the way.
+I want to say a huge thanks to my mentor, [Matthew Andres Moreno](https://mmore500.com), who has helped me every step of the way.
 
 ## Acknowledgements
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
