@@ -489,7 +489,7 @@ We're not sure whether a system like this might also be useful for native Empiri
 
 ## Acknowledgements
 
-I'd like to give credit to Austin Ferguson (@FergusonAJ) for being an excellent mentor on this project. He came up with the rough outline for the system, and contributed to every aspect of its design, as well as some of the code itself! 
+I'd like to give credit to Austin Ferguson ([@FergusonAJ17](https://twitter.com/FergusonAJ17)) for being an excellent mentor on this project. He came up with the rough outline for the system, and contributed to every aspect of its design, as well as some of the code itself! 
 
 Thanks also to everyone on the WAVES team who helped with advice, tips, and feedback. :blush:	
 
