@@ -223,11 +223,11 @@ I would like to thank the organizers of the WAVES workshop. It was an extremely 
 
 In addition, I would like to thank my mentors Cliff and Jory for giving me the opportunity to work on this super cool and interesting project, as well as for all the brainstorming sessions and for answering my questions and helping throughout the workshop. <br /><br />
 
-![]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px; align: center;"} ![]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px; align: center;"}  
+![]({{ site.baseurl }}/assets/headshots/square-cliff-bohm.png){:style="width: 130px;"} ![]({{ site.baseurl }}/assets/headshots/square-JorySchossau.png){:style="width: 130px;"}  
 
 Last but not least, I want to thank team MABE for creating friendly and encouraging atmosphere and for always being there when I needed help! I wish everyone success in their studies and career and I hope we will stay in touch! :tada::tada::tada: <br /><br />
 
-![]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px; align: center;"} ![]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px; align: center;"} ![]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px; align: center;"} ![]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px; align: center;"}
+![]({{ site.baseurl }}/assets/headshots/square-daconjam.png){:style="width: 130px;"} ![]({{ site.baseurl }}/assets/headshots/square-szendejo.png){:style="width: 130px;"} ![]({{ site.baseurl }}/assets/headshots/square-uma-sethuraman.png){:style="width: 130px;"} ![]({{ site.baseurl }}/assets/headshots/square-caovicto.png){:style="width: 130px;"}
 
 ___________
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
