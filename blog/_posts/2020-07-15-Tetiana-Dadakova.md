@@ -14,7 +14,7 @@ For a short introduction about MABE (Modular Agent-Based Evolution platform) as 
 Genome is a sequence of sites that contain heritable and mutable data.
 Genome is used by other MABE modules, for example as a source of data necessary to construct a brain in MABE.
 
-In biology, a genome is a sequence of four types of nucleotides (A, C, G, T). In MABE, the genome data could be of any type, and for this project we will the data in our genome will be of `std::byte` type.
+In biology, a genome is a sequence of four types of nucleotides (A, C, G, T). In MABE, the genome data could be of any type, and for this project the data in our genome will be of `std::byte` type.
 
 The genome class interface provides several mutation methods, which are used to create an offspring genome from a parent genome, specifically: 
 * Overwrite mutation - the value at one or more sites is overwritten by a different value
@@ -75,15 +75,14 @@ As we've seen above, the genome class has to support the following mutations:
 * Remove
 
 My implementation consists of two maps, which, for each offspring genome, store all the necessary information on how this genome is different from the parent:
-1. **change_log** is implemented as a `std::map` and contains the information about the **number of inserted and removed sites**. It is used to calculate the relationship between a particular site in the offspring genome and the parent genome 
+1. **change_log** is implemented as a `std::map` and contains the information about the **number of inserted and removed sites** (a shift in sites compared to the parent genome). It is used to calculate the relationship between a particular site in the offspring genome and the parent genome 
 2. **segments_log** is implemented as a `std::unordered_map` and stores the segments that were inserted into the genome during mutations
 
 ![]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 75%; align: center;"}  
   
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offspring genome (or a part of it) as a contiguous memory block of the necessary sites.
 
-One important detail about the change_log is that it doesn't store every removed or inserted index. 
-Instead, to optimize for memory use, it stores only one index for each range of a particular shift of sites due to insertion of removal (see example below). I.e., each key in the change_log represents all the keys in the range from the current key until the next key. 
+One important detail about the change_log is that it doesn't store every removed or inserted index, instead each key in the change_log represents all the keys in the range from the current key until the next key (see example below). 
 
 {% raw %}  
 For example, a change_log with entries `{{0 : 0}, {3 : -2}, {5 : 3}}` corresponds to the following mapping:  
