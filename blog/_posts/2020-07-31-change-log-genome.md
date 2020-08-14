@@ -25,7 +25,7 @@ The genome class interface provides several mutation methods, which are used to 
 
 Genome is a sequence of sites with specific values, e.g.:
 
-![example genome]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; align: center;"}  
+![example genome]({{ site.baseurl }}/assets/TetianaBlogFigs/GenomeExample.png){:style="width: 60%; display: block; margin-left: auto; margin-right: auto;"}  
 
 It can be naively implemented as a `std::vector` data structure from the standard library.
 In this naive design, all mutations can be implemented using the standard library algorithms on `std::vector`, specifically:
