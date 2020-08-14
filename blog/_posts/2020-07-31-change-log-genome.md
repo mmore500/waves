@@ -78,7 +78,7 @@ My implementation consists of two maps, which, for each offspring genome, store 
 1. **change_log** is implemented as a `std::map` and contains the information about the **number of inserted and removed sites** (a shift in sites compared to the parent genome). It is used to calculate the relationship between a particular site in the offspring genome and the parent genome 
 2. **segments_log** is implemented as a `std::unordered_map` and stores the segments that were inserted into the genome during mutations
 
-![map initialization]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 75%; align: center;"}  
+![map initialization]({{ site.baseurl }}/assets/TetianaBlogFigs/maps_init.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}  
 
 Each genome will have it's own change_log and segments_log, which in combination with the parent genome will allow the random access to any value in the offspring genome as well as the reconstruction of complete offspring genome (or a part of it) as a contiguous memory block of the necessary sites.
 
@@ -88,7 +88,7 @@ One important detail about the change_log is that it doesn't store every removed
 For example, a change_log with entries `{{0 : 0}, {3 : -2}, {5 : 3}}` corresponds to the following mapping:  
 {% endraw %}
 
-![range map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; align: center;"}  
+![range map]({{ site.baseurl }}/assets/TetianaBlogFigs/range_map.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}  
 
 To access any index, the following code can be used:
 ```cpp
@@ -104,7 +104,7 @@ When one or more sites are removed from the genome, a new element `{key : value}
 
 The following animation shows how the remove mutation is stored in the change_log and how the change_log is then used to reconstruct the offspring genome:
 
-![removal animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1_small.gif){:style="width: 100%; align: center;"}  
+![removal animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_1_small.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
 
 In the animation above, the `remove(3, 2)` method is called, which corresponds to removing two sites at index 3. The index and the number of removed sites are stored in the change_log as a `{key : value}` pair.
 
@@ -118,7 +118,7 @@ offspring[index] = parent[index + 2]
 
 In the change_log map, each `value` is the the accumulation of all the changes up to the corresponding `key`, for example, if **two** elements were removed at index 3 and then **three** elements were removed at index 5, the accumulated shift at index >= 5 will be -5:
 
-![removal animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2_small.gif){:style="width: 100%; align: center;"}  
+![removal animation]({{ site.baseurl }}/assets/TetianaBlogFigs/remove_animation_2_small.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
 
 Using this change_log and the parent genome, it is possible to reconstruct the offspring genome by calculating a specific index in the offspring genome in relationship to the parent genome, i.e. for indices:
 * < 3: same value as in the parent genome
@@ -136,7 +136,7 @@ In order to not confuse it with zero sites shift, an additional variable is adde
 
 The animation shows an example, where our previous change_log is updated with an insertion of three elements {20, 21, 22} at index 6:
 
-![insertion animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; align: center;"}  
+![insertion animation]({{ site.baseurl }}/assets/TetianaBlogFigs/insert_animation_small.gif){:style="width: 100%; display: block; margin-left: auto; margin-right: auto;"}  
 
 In addition to change_log, we now also use segments_log to store the inserted segment. The `std::unordered_map` allows constant time access by key. 
 
@@ -175,7 +175,7 @@ The mutation rate is 0.1%, which corresponds to the 5, 20, 50, 75, 100, 250 and 
 
 The performance of the `overwrite()` mutation of my approach is very similar to the naive approach:
 
-![overwrite mutation benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; align: center;"}
+![overwrite mutation benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkOverwrite.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}
 
 
 The performance of the `remove()` mutation is very similar between two approaches too. 
@@ -186,19 +186,19 @@ In my approach, the time complexity is linear with the change_log size (as I nee
 Normally, the genome would be much larger than the change_log, therefore, I would expect my approach to be faster.
 However, the `std::vector` data structure stores the values in the contiguous memory (as opposed to `std::map` data structure), which results in faster iteration due to the utilization of cache-friendliness.
 
-![removal benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; align: center;"}
+![removal benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkRemove.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}
 
 
 The performance of the `insert()` mutation is very similar between two approaches for the smaller genomes (< 100kB), however, as the size of the genome increases, the plots start to diverge, showing the strengths of the standard library. 
 
 In this case both approaches still have the linear time complexity, however, my approach becomes more complicated with more edge cases and the necessity to update two maps, both not contiguous in the memory.
 
-![insertion benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; align: center;"} 
+![insertion benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkInsert.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"} 
 
 
 Finally, multi-mutation behaves similar to the `insert()` mutation, which means that the performance is dominated by the `insert()` mutation in this case.
 
-![multi-mutation benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; align: center;"}  
+![multi-mutation benchmark]({{ site.baseurl }}/assets/TetianaBlogFigs/BenchmarkMulti.png){:style="width: 75%; display: block; margin-left: auto; margin-right: auto;"}  
 
 
 ### Conclusion
