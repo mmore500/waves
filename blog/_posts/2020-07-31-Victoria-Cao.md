@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Victoria Cao Project"
+title: "Exploring Genome Optimizations for Digital Evolution"
 date: 2020-07-31
 author: Victoria Cao
 ---
