@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Systematics Normalization"
-date: 2020-06-03
+date: 2020-07-31
 author: Abigail Wilson
 ---
 
