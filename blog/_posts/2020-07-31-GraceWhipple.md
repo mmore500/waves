@@ -1,21 +1,22 @@
 ---
 layout: post
-title: "Onboarding Checklist"
+title: "Incorporating R into Avida-ED Activities"
 date: 2020-07-31
 author: Grace Whipple
 ---
-![Photo]({{ site.baseurl }}/assets/GraceWhipple/WAVESIntroPhoto.jpg)
+
+![headshot]({{ site.baseurl }}/assets/GraceWhipple/WAVESIntroPhoto.jpg){:style="width: 30%; display: block; margin-left: auto; margin-right: auto;"}
 
 _Hello! My name is Grace Whipple and I am a junior at Michigan State University. I am studying Human Biology with a minor in Health Promotions. This last year I switched my major from Secondary Education to Human Biology on the Pre-Med track. This was a huge change that I was not expecting: But hey, college is where you're supposed to figure this stuff out, right? Some of my interests include doing Bob Ross paint alongs, boxing, and spending time with friends._
 
 In the WAVES Summer Workshop, I have worked with Dr. Mead to learn R code and incorporate this code into Avida-ED activities for students. I have worked with Dr. Mead previously as I took her IBIO 150 course at Michigan State University. ✨ Go Green! ✨
 
 Some things I will discuss in my post include:
--Life Before WAVES
--Evolution By Avida-ED
--`Learning.to.Code.R<-c(The, Ups, and, Downs)`
--What I Have Learned
--Going Forward
+* Life Before WAVES
+* Evolution By Avida-ED
+* `Learning.to.Code.R<-c(The, Ups, and, Downs)`
+* What I Have Learned
+* Going Forward
 
 ## Life Before WAVES
 _**I Didn't Know What I Was Missing**_
