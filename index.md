@@ -4,12 +4,12 @@ title: Call for Participants
 description: Come join us!
 ---
 
-*We are no longer accepting applications for summer 2020.
-However, you can sign up to receive updates on any future workshops [here](https://forms.gle/xtXiiVjfs39hWHJp7).*
+*This call for participants is a preliminary draft and has not been finalized.
+However, you can sign up to receive updates [here](https://forms.gle/xtXiiVjfs39hWHJp7).*
 
 # Call for Participants
 
-We are looking to recruit five to ten early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2020.
+We are looking to recruit five to eight early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2021.
 
 The goal of the workshop is four-fold:
 1. to help participants advance their careers by skillbuilding through hands-on C++ and/or JavaScript software development in an academic setting,
@@ -30,12 +30,13 @@ We describe several possible project categories below.
 Participants' projects will directly contribute open-source software to the foundation of future versions of Avida and Avida-ED.
 To demonstrate their software, participants will build their own prototype scientific web application/mini research project or contribute to an existing web application/research project.
 As a culmination of their workshop experience and an exercise in professional communication, participants will publish a blog post describing how their software works and how to use it.
+Check out last year's project write-ups [here](http://mmore500.com/waves/blog.html)!
 
 During the workshop, participants will also engage in a weekly software discussion group and a weekly group check-in meeting.
 
 ## Logistics
 
-The virtual workshop will take place between **May 25, 2020** and **July 31, 2020**.
+The virtual workshop will take place between **May 24, 2021** and **July 30, 2021** (TODO move later for compatibility with trimesters?).
 Participants will be expected to commit to full-time (approximately 40 hours/week) engagement with the workshop.
 To accommodate multiple U.S. time zones, all group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
 A **$6,000** stipend will be disbursed to participants in five bi-weekly installments of $1,200.
@@ -47,19 +48,21 @@ We are seeking participants with prior practical experience in computer science:
 Prior experience with C++ and/or JavaScript is expected, but not strictly required.
 We especially encourage applications from members of underrepresented groups in computer science.
 
-Applications should consist of:
+Applications should consist of a single PDF file with:
+1. a cover page with your name, your GitHub username, and your email address,
 1. a curriculum vitae or resume,
 2. a brief (appox. 500 to 1000 words) statement that describes
    - your personal background and career goals,
+   - your contribution to promoting diversity, equity, and inclusion (past, present, and/or future),
    - your interest in the program, and
    - an interesting coding project you've tackled.
       * in any setting: school, hackathon, personal project, research, work, etc.
       * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
-3. and, optionally, two references for your coding ability (include name, email, and relationship).
+3. and, optionally, up to two references (include name, email, and relationship).
 
-Applications should be submitted to [avida-waves@googlegroups.com](mailto:avida-waves@googlegroups.com) with the subject line "WAVES Application" no later than **May 4, 2020**.
+Applications should be [submitted by file upload](https://www.dropbox.com/request/6vZF3Cwhjke0PNdpSYVy) no later than **May 3, 2021**.
 
-We will announce participant selection no later than **May 11, 2020**.
+We will announce participant selection no later than **May 17, 2021**.
 
 This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action* (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
@@ -85,6 +88,10 @@ Build core web framework tools in the current Avida-ED system and in the [Empiri
 * Develop a JavaScript front-end and interface to C++ configuration objects.
 
 As part of their work, participants will assemble an example research, educational, or science communication web application that demonstrates their software.
+
+## Example Pedagogy Projects:
+
+* TODO
 
 ## Other Example Web Projects
 
