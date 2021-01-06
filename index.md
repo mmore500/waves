@@ -48,7 +48,7 @@ We are seeking participants with prior practical experience in computer science:
 Prior experience with C++ and/or JavaScript is expected, but not strictly required.
 We especially encourage applications from members of underrepresented groups in computer science.
 
-Applications should consist of a single PDF file with:
+Applications should consist of a single PDF file named with your GitHub username containing:
 1. a cover page with your name, your GitHub username, and your email address,
 1. a curriculum vitae or resume,
 2. a brief (appox. 500 to 1000 words) statement that describes
