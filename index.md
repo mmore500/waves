@@ -9,7 +9,7 @@ However, you can sign up to receive updates [here](https://forms.gle/xtXiiVjfs39
 
 # Call for Participants
 
-We are looking to recruit five to eight early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2021.
+We are looking to at least eight early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2021.
 
 The goal of the workshop is four-fold:
 1. to help participants advance their careers by skillbuilding through hands-on C++ and/or JavaScript software development in an academic setting,
@@ -36,7 +36,9 @@ During the workshop, participants will also engage in a weekly software discussi
 
 ## Logistics
 
-The virtual workshop will take place between **May 24, 2021** and **July 30, 2021** (TODO move later for compatibility with trimesters?).
+The virtual workshop will take place between **June 14, 2021** and **August 20, 2021**.
+If these dates don't work for you, we may be able to shift this schedule by a week or two for individual participants.
+Let us know in your application and we will do our best to accomodate you.
 Participants will be expected to commit to full-time (approximately 40 hours/week) engagement with the workshop.
 To accommodate multiple U.S. time zones, all group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
 A **$6,000** stipend will be disbursed to participants in five bi-weekly installments of $1,200.
@@ -48,21 +50,30 @@ We are seeking participants with prior practical experience in computer science:
 Prior experience with C++ and/or JavaScript is expected, but not strictly required.
 We especially encourage applications from members of underrepresented groups in computer science.
 
-Applications should consist of a single PDF file named with your GitHub username containing:
+Applications should consist of a single PDF file named `application.pdf` containing:
 1. a cover page with your name, your GitHub username, and your email address,
-1. a curriculum vitae or resume,
-2. a brief (appox. 500 to 1000 words) statement that describes
+2. a curriculum vitae or resume,
+3. a brief (appox. 500 to 1000 words) statement that describes
    - your personal background and career goals,
-   - your contribution to promoting diversity, equity, and inclusion (past, present, and/or future),
+   - your contribution to promoting diversity, equity, and/or inclusion (past, present, or future),
    - your interest in the program, and
    - an interesting coding project you've tackled.
       * in any setting: school, hackathon, personal project, research, work, etc.
       * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
-3. and, optionally, up to two references (include name, email, and relationship).
+4. the name, email, and relationship of any letter writers you have asked to submit on your behalf (see below).
 
-Applications should be [submitted by file upload](https://www.dropbox.com/request/6vZF3Cwhjke0PNdpSYVy) no later than **May 3, 2021**.
+We also encourage applicants to provide at least one and up to two letters of reccomendation.
+However, we will still consider applicants without a leter of reccomendation.
+Please ask letter writers to provide their reccomendation as a single PDF file named with your GitHub username.
+For example, if your GitHub username was `mmore500` each letter on your behalf would be named `mmore500.pdf`.
 
-We will announce participant selection no later than **May 17, 2021**.
+Applications and letters should be [submitted by file upload](https://www.dropbox.com/request/6vZF3Cwhjke0PNdpSYVy).
+Where the file upload service asks for "Your name," please provide the GitHub username of the uploader (whether an applicant or a letter writer).
+If the uploader does not have a GitHub username, please register a free account at <https://github.com/join>.
+
+Applications should be uploaded no later than **March 22, 2021**.
+Reccomendation letters should be uploaded no later than **March 29, 2021**.
+We will announce participant selection no later than **April 12, 2021**.
 
 This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action* (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
