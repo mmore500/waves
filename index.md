@@ -69,6 +69,7 @@ Your diversity, equity, and inclusion (DEI) statement can discuss any combinatio
 * your perspective on DEI issues,
 * your expectations from the workshop with respect to DEI issues, or
 * any other content that reflects engagement with DEI issues.
+
 You can view the workshop's [statement on DEI](#our-commitment-to-diversity-equity-and-inclusion), [the rubric we will use to evaluate DEI statements](#applicant-dei-statement-rubric) and [example DEI statements](#example-dei-statements) below.
 
 We also encourage applicants to provide at least one and up to two letters of reccomendation.
