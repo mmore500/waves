@@ -45,6 +45,7 @@ A **$6,000** stipend will be disbursed to participants in five bi-weekly install
 
 All U.S. citizens/permanent residents are eligible to apply, as are international students already enrolled at Michigan State University.
 The workshop will be aimed at upper-level undergraduates in computer science, but graduate students or other early-career computer scientists are also welcome to apply.
+Past workshop participants are welcome to apply, as well.
 
 We are seeking participants with prior practical experience in computer science: writing and running software of some sort.
 Prior experience with C++ and/or JavaScript is expected, but not strictly required.
@@ -55,21 +56,36 @@ Applications should consist of a single PDF file named `application.pdf` contain
 2. a curriculum vitae or resume,
 3. a brief (appox. 500 to 1000 words) statement that describes
    - your personal background and career goals,
-   - your contribution to promoting diversity, equity, and/or inclusion (past, present, or future),
+   - a diversity, equity, and inclusion statement (see below),
    - your interest in the program, and
    - an interesting coding project you've tackled.
       * in any setting: school, hackathon, personal project, research, work, etc.
       * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
 4. the name, email, and relationship of any letter writers you have asked to submit on your behalf (see below).
 
+Your diversity, equity, and inclusion (DEI) statement can discuss any combination of
+* your contribution to promoting DEI (past, present, or future),
+* your experiences with DEI issues,
+* your perspective on DEI issues,
+* your expectations from the workshop with respect to DEI issues, or
+* any other content that reflects engagement with DEI issues.
+You can view the workshop's [statement on DEI](#our-commitment-to-diversity-equity-and-inclusion), [the rubric we will use to evaluate DEI statements](#applicant-dei-statement-rubric) and [example DEI statements](#example-dei-statements) below.
+
 We also encourage applicants to provide at least one and up to two letters of reccomendation.
 However, we will still consider applicants without a leter of reccomendation.
 Please ask letter writers to provide their reccomendation as a single PDF file named with your GitHub username.
 For example, if your GitHub username was `mmore500` each letter on your behalf would be named `mmore500.pdf`.
 
-Applications and letters should be [submitted by file upload](https://www.dropbox.com/request/6vZF3Cwhjke0PNdpSYVy).
+Applications should be submitted by file upload to <https://mmore500.com/hopto/ay>.
+Letters of reccomendation should be submitted by file upload to <https://mmore500.com/hopto/az>.
 Where the file upload service asks for "Your name," please provide the GitHub username of the uploader (whether an applicant or a letter writer).
 If the uploader does not have a GitHub username, please register a free account at <https://github.com/join>.
+
+In order to better understand the makeup of our applicant pool, we ask that applicants complete [a demographic questionaire](https://mmore500.com/hopto/ba).
+We will not view this survey until after we have finalized admissions decisions.
+
+If you have questions about the workshop or the application process, please email [m.more500@gmail.com](mailto:m.more500@gmail.com).
+We will respond to all questions by email and will post generally-applicable Q&A's in [our FAQ section](#frequently-asked-questions).
 
 Applications should be uploaded no later than **March 22, 2021**.
 Reccomendation letters should be uploaded no later than **March 29, 2021**.
@@ -114,6 +130,56 @@ As part of their work, participants will assemble an example research, education
 * Write software to facilitate easy translation of labels, buttons, and other text in the Avida-ED web application.
 
 As part of their work, participants will make contributions directly to existing Avida-ED software.
+
+## Frequently Asked Questions
+
+To submit a question, please email [m.more500@gmail.com](mailto:m.more500@gmail.com).
+
+No quetsions yet!
+Why not be the first to ask?
+
+## Applicant DEI Statement Rubric
+
+We will prioritize applications that demonstrate strength in *at least one* of the three criteria below.
+Demonstrating strength across multiple criteria will benefit an application, but we will also take into account contextual factors affecting opportunity applicants have had to engage with these issues.
+
+1. Knowledge/awareness about DEI:
+- [] Weak (little to no evidence of awareness of DEI issues)
+- [] Adequate (Some evidence of awareness, but falls short of significant knowledge base or deep interest)
+- [] Strong (clear and deep understanding of dimensions of DEI)
+2. Track record in advancing DEI:
+- [] Weak (describes few or no past efforts in any detail)
+- [] Adequate (some evidence of past efforts, but not extensive enough to merit a high score) 
+- [] Strong (sustained track record of varied efforts to promote DEI in teaching, research, or service)
+3 . Plans for advancing DEI:
+- [] Weak (no personal plans to advance DEI)
+- [] Adequate (some idea about advancing DEI, but not much detail)
+- [] Strong (clear and detailed plans for advancing DEI)
+
+Adapted from the [UC Berkeley Office for Faculty Equity & Welfare](https://ofew.berkeley.edu/recruitment/contributions-diversity/rubric-assessing-candidate-contributions-diversity-equity-and).
+
+## Example DEI Statements
+
+TODO
+
+## Our Commitment to Diversity, Equity, and Inclusion
+
+Pervasive systemic inequities exist within our society with respect to systematic marginalization and exploitation of certain groups, including with respect to race, sex, sexuality, socioeconomic status, disability, age, and religion. These inequities harm both members of underrepresented groups and the vibrancy of our professional communities and our wider society. We hold our own professional communities (academia, computer science, evolutionary biology) accountable for our role perpetuating this injustice, and we must continue to work to address it. Advancing diversity, equity, and inclusion is critical to advancing our professions and strengthening our society.
+
+We aim to fulfill our duties as workshop organizers in a manner cognizant of the continuing history of pervasive systemic inequity. We commit to acting, to the extent possible, to allay these inequities within our workshop and support our community in grappling with them. We also commit to actions that contribute to dismantling systematic inequality.
+
+Among other actions, we will
+* Refer to workshop members using appropriate pronouns, names or nicknames, and pronunciations.
+* Review workshop applications holistically.
+   * Valuing experiences like mentorship, service, and commitment to your community with the same respect as experiences such as research, coursework, and project completion.
+   * Understanding that not all applicants have been exposed to the same opportunities and evaluating applicants’ experiences in context.
+* Ensuring that our Call for Participants is distributed so that it reaches members of underrepresented groups and providing special encouragement for them to apply.
+* Recruiting workshop members that share our commitment to diversity, equity, and inclusion. 
+* Committing to flexibility, recognizing that workshop members’ time, schedule, and capacity may change throughout the workshop and working to accommodate our members’ needs professionally and personally.
+* Recognizing diversity, equity, and inclusion awareness as a critical element of professional development and organizing workshop enrichment to address it.
+* Quantitatively assessing inclusivity in terms of our workshop application pool, our workshop facilitators, and our workshop participants.
+* Assessing equity and inclusion via surveys administered to workshop members.
+Designing the format of workshop meetings and social events to promote equitable participation.
 
 ## Who We Are
 
