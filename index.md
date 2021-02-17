@@ -145,17 +145,17 @@ We will prioritize applications that demonstrate strength in *at least one* of t
 Demonstrating strength across multiple criteria will benefit an application, but we will also take into account contextual factors affecting opportunity applicants have had to engage with these issues.
 
 1. Knowledge/awareness about DEI:
-- [] Weak (little to no evidence of awareness of DEI issues)
-- [] Adequate (Some evidence of awareness, but falls short of significant knowledge base or deep interest)
-- [] Strong (clear and deep understanding of dimensions of DEI)
+- [ ] Weak (little to no evidence of awareness of DEI issues)
+- [ ] Adequate (Some evidence of awareness, but falls short of significant knowledge base or deep interest)
+- [ ] Strong (clear and deep understanding of dimensions of DEI)
 2. Track record in advancing DEI:
-- [] Weak (describes few or no past efforts in any detail)
-- [] Adequate (some evidence of past efforts, but not extensive enough to merit a high score) 
-- [] Strong (sustained track record of varied efforts to promote DEI in teaching, research, or service)
-3 . Plans for advancing DEI:
-- [] Weak (no personal plans to advance DEI)
-- [] Adequate (some idea about advancing DEI, but not much detail)
-- [] Strong (clear and detailed plans for advancing DEI)
+- [ ] Weak (describes few or no past efforts in any detail)
+- [ ] Adequate (some evidence of past efforts, but not extensive enough to merit a high score) 
+- [ ] Strong (sustained track record of varied efforts to promote DEI in teaching, research, or service)
+3. Plans for advancing DEI:
+- [ ] Weak (no personal plans to advance DEI)
+- [ ] Adequate (some idea about advancing DEI, but not much detail)
+- [ ] Strong (clear and detailed plans for advancing DEI)
 
 Adapted from the [UC Berkeley Office for Faculty Equity & Welfare](https://ofew.berkeley.edu/recruitment/contributions-diversity/rubric-assessing-candidate-contributions-diversity-equity-and).
 
