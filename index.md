@@ -56,6 +56,7 @@ Applications should consist of a single PDF file named `application.pdf` contain
 2. a curriculum vitae or resume,
 3. a brief (appox. 500 to 1000 words) statement that describes
    - your personal background and career goals,
+   - how participating in the workshop will advance your objectives,
    - your commitment to diversity, equity, and inclusion (see below),
    - your interest in the program, and
    - an interesting coding project you've tackled.
