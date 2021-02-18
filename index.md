@@ -15,7 +15,7 @@ The goal of the workshop is four-fold:
 1. to help participants advance their careers by skillbuilding through hands-on C++ and/or JavaScript software development in an academic setting,
 2. to catalyze effective science communication and science pedagogy by helping participants develop the know-how to showcase their research through interactive web applications,
 3. to jumpstart software development on web framework and core digital evolution tools in support of the next version of the Avida-ED scientific and educational software, and
-4. to yield software that broadly enriches the digital evolution, scientific, education, and open-source communities.
+4. to produce software that broadly enriches the digital evolution, scientific, education, and open-source communities.
 
 This workshop is organized in conjunction with the [Avida-ED project](https://avida-ed.msu.edu/).
 Avida-ED extends the full-fledged Avida software, originally developed for digital evolution research, as a freely-available, interactive web application.
@@ -40,7 +40,7 @@ The virtual workshop will take place between **June 14, 2021** and **August 20, 
 If these dates don't work for you, we may be able to shift this schedule by a week or two for individual participants.
 Let us know in your application and we will do our best to accomodate you.
 Participants will be expected to commit to full-time (approximately 40 hours/week) engagement with the workshop.
-To accommodate multiple U.S. time zones, all group meetings will be held over videoconference between 1pm and 4pm EST (GMT-4).
+To accommodate multiple U.S. time zones, all group meetings will be held over videoconference sometime between noon and 5pm EST (GMT-4).
 A **$6,000** stipend will be disbursed to participants in five bi-weekly installments of $1,200.
 
 All U.S. citizens/permanent residents are eligible to apply, as are international students already enrolled at Michigan State University.
@@ -56,14 +56,14 @@ Applications should consist of a single PDF file named `application.pdf` contain
 2. a curriculum vitae or resume,
 3. a brief (appox. 500 to 1000 words) statement that describes
    - your personal background and career goals,
-   - a diversity, equity, and inclusion statement (see below),
+   - your commitment to diversity, equity, and inclusion (see below),
    - your interest in the program, and
    - an interesting coding project you've tackled.
       * in any setting: school, hackathon, personal project, research, work, etc.
       * as possible, link us to the code, the deployment, the project website, a writeup, and/or presentation!
 4. the name, email, and relationship of any letter writers you have asked to submit on your behalf (see below).
 
-Your diversity, equity, and inclusion (DEI) statement can discuss any combination of
+The portion of your statement covering diversity, equity, and inclusion (DEI) can discuss any combination of
 * your contribution to promoting DEI (past, present, or future),
 * your experiences with DEI issues,
 * your perspective on DEI issues,
@@ -72,13 +72,13 @@ Your diversity, equity, and inclusion (DEI) statement can discuss any combinatio
 
 You can view the workshop's [statement on DEI](#our-commitment-to-diversity-equity-and-inclusion), [the rubric we will use to evaluate DEI statements](#applicant-dei-statement-rubric) and [example DEI statements](#example-dei-statements) below.
 
-We also encourage applicants to provide at least one and up to two letters of reccomendation.
+We encourage applicants to provide at least one and up to two letters of reccomendation.
 However, we will still consider applicants without a leter of reccomendation.
 Please ask letter writers to provide their reccomendation as a single PDF file named with your GitHub username.
 For example, if your GitHub username was `mmore500` each letter on your behalf would be named `mmore500.pdf`.
 
-Applications should be submitted by file upload to <https://mmore500.com/hopto/ay>.
-Letters of reccomendation should be submitted by file upload to <https://mmore500.com/hopto/az>.
+Applications should be submitted by file upload to <https://mmore500.com/hopto/waves-apps>.
+Letters of reccomendation should be submitted by file upload to <https://mmore500.com/hopto/waves-letters>.
 Where the file upload service asks for "Your name," please provide the GitHub username of the uploader (whether an applicant or a letter writer).
 If the uploader does not have a GitHub username, please register a free account at <https://github.com/join>.
 
@@ -119,7 +119,7 @@ As part of their work, participants will assemble an example research, education
 
 ## Example Pedagogy Projects:
 
-* TODO
+* Developing Avida-ED lab activities incorporating R-based exercises.
 
 ## Other Example Web Projects
 
@@ -145,23 +145,23 @@ We will prioritize applications that demonstrate strength in *at least one* of t
 Demonstrating strength across multiple criteria will benefit an application, but we will also take into account contextual factors affecting opportunity applicants have had to engage with these issues.
 
 1. Knowledge/awareness about DEI:
-- [ ] Weak (little to no evidence of awareness of DEI issues)
-- [ ] Adequate (Some evidence of awareness, but falls short of significant knowledge base or deep interest)
-- [ ] Strong (clear and deep understanding of dimensions of DEI)
+  a. Weak (little to no evidence of awareness of DEI issues)
+  b. Adequate (Some evidence of awareness, but falls short of significant knowledge base or deep interest)
+  c. Strong (clear and deep understanding of dimensions of DEI)
 2. Track record in advancing DEI:
-- [ ] Weak (describes few or no past efforts in any detail)
-- [ ] Adequate (some evidence of past efforts, but not extensive enough to merit a high score) 
-- [ ] Strong (sustained track record of varied efforts to promote DEI in teaching, research, or service)
+  a. Weak (describes few or no past efforts in any detail)
+  b. Adequate (some evidence of past efforts, but not extensive enough to merit a high score) 
+  c. Strong (sustained track record of varied efforts to promote DEI in teaching, research, or service)
 3. Plans for advancing DEI:
-- [ ] Weak (no personal plans to advance DEI)
-- [ ] Adequate (some idea about advancing DEI, but not much detail)
-- [ ] Strong (clear and detailed plans for advancing DEI)
+  a. Weak (no personal plans to advance DEI)
+  b. Adequate (some idea about advancing DEI, but not much detail)
+  c. Strong (clear and detailed plans for advancing DEI)
 
 Adapted from the [UC Berkeley Office for Faculty Equity & Welfare](https://ofew.berkeley.edu/recruitment/contributions-diversity/rubric-assessing-candidate-contributions-diversity-equity-and).
 
 ## Example DEI Statements
 
-TODO
+Coming soon.
 
 ## Our Commitment to Diversity, Equity, and Inclusion
 
