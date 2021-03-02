@@ -38,7 +38,7 @@ During the workshop, participants will also engage in a weekly software discussi
 
 The virtual workshop will take place between **June 14, 2021** and **August 20, 2021**.
 If these dates don't work for you, we may be able to shift this schedule by a week or two for individual participants.
-Let us know in your application and we will do our best to accomodate you.
+Let us know in your application and we will do our best to accommodate you.
 Participants will be expected to commit to full-time (approximately 40 hours/week) engagement with the workshop.
 To accommodate multiple U.S. time zones, all group meetings will be held over videoconference sometime between noon and 5pm EST (GMT-4).
 A **$6,000** stipend will be disbursed to participants in five bi-weekly installments of $1,200.
