@@ -70,7 +70,7 @@ The portion of your statement covering diversity, equity, and inclusion (DEI) ca
 * your expectations from the workshop with respect to DEI issues, or
 * any other content that reflects engagement with DEI issues.
 
-You can view the workshop's [statement on DEI](#our-commitment-to-diversity-equity-and-inclusion), the [rubric](#applicant-dei-statement-rubric) we will use to evaluate DEI statements and [example DEI statements](#example-dei-statements) below.
+You can view the workshop's [statement on DEI](#our-commitment-to-diversity-equity-and-inclusion) and the [rubric](#applicant-dei-statement-rubric) we will use to evaluate DEI statements below.
 
 We encourage applicants to provide at least one and up to two letters of reccomendation.
 However, we will still consider applicants without a leter of reccomendation.
@@ -158,10 +158,6 @@ Demonstrating strength across multiple criteria will benefit an application, but
   c. Strong (clear and detailed plans for advancing DEI)
 
 Adapted from the [UC Berkeley Office for Faculty Equity & Welfare](https://ofew.berkeley.edu/recruitment/contributions-diversity/rubric-assessing-candidate-contributions-diversity-equity-and).
-
-## Example DEI Statements
-
-Coming soon.
 
 ## Our Commitment to Diversity, Equity, and Inclusion
 
