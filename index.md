@@ -4,9 +4,6 @@ title: Call for Participants
 description: Come join us!
 ---
 
-*This call for participants is a preliminary draft and has not been finalized.
-However, you can sign up to receive updates [here](https://forms.gle/xtXiiVjfs39hWHJp7).*
-
 # Call for Participants
 
 We are looking to recruit at least eight early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2021.
