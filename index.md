@@ -9,7 +9,7 @@ However, you can sign up to receive updates [here](https://forms.gle/xtXiiVjfs39
 
 # Call for Participants
 
-We are looking to at least eight early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2021.
+We are looking to recruit at least eight early-career participants (including undergraduate students) for a ten-week, funded, full-time, fully-remote software development workshop during the summer of 2021.
 
 The goal of the workshop is four-fold:
 1. to help participants advance their careers by skillbuilding through hands-on C++ and/or JavaScript software development in an academic setting,
