@@ -77,6 +77,8 @@ For example, if your GitHub username was `mmore500` each letter on your behalf w
 Applications should be submitted by file upload to <https://mmore500.com/hopto/waves-apps>.
 Letters of reccomendation should be submitted by file upload to <https://mmore500.com/hopto/waves-letters>.
 Where the file upload service asks for "Your name," please provide the GitHub username of the uploader (whether an applicant or a letter writer).
+Note that if you are signed in to a DropBox account, the upload form might not let you set a custom name.
+To set a custom name you might have to log out of DropBox, use another browser, or activate your browser's private mode.
 If the uploader does not have a GitHub username, please register a free account at <https://github.com/join>.
 
 In order to better understand the makeup of our applicant pool, we ask that applicants complete [a demographic questionaire](https://mmore500.com/hopto/ba).
