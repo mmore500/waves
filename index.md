@@ -87,8 +87,10 @@ We will not view this survey until after we have finalized admissions decisions.
 If you have questions about the workshop or the application process, please email [m.more500@gmail.com](mailto:m.more500@gmail.com).
 We will respond to all questions by email and will post generally-applicable Q&A's in [our FAQ section](#frequently-asked-questions).
 
-Applications should be uploaded no later than **March 22, 2021**.
-Reccomendation letters should be uploaded no later than **March 29, 2021**.
+Application reviews will begin on **March 26, 2021**, but will continue on a rolling basis after that.
+For full consideration, please submit your application by this date.
+We will update this page to announce when all workshop positions have been filled.
+Reccomendation letters should be uploaded by **March 31, 2021**, but will also be considered after this date on a rolling basis.
 We will announce participant selection no later than **April 12, 2021**.
 
 This workshop is funded through *Active LENS: Learning Evolution and the Nature of Science using Evolution in Action* (NSF IUSE #1432563).
