@@ -62,9 +62,10 @@ Stipend checks will be disbursed bi-weekly by mail.
 The dates that stipend checks will be mailed are listed on the [workshop schedule]({{ site.baseurl }}/schedule.html).
 
 :soon:
-Please fill out a [W-9]({{ site.baseurl }}/assets/w9.pdf) form and send it to our accounts manager, Melissa Williams.
+If you *are not* a MSU student, please fill out a [W-9]({{ site.baseurl }}/assets/w9.pdf) form and send it to our accounts manager, Melissa Williams.
 You can send your completed form by email to [will3360@msu.edu](mailto:will3360@msu.edu).
 If would prefer to submit the form by snail mail, contact her by email for instructions.
+If you *are* a MSU student, you do not need to contact Melissa.
 
 :bangbang:
 If the address you would like your stipend checks delivered to differs from the permanent address you listed in your W-9 form, be sure to let Melissa know.
@@ -77,9 +78,7 @@ If the address you would like your stipend checks delivered to differs from the 
 
 *Thanks to [@alackles](https://github.com/alackles) for contributing the following section.*
 
-
-State and federal income tax is NOT likely being withheld from these stipends.
-(If you live in East Lansing there local income tax may also apply.)
+*Unless* you are a MSU student, state and federal income tax is NOT likely being withheld from WAVES stipends.
 This means you will likely need to self-withhold taxes.
 
 This is a complex and annoying process; I've had to do it several times, so I'm here to help if you need any info or guidance.
@@ -99,7 +98,7 @@ The IRS page on estimated taxes is [here](https://www.irs.gov/businesses/small-b
 Federal tax brackets for 2020 can be found [here](https://taxfoundation.org/2020-tax-brackets/).
 State tax brackets for 2020 can be found [here](https://taxfoundation.org/state-individual-income-tax-rates-and-brackets-for-2020/).
 
-:shrug:
+:woman_shrugging:
 I'm so sorry that you all have to deal with this and that we don't live in a country where this is all automatically calculated for you.
 Like I said, I'm more than happy to help out with this if you haven't done this before or if you just have questions.
 
