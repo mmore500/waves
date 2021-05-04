@@ -65,7 +65,8 @@ The dates that stipend checks will be mailed are listed on the [workshop schedul
 If you *are not* a MSU student, please fill out a [W-9]({{ site.baseurl }}/assets/w9.pdf) form and send it to our accounts manager, Melissa Williams.
 You can send your completed form by email to [will3360@msu.edu](mailto:will3360@msu.edu).
 If would prefer to submit the form by snail mail, contact her by email for instructions.
-If you *are* a MSU student, you do not need to contact Melissa.
+If you *are* a MSU student, please send Melissa your APID number.
+(Begins with the letter "A," followed by 8 digits --- the one on your ID card.)
 
 :bangbang:
 If the address you would like your stipend checks delivered to differs from the permanent address you listed in your W-9 form, be sure to let Melissa know.
