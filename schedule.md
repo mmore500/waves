@@ -6,6 +6,108 @@ description: Workshop schedule
 
 ![school]({{ site.baseurl }}/assets/gifcities-school.gif){:style="width:100%;"}
 
+# 2021
+
+## Week 0 (June 14)
+* June 14: [orientation 0]({{ site.baseurl }}/tutorials/lesson00.html)
+  * 12pm to 5pm EST
+* June 15: [orientation 1]({{ site.baseurl }}/tutorials/lesson01.html)
+  * 12pm to 5pm EST
+* June 16: [orientation 2]({{ site.baseurl }}/tutorials/lesson02.html)
+  * 12pm to 5pm EST
+* June 17: [orientation 3]({{ site.baseurl }}/tutorials/lesson03.html)
+  * 12pm to 5pm EST
+* June 18: [orientation 4]({{ site.baseurl }}/tutorials/lesson04.html)
+  * 12pm to 5pm EST
+* June 18: *stipend installment 0 mailed*
+  * date pending confirmation by MSU
+* June 19: **Juneteenth**
+
+## Week 1 (June 21)
+* June 21: reserved for possible orientation
+  * 12pm to 5pm EST
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 1]({{ site.baseurl }}/enrichment/week1.html)
+  * Time TBA
+  * mentor: TBA
+
+## Week 2 (June 28)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 2]({{ site.baseurl }}/enrichment/week2.html)
+  * Time TBA
+  * mentor: TBA
+* July 2: *stipend installment 1 mailed*
+  * date pending confirmation by MSU
+* July 4: **Independence Day**
+
+## Week 3 (July 5)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 3]({{ site.baseurl }}/enrichment/week2.html)
+  * Time TBA
+  * mentor: TBA
+
+## Week 4 (July 12)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 4]({{ site.baseurl }}/enrichment/week4.html)
+  * Time TBA
+  * mentor: TBA
+* July 16: *stipend installment 2 mailed*
+  * date pending confirmation by MSU
+
+## Week 5 (July 19)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 5]({{ site.baseurl }}/enrichment/week5.html)
+  * Time TBA
+  * mentor: TBA
+
+## Week 6 (July 26)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 6]({{ site.baseurl }}/enrichment/week6.html)
+  * Time TBA
+  * mentor: TBA
+* July 30: *stipend installment 3 mailed*
+  * date pending confirmation by MSU
+
+## Week 7 (August 2)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 7]({{ site.baseurl }}/enrichment/week7.html)
+  * Time TBA
+  * mentor: TBA
+* July 17: *stipend installment 4 mailed*
+
+## Week 8 (August 9)
+* August 9: **blog post outline due**
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 8]({{ site.baseurl }}/enrichment/week8.html)
+  * Time TBA
+  * mentor: TBA
+* August 12: **working draft blog post due**
+* August 13: *stipend installment 4 mailed*
+  * date pending confirmation by MSU
+
+## Week 9 (August 16)
+* TBA: group check-in meeting
+  * Time TBA
+* TBA: [enrichment seminar 9]({{ site.baseurl }}/enrichment/week9.html)
+  * Time TBA
+  * mentor: TBA
+* August 17: **blog post peer feedback due**
+* August 20: WAVES closing celebration
+  * Time TBA
+* August 20: **final draft blog post due**
+* August 20: *stipend installment 5 mailed*
+
+
+# 2020
+
 * [Google Calendar](https://calendar.google.com/calendar?cid=MXQya3M1NjlndWc5MjFtZjZrc3BkYTY4aDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 * [iCal](https://calendar.google.com/calendar/ical/1t2ks569gug921mf6kspda68h0%40group.calendar.google.com/public/basic.ics)
 
