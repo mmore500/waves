@@ -10,7 +10,7 @@ We're looking forward to working with all of you this summer.
 
 ![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-trenwelcome.gif){:style="width:100%;"}
 
-To ensure that we can get off to a running start when the workshop begins, please work through onboarding information and tasks below by **Friday, June 11**.
+To ensure that we can get off to a running start when the workshop begins, please work through onboarding information and tasks below by **Wednesday, June 9th**.
 Feel free to drop a line to me at [m.more500@gmail.com](mailto:m.more500@gmail.com) with any questions or issues.
 
 Links on this checklist meant only for workshop participants are password protected.
@@ -113,7 +113,9 @@ If you have ideas for what you'd like to see on there, feel free to [open a PR](
 
 :soon:
 If you haven't marked your calendars for our first orientation meeting, be sure to do so!
-It will take place Monday, May 26 from noon to 5pm in the WAVES Zoom room.
+It will take place Monday, June 14 from noon to 5pm in the WAVES Zoom room.
+
+You can also pencil in other events listed on our [preliminary schedule]({{ site.baseurl }}/schedule.html).
 
 ![welcome!]({{ site.baseurl }}/assets/mmore500/gifcities-fishwelcome.gif){:style="width:100%;"}
 
