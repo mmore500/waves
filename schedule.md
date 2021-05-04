@@ -19,7 +19,7 @@ description: Workshop schedule
   * 12pm to 5pm EST
 * June 18: [orientation 4]({{ site.baseurl }}/tutorials/lesson04.html)
   * 12pm to 5pm EST
-* June 18: *stipend installment 0 mailed*
+* June 18: *stipend installment 1 mailed*
   * date pending confirmation by MSU
 * June 19: **Juneteenth**
 
@@ -38,7 +38,7 @@ description: Workshop schedule
 * TBA: [enrichment seminar 2]({{ site.baseurl }}/enrichment/week2.html)
   * Time TBA
   * mentor: TBA
-* July 2: *stipend installment 1 mailed*
+* July 2: *stipend installment 2 mailed*
   * date pending confirmation by MSU
 * July 4: **Independence Day**
 
@@ -55,7 +55,7 @@ description: Workshop schedule
 * TBA: [enrichment seminar 4]({{ site.baseurl }}/enrichment/week4.html)
   * Time TBA
   * mentor: TBA
-* July 16: *stipend installment 2 mailed*
+* July 16: *stipend installment 3 mailed*
   * date pending confirmation by MSU
 
 ## Week 5 (July 19)
@@ -71,7 +71,7 @@ description: Workshop schedule
 * TBA: [enrichment seminar 6]({{ site.baseurl }}/enrichment/week6.html)
   * Time TBA
   * mentor: TBA
-* July 30: *stipend installment 3 mailed*
+* July 30: *stipend installment 4 mailed*
   * date pending confirmation by MSU
 
 ## Week 7 (August 2)
@@ -80,7 +80,6 @@ description: Workshop schedule
 * TBA: [enrichment seminar 7]({{ site.baseurl }}/enrichment/week7.html)
   * Time TBA
   * mentor: TBA
-* July 17: *stipend installment 4 mailed*
 
 ## Week 8 (August 9)
 * August 9: **blog post outline due**
@@ -90,7 +89,7 @@ description: Workshop schedule
   * Time TBA
   * mentor: TBA
 * August 12: **working draft blog post due**
-* August 13: *stipend installment 4 mailed*
+* August 13: *stipend installment 5 mailed*
   * date pending confirmation by MSU
 
 ## Week 9 (August 16)
@@ -103,8 +102,6 @@ description: Workshop schedule
 * August 20: WAVES closing celebration
   * Time TBA
 * August 20: **final draft blog post due**
-* August 20: *stipend installment 5 mailed*
-
 
 # 2020
 
