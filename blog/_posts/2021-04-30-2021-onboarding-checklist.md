@@ -49,13 +49,6 @@ If you do have a critical obligation that falls between noon and 5pm EST on week
 Briefly describe your obligation in the comment.
 Otherwise, there's no need to fill out this WhenIsGood.
 
-Michgan State University requests that we refer undergraduate students working in summer positions to the Undergraduate Research Office.
-They collect information that allows them to assess undergraduate research across the institution and to coordinate professional development activities.
-
-:soon:
-If you are a current or recent undergraduate student at any college or university, please complete their survey [here](TODO).
-Enter "BEACON" for "Research Type / Program Name."
-
 ## Stipend Setup
 
 Stipend checks will be disbursed bi-weekly by mail.
