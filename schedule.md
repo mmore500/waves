@@ -24,83 +24,70 @@ description: Workshop schedule
 * June 19: **Juneteenth**
 
 ## Week 1 (June 21)
-* June 21: reserved for possible orientation
-  * 12pm to 5pm EST
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 1]({{ site.baseurl }}/enrichment/week1.html)
-  * Time TBA
-  * mentor: TBA
+* June 21: group check-in meeting
+  * 2pm to 3:30pm EST
+* June 25: [enrichment seminar 1]({{ site.baseurl }}/enrichment/21week1.html)
+  * 2pm to 3:30pm EST
 
 ## Week 2 (June 28)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 2]({{ site.baseurl }}/enrichment/week2.html)
-  * Time TBA
-  * mentor: TBA
+* June 28: group check-in meeting
+  * 2pm to 3:30pm EST
+* July 2: [enrichment seminar 2]({{ site.baseurl }}/enrichment/21week2.html)
+  * 2pm to 3:30pm EST
 * July 2: *stipend installment 2 mailed*
   * date pending confirmation by MSU
 * July 4: **Independence Day**
 
 ## Week 3 (July 5)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 3]({{ site.baseurl }}/enrichment/week2.html)
-  * Time TBA
-  * mentor: TBA
+* July 5: group check-in meeting
+  * 2pm to 3:30pm EST
+* July 9: [enrichment seminar 3]({{ site.baseurl }}/enrichment/21week2.html)
+  * 2pm to 3:30pm EST
 
 ## Week 4 (July 12)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 4]({{ site.baseurl }}/enrichment/week4.html)
-  * Time TBA
-  * mentor: TBA
+* July 12: group check-in meeting
+  * 2pm to 3:30pm EST
+* July 16: [enrichment seminar 4]({{ site.baseurl }}/enrichment/21week4.html)
+  * 2pm to 3:30pm EST
 * July 16: *stipend installment 3 mailed*
   * date pending confirmation by MSU
 
 ## Week 5 (July 19)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 5]({{ site.baseurl }}/enrichment/week5.html)
-  * Time TBA
-  * mentor: TBA
+* July 19: group check-in meeting
+  * 2pm to 3:30pm EST
+* July 23: [enrichment seminar 5]({{ site.baseurl }}/enrichment/21week5.html)
+  * 2pm to 3:30pm EST
 
 ## Week 6 (July 26)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 6]({{ site.baseurl }}/enrichment/week6.html)
-  * Time TBA
-  * mentor: TBA
+* July 26: group check-in meeting
+  * 2pm to 3:30pm EST
+* July 30: [enrichment seminar 6]({{ site.baseurl }}/enrichment/21week6.html)
+  * 2pm to 3:30pm EST
 * July 30: *stipend installment 4 mailed*
   * date pending confirmation by MSU
 
 ## Week 7 (August 2)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 7]({{ site.baseurl }}/enrichment/week7.html)
-  * Time TBA
-  * mentor: TBA
+* August 2: group check-in meeting
+  * 2pm to 3:30pm EST
+* August 6: [enrichment seminar 7]({{ site.baseurl }}/enrichment/21week7.html)
+  * 2pm to 3:30pm EST
 
 ## Week 8 (August 9)
 * August 9: **blog post outline due**
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 8]({{ site.baseurl }}/enrichment/week8.html)
-  * Time TBA
-  * mentor: TBA
+* August 9: group check-in meeting
+  * 2pm to 3:30pm EST
 * August 12: **working draft blog post due**
+* August 13: [enrichment seminar 8]({{ site.baseurl }}/enrichment/21week8.html)
+  * 2pm to 3:30pm EST
 * August 13: *stipend installment 5 mailed*
   * date pending confirmation by MSU
 
 ## Week 9 (August 16)
-* TBA: group check-in meeting
-  * Time TBA
-* TBA: [enrichment seminar 9]({{ site.baseurl }}/enrichment/week9.html)
-  * Time TBA
-  * mentor: TBA
+* August 16: group check-in meeting
+  * 2pm to 3:30pm EST
 * August 17: **blog post peer feedback due**
 * August 20: WAVES closing celebration
-  * Time TBA
+  * 2pm to 3:30pm EST
 * August 20: **final draft blog post due**
 
 # 2020
