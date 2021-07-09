@@ -86,6 +86,9 @@ description: Workshop schedule
 * August 16: group check-in meeting
   * 2pm to 3:30pm EST
 * August 17: **blog post peer feedback due**
+* August 18: BEACON Congress
+* August 19: BEACON Congress
+* August 20: BEACON Congress
 * August 20: WAVES closing celebration
   * 2pm to 3:30pm EST
 * August 20: **final draft blog post due**
