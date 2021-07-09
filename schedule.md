@@ -41,7 +41,7 @@ description: Workshop schedule
 ## Week 3 (July 5)
 * July 5: group check-in meeting
   * 2pm to 3:30pm EST
-* July 9: [enrichment seminar 3]({{ site.baseurl }}/enrichment/21week2.html)
+* July 9: [enrichment seminar 3]({{ site.baseurl }}/enrichment/21week3.html)
   * 2pm to 3:30pm EST
 
 ## Week 4 (July 12)
