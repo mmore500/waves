@@ -7,7 +7,7 @@ author: Tait Weicht
 
 * Introduction, summarize previous work
 * Building of the work of my predecessor Sarah
-* Checkout her blog [here](http://mmore500.com/waves/blog/prefab-tools.html)! For an overview of the great work she did!
+* Checkout her blog [here](http://mmore500.com/waves/blog/prefab-tools.html), for an overview of the great work she did!
 
 ## Goals
 * Loads of ideas, new and old, for prefab components
@@ -50,5 +50,6 @@ author: Tait Weicht
 * Challenges of responsive web design
 * How to make Bootstrap grid accessible
 
-
-
+## Acknowledgements
+* Matthew, my mentor!
+* NSF Grant ####### ...
