@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: "Development of MABE2"
-date: 2021-07-31
+date: 2021-08-20
 author: Mitchell Johnson & Jamie Schmidt
 ---
 
