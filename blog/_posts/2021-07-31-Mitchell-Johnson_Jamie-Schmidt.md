@@ -77,9 +77,42 @@ We did not make many changes to the Evaluator model, aside from making it compat
 -writing the aagos brain
 -putting it all together in the .gen file -> .mabe file
 -running the expiriment
+  
+  1. Write the Evaluator. (almost always necessary)
+    - Set up the config.
+    - Write the fitness calculator in OnUpdate from the emp::DataMap the Organism provides after org.GenerateOutput().
+    - Confirm that the outputs of the Brains in the DynamicOrg are properly configured with the Evaluator. 
+  2. Write the Brain. (often necessary)
+    - Set up the config.
+    - If the Brain needs to be built in a custom fashion, customize the Rebuild() function.
+    - Customize the Process() function in order to generate the desired output. 
+  3. Write the Genome. (very rarely necessary)
+    - Set up the config.
+    - Ensure compatibility with the base class.
+    - Customize the Mutate() function.
+  4. Write the Organism. (shouldn't be necessary except in the direst of circumstances)
+    - Set up the config.
+    - Customize the Initialize() and Mutate() functions.
+    
 
 ## Conclusion
 -reiterate how our work greatly simplified the end user expirience using mabe2
+  
+From these steps, it is clear that the end user can more easily and more efficiently create custom experiments to suit nearly any research goal.  Where previously almost any experiment would have required significant editing of numerous files, now most experiments can be completed simply by creating a new Evaluator and editing the config file.  In addition, experiments involving trying different forms of evolution to solve the same problem are made drastically easier, as the only difference between those experiments would be in the config files.  Finally, the more modular nature of this new framework lends itself very well to collaboration, where a Brain one person makes could easily be used in another person's Evaluator and, with how Genomes are so standardized by Genome::Head, using a new Genome type in the place of a more basic Genome would be trivial.
+  
+In short, our work has greatly simplified the end user experience and streamlined the research process for all who would use MABE2 in the future. 
 
 ## Future plans / Work we didn't complete
 -anything we wish we could have completed but didn't have time to
+  
+Unfortunately, we simply did not have the time to do everything we wanted.  As such, these are the remaining issues:
+  
+  1. The config system for Brains and Genomes does not yet work.  The structure should be similar to how Organisms are, with each Genome having a name and the various pertinent values (such as mutation rate and min/max values) and each Brain having a name, the names of the Genomes it will use, and whatever stats it will have (such as Markov Brains needing the size of their gates and all Brains having the name of their outputs).  
+  2. Brains should be implemented to actually use this information.
+  3. BasicBrains, MarkovBrains, and TypedGenomes should all be put in their own files.
+  4. The MarkovBrain should be properly tested and the hardcoded values should be made easily configurable via the config file.
+  5. As part of item 4, GenomeManager and BrainManager classes should be created to act as OrganismManagers do for Genomes and Brains.  Ideally, these would all be turned into one big Manager class.
+  6. The more complicated mutation types should be added to TypedGenome with configuration options to set the rate for each of them.
+  7. More Brain types should be added by default.
+  
+  
