@@ -79,20 +79,20 @@ We did not make many changes to the Evaluator model, aside from making it compat
 -running the expiriment
   
   1. Write the Evaluator. (almost always necessary)
-    - Set up the config.
-    - Write the fitness calculator in OnUpdate from the emp::DataMap the Organism provides after org.GenerateOutput().
-    - Confirm that the outputs of the Brains in the DynamicOrg are properly configured with the Evaluator. 
+      - Set up the config.
+      - Write the fitness calculator in OnUpdate from the emp::DataMap the Organism provides after org.GenerateOutput().
+      - Confirm that the outputs of the Brains in the DynamicOrg are properly configured with the Evaluator. 
   2. Write the Brain. (often necessary)
-    - Set up the config.
-    - If the Brain needs to be built in a custom fashion, customize the Rebuild() function.
-    - Customize the Process() function in order to generate the desired output. 
+      - Set up the config.
+      - If the Brain needs to be built in a custom fashion, customize the Rebuild() function.
+      - Customize the Process() function in order to generate the desired output. 
   3. Write the Genome. (very rarely necessary)
-    - Set up the config.
-    - Ensure compatibility with the base class.
-    - Customize the Mutate() function.
+      - Set up the config.
+      - Ensure compatibility with the base class.
+      - Customize the Mutate() function.
   4. Write the Organism. (shouldn't be necessary except in the direst of circumstances)
-    - Set up the config.
-    - Customize the Initialize() and Mutate() functions.
+      - Set up the config.
+      - Customize the Initialize() and Mutate() functions.
     
 
 ## Conclusion
