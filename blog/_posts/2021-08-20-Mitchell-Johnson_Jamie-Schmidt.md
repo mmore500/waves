@@ -95,15 +95,15 @@ Below is a list of possible steps a user could take when implementing a custom e
 Before starting, we must first make a few decisions on the exact implementation we will use. For the genome itself, we will use a TypedGenome<bool> with an initial size of 32. This genome will undergo insertion/deletion/in-place mutations and will contain the N genes. We will also use a TypedGenome<int> with a max value of our (TypedGenome<bool>.length - 1), a min value of 0, of length N. This genome will represent the N genes starting position within the genome, hence why any of its values cant exceed the current length of the genome, otherwise an out-of-bounds error would occur.
 
 We will first write the Aagos brain. Our Aagos brain will be responsible for transforming the genome and starting positions into the N genes the evaluator will evaluate.
-![AagosBrain.hpp](https://imgur.com/KPOGi8M)
+![AagosBrain.hpp](https://i.imgur.com/KPOGi8M.png)
 Our brain receives a vector of pointers to Genomes, with the first in the list being our starting positions, and the second being the genome itself. From here its as simple as extracting all the genes from the genome, and then storing them in a vector of bit vectors that our evaluator will receive.
 
 Since Aagos fitness is calculated by comparing the N genes in an organism to the environment gene-targets, we will need to write an evaluator that does this. From our brain, we know we are receiving a vector of bit vectors representing the N genes. To make things simpler, our environment will ALSO consist of a vector of bit vectors.
-![EvalAagos.hpp](https://imgur.com/Kwvmgjt)
+![EvalAagos.hpp](https://i.imgur.com/Kwvmgjt.png)
 On every update of the evaluator, we mutate the environment gene-targets if necessary. We then simply compare each gene to each gene target. The fitness of our organism is simply the proportion of matching bits. For example, if our first gene is 01011101, and our first gene target is 01010001, then the fitness for that gene is 6/8. The total fitness is simply the sum of all gene matching proportions.
 
 The last and final step is to setup the config file.
-![DynamicAagos.mabe](https://imgur.com/QaF50ZM)
+![DynamicAagos.mabe](https://i.imgur.com/QaF50ZM.png)
 We first initialize a TypedGenome<bool> and TypedGenome<int> as our primary genomes, and setting their values accordingly. Next we initialize the AagosBrain, passing it the genomes it needs to evaluate, followed by our evaluator EvalAagos. Then we just plug everything into DynamicOrg.
     
 
