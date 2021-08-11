@@ -33,9 +33,8 @@ The `stringstream` method resulted in only the first word being copied!
   }
 ```
 inside a function template, we can do a compile time type check as to whether it should generate the code inside the `if`.
-Pretty nifty!
+Pretty nifty! Knowing this pattern means that in the future if new types become supported in config files there's already a good example of how to handle their parsing smartly.
 
-Knowing this pattern means that in the future if new types become supported in config files there's already a good example of how to handle their parsing smartly.
 While fixing this problem it was also necessary to normalized the way config parameters are passed through a URL.
 In a URL query string both `%20` and `+` encode a space character (`' '`) and the standard does not differentiate between them.
 However, Empirical's `ArgumentManager` class supports multiple values for a key.
@@ -56,7 +55,6 @@ So replacing the stream operator for `Card` had the effect that when the constru
 
 Using `static_cast<Div>(*this)` will prevent infinite recursion by using `Div`'s default method of streaming components.
 
-
 #### The Config Panel Conundrum
 The next issue we tackled was a strange bug with the `ConfigPanel`.
 
@@ -74,7 +72,7 @@ Once the problem was identified it wasn't to hard to fix its identity crisis.
 In addition, the alterations provided the opportunity to break the component into some smaller reusable pieces.
 
 ![A "refactor all the things" meme]({{ site.baseurl }}/assets/lemniscate8/more-prefab-tools-refactor.png){:style="width: 100%"}
-*I had to be a little careful not get carried away*
+*I had to be a little careful not get too carried away*
 
 #### ReadoutPanel: Live Variables in the Limelight
 As a counterpart to the configuration panel, Matthew suggested making a component that could display values live from a simulation.
@@ -85,16 +83,15 @@ Here's its bio:
 * A user can specify a refresh rate the panel will attempt to update at without choking execution.
 * A close cousin in style and spirit to the `ConfigPanel` by reusing components developed in the `ConfigPanel refactor.
 
-However, the ReadoutPanel's development was complicated by being the prefab component to be derived from another prefab component.
-When I modified the `Card` class to include an "on toggle" handler so that
-
-* Fun with forwarding a parameter pack
-Just for anyone curious about where the ellipses go, the syntax is
+Along the way I also added a variadic method for adding values to the panel.
+However, this required that I pass on r-value references correctly to all the way to a `Live` wrapper which required perfect forwarding.
+The syntax for this is rather wild so for anyone curious about where the ellipses go, here's an example:
 ```cpp
 OuterFunc(VALUE_TYPES && ... others) {
   InnerFunc(std::forward<VALUE_TYPES>(others)...);
 }
 ```
+The `...` is one component of a parameter pack expansion which allows the `forward` function to be applied to each argument individually. Again, pretty nifty stuff!
 
 #### Control Panel
 One of the
@@ -120,22 +117,36 @@ In addition, it was helpful to realize that not only are we making components fo
 
 However, building components out of others isn't enough.
 Sometimes we need a souped up version of a component :racing_car:.
-However, until recently we didn't have prefab components inheriting from other prefab components, everything was just one step in inheritance above a web component.
+However, until recently we didn't have prefab components inheriting from other prefab components, everything was just one step in inheritance above a simple web component.
+The ReadoutPanel's development was complicated by being the prefab component to be derived from another prefab component.
+When I modified the `Card` class, I include an "on toggle" handler.
+To keep this function around and modifiable it need to be on the `info` member, a shared pointer that holds information about the a `Card` instance.
+This required that I make a custom class `CardInfo` that inherited from `DivInfo`.
+However, when the `ReadoutPanel` needed to have its own custom members with an "on toggle" function and a list of divs to refresh.
+However, there was no clear way to get both these properties attached to the panel without wiping out the existing `Card` structure as a side effect (and also possibly creating memory leaks).
+We solved this problem and [here](https://github.com/devosoft/Empirical/tree/master/include/emp/prefab#inheritance) you can see a more detailed explanation of the problem and proposed pattern for inheritance for prefab components to fix it.
 
-
-* Making small components is valuable even if we don't think users will use them raw
-* Building off existing components is necessary but we need a somewhat standard system
- * Idea for inheritance model + code
- * Pros and cons of this
+While this solution is nice, there are still some flaws since its somewhat unwieldy and unnatural to force all construction to be delegated to a single protected constructor, though it works for a number of the cases we have now.
+Having components be both modular and allowing derived classes to inherit properly is necessary to prevent code duplication but a hard problem.
+My solution will likely work in the short term, but I'm hoping whoever inherits this code will give it a good think too in case there's a better way.
 
 #### You know... there's CSS for that
-* Making components less opinionated and doing more with CSS
+One of the projects I didn't get to this summer was adding something like a layout manager to the prefab project.
+However, when I tried out ideas for a model, it became clear that CSS already has excellent methods for laying out components using [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [grids](https://css-tricks.com/snippets/css/complete-guide-grid/).
+Rather than creating a whole new prefab component, Empirical could simply provide some artfully crafted classes in the [default prefab styles](https://github.com/devosoft/Empirical/blob/master/include/emp/prefab/DefaultPrefabStyles.less) that users could place on their own divs.
+In a similar way, `@media` queries are a great way to change layouts or hide/show components without the costs of altering component hierarchies programmatically, though are really most effective for overarching layout alternations.
+In the end I've been pleasantly surprised with how many tricky programing problems can be avoided via artful CSS.
+
 
 ## Thoughts on the Future
-* Challenges of eventually upgrade to Bootstrap v5.0
-* Challenges of responsive web design
-* How to make Bootstrap grid accessible
+Several challenges exist on the horizon for Empirical's prefabricated web tools.
+First, upgrading past Bootstrap v4 to v5 seems to break a styling for a few components.
+This is unfortunate since Bootstrap v5 has a lot of new components which could be very useful!
+Second, there are plans to build the next version of Avida with some of these prefabricated web tools.
+However, the web components are based on Bootstrap which is developed with mobile-first responsive design philosophy where as Avida has traditionally had desktop application look-and-feel.
 
 ## Acknowledgements
-* Matthew, my mentor!
-* NSF Grant ####### ...
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563).
+Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+I'd also like to thank my mentor, Matthew Andres Moreno, for his support and guidance on this project.
