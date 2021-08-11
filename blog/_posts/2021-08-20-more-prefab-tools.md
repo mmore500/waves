@@ -42,7 +42,7 @@ By assigning `+` the role of a value separator it became possible to have suppor
 
 #### How _Card_ could it be?
 Digging deeper into the issue list I decided I would try my hand at a problem that was still unsolved: how do we override the default stream operator for a component?
-Here the term override used loosely since in C++ you can only override a virtual function, but our web components use a function template, which cannot be virtual.
+Here the term override is used loosely since in C++ you can only override a virtual function, but our web components use a function template, which cannot be virtual.
 
 :lemon: __Problem__: A number of methods had been tried to get streaming into a `Card` to place components into the `Card`'s body element but all led to the cryptic error `too much recursion`.
 
@@ -81,7 +81,7 @@ While Empirical has a visualization component using [D3](https://d3js.org/), thi
 Here's its bio:
 * Inheriting from the collapsible `Card` prefab component, the Readout Panel provides a simple way to animate a collection of live values.
 * A user can specify a refresh rate the panel will attempt to update at without choking execution.
-* A close cousin in style and spirit to the `ConfigPanel` by reusing components developed in the `ConfigPanel refactor.
+* A close cousin in style and spirit to the `ConfigPanel` by reusing components developed in the `ConfigPanel` refactor.
 
 Along the way I also added a variadic method for adding values to the panel.
 However, this required that I pass on r-value references correctly to all the way to a `Live` wrapper which required perfect forwarding.
@@ -92,12 +92,6 @@ OuterFunc(VALUE_TYPES && ... others) {
 }
 ```
 The `...` is one component of a parameter pack expansion which allows the `forward` function to be applied to each argument individually. Again, pretty nifty stuff!
-
-#### Control Panel
-One of the
-
-* Managing simulation with some standard controls
-* Ideas for helpful user interfaces: ToggleButtonGroups and AugmentedButtons
 
 ## Some Takeaways
 Having worked on projects from fixing small bugs to writing entire components, I've been able to see a good portion of Empirical's web framework.
