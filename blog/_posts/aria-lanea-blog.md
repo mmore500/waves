@@ -91,17 +91,17 @@ In essence, we began by meeting with Austin to do a high-level overview of the c
 ### Catch2
 We used a testing framework called Catch2 to test MABE2. Catch2 is an easy to use C++ unit testing framework. You can check out more of Catch2 in their [github](https://github.com/catchorg/Catch2). When writing out tests for MABE2, we relied heavily on Catch2's assertion macros, which you can find [here](https://github.com/catchorg/Catch2/blob/devel/docs/assertions.md#top). 
 
-#### Best Practices in CATCH2
-??????
-
 ### Testing MABE2
 #### Words of Wisdom
-Throughout our testing journey, we have come to learn a lot about both the testing process and the intricacies of writing tests. We thought we would share a couple of tips and tricks we learned from tackling testing this summer. 
+Throughout our testing journey, we have come to learn a lot about the intricacies of writing tests. We thought we would share a couple of tips and tricks we learned from tackling testing this summer! 
 
-1. When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file, and chose something that looks simple to start with (like a constructor!). Even if you don't end up testing that specific thing, it will give you confidence to approach the rest of the file. 
-2. You don't need to understand how everything in the file works to start writing tests! Start with things that you understand, and as you work through their implementation, you will get more familiar with the code. 
-3. On the other hand, if you are struggling to understand what a specific chunk of code is doing, don't be afraid to reach out and ask for help! It's better that you write useful tests after asking for help rather than writing tests that ultimately end up being useless because you understood the file wrong. 
-4. Know that one of the hardest parts of testing is just getting started. Once you get your testing file up and running with a non-trivial test, you've passed the first hurdle, and the rest of the testing should go flow easier. 
+1. Creating new Test Files: Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must rename or replace anything specific to the previous test file. When including the file to test, do not `#include` any of its dependencies because they should be included in that file.  
+
+2. Deciding what to Test: When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file. Start with things that you understand or something chose something that looks simple to start with (like a constructor!). As you work through their implementation, you will get more familiar with the code. 
+
+Also keep in mind that if you are struggling to understand what a specific chunk of code is doing, reach out and ask for help! It's better to write useful tests after asking for help rather than writing tests that are inappropriate for the file because you misunderstood the code. 
+
+3. Getting the First Test to Pass: Setting up a test file and understanding the code that you are to test can be difficult and time consuming. You'll probably get a lot of errors before you're able to get an actual test to pass. But don't give up! Once you get that first test to pass the others are much easier to write since you'll most likely understand the code to be tested much better by that point.
  
 
 #### MABE2 Specific Advice
@@ -135,7 +135,7 @@ What to look for when testing
 - side note, also check error message is the right one
 - 
 
-- Creating new Test Files: Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must remember to only `#include` the current file that is being tested and to rename anythign specific to the previous test file. 
+
 
 - Testing Asserts: In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail` combined with `emp::assert_clear` to reset the boolean to test that asserts had been thrown when expected.
 
@@ -148,7 +148,7 @@ void REQUIRE(bool b){
 ```
 
 to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use backtrace to look at the individual frames and see where the memory leak was coming from.
-- Getting the First Test to Pass: Setting up a test file and understanding the code that you are to test can be difficult and time consuming. You'll probably get a lot of errors before you're able to get an actual test to pass. But don't give up! Once you get that first test to pass the others are much easier to write since you'll most likely understand the code to be tested much better by that point.
+
 
 
 - Levelization and bottom up
