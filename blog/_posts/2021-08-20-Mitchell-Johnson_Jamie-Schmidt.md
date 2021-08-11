@@ -14,7 +14,9 @@ MABE, accessible [here](https://github.com/Hintzelab/MABE/wiki), stands for Modu
 
 ![MABE structure](https://github.com/Hintzelab/MABE/wiki/images/MABE_Overview.png)
 
-and, though powerful, could of course be improved.  The creation of the 2.0 version of MABE, called MABE2, was the focus of our project.  Our main focus was on refining the underlying architecture of MABE to be more end user-friendly, particularly in designing custom experiments.  The culmination of our efforts was in the creation of DynamicOrg, an Organism which was near-completely abstracted to allow for any combination of Genomes and Brains, as assigned through the config file. 
+and, though powerful, could of course be improved.  The creation of the 2.0 version of MABE, called MABE2, was the focus of our project.  Our main focus was on refining the underlying architecture of MABE to be more end user-friendly, particularly in designing custom experiments.  The culmination of our efforts was in the creation of DynamicOrg, an Organism which was near-completely abstracted to allow for any combination of Genomes and Brains, as assigned through the config file.
+
+Along with the abstraction of organisms, we were also able to abstract away the inner workings of genomes and brains into a TypedGenome<type> and a BasicBrain. All of these abstractions remove many technical pre-requisites that users were required to have before using MABE2. Because of this, not only are far fewer steps involved when setting up an experiment, but it also takes much less time, since the majority of designing a simple experiment should be simple plug-and-play.
 
 ## Genomes / author: jamie
 Genomes in MABE2 are just repositories of mutable information.  The most basic kinds are vectors of some type, and (unlike in MABE), they aren't hidden inside Organisms which manage everything about them, but they are actively added to them and manage themselves.  This means that to mutate a Genome, any Genome, the Organism just tells the Genome to mutate itself and the Genome does.  No longer will the Organism run all the mutation functions itself, now it just delegates.  This, critically, means that Organisms now no longer need to know what kinds of Genomes they have at all.
@@ -108,6 +110,8 @@ We first initialize a TypedGenome<bool> and TypedGenome<int> as our primary geno
 ## Conclusion
   
 From these steps, it is clear that the end user can more easily and more efficiently create custom experiments to suit nearly any research goal.  Where previously almost any experiment would have required significant editing of numerous files, now most experiments can be completed simply by creating a new Evaluator and editing the config file.  In addition, experiments involving trying different forms of evolution to solve the same problem are made drastically easier, as the only difference between those experiments would be in the config files.  Finally, the more modular nature of this new framework lends itself very well to collaboration, where a Brain one person makes could easily be used in another person's Evaluator and, with how Genomes are so standardized by Genome::Head, using a new Genome type in the place of a more basic Genome would be trivial.
+
+Before our work, it took an average of 6 steps in about 30 minutes of coding to create a completely custom experiment. On top of that, to achieve that speed, you would need deep C++ knowledge, experience using the Empirical library, and a good understanding of how genomes and brain are represented in code. After our work, as stated above, an experiment can be created in as little as two steps, with a maximum of 3 steps. Those steps being creating a custom evaluator, creating a custom brain, and then simply plugging everything together in the config file.
   
 In short, our work has greatly simplified the end user experience and streamlined the research process for all who would use MABE2 in the future. 
 
@@ -116,11 +120,27 @@ In short, our work has greatly simplified the end user experience and streamline
 Unfortunately, we simply did not have the time to do everything we wanted.  As such, these are the remaining issues:
   
   1. The config system for Brains and Genomes does not yet work.  The structure should be similar to how Organisms are, with each Genome having a name and the various pertinent values (such as mutation rate and min/max values) and each Brain having a name, the names of the Genomes it will use, and whatever stats it will have (such as Markov Brains needing the size of their gates and all Brains having the name of their outputs).  
+    - This is the desired form of DynamicOrg and is really the key to making it as seamless as possible. It allows most of the users work to be done inside the config file instead of in C++.
   2. Brains should be implemented to actually use this information.
+    - Brains should have their own parameters and settings that appear in the config file.
   3. BasicBrains, MarkovBrains, and TypedGenomes should all be put in their own files.
+    - For organizational purposes.
   4. The MarkovBrain should be properly tested and the hardcoded values should be made easily configurable via the config file.
+    - Similar to issue 1, it should work in the config file.
   5. As part of item 4, GenomeManager and BrainManager classes should be created to act as OrganismManagers do for Genomes and Brains.  Ideally, these would all be turned into one big Manager class.
+    - This is how issue 1 will be achieved, through the implementation of a generic manager class so that essentially any type can be placed into the config system.
   6. The more complicated mutation types should be added to TypedGenome with configuration options to set the rate for each of them.
+    - Genomes should be highly customizable to allow highly custom experiments to be run. We want to keep the user out of the C++ code as much as possible.
   7. More Brain types should be added by default.
+    - We currently only have BasicBrains and MarkovBrains, more should be included so that users have to do as little work as possible.
   
-  
+## Acknowledgements
+
+Mentors: Dr. Charles Ofria & Cliff Bohm
+Participants: Mitchell Johnson & Jamie Schmidt
+
+Charles Ofria and Cliff Bohm conceived and planned the idea of DynamicOrg. They both then contributed to the design and implementation of DynamicOrg. The majority of implementation of DynamicOrg was created by Jamie Schmidt with help from Mitchell Johnson.
+
+Jamie Schmidt wrote the sections on Brains, Genomes, Evaluators, and Introduction. Mitchell Johnson wrote the sections on Tutorial using DynamicOrg, and Conclusion. Jamie Schmidt and Mitchell Johnson worked together on sections Future plans, and DynamicOrg.
+
+Thank you to our amazing mentors!
