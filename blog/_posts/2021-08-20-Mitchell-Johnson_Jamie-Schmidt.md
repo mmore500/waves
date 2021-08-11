@@ -57,9 +57,13 @@ When coding an Evaluator, the most important thing is to make sure that, for wha
   
 We did not make many changes to the Evaluator model, aside from making it compatible with DynamicOrgs, which in turn made them significantly easier to customize since every DynamicOrg Evaluator follows the same steps: 
   1. Get the emp::DataMap
+    - This is boilerplate for every DynamicOrg evaluator and can be copied from other evaluators. DataMap will contain all the output from the organisms brain. And the brains output is what needs to be evaluated.
   2. Get all the input values you want from it
+    - Simply access the DataMap with GetVar
   3. Calculate fitness from them
+    - Implement any custom function for calculating fitness. Ex: counting 1s or pattern matching
   4. Return fitness
+    - Make sure that function actually returns your calculated fitness.
 
 ## Tutorial - Creating and running a custom experiment using DynamicOrg
 
