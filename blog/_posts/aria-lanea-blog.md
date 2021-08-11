@@ -106,13 +106,16 @@ Also keep in mind that if you are struggling to understand what a specific chunk
  
 
 #### MABE2 Specific Advice
-Here are a couple of things that you might find helpful when testing MABE2 files! We have included some things to watch out for, but also some fixes to testing bugs that cropped up and gave us some issues. 
+Here are a couple of things that you might find helpful when testing MABE2 files! We have included some things to watch out for and bug fixes/workarounds that might prove to be helpful in the future. 
 
-1. A good place to start when testing a MABE2 file is by checking that all booleans are working correctly. Another good place to start is to check that simple checking functions work correctly. For example, a function that returns whether or not an input is a double should work correctly. Another example is a function that modifies a boolean. 
-2. Most of the time, you will end up testing every method in a file, so make sure you have a clear list of the methods/a comprehensive strategy to make sure you get them all. Also, make sure you test all variations of a function: if a function has both a templated and non-templated version, both should get checked. 
-3. Many times MABE2 files will inherit from a parent class. It is always a good idea to glance through the parent class. You should check specifically for virtual functions/variables that should get overrriden in the file you're checking. Don't forget to also look for functions from the parent class that aren't overridden though!
-4. When you see that an error message would be printed to the console, make sure you check that the error gets triggered correctly! Bonus points if you also check that the correct error message is written out to the console. You can do that by modifying your
-5. **Segmentation Faults:** When setting up mabe objects or calling methods on these objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what calls caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
+1. **First Tests:** A good place to start when testing a MABE2 file is by checking that getter, setter and boolean functions work correctly. 
+2. **Test Coverage:** Most of the time, you will end up testing every method in a file, so make sure you have a clear list of the methods/a comprehensive strategy to make sure you get them all. Also, make sure you test all variations of a function: if a function has both a templated and non-templated version, both should get checked. 
+3. **Parent Classes:** Many times MABE2 files will inherit from a parent class. It is always a good idea to glance through the parent class. You should check specifically for virtual functions/variables that should get overridden in the file you're checking. Don't forget to also look for functions from the parent class that aren't overridden!
+4. **Error Messages:** When you see that an error message would be printed to the console, make sure you check that the error gets triggered correctly! Bonus points if you also check that the correct error message is written out to the console. 
+
+If you ------ 
+
+5. **Segmentation Faults:** When setting up or calling methods on mabe objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
 
 ```cpp
 void REQUIRE(bool b){
@@ -120,7 +123,12 @@ void REQUIRE(bool b){
 }
 ```
 
-to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use backtrace to look at the individual frames and see where the memory leak was coming from.
+to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use a backtrace to look at the individual frames and see where the memory leak was coming from.
+6. **Testing Asserts:** In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, Empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail`. 
+
+[insert code example] 
+
+Make sure you use `emp::assert_clear` to reset the boolean.
 
 
 MABE
@@ -146,7 +154,7 @@ OTHER
 
 
 
-- Testing Asserts: In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail` combined with `emp::assert_clear` to reset the boolean to test that asserts had been thrown when expected.
+
 
 
 
@@ -165,9 +173,9 @@ OTHER
 ## Wrap Up
 At the end of the WAVES internship, we were given the opportunity to present our summer of work at the BEACON congress. The BEACON congress is the annual meeting for researchers who belong to the [BEACON Center of Evolution in Action](https://www3.beacon-center.org/welcome/), a consortium of affiliated universities that focuses on the study of evolution in action through an interdisciplinary lens. Specifically, BEACON aims to bring together biologists, computer scientists and engineers to both study evolution in action, as well as use evolution to solve complex real-world problems. 
 
-We attended the summer 2021 BEACON congress as both participants and speakers. We presented our talk "Planning for the Future of MABE2: A Summer of Documentation and Testing". Below you can find both our abstract, as well as a video recording for our talk. 
+We attended the summer 2021 BEACON congress as both participants and speakers. We presented our talk "Planning for the Future of MABE2: A Summer of Documentation and Testing". Below you can find both our abstract, as well as a video recording of our talk. 
 
-"The second Modular Agent-Based Evolver framework (MABE2) is an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research. MABE2 reduces the time between constructing a hypothesis and generating results by providing a library of modules that connect to form a variety of experiments. To promote use among interdisciplinary researchers, modules are connected and adjusted via a simple text interface (i.e., the user does not need to add or edit any code). However, if the user requires modules beyond the existing library, MABE2 provides a set of practical tools for developing additional modules. With the understanding that MABE2 is a large piece of software, this summer we created a documentation guide and testing framework as part of the 2021 Workshop for Avida-ED Software Development (WAVES). In this talk, we will highlight the role of the documentation and testing framework in the  MABE2 user experience through a demonstration of constructing and running a custom experiment. By creating the documentation and testing framework, we hope to make MABE2 more approachable to new users and more useful to the interdisciplinary research community." 
+> The second Modular Agent-Based Evolver framework (MABE2) is an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research. MABE2 reduces the time between constructing a hypothesis and generating results by providing a library of modules that connect to form a variety of experiments. To promote use among interdisciplinary researchers, modules are connected and adjusted via a simple text interface (i.e., the user does not need to add or edit any code). However, if the user requires modules beyond the existing library, MABE2 provides a set of practical tools for developing additional modules. With the understanding that MABE2 is a large piece of software, this summer we created a documentation guide and testing framework as part of the 2021 Workshop for Avida-ED Software Development (WAVES). In this talk, we will highlight the role of the documentation and testing framework in the  MABE2 user experience through a demonstration of constructing and running a custom experiment. By creating the documentation and testing framework, we hope to make MABE2 more approachable to new users and more useful to the interdisciplinary research community.
 
 - Include video of our talk?
 
