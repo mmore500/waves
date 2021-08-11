@@ -1,5 +1,5 @@
 ---
-layout: topic
+layout: post
 date: 2021-07-31
 author: Mitchell Johnson & Jamie Schmidt
 ---
