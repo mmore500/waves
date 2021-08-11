@@ -15,7 +15,7 @@ We dedicated our summer to documenting and testing MABE2, an open-source researc
 ​
 This project was guided by our wonderful mentors [Acaica Ackles](https://alackles.github.io/) (documentation) and [Austin Ferguson](http://fergusonaj.com/) (testing).
 
-<br/>​
+​
 
 ## :interrobang: Why Document and Test Code
 ​
@@ -108,7 +108,6 @@ Throughout our testing journey, we have come to learn a lot about the intricacie
 
 <br/>
 
-##### _Setup_
 1. **Creating new Test Files:** Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must rename or replace anything specific to the previous test file. When including the file to test, do not `#include` any of its dependencies because they should be included in that file.  
 
 2. **Deciding what to Test:** When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file. Start with things that you understand or something chose something that looks simple to start with (like a constructor!). As you work through their implementation, you will get more familiar with the code. 
@@ -125,11 +124,11 @@ Here are a couple of things that you might find helpful when testing MABE2 files
 1. **First Tests:** A good place to start when testing a MABE2 file is by checking that getter, setter and boolean functions work correctly. 
 2. **Test Coverage:** Most of the time, you will end up testing every method in a file, so make sure you have a clear list of the methods/a comprehensive strategy to make sure you get them all. Also, make sure you test all variations of a function: if a function has both a templated and non-templated version, both should get checked. 
 3. **Parent Classes:** Many times MABE2 files will inherit from a parent class. It is always a good idea to glance through the parent class. You should check specifically for virtual functions/variables that should get overridden in the file you're checking. Don't forget to also look for functions from the parent class that aren't overridden!
-4. **Error Messages:** When you see that an error message would be printed to the console, make sure you check that the error gets triggered correctly! Bonus points if you also check that the correct error message is written out to the console. 
+4. **ErrorManager:** Currently in the ErrorManager (`source/core/ErrorManager.hpp`) we have commented out the `#ifndef NDEBUG` line in the `AddError` function. This is on purpose and is a temporary fix. With this line active, if an error is added to the manager the entire program halts. This is not helpful when trying to check to see that errors are being thrown appropriately. A couple of possible fixes for this would be a) to modify the Makefile to use a flag when compiling the tests or b) create some type of macro work around. 
+5. **Error Messages:** When you see that an error message would be printed to the console, make sure you check that the error gets triggered correctly! Bonus points if you also check that the correct error message is written out to the console. 
 
-If you ------ 
-
-5. **Segmentation Faults:** When setting up or calling methods on mabe objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
+    If you are using the ErrorManager, one way to do this is by capturing the error message in a variable in the `error_function` for the ErrorManager and then comparing the generated string to the expected string in a `REQUIRE`. 
+6. **Segmentation Faults:** When setting up or calling methods on mabe objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
 
     ```cpp
     void REQUIRE(bool b){
@@ -138,11 +137,37 @@ If you ------
     ```
 
     to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use a backtrace to look at the individual frames and see where the memory leak was coming from.
-6. **Testing Asserts:** In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, Empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail`. 
+7. **Testing Asserts:** In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, Empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail`. 
 
     [insert code example] 
 
     Make sure you use `emp::assert_clear` to reset the boolean.
+8. **Empirical**: A good resource for modeling both tests as well as implementation examples is the Empirical files, located in `source/third_party`. Empirical's library includes a lot of implementation of classes and files included throughout MABE. Checking out those base class files (like Ptr.hpp or vector.hpp) can be helpful when understanding different MABE files. 
+9. **Manager Booleans:** One thing to be careful of is to check that booleans who depend on a Manager are actually reset after a test is run. For example, if you want to check a specific feature's Manager throws an error, most times manually setting the boolean back to false is not sufficient. Because the Managers persist, that same feature you just tested to throw an error will again trigger the boolean, regardless of what the new feature actually does in the Manager. For example: 
+
+    ```cpp
+    bool has_error_been_thrown = false; 
+
+    /* 
+    Do something to add an error in the Manager
+    ...
+    */
+
+    REQUIRE(has_error_been_thrown); // Error is thrown correctly!
+
+    has_error_been_thrown = false; // Manually reset the boolean
+
+    /*
+    Start testing something unrelated that doesn't add an error
+    ...
+    */
+    REQUIRE_FALSE(has_error_been_thrown); // Will FAIL 
+    ```
+    To get around this issue you can set up multiple Managers and first check things that won't add an error, and end with checking one thing that does throw an error. 
+
+    One note for this: if the next thing you test should get rid of the error. For example: a module A requires that at least one other module of type B exists. First you check that adding a module A by itself throws and error. However, if your very next step is to add a module of type B, this should appease the manager, and the no error is thrown. In this case, the Manager can be re-used. 
+
+<br/>
         
 ## Wrap Up
 At the end of the WAVES internship, we were given the opportunity to present our summer of work at the BEACON congress. The BEACON congress is the annual meeting for researchers who belong to the [BEACON Center of Evolution in Action](https://www3.beacon-center.org/welcome/), a consortium of affiliated universities that focuses on the study of evolution in action through an interdisciplinary lens. Specifically, BEACON aims to bring together biologists, computer scientists and engineers to both study evolution in action, as well as use evolution to solve complex real-world problems. 
@@ -150,6 +175,8 @@ At the end of the WAVES internship, we were given the opportunity to present our
 We attended the summer 2021 BEACON congress as both participants and speakers. We presented our talk "Planning for the Future of MABE2: A Summer of Documentation and Testing". Below you can find both our abstract, as well as a video recording of our talk. 
 
 > The second Modular Agent-Based Evolver framework (MABE2) is an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research. MABE2 reduces the time between constructing a hypothesis and generating results by providing a library of modules that connect to form a variety of experiments. To promote use among interdisciplinary researchers, modules are connected and adjusted via a simple text interface (i.e., the user does not need to add or edit any code). However, if the user requires modules beyond the existing library, MABE2 provides a set of practical tools for developing additional modules. With the understanding that MABE2 is a large piece of software, this summer we created a documentation guide and testing framework as part of the 2021 Workshop for Avida-ED Software Development (WAVES). In this talk, we will highlight the role of the documentation and testing framework in the  MABE2 user experience through a demonstration of constructing and running a custom experiment. By creating the documentation and testing framework, we hope to make MABE2 more approachable to new users and more useful to the interdisciplinary research community.
+
+<br/>
 
 ## Acknowledgements
 ​
