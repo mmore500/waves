@@ -86,6 +86,8 @@ After testing a couple of files with this method, we decided to push ourselves t
 
 [insert his flowchart]
 
+In essence, we began with doing a high level overview of the code to make sure we understood what we would be testing, and then we created our own test suite. Afterwards, we would send our testing to Austin, who would come up with his own independent set of tests. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We would then repeat that cycle until both Austin and ourselves were happy with the testing for the file, and then move to the next file. 
+
 ### CATCH 2
 We used a testing framework called CATCH2 to test MABE2. BLURB, include link to github repo. 
 
