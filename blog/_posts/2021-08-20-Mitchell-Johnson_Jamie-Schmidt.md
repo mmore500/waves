@@ -17,6 +17,12 @@ MABE, accessible [here](https://github.com/Hintzelab/MABE/wiki), stands for Modu
 and, though powerful, could of course be improved.  The creation of the 2.0 version of MABE, called MABE2, was the focus of our project.  Our main focus was on refining the underlying architecture of MABE to be more end user-friendly, particularly in designing custom experiments.  The culmination of our efforts was in the creation of DynamicOrg, an Organism which was near-completely abstracted to allow for any combination of Genomes and Brains, as assigned through the config file.
 
 Along with the abstraction of organisms, we were also able to abstract away the inner workings of genomes and brains into a TypedGenome<type> and a BasicBrain. All of these abstractions remove many technical pre-requisites that users were required to have before using MABE2. Because of this, not only are far fewer steps involved when setting up an experiment, but it also takes much less time, since the majority of designing a simple experiment should be simple plug-and-play.
+  
+For comparison, this is the structure of MABE2 when using a DynamicOrg:
+  
+![MABE2 structure](https://imgur.com/TCklKle)
+  
+To explain exactly what's going on here, we're going to go through Genomes, DynamicOrg, Brains, and then Evaluators.
 
 ## Genomes / author: jamie
 Genomes in MABE2 are just repositories of mutable information.  The most basic kinds are vectors of some type, and (unlike in MABE), they aren't hidden inside Organisms which manage everything about them, but they are actively added to them and manage themselves.  This means that to mutate a Genome, any Genome, the Organism just tells the Genome to mutate itself and the Genome does.  No longer will the Organism run all the mutation functions itself, now it just delegates.  This, critically, means that Organisms now no longer need to know what kinds of Genomes they have at all.
@@ -26,6 +32,43 @@ Genomes in MABE2 are also accessed differently -- regardless of what type the Ge
 Moreover, Genomes are often handled through the Genome::Head class, which allows for easy and abstract use of Genomes.  Heads move along a Genome, and through a Head, any Genome operation can be accomplished, including searching (for values, ranges, multiple values, and ranges of multiple values) and all aforementioned reads and writes.  
 
 This means that it is often beneficial to pass Genomes as Heads if you want to be as generic as possible while still allowing full functionality of the Genome.
+  
+The most important part of a Genome is the mutate function.  Here's an example of a very simple mutate function for a vector of bits:
+  
+```cpp
+  
+  size_t Mutate(emp::Random & random) override { // receives a random number generator
+      // if we haven't configured the mutation sites yet, do so and set up the binomial distribution
+      if (mut_sites.GetSize() != data.size()) { 
+        mut_dist.Setup(mut_p, data.size());
+        mut_sites.resize(data.size());
+      }
+      // get the number of mutations
+      const size_t num_muts = mut_dist.PickRandom(random); 
+      
+
+      if (num_muts == 0) return 0;
+      if (num_muts == 1) {
+        const size_t pos = random.GetUInt(data.size());
+        data.Toggle(pos); // swaps the bit
+        return 1;
+      }
+
+      // Only remaining option is num_muts > 1.
+      mut_sites.Clear();
+      for (size_t i = 0; i < num_muts; i++) {
+        const size_t pos = random.GetUInt(data.size());
+        if (mut_sites[pos]) { --i; continue; }  // duplicate position; try again.
+        mut_sites.Set(pos); // sets each site of mutation to 1
+      }
+      data ^= mut_sites; // computes an exclusive or with the vector of bits and the mutation position vector
+
+      return num_muts;
+    }
+  
+```  
+
+Naturally, there are many more ways to mutate a Genome, particuarly if the Genome is a vector of integers or doubles.  If you want to make a Genome that mutates in a particular fashion, this is the way you'll have to go about it. 
 
 ## DynamicOrg / author: mitchell and jamie, predominantly mitchell though
 In MABE2, an Organism can be thought of as a box which contains some number of Genomes and some  number of Brains.  An Organism has three main functions: 
