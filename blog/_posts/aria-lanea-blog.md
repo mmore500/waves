@@ -95,13 +95,14 @@ We used a testing framework called Catch2 to test MABE2. Catch2 is an easy to us
 #### Words of Wisdom
 Throughout our testing journey, we have come to learn a lot about the intricacies of writing tests. We thought we would share a couple of tips and tricks we learned from tackling testing this summer! 
 
-1. Creating new Test Files: Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must rename or replace anything specific to the previous test file. When including the file to test, do not `#include` any of its dependencies because they should be included in that file.  
+##### Setup
+1. **Creating new Test Files:** Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must rename or replace anything specific to the previous test file. When including the file to test, do not `#include` any of its dependencies because they should be included in that file.  
 
-2. Deciding what to Test: When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file. Start with things that you understand or something chose something that looks simple to start with (like a constructor!). As you work through their implementation, you will get more familiar with the code. 
+2. **Deciding what to Test:** When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file. Start with things that you understand or something chose something that looks simple to start with (like a constructor!). As you work through their implementation, you will get more familiar with the code. 
 
 Also keep in mind that if you are struggling to understand what a specific chunk of code is doing, reach out and ask for help! It's better to write useful tests after asking for help rather than writing tests that are inappropriate for the file because you misunderstood the code. 
 
-3. Getting the First Test to Pass: Setting up a test file and understanding the code that you are to test can be difficult and time consuming. You'll probably get a lot of errors before you're able to get an actual test to pass. But don't give up! Once you get that first test to pass the others are much easier to write since you'll most likely understand the code to be tested much better by that point.
+3. **Getting the First Test to Pass:** When you write your first test, you'll probably get a lot of errors before you're able to get it to pass. But don't give up! Once you get that first test to pass the others are much easier to write since you'll understand the setup of the file you're testing. 
  
 
 #### MABE2 Specific Advice
@@ -111,35 +112,7 @@ Here are a couple of things that you might find helpful when testing MABE2 files
 2. Most of the time, you will end up testing every method in a file, so make sure you have a clear list of the methods/a comprehensive strategy to make sure you get them all. Also, make sure you test all variations of a function: if a function has both a templated and non-templated version, both should get checked. 
 3. Many times MABE2 files will inherit from a parent class. It is always a good idea to glance through the parent class. You should check specifically for virtual functions/variables that should get overrriden in the file you're checking. Don't forget to also look for functions from the parent class that aren't overridden though!
 4. When you see that an error message would be printed to the console, make sure you check that the error gets triggered correctly! Bonus points if you also check that the correct error message is written out to the console. You can do that by modifying your
-
-
-
-+ Assert issue
-- Makefile must have debugging turned on (use with pointer tracking)
-- NDEFDEBUG flag in ErrorManager. 
-+ Put things in MABE.cpp file to check if they work (isolate the issue)
-+ lldb/gdb then bt to frame number
-- check Empirical test files for example usage/tests (only helpful if they're implemented)
-+ Copy paste from old test files to preserve boiler plate stuff
-+ ONLY INCLUDE the file you're testing, not stuff included from .hpp file
-+ once you get one test up and running, it gets easier!
-+ ask for help! especially for understanding what the .hpp file does
-- check booleans actually reset 
-
-What to look for when testing
-+ test all booleans
-+ test every method
-+ make sure to check parent class for virtual overrrides in derived class
-+ make sure to check parent class for non-overridden functions
-- any time you print an error message to the console, you should check that an error is thrown
-- side note, also check error message is the right one
-- 
-
-
-
-- Testing Asserts: In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail` combined with `emp::assert_clear` to reset the boolean to test that asserts had been thrown when expected.
-
-- Segmentation Faults: When setting up mabe objects or calling methods on these objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what calls caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
+5. **Segmentation Faults:** When setting up mabe objects or calling methods on these objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what calls caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
 
 ```cpp
 void REQUIRE(bool b){
@@ -148,6 +121,34 @@ void REQUIRE(bool b){
 ```
 
 to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use backtrace to look at the individual frames and see where the memory leak was coming from.
+
+
+MABE
++ Assert issue
+- Makefile must have debugging turned on (use with pointer tracking)
+- NDEFDEBUG flag in ErrorManager. 
++ Put things in MABE.cpp file to check if they work (isolate the issue)
++ lldb/gdb then bt to frame number
+- check Empirical test files for example usage/tests (only helpful if they're implemented)
+- check booleans actually reset 
++ test all booleans
++ test every method
++ make sure to check parent class for virtual overrrides in derived class
++ make sure to check parent class for non-overridden functions
+- any time you print an error message to the console, you should check that an error is thrown
+- side note, also check error message is the right one
+
+OTHER
++ Copy paste from old test files to preserve boiler plate stuff
++ ONLY INCLUDE the file you're testing, not stuff included from .hpp file
++ once you get one test up and running, it gets easier!
++ ask for help! especially for understanding what the .hpp file does
+
+
+
+- Testing Asserts: In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail` combined with `emp::assert_clear` to reset the boolean to test that asserts had been thrown when expected.
+
+
 
 
 
