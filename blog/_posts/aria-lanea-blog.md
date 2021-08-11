@@ -96,7 +96,17 @@ We used a testing framework called Catch2 to test MABE2. Catch2 is an easy to us
 
 ### Testing MABE2
 #### Words of Wisdom
-Throughout our testing journey, we have come to learn a lot about both the testing process and the intricacies of writing tests. We thought we would share a couple of nuggets of wisdom 
+Throughout our testing journey, we have come to learn a lot about both the testing process and the intricacies of writing tests. We thought we would share a couple of tips and tricks we learned from tackling testing this summer. 
+
+1. When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file, and chose something that looks simple to start with (like a constructor!). Even if you don't end up testing that specific thing, it will give you confidence to approach the rest of the file. 
+2. You don't need to understand how everything in the file works to start writing tests! Start with things that you understand, and as you work through their implementation, you will get more familiar with the code. 
+3. On the other hand, if you are struggling to understand what a specific chunk of code is doing, don't be afraid to reach out and ask for help! It's better that you write useful tests after asking for help rather than writing tests that ultimately end up being useless because you understood the file wrong. 
+4. f
+
+#### MABE2 Specific Advice
+Here are a couple of things that you might find helpful when testing MABE2 files! We have included some things to watch out for, but also some fixes to testing bugs that cropped up and gave us some issues. 
+
+1. 
 
 
 
@@ -109,7 +119,7 @@ Throughout our testing journey, we have come to learn a lot about both the testi
 - Copy paste from old test files to preserve boiler plate stuff
 - ONLY INCLUDE the file you're testing, not stuff included from .hpp file
 - once you get one test up and running, it gets easier!
-- ask for help! especially for understanding what the .hpp file does
++ ask for help! especially for understanding what the .hpp file does
 - check booleans actually reset 
 
 What to look for when testing
