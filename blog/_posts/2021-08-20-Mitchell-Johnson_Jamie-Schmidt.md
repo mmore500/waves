@@ -7,10 +7,6 @@ author: Mitchell Johnson & Jamie Schmidt
 ### Development of MABE2
 
 ## Introduction
--what is MABE2
-For our project, we focused our work mostly on 
--improving the end user experience through the development of DynamicOrg.
--adding support for brains and genomes, both of which have base classes
 
 To quote the [Github for MABE2](https://github.com/mercere99/MABE2), MABE is a software framework deigned to easily build and customize software for evolutionary computation or artificial life.  The resulting systems should be useful for studying evolutionary dynamics, solving complex problems, comparing evolving systems, or exploring the open-ended power of evolution.  
 
@@ -44,18 +40,14 @@ Now, a DynamicOrg must necessarily be significantly less restrictive. Copying it
 In the config file, this means all a DynamicOrg needs is a list of names of all the Genomes and Brains it will contain. So long as all these Genomes and Brains are properly named, this will work seamlessly. Each specific TypedGenome<> will also come with specific parameters that appear in the .mabe file. Parameters like mutation probabilities, max/min values, and initially starting randomized or not, allow very specific experiments to be created.
   
 ## Brains / author: jamie
--how new brain functionality was implemented before we made the switch
--how/where the functionality lives now, how its better this way
-  
-Brains are the processors of all the Genomes in an Organism.  They are only ever accessed through their process function, which takes an emp::DataMap and then processes all the relevent information.  In DynamicOrg in particular, they are all given a DataMap containing the Genomes in the DynamicOrg, and as each Brain will know which Genomes matter for its calculations, it will then access those Genomes, process them, and write its output to the DataMap.
+
+Brains are the processors of all the Genomes in an Organism.  They are only ever accessed through their process function, which takes an emp::DataMap and then processes all the relevant information.  In DynamicOrg in particular, they are all given a DataMap containing the Genomes in the DynamicOrg, and as each Brain will know which Genomes matter for its calculations, it will then access those Genomes, process them, and write its output to the DataMap.
   
 The Brain will be configured with the names of the Genomes it works with, along with the name of its output.  This means that you can make identical Brains which still deal with different Genomes and write their outputs to different addresses in the DataMap.  
   
 Many Brains, such as Markov Brains, are built from Genomes themselves, and this also occurs in the process function.  This allows for Brains that evolve over time, and the Evaluator can either receive the Brain itself or whatever decision-making process it has built from the Genomes the Brain was given.
   
 ## Evaluators / author: jamie
--how new evaluator functionality was implemented before we made the switch
--how/where the functionality lives now, how its better this way
   
 An Evaluator is, perhaps, the thing most users will spend the most time with for their custom experiments.  In any evolutionary situation, Organisms will need to be evaluated on whatever traits they are supposed to be evolving, and the Evaluator assigns their fitness value from whatever outputs the Brains provide.  
   
@@ -67,7 +59,7 @@ We did not make many changes to the Evaluator model, aside from making it compat
   3. Calculate fitness from them
   4. Return fitness
 
-## Tutorial - creating and running Aagos using DynamicOrg / author: mitchell
+## Tutorial - Creating and running a custom experiment using DynamicOrg
 
 Aagos (Auto-Adaptive Genetic Organization System), is a digital evolution experiment designed to show how high and low environmental change promote the evolution of segregated or non-segregated genes. It consists of N K long genes in a circular genome that can undergo insertion/deletion/in-place mutations, as well as gene move mutations. When a gene move mutation occurs, the gene randomly picks a new starting position in the genome. There is a maximum and minimum length the genome can grow/shrink to, and fitness is calculated by comparing the N genes to a set of gene targets that act as the environment. As a demonstration of DynamicOrg and its usefulness, we will show the steps involved in implementing Aagos using DynamicOrg.
   
@@ -114,15 +106,13 @@ We first initialize a TypedGenome<bool> and TypedGenome<int> as our primary geno
     
 
 ## Conclusion
--reiterate how our work greatly simplified the end user expirience using mabe2
   
 From these steps, it is clear that the end user can more easily and more efficiently create custom experiments to suit nearly any research goal.  Where previously almost any experiment would have required significant editing of numerous files, now most experiments can be completed simply by creating a new Evaluator and editing the config file.  In addition, experiments involving trying different forms of evolution to solve the same problem are made drastically easier, as the only difference between those experiments would be in the config files.  Finally, the more modular nature of this new framework lends itself very well to collaboration, where a Brain one person makes could easily be used in another person's Evaluator and, with how Genomes are so standardized by Genome::Head, using a new Genome type in the place of a more basic Genome would be trivial.
   
 In short, our work has greatly simplified the end user experience and streamlined the research process for all who would use MABE2 in the future. 
 
 ## Future plans / Work we didn't complete
--anything we wish we could have completed but didn't have time to
-  
+ 
 Unfortunately, we simply did not have the time to do everything we wanted.  As such, these are the remaining issues:
   
   1. The config system for Brains and Genomes does not yet work.  The structure should be similar to how Organisms are, with each Genome having a name and the various pertinent values (such as mutation rate and min/max values) and each Brain having a name, the names of the Genomes it will use, and whatever stats it will have (such as Markov Brains needing the size of their gates and all Brains having the name of their outputs).  
