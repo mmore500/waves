@@ -86,7 +86,7 @@ After testing a couple of files with this method, we decided to push ourselves t
 
 [insert his flowchart]
 
-In essence, we began with doing a high level overview of the code to make sure we understood what we would be testing, and then we created our own test suite. Afterwards, we would send our testing to Austin, who would come up with his own independent set of tests. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We would then repeat that cycle until both Austin and ourselves were happy with the testing for the file, and then move to the next file. 
+In essence, we began by meeting with Austin to do a high-level overview of the code to make sure we understood what we would be testing. Then, on our own, we created a comprehensive test suite for the specific file with a variety of unit tests. Afterwards, we would send our tests to Austin who would come up with his own independent list of things to test. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We then repeat that cycle until all of us were satisfied with the testing coverage for the file. Then we repeat this process for the next file.
 
 ### Catch2
 We used a testing framework called Catch2 to test MABE2. Catch2 is an easy to use C++ unit testing framework. You can check out more of Catch2 in their [github](https://github.com/catchorg/Catch2). When writing out tests for MABE2, we relied heavily on Catch2's assertion macros, which you can find [here](https://github.com/catchorg/Catch2/blob/devel/docs/assertions.md#top). 
@@ -101,37 +101,54 @@ Throughout our testing journey, we have come to learn a lot about both the testi
 1. When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file, and chose something that looks simple to start with (like a constructor!). Even if you don't end up testing that specific thing, it will give you confidence to approach the rest of the file. 
 2. You don't need to understand how everything in the file works to start writing tests! Start with things that you understand, and as you work through their implementation, you will get more familiar with the code. 
 3. On the other hand, if you are struggling to understand what a specific chunk of code is doing, don't be afraid to reach out and ask for help! It's better that you write useful tests after asking for help rather than writing tests that ultimately end up being useless because you understood the file wrong. 
-4. f
+4. Know that one of the hardest parts of testing is just getting started. Once you get your testing file up and running with a non-trivial test, you've passed the first hurdle, and the rest of the testing should go flow easier. 
+ 
 
 #### MABE2 Specific Advice
 Here are a couple of things that you might find helpful when testing MABE2 files! We have included some things to watch out for, but also some fixes to testing bugs that cropped up and gave us some issues. 
 
-1. 
+1. A good place to start when testing a MABE2 file is by checking that all booleans are working correctly. Another good place to start is to check that simple checking functions work correctly. For example, a function that returns whether or not an input is a double should work correctly. Another example is a function that modifies a boolean. 
+2. Most of the time, you will end up testing every method in a file, so make sure you have a clear list of the methods/a comprehensive strategy to make sure you get them all. Also, make sure you test all variations of a function: if a function has both a templated and non-templated version, both should get checked. 
+3. Many times MABE2 files will inherit from a parent class. It is always a good idea to glance through the parent class. You should check specifically for virtual functions/variables that should get overrriden in the file you're checking. Don't forget to also look for functions from the parent class that aren't overridden though!
+4. When you see that an error message would be printed to the console, make sure you check that the error gets triggered correctly! Bonus points if you also check that the correct error message is written out to the console. You can do that by modifying your
 
 
 
-- Assert issue
++ Assert issue
 - Makefile must have debugging turned on (use with pointer tracking)
 - NDEFDEBUG flag in ErrorManager. 
-- Put things in MABE.cpp file to check if they work (isolate the issue)
-- lldb/gdb then bt to frame number
++ Put things in MABE.cpp file to check if they work (isolate the issue)
++ lldb/gdb then bt to frame number
 - check Empirical test files for example usage/tests (only helpful if they're implemented)
-- Copy paste from old test files to preserve boiler plate stuff
-- ONLY INCLUDE the file you're testing, not stuff included from .hpp file
-- once you get one test up and running, it gets easier!
++ Copy paste from old test files to preserve boiler plate stuff
++ ONLY INCLUDE the file you're testing, not stuff included from .hpp file
++ once you get one test up and running, it gets easier!
 + ask for help! especially for understanding what the .hpp file does
 - check booleans actually reset 
 
 What to look for when testing
-- test all booleans
-- test every method
-- make sure to check parent class for virtual overrrides in derived class
-- make sure to check parent class for non-overridden functions
++ test all booleans
++ test every method
++ make sure to check parent class for virtual overrrides in derived class
++ make sure to check parent class for non-overridden functions
 - any time you print an error message to the console, you should check that an error is thrown
 - side note, also check error message is the right one
 - 
 
+- Creating new Test Files: Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must remember to only `#include` the current file that is being tested and to rename anythign specific to the previous test file. 
 
+- Testing Asserts: In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail` combined with `emp::assert_clear` to reset the boolean to test that asserts had been thrown when expected.
+
+- Segmentation Faults: When setting up mabe objects or calling methods on these objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what calls caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
+
+```cpp
+void REQUIRE(bool b){
+  std::cout << b << std::endl;
+}
+```
+
+to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use backtrace to look at the individual frames and see where the memory leak was coming from.
+- Getting the First Test to Pass: Setting up a test file and understanding the code that you are to test can be difficult and time consuming. You'll probably get a lot of errors before you're able to get an actual test to pass. But don't give up! Once you get that first test to pass the others are much easier to write since you'll most likely understand the code to be tested much better by that point.
 
 
 - Levelization and bottom up
