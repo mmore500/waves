@@ -88,8 +88,10 @@ After testing a couple of files with this method, we decided to push ourselves t
 
 In essence, we began with doing a high level overview of the code to make sure we understood what we would be testing, and then we created our own test suite. Afterwards, we would send our testing to Austin, who would come up with his own independent set of tests. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We would then repeat that cycle until both Austin and ourselves were happy with the testing for the file, and then move to the next file. 
 
-### CATCH 2
-We used a testing framework called CATCH2 to test MABE2. BLURB, include link to github repo. 
+### Catch2
+We used a testing framework called Catch2 to test MABE2. Catch2 is an easy to use C++ unit testing framework. You can check out more of Catch2 in their [github](https://github.com/catchorg/Catch2). When writing out tests for MABE2, we relied heavily on Catch2's assertion macros, which you can find [here](https://github.com/catchorg/Catch2/blob/devel/docs/assertions.md#top). 
+
+BLURB, include link to github repo. 
 
 #### Best Practices in CATCH2
 
@@ -129,7 +131,7 @@ What to look for when testing
         - What to look for when testing
         
 ## Wrap Up
-At the end of the WAVES internship, we were given the opportunity to present our summer of work at the BEACON congress. The BEACON congress is the annual meeting for researchers who belong to the BEACON Center of Evolution in Action (insert link!), an organization of affiliated universities that focuses on the study of evolution in action through an interdisciplinary lens. Specifically, BEACON aims to bring together biologists, computer scientists and engineers to both study evolution in action, as well as use evolution to solve complex real-world problems. 
+At the end of the WAVES internship, we were given the opportunity to present our summer of work at the BEACON congress. The BEACON congress is the annual meeting for researchers who belong to the [BEACON Center of Evolution in Action](https://www3.beacon-center.org/welcome/), an organization of affiliated universities that focuses on the study of evolution in action through an interdisciplinary lens. Specifically, BEACON aims to bring together biologists, computer scientists and engineers to both study evolution in action, as well as use evolution to solve complex real-world problems. 
 
 We attended the summer 2021 BEACON congress as both participants and speakers. We presented our talk "Planning for the Future of MABE2: A Summer of Documentation and Testing". Below you can find both our abstract, as well as a video recording for our talk. 
 
