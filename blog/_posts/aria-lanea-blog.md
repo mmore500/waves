@@ -14,7 +14,9 @@ Hello! This summer we (Lanea Rohan, '22 Grinnel College, and Aria Killebrew Brue
 We dedicated our summer to documenting and testing MABE2, an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research.
 ​
 This project was guided by our wonderful mentors [Acaica Ackles](https://alackles.github.io/) (documentation) and [Austin Ferguson](http://fergusonaj.com/) (testing).
-​
+
+<br/>​
+
 ## :interrobang: Why Document and Test Code
 ​
 The ???Michegan State University devolab??? has spent countless hours developing MABE2 and preparing for its release. Proper documentation and testing are essential for ensuring that MABE2 is accepted into and used by as large of a community as possible.
@@ -36,6 +38,8 @@ Documentation is also important for the MABE2 users who wish to write their own 
 Software must also be tested before it is released to the community. End-users will (and should) be cautious of code that has no testing framework. Without code being tested how can we expect it to preform as expected? We must provide a testing suite to assure MABE2 users that this software runs correctly.
 ​
 Testing frameworks are also helpful for future developers who want to make sure their contributions to this software does not break any previously functioning code.
+
+<br/>
 ​
 ## :book: Documentation
 
@@ -55,9 +59,10 @@ Because MABE2 is still under active development there are some features whose im
 
 ​If you're curious to learn more, you can check out a live version of the documentation [here](https://mabe2.readthedocs.io/en/latest/).
 
+<br/>
+
 ## Testing
 ### The Beginning
-
 Many large projects contain complex webs of dependencies, which are files that rely on other files. This is the case with MABE2. Dependencies make deciding where to start testing difficult. You need to be sure that the code you are testing does not rely on any untested files, since they could contain unknown bugs which may lead to errors in your current code. To avoid potential errors from untested dependencies, our mentor Austin suggested that we start with code that had no dependencies. This method is called "bottom up" testing. 
 
 One way to organize the system of dependencies is to "levelize" the code your working with. Levelizing is the process of sorting all files in a project based on the number of dependencies that they have. Then, you can organize the files into "levels", each level representing the addition of one dependency. Levelization can be a great tool to help understand how a large code base is organized. 
@@ -69,7 +74,9 @@ In our case, Austin used the levelization of MABE2 to decide which files we shou
 
 One really important thing to note about levelizing MABE2 is that MABE2 has a library of third-party dependencies that are used throughout MABE2 source code, including Empirical. We worked under the assumption that all of these third-party resources were working correctly, and thus any error we found was occurring from within MABE2. 
 
-### The Process
+<br/>
+
+### _The Process_
 The process of testing is not linear, and is more involved than most people first assume. In its most basic form, the testing process can be summed up as below. 
 
 1. Decide what you're testing. 
@@ -88,24 +95,31 @@ After testing a couple of files with this method, we decided to push ourselves t
 
 In essence, we began by meeting with Austin to do a high-level overview of the code to make sure we understood what we would be testing. Then, on our own, we created a comprehensive test suite for the specific file with a variety of unit tests. Afterwards, we would send our tests to Austin who would come up with his own independent list of things to test. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We then repeat that cycle until all of us were satisfied with the testing coverage for the file. Then we repeat this process for the next file.
 
-### Catch2
+<br/>
+
+### _Catch2_
 We used a testing framework called Catch2 to test MABE2. Catch2 is an easy to use C++ unit testing framework. You can check out more of Catch2 in their [github](https://github.com/catchorg/Catch2). When writing out tests for MABE2, we relied heavily on Catch2's assertion macros, which you can find [here](https://github.com/catchorg/Catch2/blob/devel/docs/assertions.md#top). 
 
-### Testing MABE2
-#### Words of Wisdom
+<br/>
+
+### **Testing MABE2**
+#### _Words of Wisdom_
 Throughout our testing journey, we have come to learn a lot about the intricacies of writing tests. We thought we would share a couple of tips and tricks we learned from tackling testing this summer! 
 
-##### Setup
+<br/>
+
+##### _Setup_
 1. **Creating new Test Files:** Test files can have large boiler plates (setup before the actual code is written, lots of `#include`s and `#define`s) which can make setting up a new testing file tricky to get right. We found that the easiest way to get the boiler plate right was to simply copy a preexisting test file and "rip out its guts" and replace it with new test code. When doing this you must rename or replace anything specific to the previous test file. When including the file to test, do not `#include` any of its dependencies because they should be included in that file.  
 
 2. **Deciding what to Test:** When you first open up a file that you're going to test, it's okay not to understand everything that you see! Take a breath, read any documentation at the top of the file. Start with things that you understand or something chose something that looks simple to start with (like a constructor!). As you work through their implementation, you will get more familiar with the code. 
 
-Also keep in mind that if you are struggling to understand what a specific chunk of code is doing, reach out and ask for help! It's better to write useful tests after asking for help rather than writing tests that are inappropriate for the file because you misunderstood the code. 
+    Also keep in mind that if you are struggling to understand what a specific chunk of code is doing, reach out and ask for help! It's better to write useful tests after asking for help rather than writing tests that are inappropriate for the file because you misunderstood the code. 
 
 3. **Getting the First Test to Pass:** When you write your first test, you'll probably get a lot of errors before you're able to get it to pass. But don't give up! Once you get that first test to pass the others are much easier to write since you'll understand the setup of the file you're testing. 
  
+<br/>
 
-#### MABE2 Specific Advice
+#### **MABE2 Specific Advice**
 Here are a couple of things that you might find helpful when testing MABE2 files! We have included some things to watch out for and bug fixes/workarounds that might prove to be helpful in the future. 
 
 1. **First Tests:** A good place to start when testing a MABE2 file is by checking that getter, setter and boolean functions work correctly. 
@@ -117,18 +131,18 @@ If you ------
 
 5. **Segmentation Faults:** When setting up or calling methods on mabe objects we would sometimes run into segmentation faults (files trying to read/write to an illegal memory location). Catch2 made this difficult to debug since it would crash at the beginning of the test case and not give specific line numbers of what caused the crash. To work around this we would put the broken code into `MABE.cpp` along with the function:
 
-```cpp
-void REQUIRE(bool b){
-  std::cout << b << std::endl;
-}
-```
+    ```cpp
+    void REQUIRE(bool b){
+    std::cout << b << std::endl;
+    }
+    ```
 
-to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use a backtrace to look at the individual frames and see where the memory leak was coming from.
+    to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we could use lldb (gdb on Windows) to find the memory leaks. With lldb we would run the program, then use a backtrace to look at the individual frames and see where the memory leak was coming from.
 6. **Testing Asserts:** In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, Empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail`. 
 
-[insert code example] 
+    [insert code example] 
 
-Make sure you use `emp::assert_clear` to reset the boolean.
+    Make sure you use `emp::assert_clear` to reset the boolean.
         
 ## Wrap Up
 At the end of the WAVES internship, we were given the opportunity to present our summer of work at the BEACON congress. The BEACON congress is the annual meeting for researchers who belong to the [BEACON Center of Evolution in Action](https://www3.beacon-center.org/welcome/), a consortium of affiliated universities that focuses on the study of evolution in action through an interdisciplinary lens. Specifically, BEACON aims to bring together biologists, computer scientists and engineers to both study evolution in action, as well as use evolution to solve complex real-world problems. 
