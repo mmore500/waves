@@ -13,7 +13,7 @@ Hello! This summer we (Lanea Rohan, '22 Grinnel College, and Aria Killebrew Brue
 '23 Reed College) participated in the WAVES workshop through Michigan State University.
 We dedicated our summer to documenting and testing MABE2, an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research.
 ​
-This project was guided by our wonderful mentors [Acaica Ackles](https://alackles.github.io/) (documentation) and Austin Ferguson (testing).
+This project was guided by our wonderful mentors [Acaica Ackles](https://alackles.github.io/) (documentation) and [Austin Ferguson](http://fergusonaj.com/) (testing).
 ​
 ## :interrobang: Why Document and Test Code
 ​
@@ -129,46 +129,6 @@ to work around the `REQUIRE`s in Catch2. When we ran the `MABE.cpp` file we coul
 [insert code example] 
 
 Make sure you use `emp::assert_clear` to reset the boolean.
-
-
-MABE
-+ Assert issue
-- Makefile must have debugging turned on (use with pointer tracking)
-- NDEFDEBUG flag in ErrorManager. 
-+ Put things in MABE.cpp file to check if they work (isolate the issue)
-+ lldb/gdb then bt to frame number
-- check Empirical test files for example usage/tests (only helpful if they're implemented)
-- check booleans actually reset 
-+ test all booleans
-+ test every method
-+ make sure to check parent class for virtual overrrides in derived class
-+ make sure to check parent class for non-overridden functions
-- any time you print an error message to the console, you should check that an error is thrown
-- side note, also check error message is the right one
-
-OTHER
-+ Copy paste from old test files to preserve boiler plate stuff
-+ ONLY INCLUDE the file you're testing, not stuff included from .hpp file
-+ once you get one test up and running, it gets easier!
-+ ask for help! especially for understanding what the .hpp file does
-
-
-
-
-
-
-
-
-
-- Levelization and bottom up
-    - Austin's vizualization of MABE2
-    - Assuming everything in Empirical was working correctly
-    - Flowchart process (insert the flowchart Austin made)
-        - Why use this?
-- Using CATCH2
-    - Words of Wisdom (what was easy/hard)
-        - Assert issue
-        - What to look for when testing
         
 ## Wrap Up
 At the end of the WAVES internship, we were given the opportunity to present our summer of work at the BEACON congress. The BEACON congress is the annual meeting for researchers who belong to the [BEACON Center of Evolution in Action](https://www3.beacon-center.org/welcome/), a consortium of affiliated universities that focuses on the study of evolution in action through an interdisciplinary lens. Specifically, BEACON aims to bring together biologists, computer scientists and engineers to both study evolution in action, as well as use evolution to solve complex real-world problems. 
@@ -176,8 +136,6 @@ At the end of the WAVES internship, we were given the opportunity to present our
 We attended the summer 2021 BEACON congress as both participants and speakers. We presented our talk "Planning for the Future of MABE2: A Summer of Documentation and Testing". Below you can find both our abstract, as well as a video recording of our talk. 
 
 > The second Modular Agent-Based Evolver framework (MABE2) is an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research. MABE2 reduces the time between constructing a hypothesis and generating results by providing a library of modules that connect to form a variety of experiments. To promote use among interdisciplinary researchers, modules are connected and adjusted via a simple text interface (i.e., the user does not need to add or edit any code). However, if the user requires modules beyond the existing library, MABE2 provides a set of practical tools for developing additional modules. With the understanding that MABE2 is a large piece of software, this summer we created a documentation guide and testing framework as part of the 2021 Workshop for Avida-ED Software Development (WAVES). In this talk, we will highlight the role of the documentation and testing framework in the  MABE2 user experience through a demonstration of constructing and running a custom experiment. By creating the documentation and testing framework, we hope to make MABE2 more approachable to new users and more useful to the interdisciplinary research community.
-
-- Include video of our talk?
 
 ## Acknowledgements
 ​
