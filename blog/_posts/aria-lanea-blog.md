@@ -186,3 +186,5 @@ for their continued support and dedication throughout the summer!
 We would also like to thank Charles Offria and Cliff Bohm for their support in understanding MABE2!
 ​
 Finally, we would like to thank all the WAVES mentors who led us in enrichment seminars and everyone who gave us feedback on our documentation!
+
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
