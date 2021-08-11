@@ -19,7 +19,7 @@ This project was guided by our wonderful mentors [Acaica Ackles](https://alackle
 
 ## :interrobang: Why Document and Test Code
 ​
-The ???Michegan State University devolab??? has spent countless hours developing MABE2 and preparing for its release. Proper documentation and testing are essential for ensuring that MABE2 is accepted into and used by as large of a community as possible.
+The [Digital Evolution Lab](https://devolab.org/) has spent countless hours developing MABE2 and preparing for its release. Proper documentation and testing are essential for ensuring that MABE2 is accepted into and used by as large of a community as possible.
 ​
 Write the Docs (link!), BLURB, puts the importance of proper documentation quite plainly:
 ​
