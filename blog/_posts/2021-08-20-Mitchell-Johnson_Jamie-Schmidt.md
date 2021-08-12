@@ -70,7 +70,7 @@ The most important part of a Genome is the mutate function.  Here's an example o
 
 Naturally, there are many more ways to mutate a Genome, particuarly if the Genome is a vector of integers or doubles.  If you want to make a Genome that mutates in a particular fashion, this is the way you'll have to go about it. 
 
-## DynamicOrg / author: mitchell and jamie, predominantly mitchell though
+## DynamicOrg / author: mitchell and jamie
 In MABE2, an Organism can be thought of as a box which contains some number of Genomes and some  number of Brains.  An Organism has three main functions: 
 1. An Organism needs to be able to copy itself to form one or more children.
 2. An Organism needs to be able to mutate itself in some way for evolution to happen.
@@ -83,6 +83,29 @@ But what's a DynamicOrg?  Well, a DynamicOrg is an Organism that is nearly total
 Now, a DynamicOrg must necessarily be significantly less restrictive. Copying itself is fine, we just copy all its Genomes and Brains.  Mutations are also reasonably simple, since all we need to do is mutate every Genome in it. But how on earth do we know what to return?  Simply put, we don't, so we just want to return an emp::DataMap. The Evaluator knows what kind of output to look for, so we let it handle extracting the necessary information from the data map. The Brains then all edit this emp::DataMap in order, in whatever way they are designed to do.  
   
 In the config file, this means all a DynamicOrg needs is a list of names of all the Genomes and Brains it will contain. So long as all these Genomes and Brains are properly named, this will work seamlessly. Each specific TypedGenome<> will also come with specific parameters that appear in the .mabe file. Parameters like mutation probabilities, max/min values, and initially starting randomized or not, allow very specific experiments to be created.
+        
+The most important part of DynamicOrg is GenerateOutput().  
+        
+ ```cpp
+        
+    void GenerateOutput() override {
+      emp::DataMap temp;
+  
+      map.Set<emp::vector<emp::Ptr<Genome>>>("genomes", genome_vec);
+      map.Set<emp::Ptr<emp::DataMap>>("data_map", & GetDataMap());
+      map.Set<emp::Ptr<emp::DataMap>>("output", & temp);
+      for (size_t i = 0; i < brain_vec.size(); i++) {
+        brain_vec[i]->rebuild(map);
+        brain_vec[i]->process(map);
+      }
+
+      SetVar<emp::DataMap>(SharedData().output_name, temp);
+    }
+        
+        
+```
+        
+Though it may look very simple, in fact it tells you exactly what goes on in Brains and Evaluators.  Essentially, the Brains get sent a DataMap of the Genomes, the DynamicOrg's own DataMap, an output DataMap, and (not seen here) the output name.  Then, each Brain builds itself (which most Brains don't do) and then processes the data.  Each Brain writes its outputs to the output DataMap, which each Brain can also read from as well, allowing for communication of a kind.  Critically, this output DataMap is the only thing the Evaluator gets, and so is the only part of the DynamicOrg which it can see.
   
 ## Brains / author: jamie
 
@@ -91,6 +114,20 @@ Brains are the processors of all the Genomes in an Organism.  They are only ever
 The Brain will be configured with the names of the Genomes it works with, along with the name of its output.  This means that you can make identical Brains which still deal with different Genomes and write their outputs to different addresses in the DataMap.  
   
 Many Brains, such as Markov Brains, are built from Genomes themselves, and this also occurs in the process function.  This allows for Brains that evolve over time, and the Evaluator can either receive the Brain itself or whatever decision-making process it has built from the Genomes the Brain was given.
+        
+The most important part of a Brain is the process() function.
+        
+ ```cpp
+        
+    void process(emp::DataMap org_map) override {
+
+        SetVar<Genome::Head>(GetOutput(org_map), GetOutputName(org_map), Genome::Head(*(GetGenomes(org_map)[genome_indices[0]])));
+
+    }
+        
+```        
+        
+This is a very simple Brain: it takes the first Genome associated with it and returns a Head to that Genome, writing it in the output DataMap with the same name that the output DataMap is written in the DynamicOrg's DataMap.  This is the "default" brain, which is useful for any experiment where you want to give the Evaluator an entire Genome. 
   
 ## Evaluators / author: jamie
   
@@ -107,6 +144,72 @@ We did not make many changes to the Evaluator model, aside from making it compat
     - Implement any custom function for calculating fitness. Ex: counting 1s or pattern matching
   4. Return fitness
     - Make sure that function actually returns your calculated fitness.
+                                      
+                                      
+And here's an example of those exact steps, for a very simple Evaluator that just counts the number of ones (or zeros) in a vector of bits.  The function in questin here is OnUpdate().
+        
+```cpp
+        
+    void OnUpdate(size_t /* update */) override {
+      emp_assert(control.GetNumPopulations() >= 1);
+
+      // Loop through the population and evaluate each organism.
+      double max_fitness = 0.0;
+      emp::Ptr<Organism> max_org = nullptr;
+      mabe::Collection alive_collect( target_collect.GetAlive() );
+      for (Organism & org : alive_collect) {        
+        // Make sure this organism has its bit sequence ready for us to access.
+        org.GenerateOutput();
+
+        emp::DataMap dm = org.GetVar<emp::DataMap>(bits_trait);
+
+        Genome::Head head = dm.Get<Genome::Head>(bits_trait);
+
+        double fitness = 0.0;
+        double total = 0.0;
+
+        while (head.IsValid()) {
+          fitness += head.ReadBit();
+          total += 1;
+        }
+
+        // If we were supposed to count zeros, subtract ones count from total number of bits.
+        if (count_type == 0) fitness = total - fitness;
+
+        // Store the count on the organism in the fitness trait.
+        org.SetVar<double>(fitness_trait, fitness);
+
+        if (fitness > max_fitness || !max_org) {
+          max_fitness = fitness;
+          max_org = &org;
+        }
+      }
+
+      std::cout << "Max " << fitness_trait << " = " << max_fitness << std::endl;
+    }
+        
+```
+        
+The important thing here (and the thing which you will likely need to edit for any custom experiment is this bit of code: 
+        
+        
+```cpp
+        
+          Genome::Head head = dm.Get<Genome::Head>(bits_trait);
+
+          double fitness = 0.0;
+          double total = 0.0;
+
+          while (head.IsValid()) {
+            fitness += head.ReadBit();
+            total += 1;
+          }
+
+          // If we were supposed to count zeros, subtract ones count from total number of bits.
+          if (count_type == 0) fitness = total - fitness; 
+```
+        
+After we generate the output, get its DataMap, and acquire the output DataMap from it, we have the actually unique part about the Evaluator.  We grab the Head from the output DataMap (remember, we put it there with the previous example Brain!) and then we compute and set the fitness.  You can start to see how any experiment you might want to run involving evolving a vector of bits towards a particular quality is practically trivial to write, since all you'd need to do is edit the few lines of code that actually calculate the fitness.  Trying out different Genomes, Brains, and configuations thereof on that problem is then incredibly easy, since each trial is simply a tweak of the config file.
 
 ## Tutorial - Creating and running a custom experiment using DynamicOrg
 
