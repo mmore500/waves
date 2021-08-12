@@ -145,7 +145,7 @@ At its core the ideas is that every web component has a protected constructor ac
 Public interfaces use [delegated construction](https://en.cppreference.com/w/cpp/language/constructor) to tap into this protected pipeline with the correct type of pointer.
 Using delegation prevents users from having to manage pointers explicitly.
 
-__Add diagram of this model.__
+![A model for construction and inheritance]({{ site.baseurl }}/assets/lemniscate8/more-prefab-tools-pipeline.png){:style="width: 100%"}
 
 Since this is an important issue and likely to come up again in the future I created a README for the prefab components and documented the method I used [here](https://github.com/devosoft/Empirical/tree/master/include/emp/prefab#inheritance).
 
