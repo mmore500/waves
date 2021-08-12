@@ -166,6 +166,7 @@ Here are a couple of things that you might find helpful when testing MABE2 files
     To get around this issue you can set up multiple Managers and first check things that won't add an error, and end with checking one thing that does throw an error. 
 
     One note for this: if the next thing you test should get rid of the error. For example: a module A requires that at least one other module of type B exists. First you check that adding a module A by itself throws and error. However, if your very next step is to add a module of type B, this should appease the manager, and the no error is thrown. In this case, the Manager can be re-used. 
+10. **Pointer Tracking:** An important part of testing is making sure destructors work correctly and delete pointers as needed. Empirical provides a pointer tracker which can be used with the macro `#include "emp/base/Ptr.hpp"`. Pointers can be tracked with the boolean function `emp::BasePtr<void>::Tracker().IsDeleted(<pointer>.id)`. To turn on pointer tracking, the test file must be compiled with the flags `-g` and  `-DEMP_TRACK_MEM`.
 
 <br/>
         
