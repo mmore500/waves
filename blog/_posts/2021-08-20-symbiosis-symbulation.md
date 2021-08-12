@@ -9,7 +9,11 @@
 - - - 
 
 ## Introduction to Symbiosis 
- Through the guidance of my mentor Anya, this summer I have worked on simulating symbiosis, the interaction between two organisms that are often referred as the host and its symbiont. While symbiosis has been simulated using Symbulation, the purpose of this project is to simulate symbiosis using the Empirical library in order to create and understand various types of symbiosis relationships while specificallly using the Avida complex genome to make the host and its symbionts. For this summer, we focused on being able to add symbionts to a host system which would then increase the count of a point system. The original idea is that if the host reaches a certain amount of points, it would then donate a point to the symbiont and if the symbiont reaches a certain amount of points, then the symbiont would donate a point to the host which would then be multiplied by three.
+  Through the guidance of my mentor Anya, this summer I have worked on simulating symbiosis; symbiosis is any type of close and long-term biological interaction between two different biological organisims which would be mutualistic, commensalistic, or parasitic. We can look at the movie _Finding Nemo_ (2003) for an example of symbiosis; the symbiotic relationship between an anemone and a clownfish is a classion one where both organisms benefit each other. The anemone provides the clownfish with shelter and protection, while the clownfish provides the anemone nutries in the form of waste and scares off potential predator fish. Symbiotic relationships are important because they are a major driving force of evolution. This networking and cooperation among species allows them to survive better than they would as individuals
+ 
+  While symbiosis has been simulated using Symbulation, the purpose of this project is to simulate symbiosis using the Empirical library in order to create and understand various types of symbiosis relationships while specificallly using the Avida complex genome to make the host and its symbionts.
+ 
+ For this summer, we focused on being able to add symbionts to a host system which would then increase the count of a point system. The original idea is that if the host reaches a certain amount of points, it would then donate a point to the symbiont and if the symbiont reaches a certain amount of points, then the symbiont would donate a point to the host which would then be multiplied by three.
 
 ---
 
