@@ -20,7 +20,7 @@ Along with the abstraction of organisms, we were also able to abstract away the 
   
 For comparison, this is the structure of MABE2 when using a DynamicOrg:
   
-![MABE2 structure](https://imgur.com/TCklKle)
+![MABE2 structure](https://i.imgur.com/TCklKle.png)
   
 To explain exactly what's going on here, we're going to go through Genomes, DynamicOrg, Brains, and then Evaluators.
 
