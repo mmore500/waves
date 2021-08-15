@@ -25,7 +25,7 @@ author: Tiffany-Ellen Vo
 ---
 
  ## Symbiosis Environment
- In order to create symbiosis, we need to create a host with symbionts and create a world to put them in. Header files for the world, host and symbiont were created in order to do so. These files were originally created by the last WAVES participant that worked with Anya, which were then built upon and edited for this summer. 
+ In order to create symbiosis, we need to create a host with symbionts and create a world to put them in. Header files for the world, host and symbiont were created in order to do so. These files were originally created by the [last WAVES participant][blogPost] that worked with Anya, which were then built upon and edited for this summer. 
 
   The constructors for each organism were edited to be up-to-date, which additional functions to add symbionts, which would then increase the count when simulating. 
 
@@ -79,3 +79,5 @@ Special thanks to my mentor, Anya Vostinar for guiding me throughout this summer
 
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+[blogPost]: http://mmore500.com/waves/blog/symbiosis-genomes.html
