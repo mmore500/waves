@@ -240,19 +240,120 @@ Before starting, we must first make a few decisions on the exact implementation 
 
 We will first write the Aagos brain. Our Aagos brain will be responsible for transforming the genome and starting positions into the N genes the evaluator will evaluate.
 
-![AagosBrain.hpp](https://i.imgur.com/KPOGi8M.png)
+```cpp
+        
+    class AagosBrain : public Brain {
+      protected:
+          emp::vector<emp::Ptr<Genome>> genomes;
+      public:
+        AagosBrain() {};
+        AagosBrain(const AagosBrain &) = default;
+        AagosBrain(const emp::vector<emp::Ptr<Genome>> & genomes_in) : genomes(genomes_in) { }
+        void process(emp::DataMap org_map) override {
+          size_t gene_size = 8;
+          emp::vector<emp::BitVector> genes(genomes[0]->GetSize());
+          for(size_t i = 0; i < genomes[1]->GetSize(); i++) {
+            emp::BitVector gene(gene_size); // create empty bit vector which will hold separated genes
+            gene.Clear(); // this function apparently only works for doubles right now, so I will manually set each bit to 0
+
+            size_t current_position = genomes[0]->ReadInt(i); // start current position at genes start position
+            for (size_t j = 0; j < gene_size; j++) {
+              if (genomes[1]->ReadBit(current_position)) { // copy bit out of bits at current_position into gene at j
+                gene.Toggle(j);
+              }
+              current_position++; // increase current position in genome
+              if(current_position == genomes[1]->GetSize()) { // if current_position goes out of range, reset to 0
+                  current_position = 0;
+              } 
+            
+            genes[i] = gene; // insert constructed gene into output vector
+        }
+        org_map.Get<emp::Ptr<Organism>>("organism")->SetVar<emp::vector<emp::BitVector>>(org_map.Get<std::string>("output_name"), genes);
+      }
+    };
+```
 
 Our brain receives a vector of pointers to Genomes, with the first in the list being our starting positions, and the second being the genome itself. From here its as simple as extracting all the genes from the genome, and then storing them in a vector of bit vectors that our evaluator will receive.
 
 Since Aagos fitness is calculated by comparing the N genes in an organism to the environment gene-targets, we will need to write an evaluator that does this. From our brain, we know we are receiving a vector of bit vectors representing the N genes. To make things simpler, our environment will ALSO consist of a vector of bit vectors.
 
-![EvalAagos.hpp](https://i.imgur.com/Kwvmgjt.png)
+```cpp
+        
+    void OnUpdate(size_t update) override {
+      emp_assert(control.GetNumPopulations() >= 1);
+
+      // every 'change_frequency', mutate the environment
+      if (update % change_frequency == 0) {
+        mutateEnvironment();
+      }
+
+      // Loop through the population and evaluate each organism.
+      double max_fitness = 0.0;
+      emp::Ptr<Organism> max_org = nullptr;
+      mabe::Collection alive_collect( target_collect.GetAlive() );
+      for (Organism & org : alive_collect) {        
+        // Make sure this organism has its bit sequence ready for us to access.
+        org.GenerateOutput();
+        // get genome from organism
+        const emp::vector<emp::BitVector> & gene_set = org.GetVar<emp::vector<emp::BitVector>>(bits_trait);
+        // start fitness at 0
+        double fitness = 0.0;
+        for (size_t i = 0; i < gene_targets.size(); i++) {
+            double matching_bits = 0.0;
+            for (size_t j = 0; j < gene_size; j++) {
+                if (gene_set[i][j] == gene_targets[i][j]) {
+                    matching_bits++;
+                }
+            }
+            double gene_fitness = matching_bits / gene_size;
+            fitness += gene_fitness;
+        }
+        fitness = (fitness / gene_targets.size()) * 100;
+
+        // Store the count on the organism in the fitness trait.
+        org.SetVar<double>(fitness_trait, fitness);
+
+        if (fitness > max_fitness) {
+          max_fitness = fitness;
+        }
+      }
+      std::cout << "Max " << fitness_trait << " = " << max_fitness << std::endl;
+    }
+```
 
 On every update of the evaluator, we mutate the environment gene-targets if necessary. We then simply compare each gene to each gene target. The fitness of our organism is simply the proportion of matching bits. For example, if our first gene is 01011101, and our first gene target is 01010001, then the fitness for that gene is 6/8. The total fitness is simply the sum of all gene matching proportions.
 
 The last and final step is to setup the config file.
 
-![DynamicAagos.mabe](https://i.imgur.com/QaF50ZM.png)
+```text
+        
+  TypedGenome<bool> bit_genome {  // Holds a genome of true/false
+    length = 32;                  // Length of genome
+    mut_prob = 0.003;             // Chance for a mutation to occur
+    init_random = 1;              // Should we randomize ancestor?  (0 = all zeros)
+  }
+  TypedGenome<int> int_genome {   // Holds a genome of ints
+    length = 8;                   // Length of genome
+    min_val = 0;                  // Minimum value for specific int
+    max_val = bit_genome.length;  // Maximum value for specific int
+    mut_prob = 0.003;             // Chance for a mutation to occur
+    init_random = 1;              // Should we randomize ancestor?  (0 = all min value)
+  }
+  AagosBrain aagos_brain {        // Splits a TypedGenome<bool> into num_genes genes using a TypedGenome<int> that represents start positions
+    num_genes = int_genome.length;// Number of genes to create
+    gene_size = 8;                // Size of each gene
+    genomes = "bit_genome,int_genome";// Genomes AagosBrain will work with
+  }
+  EvalAagos eval_ag {             // Evaluate a genome by its proportion of bits matching the gene targets.
+    target = "main_pop";          // Which population(s) should we evaluate?
+    bits_trait = "bits";          // Which trait stores the bit sequence to evaluate?
+    fitness_trait = "fitness";    // Which trait should we store NK fitness in?
+  }
+  DynamicOrg aagos_org {          // Dynamic organism that can take any number of genomes and brains.
+    genomes = "bit_genome,int_genome";// Types of genomes to use.
+    brains = "aagos_brain";       // Types of brains to use.
+  }
+```
 
 We first initialize a TypedGenome<bool> and TypedGenome<int> as our primary genomes, and setting their values accordingly. Next we initialize the AagosBrain, passing it the genomes it needs to evaluate, followed by our evaluator EvalAagos. Then we just plug everything into DynamicOrg.
     
