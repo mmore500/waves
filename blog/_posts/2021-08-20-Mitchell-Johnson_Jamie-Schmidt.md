@@ -1,20 +1,20 @@
 ---
 layout: post
-date: 2021-07-31
+date: 2021-08-20
 author: Mitchell Johnson & Jamie Schmidt
 ---
 
 ### Development of MABE2
 
 ## Introduction
-
-To quote the [Github for MABE2](https://github.com/mercere99/MABE2), MABE is a software framework deigned to easily build and customize software for evolutionary computation or artificial life.  The resulting systems should be useful for studying evolutionary dynamics, solving complex problems, comparing evolving systems, or exploring the open-ended power of evolution.  
+:alien:
+To quote the [Github for MABE2](https://github.com/mercere99/MABE2), "MABE is a software framework deigned to easily build and customize software for evolutionary computation or artificial life". The resulting systems should be useful for studying evolutionary dynamics, solving complex problems, comparing evolving systems, or exploring the open-ended power of evolution.  
 
 MABE, accessible [here](https://github.com/Hintzelab/MABE/wiki), stands for Modular Agent-Based Evolution and was one of the first true digital evolution frameworks.  It was structured in this fashion:
 
 ![MABE structure](https://github.com/Hintzelab/MABE/wiki/images/MABE_Overview.png)
 
-and, though powerful, could of course be improved.  The creation of the 2.0 version of MABE, called MABE2, was the focus of our project.  Our main focus was on refining the underlying architecture of MABE to be more end user-friendly, particularly in designing custom experiments.  The culmination of our efforts was in the creation of DynamicOrg, an Organism which was near-completely abstracted to allow for any combination of Genomes and Brains, as assigned through the config file.
+Though powerful, could of course be improved.  The creation of the 2.0 version of MABE, called MABE2, was the focus of our project.  Our main focus was on refining the underlying architecture of MABE to be more end user-friendly, particularly in designing custom experiments. **The culmination** of our efforts was in the creation of DynamicOrg, an Organism which was near-completely abstracted to allow for any combination of Genomes and Brains, as assigned through the config file.
 
 Along with the abstraction of organisms, we were also able to abstract away the inner workings of genomes and brains into a TypedGenome<type> and a BasicBrain. All of these abstractions remove many technical pre-requisites that users were required to have before using MABE2. Because of this, not only are far fewer steps involved when setting up an experiment, but it also takes much less time, since the majority of designing a simple experiment should be simple plug-and-play.
   
@@ -25,6 +25,7 @@ For comparison, this is the structure of MABE2 when using a DynamicOrg:
 To explain exactly what's going on here, we're going to go through Genomes, DynamicOrg, Brains, and then Evaluators.
 
 ## Genomes / author: jamie
+:grinning:
 Genomes in MABE2 are just repositories of mutable information.  The most basic kinds are vectors of some type, and (unlike in MABE), they aren't hidden inside Organisms which manage everything about them, but they are actively added to them and manage themselves.  This means that to mutate a Genome, any Genome, the Organism just tells the Genome to mutate itself and the Genome does.  No longer will the Organism run all the mutation functions itself, now it just delegates.  This, critically, means that Organisms now no longer need to know what kinds of Genomes they have at all.
 
 Genomes in MABE2 are also accessed differently -- regardless of what type the Genome is, it can be read from and written to as if it were made of doubles, ints, bytes, or bits.  They can also be read from and written to in bulk, and they can be "scaled", where what you see is automatically scaled to whatever the Genome's actual range of values is.  
@@ -71,6 +72,7 @@ The most important part of a Genome is the mutate function.  Here's an example o
 Naturally, there are many more ways to mutate a Genome, particuarly if the Genome is a vector of integers or doubles.  If you want to make a Genome that mutates in a particular fashion, this is the way you'll have to go about it. 
 
 ## DynamicOrg / author: mitchell and jamie
+:cowboy_hat_face:
 In MABE2, an Organism can be thought of as a box which contains some number of Genomes and some  number of Brains.  An Organism has three main functions: 
 1. An Organism needs to be able to copy itself to form one or more children.
 2. An Organism needs to be able to mutate itself in some way for evolution to happen.
@@ -108,7 +110,7 @@ The most important part of DynamicOrg is GenerateOutput().
 Though it may look very simple, in fact it tells you exactly what goes on in Brains and Evaluators.  Essentially, the Brains get sent a DataMap of the Genomes, the DynamicOrg's own DataMap, an output DataMap, and (not seen here) the output name.  Then, each Brain builds itself (which most Brains don't do) and then processes the data.  Each Brain writes its outputs to the output DataMap, which each Brain can also read from as well, allowing for communication of a kind.  Critically, this output DataMap is the only thing the Evaluator gets, and so is the only part of the DynamicOrg which it can see.
   
 ## Brains / author: jamie
-
+:brain:
 Brains are the processors of all the Genomes in an Organism.  They are only ever accessed through their process function, which takes an emp::DataMap and then processes all the relevant information.  In DynamicOrg in particular, they are all given a DataMap containing the Genomes in the DynamicOrg, and as each Brain will know which Genomes matter for its calculations, it will then access those Genomes, process them, and write its output to the DataMap.
   
 The Brain will be configured with the names of the Genomes it works with, along with the name of its output.  This means that you can make identical Brains which still deal with different Genomes and write their outputs to different addresses in the DataMap.  
@@ -130,7 +132,7 @@ The most important part of a Brain is the process() function.
 This is a very simple Brain: it takes the first Genome associated with it and returns a Head to that Genome, writing it in the output DataMap with the same name that the output DataMap is written in the DynamicOrg's DataMap.  This is the "default" brain, which is useful for any experiment where you want to give the Evaluator an entire Genome. 
   
 ## Evaluators / author: jamie
-  
+:mechanical_arm:
 An Evaluator is, perhaps, the thing most users will spend the most time with for their custom experiments.  In any evolutionary situation, Organisms will need to be evaluated on whatever traits they are supposed to be evolving, and the Evaluator assigns their fitness value from whatever outputs the Brains provide.  
   
 When coding an Evaluator, the most important thing is to make sure that, for whatever inputs your evaluate function requires, you've got Brains that can supply it.  They're configured in the same way that Brains and Genomes are, by being given a list of input names that correspond to the types that the Evaluator is expecting.
@@ -190,7 +192,7 @@ And here's an example of those exact steps, for a very simple Evaluator that jus
         
 ```
         
-The important thing here (and the thing which you will likely need to edit for any custom experiment is this bit of code: 
+The important thing here (and the thing which you will likely need) to edit for any custom experiment is this bit of code: 
         
         
 ```cpp
@@ -212,13 +214,13 @@ The important thing here (and the thing which you will likely need to edit for a
 After we generate the output, get its DataMap, and acquire the output DataMap from it, we have the actually unique part about the Evaluator.  We grab the Head from the output DataMap (remember, we put it there with the previous example Brain!) and then we compute and set the fitness.  You can start to see how any experiment you might want to run involving evolving a vector of bits towards a particular quality is practically trivial to write, since all you'd need to do is edit the few lines of code that actually calculate the fitness.  Trying out different Genomes, Brains, and configuations thereof on that problem is then incredibly easy, since each trial is simply a tweak of the config file.
 
 ## Tutorial - Creating and running a custom experiment using DynamicOrg
-
-Aagos (Auto-Adaptive Genetic Organization System), is a digital evolution experiment designed to show how high and low environmental change promote the evolution of segregated or non-segregated genes. It consists of N K long genes in a circular genome that can undergo insertion/deletion/in-place mutations, as well as gene move mutations. When a gene move mutation occurs, the gene randomly picks a new starting position in the genome. There is a maximum and minimum length the genome can grow/shrink to, and fitness is calculated by comparing the N genes to a set of gene targets that act as the environment. As a demonstration of DynamicOrg and its usefulness, we will show the steps involved in implementing Aagos using DynamicOrg.
+:robot:
+Aagos (Auto-Adaptive Genetic Organization System), is a digital evolution experiment designed to show how high and low environmental change promote the evolution of segregated or non-segregated genes. It consists of N K-long genes in a circular genome that can undergo insertion/deletion/in-place mutations, as well as gene move mutations. When a gene move mutation occurs, the gene randomly picks a new starting position in the genome. There is a maximum and minimum length the genome can grow/shrink to, and fitness is calculated by comparing the N genes to a set of gene targets that act as the environment. As a demonstration of DynamicOrg and its usefulness, we will show the steps involved in implementing Aagos using DynamicOrg.
   
 Below is a list of possible steps a user could take when implementing a custom experiment. For Aagos, only steps 1, 2 and 3 are required.
   1. Write the Evaluator. (almost always necessary)
       - Set up the config.
-      - Write the fitness calculator in OnUpdate from the emp::DataMap the Organism provides after org.GenerateOutput().
+      - Write the fitness calculator in OnUpdate from the emp::DataMap the Organism provides after GenerateOutput function is called
       - Confirm that the outputs of the Brains in the DynamicOrg are properly configured with the Evaluator. 
   2. Write the Brain. (often necessary)
       - Set up the config.
@@ -359,7 +361,7 @@ We first initialize a TypedGenome<bool> and TypedGenome<int> as our primary geno
     
 
 ## Conclusion
-  
+:frog:
 From these steps, it is clear that the end user can more easily and more efficiently create custom experiments to suit nearly any research goal.  Where previously almost any experiment would have required significant editing of numerous files, now most experiments can be completed simply by creating a new Evaluator and editing the config file.  In addition, experiments involving trying different forms of evolution to solve the same problem are made drastically easier, as the only difference between those experiments would be in the config files.  Finally, the more modular nature of this new framework lends itself very well to collaboration, where a Brain one person makes could easily be used in another person's Evaluator and, with how Genomes are so standardized by Genome::Head, using a new Genome type in the place of a more basic Genome would be trivial.
 
 Before our work, it took an average of 6 steps in about 30 minutes of coding to create a completely custom experiment. On top of that, to achieve that speed, you would need deep C++ knowledge, experience using the Empirical library, and a good understanding of how genomes and brain are represented in code. After our work, as stated above, an experiment can be created in as little as two steps, with a maximum of 3 steps. Those steps being creating a custom evaluator, creating a custom brain, and then simply plugging everything together in the config file.
@@ -367,7 +369,7 @@ Before our work, it took an average of 6 steps in about 30 minutes of coding to 
 In short, our work has greatly simplified the end user experience and streamlined the research process for all who would use MABE2 in the future. 
 
 ## Future plans / Work we didn't complete
- 
+:whale:
 Unfortunately, we simply did not have the time to do everything we wanted.  As such, these are the remaining issues:
   
   1. The config system for Brains and Genomes does not yet work.  The structure should be similar to how Organisms are, with each Genome having a name and the various pertinent values (such as mutation rate and min/max values) and each Brain having a name, the names of the Genomes it will use, and whatever stats it will have (such as Markov Brains needing the size of their gates and all Brains having the name of their outputs).  
@@ -395,3 +397,5 @@ Charles Ofria and Cliff Bohm conceived and planned the idea of DynamicOrg. They 
 Jamie Schmidt wrote the sections on Brains, Genomes, Evaluators, and Introduction. Mitchell Johnson wrote the sections on Tutorial using DynamicOrg, and Conclusion. Jamie Schmidt and Mitchell Johnson worked together on sections Future plans, and DynamicOrg.
 
 Thank you to our amazing mentors!
+
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
