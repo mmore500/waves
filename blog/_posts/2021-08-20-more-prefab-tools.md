@@ -9,10 +9,10 @@ Prior to learning of [Empirical](https://github.com/devosoft/Empirical), a libra
 Thanks to [emscripten](https://emscripten.org/), it _is_ possible turn your C++ into WebAssembly to run quickly in the browser.
 With this framework, it becomes simple to turn a C++ command line tool into web application.
 Running scientific software on the web has enormous potential to expand reach and engage the public since literally anyone can replicate your results and play with experimental conditions.
-However, just because something can run on the web does not mean it will work well.
-Developing a graphical user interface is a lot more work than making a command line one.
+However, just because something can run on the web does not make it a _web application_.
+Developing a graphical user interface is a lot more work than making a command line interface.
 
-To expedite porting from command line to browser, Empirical adds in simple components like divs, spans, and buttons and more complicated controls like a whole configuration panel for managing settings.
+To expedite porting from command line to browser, Empirical adds in simple components like divs (for <em>div</em>iding up web content), spans (for placing and styling text), buttons and more complicated controls like a whole configuration panel for managing settings.
 Since these components are created and managed in C++ they can provide an graphical user interface to manage the execution of preexisting code.
 We call these components "prefabricated web tools" and they have be developed using the open source front-end toolkit, [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/).
 My predecessor Sarah Boyd developed a large number of components and you can read about her work [here]({{ site.baseurl }}/blog/prefab-tools.html).
@@ -20,7 +20,7 @@ I took up the torch this summer to add to this previous work!
 
 ## Goals
 The goal of the project this summer was to enhance existing prefabricated components and to create new ones.
-In addition, some prefabricated components had issues which needed to be addressed (:bug:).
+In addition, some prefabricated components had issues which needed to be addressed (:bug:) or challenges (:lemon:).
 The following [issue](https://github.com/devosoft/Empirical/issues/334) listed some components to develop and along the way we thought up some more (:bulb:)! This [issue](https://github.com/devosoft/Empirical/issues/444) contains the most current list of project ideas for prefab components.
 
 #### "It will be simple," they said, "a button", they said
@@ -73,13 +73,16 @@ The next issue we tackled was a strange bug with the `ConfigPanel`.
 
 This indicated that something was going wrong with our memory management.
 The problem was a rather subtle one, while the `ConfigPanel` _was_ a div, it also _had_ a div.
-Like Dr. Jekyll and Mr. Hyde caught mid transformation the `ConfigPanel` was caught trying to be two things at once, a class to setup a div :hammer_and_wrench: and a div with some extra frills :ribbon:.
+Like Dr. Jekyll and Mr. Hyde caught mid transformation the `ConfigPanel` was caught trying to be two things at once, a class to setup a div (:hammer_and_wrench:) and a div with some extra frills (:ribbon:).
 The result was that when time came to add the component to the document object model (DOM), the inner shell member div was properly placed and the outer shell destructed, but the inner shell kept references to the outer.
 
 :exclamation: And since the outer shell didn't exist at that point things were seriously borked. :exclamation:
 
 Keeping the component global kept the outer shell in existence past the end of `main` which is why the component could function.
 Once the problem was identified it wasn't to hard to fix its identity crisis.
+
+:butterfly: __Solution__:
+
 To align its behavior with other components, I eliminated the internal div and made sure users have to stream the entire component into the document.
 I also made sure that lambda expression capture by copy any components they need to keep around.
 Since Empirical web components are really just interfaces around a protected shared pointer this keeps access to the shared pointer with little overhead and prevents dangling references inside the lambda.
@@ -87,6 +90,19 @@ In addition, the alterations provided the opportunity to break the component int
 
 ![A "refactor all the things" meme]({{ site.baseurl }}/assets/lemniscate8/more-prefab-tools-refactor.png){:style="width: 100%"}
 *I had to be a little careful not get too carried away*
+
+I also wrote a reload button that refreshes the page and injects any settings the user has supplied through the config panel.
+This allows the user to easily restart an application, much like rerunning a program on the command-line.
+An added bonus is that you can then copy the URL which will contain your simulation settings.
+This of course has lead to more ideas for config panel buttons/features.
+
+:bulb: __Save button__: a button to save configuration settings as a `.cfg` file.
+
+:bulb: __Clipboard button__: a button to copy the URL to this simulation w/ settings to the clipboard.
+
+:bulb: __Apply settings__: a way to initiate file selection for a `.cfg` file with settings to load.
+
+All the ideas for prefab components can be found in this [issue](https://github.com/devosoft/Empirical/issues/444) on GitHub!
 
 #### ReadoutPanel: Live Variables in the Limelight
 As a counterpart to the configuration panel, Matthew suggested making a component that could display values live from a simulation.
@@ -109,11 +125,11 @@ OuterFunc(VALUE_TYPES && ... others) {
   InnerFunc(std::forward<VALUE_TYPES>(others)...);
 }
 ```
-The `...` is one component of a parameter pack expansion which allows the `forward` function to be applied to each argument individually. Again, pretty nifty stuff!
+The ellipses (`...`) in the inner function indicates a parameter pack expansion which allows the `forward` function to be applied to each argument individually. Pretty nifty stuff!
 
 ## Some Takeaways
 Having worked on projects from fixing small bugs to writing entire components, I've been able to see a good portion of Empirical's web framework.
-I'm really excited for where things are going and want to try and want leave things in a good state for the next person to work on this code base.
+I'm really excited for where things are going and want to leave things in a good state for the next person to work on this code base.
 As such, here are some ideas and principles I've come across or come up with when working on this project.
 
 #### Modularity is King, Specialization is Queen
@@ -129,7 +145,7 @@ While these components are not much use on their own to an Empirical user, they 
 
 In addition, it was helpful to realize that not only are we making components for end users, but we can also make them for ourselves as developers to make the job easier. Modularity also helps with testing since breaking into smaller components that could be individually tested eliminated redundancies in the `ConfigPanel`'s unit tests.
 
-However, building components out of others isn't enough because sometimes we just need a souped up version of a component :racing_car: with new features that we can't get by just adding other components.
+However, building components out of others isn't enough because sometimes we just need a souped up version of a component (:racing_car:) with new features that we can't get by just adding other components (:car:).
 However, until recently we didn't have prefab components inheriting from other prefab components; everything was just one step in inheritance above a simple web component.
 The `ReadoutPanel`'s development was complicated by being derived from another prefab component.
 When I modified the `Card` class, I include an "on toggle" handler.
@@ -138,7 +154,8 @@ Empirical web components are really just interfaces around a protected shared po
 When components are streamed into the global `Document` instance, they are registered which will keep the `info` pointer from being destructed.
 To keep the "on toggle" function around and modifiable it need to be on the `info` member, a shared pointer that holds information about the a `Card` instance.
 This required that I make a custom class with the "on toggle" function `CardInfo` that is derived from `DivInfo`.
-However, when the `ReadoutPanel` needed to have its own custom members with an "on toggle" function and a list of divs to refresh.
+The `ReadoutPanel` also needed to have its own custom members with an "on toggle" function and a list of divs to refresh.
+
 However, there was no clear way to get both these properties attached to the panel without wiping out the existing `Card` structure as a side effect (and also possibly creating memory leaks).
 To fix the problem, we had to come up with a model for inheritance and construction when you've got an interface wrapped around a shared pointer.
 At its core the ideas is that every web component has a protected constructor accepting a raw `info` pointer and which may call a [derived constructor](https://en.cppreference.com/w/cpp/language/derived_class) if it is inheriting from another component.
@@ -161,17 +178,25 @@ Rather than creating a whole new prefab component, Empirical could simply provid
 In a similar way, `@media` queries are a great way to make dramatic changes a page's main layout or hide/show components without the costs of altering component hierarchies programmatically.
 In the end I've been pleasantly surprised with how many tricky programing problems can be avoided via artful CSS.
 
+:bulb: __Layout classes__: make some CSS classes for standard responsive layouts.
+
+:bulb: __Grid guides__: make Bootstrap's grid classes more accessible through some [sort of interface](https://github.com/devosoft/Empirical/issues/441).
+
 ## Thoughts on the Future
 Several challenges exist on the horizon for Empirical's prefabricated web tools.
 First, upgrading past Bootstrap v4 to v5 seems to break styling for a few components.
 This is unfortunate since Bootstrap v5 levelizes button and input groups, making them easier to construct and adds new components such as [offcanvas](https://getbootstrap.com/docs/5.1/components/offcanvas/) which is a fantastic place to put items when there is limited space on the page (i.e. on a mobile device).
+
 Second, there are plans to build the next version of Avida with some of these prefabricated web tools.
 The web components are based on Bootstrap, which is developed with mobile-first responsive design philosophy, where as Avida has traditionally had desktop application look-and-feel.
 Since nowadays the majority of people expect a web page to function on their mobile device and we are already using Bootstrap, it would be valuable to consider what opportunities might be afforded by developing future tools with mobile viewport in mind.
-In addition, a modernized style would likely be appealing to younger generations which would greatly benefit the next generation of Avida-ED.
+In addition, a modernized style would likely be appealing to younger generations which would benefit outreach using the next generation of Avida-ED.
 
 ## Acknowledgements
+I'd like to thank my mentor, Matthew Andres Moreno, for his support and guidance on this project.
+He's also done a great job leading the whole program!
+:clap: :clap: :clap:
+
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563).
 Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
-I'd also like to thank my mentor, Matthew Andres Moreno, for his support and guidance on this project.
