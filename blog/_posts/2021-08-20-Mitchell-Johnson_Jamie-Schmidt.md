@@ -375,19 +375,19 @@ In short, our work has greatly simplified the end user experience and streamline
 Unfortunately, we simply did not have the time to do everything we wanted.  As such, these are the remaining issues:
   
   1. The config system for Brains and Genomes does not yet work.  The structure should be similar to how Organisms are, with each Genome having a name and the various pertinent values (such as mutation rate and min/max values) and each Brain having a name, the names of the Genomes it will use, and whatever stats it will have (such as Markov Brains needing the size of their gates and all Brains having the name of their outputs).  
-    - This is the desired form of DynamicOrg and is really the key to making it as seamless as possible. It allows most of the users work to be done inside the config file instead of in C++.
+        - This is the desired form of DynamicOrg and is really the key to making it as seamless as possible. It allows most of the users work to be done inside the config file instead of in C++.
   2. Brains should be implemented to actually use this information.
-    - Brains should have their own parameters and settings that appear in the config file.
+        - Brains should have their own parameters and settings that appear in the config file.
   3. BasicBrains, MarkovBrains, and TypedGenomes should all be put in their own files.
-    - For organizational purposes.
+        - For organizational purposes.
   4. The MarkovBrain should be properly tested and the hardcoded values should be made easily configurable via the config file.
-    - Similar to issue 1, it should work in the config file.
-  5. As part of item 4, GenomeManager and BrainManager classes should be created to act as OrganismManagers do for Genomes and Brains.  Ideally, these would all be turned into one big Manager class.
-    - This is how issue 1 will be achieved, through the implementation of a generic manager class so that essentially any type can be placed into the config system.
-  6. The more complicated mutation types should be added to TypedGenome with configuration options to set the rate for each of them.
-    - Genomes should be highly customizable to allow highly custom experiments to be run. We want to keep the user out of the C++ code as much as possible.
-  7. More Brain types should be added by default.
-    - We currently only have BasicBrains and MarkovBrains, more should be included so that users have to do as little work as possible.
+        - Similar to issue 1, it should work in the config file.
+  6. As part of item 4, GenomeManager and BrainManager classes should be created to act as OrganismManagers do for Genomes and Brains.  Ideally, these would all be turned into one big Manager class.
+        - This is how issue 1 will be achieved, through the implementation of a generic manager class so that essentially any type can be placed into the config system.
+  7. The more complicated mutation types should be added to TypedGenome with configuration options to set the rate for each of them.
+        - Genomes should be highly customizable to allow highly custom experiments to be run. We want to keep the user out of the C++ code as much as possible.
+  8. More Brain types should be added by default.
+        - We currently only have BasicBrains and MarkovBrains, more should be included so that users have to do as little work as possible.
   
 ## Acknowledgements
 
