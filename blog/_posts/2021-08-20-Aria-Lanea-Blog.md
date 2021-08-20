@@ -138,7 +138,7 @@ Here are a couple of things that you might find helpful when testing MABE2 files
 7. :bangbang: **Testing Asserts:** In almost every file we wanted to be able to test that asserts had been thrown when expected. However, asserts typically terminate a program, making this difficult. Luckily, Empirical has a file that implements a "non-terminating assert trigger" which is perfect for unit testing. All we had to do was use the macro `#define EMP_TDEBUG` and the boolean `emp::assert_last_fail`.
 
     ```cpp
-    emp::assert_clear();            // reest the boolean
+    emp::assert_clear();            // reset the boolean
     error00.AsDouble();             // intended to trigger an assert
     REQUIRE(emp::assert_last_fail); // make sure assert is triggered
     ```
