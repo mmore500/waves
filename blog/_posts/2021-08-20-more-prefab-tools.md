@@ -195,6 +195,13 @@ The web components are based on Bootstrap, which is developed with mobile-first 
 Since nowadays the majority of people expect a web page to function on their mobile device and we are already using Bootstrap, it would be valuable to consider what opportunities might be afforded by developing future tools with mobile viewport in mind.
 In addition, a modernized style would likely be appealing to younger generations which would benefit outreach using the next generation of Avida-ED.
 
+## BEACON Congress
+I gave a brief talk about some of Empirical's prefab components at the 2021 BEACON Congress which used [Reveal.js](https://revealjs.com/) and was made possible with the URL query parsing done by the config panel.
+I hope it's useful resource for anyone trying to show off an Empirical application live in a talk.
+You can find the slides here: [https://github.com/lemniscate8/waves-prefab-presentation](https://github.com/lemniscate8/waves-prefab-presentation), and the demo here: [https://github.com/lemniscate8/waves-prefab-demo](https://github.com/lemniscate8/waves-prefab-demo).
+The demo uses [Empirical's cookiecutter project](https://github.com/devosoft/cookiecutter-empirical-project) which is a great way to get started with Empirical.
+
+
 ## Acknowledgements
 I'd like to thank my mentor, Matthew Andres Moreno, for his support and guidance on this project.
 He's also done a great job leading the whole program!
