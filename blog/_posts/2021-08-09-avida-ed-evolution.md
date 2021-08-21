@@ -17,189 +17,135 @@ Objectives
 Dragbars : The New Way to Raise the Bar (Get it?)
 --
 Wow, it was harder than I thought.
-   Honestly, the way I think about web pages in general changed tremendously working on this project. I was constantly astounded by, and am still being astounded by the variety of ways JavaScript, and JQuery, and the dollar signs (who knew that $ had so many meanings) and various Javascript libraries confuse each other! and give me frustration! but allow me to do magic on the page at the end :) And yes, something as simple as a dragbar, is rather complicated in its inner workings! 
+   Honestly, the way I think about web pages in general changed tremendously working on this project. I was constantly astounded by, and am still being astounded by the variety of ways plain JavaScript, JQuery, and the dollar signs (who knew that $ had so many meanings) and various other Javascript libraries are similar and yet at times frustratingly incompatible with each other. In the end, however, they coped with me to do magic on the page. :) In addition, I learned the precious lesson that I should not take even something as simple as a dragbar for granted! 
    
-Steps I took to implement it:
-1. I realized Avida-ED is a pretty big project (kudos to Diane!). I had to spend a few days simply looking at the code (literally) to get my eyes adjusted to all the namespaces and file structure!
-2. I was tasked with creating the dragbars at first. I've never done that. Where should I start?
-3. I made a proof of concept, sandbox type website to experiment with different components and mock up a dragbar.
-4. I copied, pasted, modified my poc dragbar into the codebase, and tweaked a lot of things (it turned out) to make it actually compatible with the rest of the Avida-ED code and layout (Hello, maquetta grid!).
+Steps I took to implement a Dragbar:
+1. Avida-ED is a pretty big project (kudos to Diane for developing it this far!). I had to spend a few days simply looking at the code (literally) to get my eyes adjusted to all the namespaces and file structure!
+2. I was tasked with creating the dragbars at first. I've never done that. Where do I start?
+3. I made a proof of concept, sandbox type website to experiment with different web components, and mocked up a dragbar (mostly for my sanity).
+4. I copied, pasted, and modified my poc dragbar into the codebase, and tweaked a lot of things (as it turned out) to make it actually compatible with the rest of the Avida-ED code and layout (Hello, maquetta grid!)
 
 This might be a great time to bring up..
 
 ### The Importance of Proof of Concept
    #### (Image of Proof of Concept)
-   What I learned is that, if you ever run into a situation where you don't know what the heck is going on in the codebase, and you don't know where to start? Do a proof of concept, it will save you big time. First, it is a great chance for you get yourself familiar with the Javascript functions that will be handy for your task. Second, it is a medium to communicate to stakeholders or your mentors what you are working on and how you plan on implementing the component onto the actual website. And lastly, and perhaps most importantly, it gives you a template, a kind of jumping off point to get you going (and with confidence) when you actually touch the codebase. Fear not! 
+   What I learned is that, if you ever run into a situation where you don't know what is going on in the codebase, and you don't know where to start? Do a proof of concept, it will save you big time. First, whipping up a proof of concept is a great chance for you get yourself familiar with the Javascript functions that will be handy for your task. Second, it is a medium to articulate to stakeholders or your mentors what you are working on and how you plan on implementing the component onto the actual website. And lastly, and perhaps most importantly, it gives you a template, a kind of jumping off point to get you going (and with confidence) when you do finally touch the codebase. Fear not! 
 
-When you do actually start working on the code though..
+When you start working on the code though..
 
 ### Approach code like a surgeon 
-What I mean by that is, my honest impression of working on the codebase was me constantly feeling like I was making small incisions in the code to insert whatever solution I had to offer the website (in this case, a dragbar). Like all beginner programmers, I was fearful. What if I break something really bad, and I mess something up, and the world comes to an end? (right...) Anyhow, I was always careful what I tweak and how I tweak it. I am a forgetful person, too. So I left a bunch of "yemi:(comment)" comments where I was changing anything, first leaving some breadcrumbs for me to pick back up if I do end up breaking something, and second to communicate to Diane what I was changing and why I was changing it, so if I do break something, she can at least follow what I was doing to perhaps offer up some higher level insight..(thank you, Diane!) But I learned that, if you approach code like a surgeon, and be very aware of every change you make precisely, you will save much energy later down the road where you need to back track not knowing where you messed up if you do (and you most likely will!) 
+What I mean by that is, my honest impression of working on the codebase was me constantly feeling like I was making small incisions in the code to insert whatever solution I had to offer the website (in this case, a dragbar). Like all beginner programmers, I was fearful. What if I break something really bad, and I mess something up, and the world comes to an end? (right...) Anyhow, I was always careful about what I was tweaking and how I was tweaking it. I am a forgetful person, too. So I left a bunch of "yemi:(comment)" comments where I was changing anything, first of all to leave some breadcrumbs for me to pick back up if I do end up breaking something, and second to communicate to Diane what I was changing and why I was changing it, so in the worst case scenario, she could at least follow what I was doing to perhaps offer up some higher level insight..(thank you, Diane!) But I learned that, if you approach code like a surgeon, and are very aware of every change you make precisely, you will save much energy later down the road when you likely will be scrutinizing the code for the insidious mistake that are not the most pleasant to search for! 
 
-### (Possibly essential code snippets)
+After a while, I was done implementing dragbars. It was time for me to discover..,
 
-Still working on it!
-
-Dragula, the New Way to Drag and Drop (perhaps a more clever title)
+Dragula, the New Way to Drag and Drop 
 -- 
-It was a web of dependencies from which I knew no escape. And then, I saw the light. Its name was 'Dragula: Drag and Drop So Easy It Hurts," and yes I was hurt. It was thanks to Raheem, a participant who worked on the Avida-ED project before me, who did his dilligent research looking for the best drag and drop library to support the next generation of Avida-ED. His very neat proof of concept website was very helpful(see? it does help!). Turns out, drag and drop forms the foundation of all actions on Avida-ED. I was ambitious, and Diane was patient!
+It was a web of dependencies from which I knew no escape. 
+
+And then, I saw the light. Its name was 'Dragula: Drag and Drop So Easy It Hurts," and yes I was hurt. It was thanks to Raheem, a participant who worked on the Avida-ED project before me, who did his dilligent research looking for the best drag and drop library to support the next generation of Avida-ED. His very neat proof of concept website was very helpful for me to get onboarded (see? it does help!). Turns out, drag and drop forms the foundation of all actions on Avida-ED. I was ambitious, and did not exactly see what was coming ahead of me. But it was all for good.
 
 # The Deets
 
 Implementing Features
 --
-### Final Product
+### Final Product Overview
+---
 * dragbar
+
 ![dragbar](https://media.giphy.com/media/bGGKFk6sefEcGEN1XW/giphy.gif)
 
 * drag and drop
+
 ![drag and drop](https://media.giphy.com/media/Dyrnna2ZsOpSX3wqZh/giphy.gif)
 
-## (Some code for...see descriptions below)
+### Code
 
-#### Dragbars
-----
-* Some mouse coordination
+#### **DISCLAIMER**: The following code snippets may not be coherent pieces of code within the actual codebase. They are in order, just not guaranteed to be strictly next to each other.
+---
+#### **Dragbars**
+
+`resizePageParts.js`
+
 ```Javascript
-/* yemi: functions for left dragbar */
 function dragbarLeftResize() {
-  console.log('navColID=', parseInt($('#navColId').css("min-width")));
-  var dragging = false;
-
-  /* yemi: when there's a mousehover over dragbar, dragbar changes color */
-  $('#dragbarLeft').on('mouseover touchstart', function(e) {
-    $('#dragbarLeft').css('background-color', 'blue');
-  });
-
-  $('#dragbarLeft').on('mouseout touchend', function(e) {
-    $('#dragbarLeft').css('background-color', 'gray');
-  });
-
-  $('#dragbarLeft').on('mousedown touchstart', function(e) {
-    dragging = true;
-    
-    $(document).on('mousemove touchmove', function(e){
-      av.grd.drawGridSetupFn(); // yemi: redraw the grid
-      
-      // yemi: need to account for both touch and mouse event
-      var x;
-      if(e.type == 'touchmove'){
-        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        x = touch.pageX;
-      } else if (e.type == 'mousemove') {
-        x = e.pageX;
-      }
-
-      /* yemi: on mouse move, dragbar changes color */
-      $('#dragbarLeft').css('background-color', 'blue');
-
-      var rightSideWidth = $('#rightInfoHolder').css("width");
-      var rightSideWidthNum = parseInt($('#rightInfoHolder').css("width")); /* yemi: extract only the number */
-      var widthAvailable = window.innerWidth - rightSideWidthNum - 6; /* yemi: hard-coded 400px (right panel) 6px (left dragbar + right dragbar), need to fix */
-      var percentage = (x / widthAvailable);
-      var widthOfNav = widthAvailable * percentage;
-
-
-      /* yemi: if the width of the user's cursor is smaller than the minimum width of the navigation column, choose the minimum width */
-      if (widthOfNav < parseInt($('#navColId').css("min-width"))) {
-        widthOfNav = 0; /* yemi: if width too small, collapse it*/
-        IS_LEFT_CLOSED = true;
-      } 
-      /* yemi: if thhe width of the user's cursor is larger than the maximum width of the navigation column, choose the maximum width */
-      else if (widthOfNav > parseInt($('#navColId').css("max-width"))) {
-        widthOfNav = parseInt($('#navColId').css("max-width"));
-        IS_LEFT_CLOSED = false;
-      }
-      else {
-        IS_LEFT_CLOSED = false;
-      }
-
-      /* yemi: when modifying the column sizes, need to modify all three layouts */
-      var population_colInfo = widthOfNav + "px 3px " + "auto 3px " + rightSideWidth;
-      var organism_colInfo = widthOfNav + "px 3px " + "auto 3px " + rightSideWidth;
-      var analysis_colInfo = widthOfNav + "px 3px auto";
-      $('.all2lft').css("grid-template-columns", analysis_colInfo); /* yemi: you need to resize again on the analysis page to resize it correctly */
-      $('.all3pop').css("grid-template-columns", population_colInfo);
-      $('.all3org').css("grid-template-columns", organism_colInfo);
-
-      /* yemi: make the following divs take up the entire width of their containers */
-      $('orgInfoHolder').css("width", "100%");
-
-      /* yemi: update organism canvas */
-      av.ind.updateOrgTrace();
-    });
-  });
-
-  $(document).on('mouseup touchend', function(e) {
-
-    if (dragging) {
-      av.grd.drawGridSetupFn(); // yemi: redraw the grid
-
-      // yemi: need to account for both touch and mouse event
-      var x;
-      if(e.type == 'touchmove'){
-        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        x = touch.pageX;
-      } else if (e.type == 'mouseup') {
-        x = e.clientX;
-      }
-
-      /* yemi: dragbar changes color back to original */
-      $('#dragbarLeft').css('background-color', 'gray');
-
-      var rightSideWidth = $('#rightInfoHolder').css("width");
-      var rightSideWidthNum = parseInt($('#rightInfoHolder').css("width")); /* yemi: extract only the number */
-      var widthAvailable = window.innerWidth - rightSideWidthNum - 6; /* yemi: hard-coded 400px (right panel) 6px (left dragbar + right dragbar), need to fix */
-      var percentage = (x / widthAvailable);
-      var widthOfNav = widthAvailable * percentage;
-
-      /* yemi: if the width of the user's cursor is smaller than the minimum width of the navigation column, choose the minimum width */
-      if (widthOfNav < parseInt($('.navColClass').css("min-width"))) {
-        widthOfNav = 0; /* yemi: if width too small, collapse it */
-        IS_LEFT_CLOSED = true;
-        /* yemi: change the button's contents and look */
-        $('#leftPanelButton').val('>> ');
-        $('#leftPanelBUtton').css('background', '#ccc');
-      } 
-      /* yemi: if thhe width of the user's cursor is larger than the maximum width of the navigation column, choose the maximum width */
-      else if (widthOfNav > parseInt($('.navColClass').css("max-width"))) {
-        widthOfNav = parseInt($('#navColId').css("max-width"));
-        IS_LEFT_CLOSED = false;
-        /* yemi: change the button's contents and look */
-        $('#leftPanelButton').val('<< ');
-        $('#leftPanelBUtton').css('background', 'inherit');
-      }
-      else {
-        IS_LEFT_CLOSED = false;
-        /* yemi: change the button's contents and look */
-        $('#leftPanelButton').val('<< ');
-        $('#leftPanelBUtton').css('background', 'inherit');
-      }
-  });
-};
 ```
-* Modifying the grid!
+1. Capture the x coordinate of the mouse on the screen.
 ```Javascript
-/* yemi: when modifying the column sizes, need to modify all three layouts */
-      var population_colInfo = widthOfNav + "px 3px " + "auto 3px " + rightSideWidth;
-      var organism_colInfo = widthOfNav + "px 3px " + "auto 3px " + rightSideWidth;
-      var analysis_colInfo = widthOfNav + "px 3px auto";
-      $('.all2lft').css("grid-template-columns", analysis_colInfo); /* yemi: you need to resize again on the analysis page to resize it correctly */
-      $('.all3pop').css("grid-template-columns", population_colInfo);
-      $('.all3org').css("grid-template-columns", organism_colInfo);
-
-      /* yemi: make the following divs take up the entire width of their containers */
-      $('orgInfoHolder').css("width", "100%");
-      
-      $(document).unbind('mousemove touchmove'); // yemi: need it
-      
-      dragging = false;
+  $(document).on('mousemove touchmove', function(e){
+    av.grd.drawGridSetupFn(); // yemi: redraw the grid when page resized
+    var x;
+    if(e.type == 'touchmove'){
+      var touch = e.originalEvent.touches[0] || 
+                  e.originalEvent.changedTouches[0];
+      x = touch.pageX;
+    } else if (e.type == 'mousemove') {
+      x = e.pageX;
     }
 ```
+2. Calculate the width of the gridColumns based on this coordinate.
+```Javascript
+    var rightSideWidth = $('#rightInfoHolder').css("width");
+    var rightSideWidthNum = parseInt($('#rightInfoHolder').css("width")); /* yemi: extract only the number */
+    var widthAvailable = window.innerWidth - rightSideWidthNum - 6; /* yemi: hard-coded 400px (right panel) 6px (left dragbar + right dragbar), need to fix */
+    var percentage = (x / widthAvailable);
+    var widthOfNav = widthAvailable * percentage;
+```
+3. Entirely collapse or open a sidebar based on threshold.
+```Javascript
+    /* yemi: if the width of the user's cursor is smaller than the minimum width of the navigation column, choose the minimum width */
+    if (widthOfNav < parseInt($('#navColId').css("min-width"))) {
+      widthOfNav = 0; /* yemi: if width too small, collapse it*/
+    } 
+    /* yemi: if thhe width of the user's cursor is larger than the maximum width of the navigation column, choose the maximum width */
+    else if (widthOfNav > parseInt($('#navColId').css("max-width"))) {
+      widthOfNav = parseInt($('#navColId').css("max-width"));
+    }
+```
+4. Change the css of the grid with the newly calculated column widths.
+```Javascript
+    /* yemi: when modifying the column sizes, need to modify all three layouts */
+    var population_colInfo = widthOfNav + "px 3px " + "auto 3px " + rightSideWidth;
+    var organism_colInfo = widthOfNav + "px 3px " + "auto 3px " + rightSideWidth;
+    var analysis_colInfo = widthOfNav + "px 3px auto";
+    $('.all2lft').css("grid-template-columns", analysis_colInfo); /* yemi: you need to resize again on the analysis page to resize it correctly */
+    $('.all3pop').css("grid-template-columns", population_colInfo);
+    $('.all3org').css("grid-template-columns", organism_colInfo);
+```
+The above code will resize the sidebar widths every time the user's mouse cursor moves. If you wish to make the changed grid layout stick even after the user release's the mouse, just add this line 
+```Javascript
+  $(document).on('mouseup touchend', function(e){
+```
+and repeat the code from `1` through `4`.
 
-#### Dragula Drag and Drop
+The keywords `touchmove` and `touchend` enable touch actions on the screen.
+
+If you are unfamiliar with the css grid, here is one of the grid layouts we are modifying.
+
+`avidaEdEco.css`
+
+```css
+.all3pop{ 
+  display: grid;
+  grid-template-rows: 2.5em 1fr; 
+  grid-template-columns: 240px 3px auto 3px 400px; 
+  grid-template-areas: 'headerRow headerRow headerRow headerRow headerRow' 
+                        'navColClass dragbarLeft mainBlockHolder dragbarRight rightInfoHolder';
+  height: 99vh;
+  width: 100vw;
+  min-height: 98vh;
+  min-width: 100vw;
+  max-height: 99vh;
+  max-width: 100vw;
+  margin: 0;
+  background:  #F5F5F5;   /* lightsalmon;  */
+}
+```
 ----
-* The players (the av.dnd's)
+
+#### **Dragula Drag and Drop**
+
+`dragulaDnd.js`
+1. Summon the players (aka draggable containers)
 ```Javascript
 var containers = [
                     $.map($(".freezerContainer"), (value, key) => { return value }),  
@@ -217,10 +163,7 @@ var containers = [
                     $.map($("#popDish1"), (value, key) => { return value }),
                     $.map($("#popDish2"), (value, key) => { return value }),
                    ].flat();
-  console.log('dragula containters: ', containers);
 
-  // currently only have draggable containers on the Population page. 
-  // Organism and Analysis page draggable containers will be implemented soon.
   av.dnd.fzConfig = containers[0]
   av.dnd.fzOrgan = containers[1]
   av.dnd.fzWorld = containers[2]
@@ -239,7 +182,21 @@ var containers = [
   av.dnd.popDish1 = containers[15]
   av.dnd.popDish2 = containers[16]
 ```
-* initiating the Dragula engine
+Below line extracts the actual dom object from the JQuery wrapper.
+```Javascript
+$.map($("#activeConfig"), (value, key) => { return value })
+```
+2. Initiate the Dragula engine. 
+
+    `el` is the dom object being dragged,
+
+    `source` is the dom object where `el` was dragged from,
+
+    `target` is the dom object that `el` is being dragged to.
+
+    All of `el`, `source`, and `target` are basically things you could `.id` to.
+
+    Object that is returned is more formally called an 'event emitter'. See [Dragula](https://github.com/bevacqua/dragula#readme) documentation for more detail. 
 ```Javascript
 var dra = dragula(containers, {
     isContainer: function (el) {
@@ -249,37 +206,7 @@ var dra = dragula(containers, {
       return true; // elements are always draggable by default
     },
     accepts: function (el, target, source, sibling) {
-      if (target === source) {
-        return true;
-      }
-      if ((source === av.dnd.ancestorBox) && (target === av.dnd.organIcon || target === av.dnd.gridCanvas)) {
-        return true;
-      }
-      if (source === av.dnd.activeConfig && (target === av.dnd.fzConfig || target === av.dnd.fzWorld)) {
-        return true;
-      }
-      if (source === av.dnd.activeOrgan && (target === av.dnd.fzOrgan)) {
-        return true;
-      }
-      if ((source === av.dnd.fzConfig || source === av.dnd.fzWorld) && target === av.dnd.activeConfig) {
-        return true;
-      }
-      if (source === av.dnd.fzWorld && (target === av.dnd.anlDndChart || target === av.dnd.popDish0 || target === av.dnd.popDish1 || target === av.dnd.popDish2)) {
-        return true;
-      }
-      if (source === av.dnd.fzOrgan && (target === av.dnd.activeOrgan || target === av.dnd.organCanvas || target === av.dnd.organIcon || target === av.dnd.gridCanvas || target === av.dnd.ancestorBox || target === av.dnd.ancestorBoTest)) {
-        return true;
-      }
-      if (source === av.dnd.fzTdish && target === av.dnd.testConfig) {
-        return true;
-      } 
-      if (target === av.dnd.trashCan) {
-        return true;
-      }
-      else {
-        // el.style.cursor = 'not-allowed'; // not working yet 
-        return false;
-      }
+      return true; // by default all items are accepted everywhere
     },
     invalid: function (el, handle) {
       return false; // don't prevent any drags from initiating by default
@@ -296,22 +223,65 @@ var dra = dragula(containers, {
     ignoreInputTextSelection: true     // allows users to select input text, see details below
   });
 ```
-* dragging it away
+3. Specify the what is accepted where. Taken out of the dragula constructor to be reusable in other parts of the code.
+```Javascript
+av.dnd.accepts = function(el, target, source) {
+    if (target === source) {
+      return true;
+    }
+    if ((source === av.dnd.ancestorBox) && (target === av.dnd.fzOrgan || target === av.dnd.organIcon || target === av.dnd.gridCanvas)) {
+      return true;
+    }
+    if (source === av.dnd.activeConfig && (target === av.dnd.fzConfig || target === av.dnd.fzWorld)) {
+      return true;
+    }
+    if (source === av.dnd.activeOrgan && (target === av.dnd.fzOrgan || target === av.dnd.organIcon || target === av.dnd.organCanvas)) {
+      return true;
+    }
+    if ((source === av.dnd.fzConfig || source === av.dnd.fzWorld) && target === av.dnd.activeConfig) {
+      return true;
+    }
+    if (source === av.dnd.fzWorld && (target === av.dnd.gridCanvas || target === av.dnd.anlDndChart || target === av.dnd.popDish0 || target === av.dnd.popDish1 || target === av.dnd.popDish2)) {
+      return true;
+    }
+    if (source === av.dnd.fzOrgan && (target === av.dnd.activeOrgan || target === av.dnd.organCanvas || target === av.dnd.organIcon || target === av.dnd.gridCanvas || target === av.dnd.ancestorBox || target === av.dnd.ancestorBoTest)) {
+      return true;
+    }
+    if (source === av.dnd.fzTdish && target === av.dnd.testConfig) {
+      return true;
+    } 
+    if (target === av.dnd.trashCan) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+```
+4. Capture 'drag' event.
 ```Javascript
 dra.on('drag', (el, source) => { 
-    // el.style.background = 'rgb(189, 229, 245)';
-    el.style.cursor =  'default';
-    console.log("dragging");
     dragging = true;
-    //When mouse button is released, return cursor to default values
     if (source === av.dnd.fzOrgan) { // necessary because for some reason inside mouse events, dra 'source' and 'target' are messed up
       sourceIsFzOrgan = true;
     } else sourceIsFzOrgan = false;
+
+    if (source === av.dnd.fzWorld) {
+      sourceIsFzWorld = true;
+    } else sourceIsFzWorld = false;
+
+    if (source === av.dnd.ancestorBox) {
+      sourceIsAncestorBox = true;
+    } else sourceIsAncestorBox = false;
+
+    elForGrid = el;
   });
+```
+The three `if` cases in the function are specifically for handling drag events on the gridCanvas. This is because as I found out, Dragula event emitter and regular mouse events that are essential for locating cursor within the grid are incompatible. The `target` and `source` was not correctly being registered within the gridCanvas mouse event handler, so I created separate global variables `sourceIsFzOrgan` and so forth to capture this information. Not the cleanest, but does the job!
 
-  // main function that determines the logic for drag and drop
+5. Capture 'drop' event.
+```Javascript
   dra.on('drop', (el, target, source) => {
-
     // el, target, source are dom objects aka stuff you could 'target.id' to
     if ((target === av.dnd.activeConfig || target === av.dnd.ancestorBox) && av.grd.runState === 'started') {
       av.dom.newDishModalID.style.display = 'block'; // show the 'please save' modal
@@ -320,36 +290,8 @@ dra.on('drag', (el, source) => {
       av.dnd.landActiveConfig(el, target, source);
     }
 
-    if (target === av.dnd.testConfig || target === av.dnd.ancestorBoTest && av.grd.runState === 'started') {
-      av.dom.newDishModalID.style.display = 'block';
-      dra.cancel();
-    } else if (target === av.dnd.testConfig) {
-      av.dnd.landTestConfig(el, target, source);
-    }
+    ...
 
-    if (target === av.dnd.trashCan) {
-      // yemi: however, if the drag is being initiated from the gridCanvas aka, then the event handler is in mouse.js
-      // refer to av.mouse.ParentMouse or av.mouse.KidMouse
-      av.dnd.landTrashCan(el, source);
-    }
-    
-    if (target === av.dnd.fzConfig) {
-      av.dnd.landFzConfig(el, target, source);
-    }
-
-    if (target === av.dnd.ancestorBox) {
-      av.dnd.landAncestorBox(el, target, source);
-    }
-
-    if (target === av.dnd.ancestorBoTest) {
-      av.dnd.landAncestorBoTest(el, target, source);
-    }
-
-    if (target === av.dnd.fzWorld) {
-      // yemi: does not trigger because techinically there are no 'items' on the grid right now.
-      // on the grid, mouse movements overtake. Code for that is in mouse.js (av.mouse.kidMouse)
-      av.dnd.landFzWorld(el, target, source);
-    }
 
     if (target === av.dnd.fzOrgan) {
       av.dnd.landFzOrgan(el, target, source); // I don't think it's getting called
@@ -358,7 +300,10 @@ dra.on('drag', (el, source) => {
     if (target === av.dnd.organIcon) {
       av.dnd.landOrganIcon(el, target, source);
     }
+```
+And here it is. A sore thumb it was, handling drop events on gridCanvas.
 
+```Javascript
     $(document).on('mouseup touchend', function (evt) {
       'use strict';
       if (dragging) {
@@ -374,7 +319,7 @@ dra.on('drag', (el, source) => {
         }
         av.mouse.UpGridPos = [x, y];
         var elements = $.map(document.elementsFromPoint(x, y), (x) => {return x.id});
-        if (elements.indexOf("gridCanvas") != -1 && sourceIsFzOrgan) { // if gridCanvas is behind this mouse point
+        if (elements.indexOf("gridCanvas") != -1 && sourceIsFzOrgan) { 
           av.dnd.landGridCanvas(el, target, source);
           av.grd.drawGridSetupFn('av.dnd.gridCanvas where target = gridCanvas');
         }
@@ -382,42 +327,16 @@ dra.on('drag', (el, source) => {
       dragging = false;
       $(document).unbind('mousemove touchmove');
     });
-
-    if (target === av.dnd.activeOrgan) {
-      av.dnd.landActiveOrgan(el, target, source);
-    }
-
-    if (target === av.dnd.organCanvas) {
-      av.dnd.landOrganCanvas(el, target, source);
-    }
-
-    if (target === av.dnd.anlDndChart) {
-      av.dnd.landAnlDndChart(el, target, source);
-    }
-
-    if (target === av.dnd.popDish0 || target === av.dnd.popDish1 || target === av.dnd.popDish2) {
-      if (target === av.dnd.popDish0) {
-        av.dnd.landpopDish(el, target, source, 0);
-      }
-      else if (target === av.dnd.popDish1) {
-        av.dnd.landpopDish(el, target, source, 1);
-      }
-      else if (target === av.dnd.popDish2) {
-        av.dnd.landpopDish(el, target, source, 2);
-      }
-    } 
-  });
 ```
-* one of (many) drag event handlers
+
+6. Handle 'drop'. 
+
+    Below is one of many drop handlers. 
 ```Javascript
 av.dnd.landGridCanvas = function(el, target, source) {
-    'use strict';
-    if (av.debug.dnd) console.log('inside gridCanvas dnd');
-    if (av.debug.dnd) console.log('parents', av.parents);
-
-    var nn = av.parents.name.length;
-    av.post.addUser('DnD: ' + source.id + '--> GridCanvas: by: ' + el.textContent.trim() + ' on (' +  av.mouse.UpGridPos[0] + ', ' + av.mouse.UpGridPos[1] + ')' );
-
+```
+* Find where the user's mouse landed.
+```Javascript
     // to correctly place the organism, need to calculate offsets
     var offsetXLocal = ($("#gridHolder").width() - av.dom.gridCanvas.width) / 2;
     var offsetYLocal = ($("#gridHolder").height() - av.dom.gridCanvas.height) / 2;
@@ -429,100 +348,92 @@ av.dnd.landGridCanvas = function(el, target, source) {
     if (av.debug.dnd) console.log('mouseX, y', mouseX, mouseY);
     av.parents.col[nn] = Math.floor(mouseX / av.grd.cellWd);
     av.parents.row[nn] = Math.floor(mouseY / av.grd.cellHt);
-    //check to see if in the grid part of the canvas
+```
+* If the mouse cursor landed within the gridCanvas, process it.
+```Javascript
+    // check to see if in the grid part of the canvas
+    var nn = av.parents.name.length;
     if (av.parents.col[nn] >= 0 && av.parents.col[nn] < av.grd.cols && av.parents.row[nn] >= 0 && av.parents.row[nn] < av.grd.rows) {
       av.parents.AvidaNdx[nn] = av.parents.row[nn] * av.grd.cols + av.parents.col[nn];
-
-      //Start setting up for getting data for parents structure
+      // start setting up for getting data for parents structure
       nn = av.parents.name.length;  // get index into parents
+      // clone the element
+      el = el.cloneNode(true);
+```
+* Update the backend. 
+    
+  Namely `av.fzr.dir` and `av.fzr.domid`
+```Javascript
+      // get the data for the dragged element
+      var dir = av.fzr.dir[el.id];
+      // give a new id to the new dom object
+      el.id = 'g' + av.fzr.gNum++;
+      mostRecentlyAddedDomid = el.id;
+      // add an entry to av.fzr.dir for this new new dom id
+      av.fzr.dir[el.id] = dir;
+      // and vice versa
+      av.fzr.domid[dir].push(el.id);
+```
+* Update the frontend. 
+  
+  Namely `containerMap` (which keeps track of which draggable items are in what container) and the DOM.
+```Javascript
+      // give a new name
       el.textContent = av.dnd.nameParent(el.textContent.trim());
-      //Add organism to av.dnd.ancestorBox in settings.
-      var domid = el.id;
-      var dir = domid;
+      // insert element into ancestorBox containerMap
       av.dnd.insert(av.dnd.ancestorBox, el, 'g');
+      // insert element into ancestorBox DOM
       av.dnd.insertToDOM(av.dnd.ancestorBox, el);
-
-      if (av.debug.dnd) console.log('containerMap[#ancestorBox]', containerMap[container]);
-
+```
+* Insert a `parent`, which is an Avidian organism that are initially placed on the grid. 
+  
+  This is an essential step in order for the experiment to run successfully.
+```Javascript
       // Push the item to av.parents
-      av.parents.domid.push(domid);
+      av.parents.domid.push(el.id);
       //update parents structure
       av.parents.handNdx.push(nn);
       av.parents.howPlaced[nn] = 'hand';
       av.parents.injected[nn] = false;
-      if (av.debug.dnd) console.log('av.dnd.landGridCanvas; domId', domid, '; av.fzr.genome', av.fzr.genome);
-      var dir = av.fzr.dir[domid];
+      if (av.debug.dnd) console.log('av.dnd.landGridCanvas; domId', el.id, '; av.fzr.genome', av.fzr.genome);
       av.parents.genome.push(av.fzr.file[dir+'/genome.seq']);
       //Find color of ancestor
       if (0 < av.parents.Colors.length) {av.parents.color.push(av.parents.Colors.pop());}
       else {av.parents.color.push(av.color.defaultParentColor);}
       //Re-Draw Grid - done in routine that calls this one.
     }
-    else {
-      // not on grid
-      av.post.addUser('DnD: ' + source.id + '--> GridCanvas: by: ' + el.textContent.trim());
-    }
-    //In all cases remove the ancestor from the gridCanvas so we only keep them in the av.dnd.ancestorBox.
-    av.dnd.empty(av.dnd.gridCanvas);  //http://stackoverflow.com/questions/11909540/how-to-remove-delete-an-item-from-a-dojo-drag-and-drop-source
-    if (av.debug.dnd) console.log('parents', av.parents);
-  };
 ```
 
-* containerMap to replace dojo's 'map'
-```Javascript
-/*
-  Helpers for Inserting and Removing Items from Dragula Containers
-  */
+# Results
 
-  av.dnd.empty = function(target) {
-    var container = target.id !== undefined ? "#" + target.id : "." + target.className;
-    $(container).empty();
-    if (Object.keys(containerMap).indexOf(container) != -1) {
-      containerMap[container] = {}
-    }
-  }
+Drag and drop works on a touch screen!!
 
-  av.dnd.remove = function(target, el) {
-    var container = target.id !== undefined ? "#" + target.id : "." + target.className;
-    $(container).remove(el);
-    document.querySelector(container).removeChild(document.getElementById(el.id));
-    delete containerMap[container][el.id];
-  }
+Below is a simulation of an iPad.
 
-  av.dnd.insert = function(target, el, type) {
-    var domid = el.id;
-    var container = target.id !== undefined ? "#" + target.id : "." + target.className;
-    if (Object.keys(containerMap).indexOf(container) === -1) {
-      containerMap[container] = {}
-    }
-    console.log(el);
-    console.log($(el));
-    containerMap[container][domid] = {'name': el.textContent.trim() , 'type': type};
-  }
+*Population Page*
 
-  av.dnd.insertToDOM = function(target, el) {
-    var container = target.id !== undefined ? "#" + target.id : "." + target.className;
-    $(container).append(el);
-  }
+![touchscreen_pop](https://media.giphy.com/media/1eqJVElzAs16IMIGRY/giphy.gif?cid=790b7611bb359af2851bb38ef6ef2bf46479ec2d8d790670&rid=giphy.gif&ct=g)
 
-  av.dnd.getAllItems = function (source) {
-    'use strict';
-    var container = source.id !== undefined ? "#" + source.id : "." + source.className;
-    try {
-      var items = Object.keys(containerMap[container]);
-    } catch (error) {
-      var items = [];
-    }
-    return items;
-  };
-```
-* I realize these snippets are kind of huge. I will get the essential snippets for the actual blog. :)
+*Organism Page*
 
+![touchscreen_org](https://media.giphy.com/media/zOhal1mfv8mfd3MEUO/giphy.gif?cid=790b76111b024e9f0b5ecc71ccdbd2b91a506b82305c4f0b&rid=giphy.gif&ct=g)
+
+*Analysis Page*
+
+![touchscreen_anl](https://media.giphy.com/media/tI8gRQ7hEakVn1DNF4/giphy.gif?cid=790b7611d4561a125affcb97e765c0977fb4c01cb1eb8993&rid=giphy.gif&ct=g)
 # Moving forward
 
-My goal was to make Avida-ED 4 more user-friendly and accesible for more people. Implementing the dragbar and the new drag and drop definitely came with its challenges, but in the end I think I got so much out of the experience, beyond just what I was doing. Namely, the fact that I was working on a meaningful, and historical! software that is Avida-ED 4 and seeing my often futile attempts come to fruition on the webpage was simply pure joy. 
+My goal was to make Avida-ED 4 more user-friendly and accesible to more people. Implementing the dragbar and the new drag&drop definitely came with its challenges, but in the end I think I got so much out of the experience, beyond just what I was coding. Namely, the fact that I was working on a meaningful, and historical! software that is Avida-ED 4, as well interacting with like-minded peers and seeing my often futile attempts come to fruition on the webpage!! was simply pure joy. 
 
 Acknowledgements
 --
-Of course, I cannot forget to express my utmost gratitude to Diane Blackwood, without whom I would not have been able to achieve as much as I did. Talking with Diane on Zoom (and Wesley!) about not just work but also different aspects of our lives was delightful! And to all of the WAVE mentors, collegues, and Matthew!: Thank you so much for supporting me and encouraging me all this way; I really enjoyed hearing about everyone's contributions and progress throughout the workshop! It was inspiring, especially when coding wasn't going smooth, haha. So thank you. I hope our paths cross again in the future!
+Of course, I cannot forget to express my great thanks to Diane Blackwood, without whom I would not have been able to achieve as much as I did. Talking with Diane on Zoom (and Wesley!) about not just work but also different aspects of our lives was delightful! And to all of the WAVE mentors, collegues, and Matthew: Thank you for organizing WAVES and giving me an opportunity to learn so much about software development as well as educational outreach. I really enjoyed hearing about everyone's contributions and progress throughout the workshop, and I hope our paths cross again in the future!
+
+This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+Sources
+--
+[Link to Avida-ED GitHub](https://github.com/yemi33/Avida-ED-Eco/tree/yemi-dnd)
+
+
 
