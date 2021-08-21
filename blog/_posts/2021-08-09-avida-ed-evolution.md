@@ -435,5 +435,11 @@ Sources
 --
 [Link to Avida-ED GitHub](https://github.com/yemi33/Avida-ED-Eco/tree/yemi-dnd)
 
+About Author
+--
+I'm currently a rising senior at Carleton College, studying Computer Science! :)
+
+[Learn More About Me](https://yemi33.github.io/)
+
 
 
