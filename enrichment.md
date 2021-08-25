@@ -4,6 +4,6 @@ title: Enrichment
 description: Materials from enrichment seminars
 ---
 
-{% for post in site.categories.enrichment reversed %}
+{% for post in site.categories.enrichment %}
 # [{{ post.title }}]({{ site.baseurl }}{{ post.url }})
 {% endfor %}
