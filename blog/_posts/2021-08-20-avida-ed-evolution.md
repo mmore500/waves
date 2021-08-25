@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Avida-ED 4 Evolves For Better Usability"
-date: 2021-08-09
+date: 2021-08-20
 author: Yemi Shin
 ---
 **Description**: This summer, I worked on re-implementing and enhancing parts of Avida-ED 4 to improve design and usability.
@@ -17,8 +17,8 @@ Objectives
 Dragbars : The New Way to Raise the Bar (Get it?)
 --
 Wow, it was harder than I thought.
-   Honestly, the way I think about web pages in general changed tremendously working on this project. I was constantly astounded by, and am still being astounded by the variety of ways plain JavaScript, JQuery, and the dollar signs (who knew that $ had so many meanings) and various other Javascript libraries are similar and yet at times frustratingly incompatible with each other. In the end, however, they coped with me to do magic on the page. :) In addition, I learned the precious lesson that I should not take even something as simple as a dragbar for granted! 
-   
+   Honestly, the way I think about web pages in general changed tremendously working on this project. I was constantly astounded by, and am still being astounded by the variety of ways plain JavaScript, JQuery, and the dollar signs (who knew that $ had so many meanings) and various other Javascript libraries are similar and yet at times frustratingly incompatible with each other. In the end, however, they coped with me to do magic on the page. :) In addition, I learned the precious lesson that I should not take even something as simple as a dragbar for granted!
+
 Steps I took to implement a Dragbar:
 1. Avida-ED is a pretty big project (kudos to Diane for developing it this far!). I had to spend a few days simply looking at the code (literally) to get my eyes adjusted to all the namespaces and file structure!
 2. I was tasked with creating the dragbars at first. I've never done that. Where do I start?
@@ -29,18 +29,18 @@ This might be a great time to bring up..
 
 ### The Importance of Proof of Concept
    #### (Image of Proof of Concept)
-   What I learned is that, if you ever run into a situation where you don't know what is going on in the codebase, and you don't know where to start? Do a proof of concept, it will save you big time. First, whipping up a proof of concept is a great chance for you get yourself familiar with the Javascript functions that will be handy for your task. Second, it is a medium to articulate to stakeholders or your mentors what you are working on and how you plan on implementing the component onto the actual website. And lastly, and perhaps most importantly, it gives you a template, a kind of jumping off point to get you going (and with confidence) when you do finally touch the codebase. Fear not! 
+   What I learned is that, if you ever run into a situation where you don't know what is going on in the codebase, and you don't know where to start? Do a proof of concept, it will save you big time. First, whipping up a proof of concept is a great chance for you get yourself familiar with the Javascript functions that will be handy for your task. Second, it is a medium to articulate to stakeholders or your mentors what you are working on and how you plan on implementing the component onto the actual website. And lastly, and perhaps most importantly, it gives you a template, a kind of jumping off point to get you going (and with confidence) when you do finally touch the codebase. Fear not!
 
 When you start working on the code though..
 
-### Approach code like a surgeon 
-What I mean by that is, my honest impression of working on the codebase was me constantly feeling like I was making small incisions in the code to insert whatever solution I had to offer the website (in this case, a dragbar). Like all beginner programmers, I was fearful. What if I break something really bad, and I mess something up, and the world comes to an end? (right...) Anyhow, I was always careful about what I was tweaking and how I was tweaking it. I am a forgetful person, too. So I left a bunch of "yemi:(comment)" comments where I was changing anything, first of all to leave some breadcrumbs for me to pick back up if I do end up breaking something, and second to communicate to Diane what I was changing and why I was changing it, so in the worst case scenario, she could at least follow what I was doing to perhaps offer up some higher level insight..(thank you, Diane!) But I learned that, if you approach code like a surgeon, and are very aware of every change you make precisely, you will save much energy later down the road when you likely will be scrutinizing the code for the insidious mistake that are not the most pleasant to search for! 
+### Approach code like a surgeon
+What I mean by that is, my honest impression of working on the codebase was me constantly feeling like I was making small incisions in the code to insert whatever solution I had to offer the website (in this case, a dragbar). Like all beginner programmers, I was fearful. What if I break something really bad, and I mess something up, and the world comes to an end? (right...) Anyhow, I was always careful about what I was tweaking and how I was tweaking it. I am a forgetful person, too. So I left a bunch of "yemi:(comment)" comments where I was changing anything, first of all to leave some breadcrumbs for me to pick back up if I do end up breaking something, and second to communicate to Diane what I was changing and why I was changing it, so in the worst case scenario, she could at least follow what I was doing to perhaps offer up some higher level insight..(thank you, Diane!) But I learned that, if you approach code like a surgeon, and are very aware of every change you make precisely, you will save much energy later down the road when you likely will be scrutinizing the code for the insidious mistake that are not the most pleasant to search for!
 
 After a while, I was done implementing dragbars. It was time for me to discover..,
 
-Dragula, the New Way to Drag and Drop 
--- 
-It was a web of dependencies from which I knew no escape. 
+Dragula, the New Way to Drag and Drop
+--
+It was a web of dependencies from which I knew no escape.
 
 And then, I saw the light. Its name was 'Dragula: Drag and Drop So Easy It Hurts," and yes I was hurt. It was thanks to Raheem, a participant who worked on the Avida-ED project before me, who did his dilligent research looking for the best drag and drop library to support the next generation of Avida-ED. His very neat proof of concept website was very helpful for me to get onboarded (see? it does help!). Turns out, drag and drop forms the foundation of all actions on Avida-ED. I was ambitious, and did not exactly see what was coming ahead of me. But it was all for good.
 
@@ -75,7 +75,7 @@ function dragbarLeftResize() {
     av.grd.drawGridSetupFn(); // yemi: redraw the grid when page resized
     var x;
     if(e.type == 'touchmove'){
-      var touch = e.originalEvent.touches[0] || 
+      var touch = e.originalEvent.touches[0] ||
                   e.originalEvent.changedTouches[0];
       x = touch.pageX;
     } else if (e.type == 'mousemove') {
@@ -95,7 +95,7 @@ function dragbarLeftResize() {
     /* yemi: if the width of the user's cursor is smaller than the minimum width of the navigation column, choose the minimum width */
     if (widthOfNav < parseInt($('#navColId').css("min-width"))) {
       widthOfNav = 0; /* yemi: if width too small, collapse it*/
-    } 
+    }
     /* yemi: if thhe width of the user's cursor is larger than the maximum width of the navigation column, choose the maximum width */
     else if (widthOfNav > parseInt($('#navColId').css("max-width"))) {
       widthOfNav = parseInt($('#navColId').css("max-width"));
@@ -111,7 +111,7 @@ function dragbarLeftResize() {
     $('.all3pop').css("grid-template-columns", population_colInfo);
     $('.all3org').css("grid-template-columns", organism_colInfo);
 ```
-The above code will resize the sidebar widths every time the user's mouse cursor moves. If you wish to make the changed grid layout stick even after the user release's the mouse, just add this line 
+The above code will resize the sidebar widths every time the user's mouse cursor moves. If you wish to make the changed grid layout stick even after the user release's the mouse, just add this line
 ```Javascript
   $(document).on('mouseup touchend', function(e){
 ```
@@ -124,11 +124,11 @@ If you are unfamiliar with the css grid, here is one of the grid layouts we are 
 `avidaEdEco.css`
 
 ```css
-.all3pop{ 
+.all3pop{
   display: grid;
-  grid-template-rows: 2.5em 1fr; 
-  grid-template-columns: 240px 3px auto 3px 400px; 
-  grid-template-areas: 'headerRow headerRow headerRow headerRow headerRow' 
+  grid-template-rows: 2.5em 1fr;
+  grid-template-columns: 240px 3px auto 3px 400px;
+  grid-template-areas: 'headerRow headerRow headerRow headerRow headerRow'
                         'navColClass dragbarLeft mainBlockHolder dragbarRight rightInfoHolder';
   height: 99vh;
   width: 100vw;
@@ -148,11 +148,11 @@ If you are unfamiliar with the css grid, here is one of the grid layouts we are 
 1. Summon the players (aka draggable containers)
 ```Javascript
 var containers = [
-                    $.map($(".freezerContainer"), (value, key) => { return value }),  
+                    $.map($(".freezerContainer"), (value, key) => { return value }),
                     $.map($("#testConfig"), (value, key) => { return value }),
-                    $.map($("#activeConfig"), (value, key) => { return value }), 
-                    $.map($("#trashCan"), (value, key) => { return value }), 
-                    $.map($("#gridCanvas"), (value, key) => { return value }), 
+                    $.map($("#activeConfig"), (value, key) => { return value }),
+                    $.map($("#trashCan"), (value, key) => { return value }),
+                    $.map($("#gridCanvas"), (value, key) => { return value }),
                     $.map($("#ancestorBox"), (value, key) => { return value }),
                     $.map($("#ancestorBoTest"), (value, key) => { return value }),
                     $.map($("#activeOrgan"), (value, key) => { return value }),
@@ -186,7 +186,7 @@ Below line extracts the actual dom object from the JQuery wrapper.
 ```Javascript
 $.map($("#activeConfig"), (value, key) => { return value })
 ```
-2. Initiate the Dragula engine. 
+2. Initiate the Dragula engine.
 
     `el` is the dom object being dragged,
 
@@ -196,7 +196,7 @@ $.map($("#activeConfig"), (value, key) => { return value })
 
     All of `el`, `source`, and `target` are basically things you could `.id` to.
 
-    Object that is returned is more formally called an 'event emitter'. See [Dragula](https://github.com/bevacqua/dragula#readme) documentation for more detail. 
+    Object that is returned is more formally called an 'event emitter'. See [Dragula](https://github.com/bevacqua/dragula#readme) documentation for more detail.
 ```Javascript
 var dra = dragula(containers, {
     isContainer: function (el) {
@@ -215,7 +215,7 @@ var dra = dragula(containers, {
       //Makes sure the only item that will be copied instead of moved is in the FreezerMove div
       return source === av.dnd.activeOrgan || source === av.dnd.activeConfig || source === av.dnd.fzConfig || source === av.dnd.fzOrgan || source === av.dnd.fzWorld || source === av.dnd.fzTdish;
     },
-    direction: 'vertical',             // Y axis is considered when determining where an element would be dropped                       
+    direction: 'vertical',             // Y axis is considered when determining where an element would be dropped
     copySortSource: false,             // elements in copy-source containers can be reordered
     revertOnSpill: true,               // spilling will put the element back where it was dragged from, if this is true
     removeOnSpill: false,              // spilling will `.remove` the element, if this is true
@@ -249,7 +249,7 @@ av.dnd.accepts = function(el, target, source) {
     }
     if (source === av.dnd.fzTdish && target === av.dnd.testConfig) {
       return true;
-    } 
+    }
     if (target === av.dnd.trashCan) {
       return true;
     }
@@ -260,7 +260,7 @@ av.dnd.accepts = function(el, target, source) {
 ```
 4. Capture 'drag' event.
 ```Javascript
-dra.on('drag', (el, source) => { 
+dra.on('drag', (el, source) => {
     dragging = true;
     if (source === av.dnd.fzOrgan) { // necessary because for some reason inside mouse events, dra 'source' and 'target' are messed up
       sourceIsFzOrgan = true;
@@ -319,7 +319,7 @@ And here it is. A sore thumb it was, handling drop events on gridCanvas.
         }
         av.mouse.UpGridPos = [x, y];
         var elements = $.map(document.elementsFromPoint(x, y), (x) => {return x.id});
-        if (elements.indexOf("gridCanvas") != -1 && sourceIsFzOrgan) { 
+        if (elements.indexOf("gridCanvas") != -1 && sourceIsFzOrgan) {
           av.dnd.landGridCanvas(el, target, source);
           av.grd.drawGridSetupFn('av.dnd.gridCanvas where target = gridCanvas');
         }
@@ -329,9 +329,9 @@ And here it is. A sore thumb it was, handling drop events on gridCanvas.
     });
 ```
 
-6. Handle 'drop'. 
+6. Handle 'drop'.
 
-    Below is one of many drop handlers. 
+    Below is one of many drop handlers.
 ```Javascript
 av.dnd.landGridCanvas = function(el, target, source) {
 ```
@@ -360,8 +360,8 @@ av.dnd.landGridCanvas = function(el, target, source) {
       // clone the element
       el = el.cloneNode(true);
 ```
-* Update the backend. 
-    
+* Update the backend.
+
   Namely `av.fzr.dir` and `av.fzr.domid`
 ```Javascript
       // get the data for the dragged element
@@ -374,8 +374,8 @@ av.dnd.landGridCanvas = function(el, target, source) {
       // and vice versa
       av.fzr.domid[dir].push(el.id);
 ```
-* Update the frontend. 
-  
+* Update the frontend.
+
   Namely `containerMap` (which keeps track of which draggable items are in what container) and the DOM.
 ```Javascript
       // give a new name
@@ -385,8 +385,8 @@ av.dnd.landGridCanvas = function(el, target, source) {
       // insert element into ancestorBox DOM
       av.dnd.insertToDOM(av.dnd.ancestorBox, el);
 ```
-* Insert a `parent`, which is an Avidian organism that are initially placed on the grid. 
-  
+* Insert a `parent`, which is an Avidian organism that are initially placed on the grid.
+
   This is an essential step in order for the experiment to run successfully.
 ```Javascript
       // Push the item to av.parents
@@ -423,23 +423,20 @@ Below is a simulation of an iPad.
 ![touchscreen_anl](https://media.giphy.com/media/tI8gRQ7hEakVn1DNF4/giphy.gif?cid=790b7611d4561a125affcb97e765c0977fb4c01cb1eb8993&rid=giphy.gif&ct=g)
 # Moving forward
 
-My goal was to make Avida-ED 4 more user-friendly and accesible to more people. Implementing the dragbar and the new drag&drop definitely came with its challenges, but in the end I think I got so much out of the experience, beyond just what I was coding. Namely, the fact that I was working on a meaningful, and historical! software that is Avida-ED 4, as well interacting with like-minded peers and seeing my often futile attempts come to fruition on the webpage!! was simply pure joy. 
+My goal was to make Avida-ED 4 more user-friendly and accesible to more people. Implementing the dragbar and the new drag&drop definitely came with its challenges, but in the end I think I got so much out of the experience, beyond just what I was coding. Namely, the fact that I was working on a meaningful, and historical! software that is Avida-ED 4, as well interacting with like-minded peers and seeing my often futile attempts come to fruition on the webpage!! was simply pure joy.
 
-Acknowledgements
---
+# Acknowledgments
+
 Of course, I cannot forget to express my great thanks to Diane Blackwood, without whom I would not have been able to achieve as much as I did. Talking with Diane on Zoom (and Wesley!) about not just work but also different aspects of our lives was delightful! And to all of the WAVE mentors, collegues, and Matthew: Thank you for organizing WAVES and giving me an opportunity to learn so much about software development as well as educational outreach. I really enjoyed hearing about everyone's contributions and progress throughout the workshop, and I hope our paths cross again in the future!
 
 This work is supported through Active LENS: Learning Evolution and the Nature of Science using Evolution in Action (NSF IUSE #1432563). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
-Sources
---
+# Sources
+
 [Link to Avida-ED GitHub](https://github.com/yemi33/Avida-ED-Eco/tree/yemi-dnd)
 
-About Author
---
+# About Author
+
 I'm currently a rising senior at Carleton College, studying Computer Science! :)
 
 [Learn More About Me](https://yemi33.github.io/)
-
-
-

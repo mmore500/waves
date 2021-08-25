@@ -110,7 +110,7 @@ All the ideas for prefab components which we didn't have time to develop can be 
 As a counterpart to the configuration panel, Matthew suggested making a component that could display values live from a simulation.
 While Empirical has a graphical visualization component using [D3](https://d3js.org/), this component would serve the need for a lightweight display for simulation statistics.
 
-![Gollum eating a fish]({{ site.baseurl }}/assets/lemniscate8/more-prefab-tools-raw.png){:style="width: 50%"}
+![Gollum eating a fish]({{ site.baseurl }}/assets/lemniscate8/more-prefab-tools-raw.jpg){:style="width: 50%"}
 *If you like your numbers like Gollum likes his fish, the `ReadoutPanel` might be for you*
 
 Here's its bio:
