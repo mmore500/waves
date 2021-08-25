@@ -4,14 +4,20 @@ title: People
 description: Workshop folks
 ---
 
-{% assign mentors = site.data.people | where:'role', 'mentor' | sort: "nick" %}
-{% assign participants = site.data.people | where:'role', 'participant' | sort: "nick" %}
-{% assign friends = site.data.people | where:'role', 'other'  | sort: "nick" %}
-{% assign shuffle = site.data.people | sample: 100 %}
+{% assign mentors2021 = site.data.people | where:'role', 'mentor' | where:'year', '2021' | sort: "nick" %}
+{% assign participants2021 = site.data.people | where:'role', 'participant' | where:'year', '2021' | sort: "nick" %}
+{% assign friends2021 = site.data.people | where:'role', 'other' | where:'year', '2021' | sort: "nick" %}
+
+{% assign mentors2020 = site.data.people | where:'role', 'mentor' | where:'year', '2020' | sort: "nick" %}
+{% assign participants2020 = site.data.people | where:'role', 'participant' | where:'year', '2020' | sort: "nick" %}
+{% assign friends2020 = site.data.people | where:'role', 'other' | where:'year', '2020' | sort: "nick" %}
+
+{% assign shuffled_grouped = site.data.people | group_by:"github" | sample: 100 %}
 
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 100vw; margin-left: -50vw; left: 50%; position: relative;">
-{% for person in shuffle %}
+{% for by_github_username in shuffled_grouped %}
+  {% assign person = by_github_username.items | first %}
 
   <div class="img-holder">
     <a href="#{{ person.github | replace: "-", "_" }}">
@@ -24,31 +30,61 @@ description: Workshop folks
 {% endfor %}
 </div>
 
-# Participants
+# Participants 2021
 
 ![clouds]({{ site.baseurl }}/assets/gifcities-clouds.gif){:style="width:100%;"}
 
-{% for person in participants %}
+{% for person in participants2021 %}
 
   {% include person.html %}
 
 {% endfor %}
 
-# Mentors
+# Mentors 2021
 
 ![twisting]({{ site.baseurl }}/assets/gifcities-twist.gif){:style="width:100%;"}
 
-{% for person in mentors %}
+{% for person in mentors2021 %}
 
   {% include person.html %}
 
 {% endfor %}
 
-# Friends
+# Friends 2021
 
 ![sheep]({{ site.baseurl }}/assets/gifcities-sheep.gif){:style="width:100%;"}
 
-{% for person in friends %}
+{% for person in friends2021 %}
+
+  {% include person.html %}
+
+{% endfor %}
+
+# Participants 2020
+
+![clouds]({{ site.baseurl }}/assets/gifcities-clouds.gif){:style="width:100%;"}
+
+{% for person in participants2020 %}
+
+  {% include person.html %}
+
+{% endfor %}
+
+# Mentors 2020
+
+![twisting]({{ site.baseurl }}/assets/gifcities-twist.gif){:style="width:100%;"}
+
+{% for person in mentors2020 %}
+
+  {% include person.html %}
+
+{% endfor %}
+
+# Friends 2020
+
+![sheep]({{ site.baseurl }}/assets/gifcities-sheep.gif){:style="width:100%;"}
+
+{% for person in friends2020 %}
 
   {% include person.html %}
 

@@ -6,6 +6,7 @@
   bio: I'm currently wrapping up a postdoctoral research position at Cleveland Clinic, before starting in the Fall as an Assistant Professor in computer science at Michigan State University. I use digital systems to study eco-evolutionary dynamics at broad spatiotemporal scales. Like most ecologists, I'm fascinated by the vast diversity of life that coexists on our planet. Understanding the evolutionary and ecological processes that generate and maintain this diversity is important both for biology and for machine learning via evolutionary computation. My formal training is in Computer Science, Evolutionary Biology, and Ecology.
   href: https://www.emilyldolson.com/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: mmore500
@@ -17,6 +18,7 @@
   href: https://mmore500.com
   role: mentor
   institution: Michigan State University
+  year: 2020
 
 - github: schmi710
   twitter:
@@ -26,6 +28,7 @@
   bio: Jamie is a second-year undergrad at Michigan State University majoring in Advanced Mathematics, Computer Science, Physics, and Data Science.  He enjoys playing the piano and fighting with longswords.
   href:
   role: participant
+  year: 2020
   institution: Michigan State University
 
 - github: FergusonAJ
@@ -36,6 +39,7 @@
   bio: Hello! I just finished the second year of my PhD at Michigan State University studying computer science and evolution. I use computational models to study how "living" organisms adapt to information from their environment. This includes evolution at the population level, but also learning and plasticity at the organism level. In my free time I enjoy experiencing the natural world (e.g., hiking, camping, cycling, and keeping plants) and also the synthetic (e.g., making / playing video games)!
   href: http://austinjferguson.com/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: alackles
@@ -46,6 +50,7 @@
   bio: I'm a 2nd year PhD student in Integrative Biology at Michigan State University. I'm co-advised by Dr. Emily Dolson and Dr. Elise Zipkin, meaning that I work with computational statistical ecologists despite no formal training in (1) computation, (2) statistics, or (3) ecology. That said, I'm really interested in genetic complexity and how we can measure it using tools from different disciplines! I'm also passionate about undergraduate interdisciplinary pedagogy. Outside academia I enjoy games (board, video) and cats (the small, indoor kind).
   href: https://alackles.github.io/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: cliff-bohm
@@ -56,6 +61,7 @@
   bio: I'm generally interested in evolutionary processes that result in and from complex systems. My research interests currently include sexual selection and quantifying the effects on selection in systems with more than one orthogonal fitness vectors. I also work on MABE.
   href: https://cliffbohm.weebly.com/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: mjwiser
@@ -67,6 +73,7 @@
     I'm a teaching faculty member in the Biological Sciences program at MSU, and involved in several research projects over the summer.  Most relevant to the WAVES workshop is my work with Avida-ED.  My pedagogical research is most focused on what factors influence student learning about natural selection and evolution, and how students understand the concept of randomness.  I am also investigating whether different types of students have predictably different misconceptions prior to instruction.  My basic science research focuses on questions of the evolutionary process: How predictable is evolution?  How repeatable are the patterns?  And how well do patterns generalize across different study systems?  I use both computational and wetlab experiments to address these topics in the context of experimental evolution.
   href: https://msu.edu/~mwiser/
   role: other
+  year: 2020
   institution: Michigan State University
 
 - github: amlalejini
@@ -77,6 +84,7 @@
   bio: I'm a fifth year PhD student working with Dr. Charles Ofria in Computer Science and Ecology, Evolutionary Biology, & Behavior at Michigan State University. My research resides somewhere at the intersection of artificial life, evolutionary biology, and evolutionary computation. I use self-replicating computer programs as a model organism for studying the dynamics of evolving systems, and I draw inspiration from natural evolution to develop new evolutionary computation techniques and representations. Outside of academia, I enjoy tabletop gaming and un-athletically playing frisbee and soccer.
   href: https://lalejini.com/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: mercere99
@@ -87,6 +95,7 @@
   bio: I am a Professor of Computer Science at Michigan State University, as well as Director of the Digital Evolution Laboratory, Director of the BEACON Center for the Study of Evolution in Action, and President of the International Society for Artificial Life.  My core interests have to do with understanding the evolution of complex traits, behaviors, and functions, especially the evolution of intelligence.  In nature, adaptive evolution relies on many different processes, stemming from information-rich environments with multi-scale spatial and temporal dynamics that generate complex ecologies including both cooperative and competative co-evolutionary pressures.  Ultimately these dynamics lead to open-ended evolution, where major evolutionary transitions can produce whole new type of organisms. Many of these processes can be replicated in a computer, both to understand their role in natural evolution and to harness them for problem solving.  In my lab we conduct projects to study these topics, as well as to make this research accessible to a broad range of student and public audiences.
   href: https://ofria.com/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: JorySchossau
@@ -97,6 +106,7 @@
   bio: Jory is a 3rd year researcher, after PhD, studying artificial cognition, reinforcement learning in evolution, and other fun stuff. He makes cross-platform software, studies video game design, played piano for 25 years, and loves mountain backpacking, scuba diving, white water rafting, and miniature golf. Ask about representation in video games, or the Nim programming language if you're trying to distract him.
   href:
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: kayakingCellist
@@ -107,6 +117,7 @@
   bio: Hello! I recently graduated from Southwestern University. Over the years, I have discovered a love for robotics and web development as well as academic research. Outside of the software world, I like to kayak, boulder, and play cello.
   href:
   role: participant
+  year: 2020
   institution: Southwestern University
 
 - github: daconjam
@@ -117,6 +128,7 @@
   bio: Jamell Dacon is a second graduate student of Department of Computer Science and Engineering at Michigan State University (MSU). He was awarded a University Enrichment Fellowship (UEF) by The Graduate School at MSU which covers the years 2018-2023. He joined the Data Science and Engineering (DSE) Lab in Fall 2018. His research interests include Machine Learning that is primarily focused in Recommender Systems, Data Mining and Deep Learning. Jamell not only concentrates on increasing his academic skills, but is very passionate about Community Outreach, Diversity and Inclusion, in that, he was awarded a Graduate Leadership Fellow Position by the College of Engineering. He enjoys running cooking, and listening to music.
   href: https://cse.msu.edu/~daconjam/
   role: participant
+  year: 2020
   institution: Michigan State University
 
 - github: uma-sethuraman
@@ -127,6 +139,7 @@
   bio: Uma Sethuraman is a sophomore computer science major, with a minor in business, at the University of Texas at Austin. After taking her first computer science course in ninth grade, Uma saw how computer science could solve a single problem in so many different ways. Uma became the president of her high school’s Girls in Computing Club and a coach for the Computer Science Club. In high school, she also created a genetic algorithm to address the problem of high school class scheduling. With this project, she won the Oracle Academy First Award at the Intel International Science and Engineering Fair. For Uma, exploring and finding solutions to computer science problems provides a feeling of achievement like no other. In college, Uma volunteered with a nonprofit organization to develop their iOS and Android apps. She has also taught elementary and middle school students about computer science through university organizations like Women in Computer Science. In the future, she aspires to apply the skills that she has learned in her coursework and projects to engineer software and algorithms that can solve real-world problems. In her free time, Uma also likes to cook and dance.
   href:
   role: participant
+  year: 2020
   institution: The University of Texas at Austin
 
 - github: kgskocelas
@@ -137,6 +150,7 @@
   bio: I am entering my 2nd year as a doctoral student at MSU pursuing a dual PhD in Computer Science and Ecology, Evolutionary Biology, & Behavior. I work in the Digital Evolution Lab under Dr. Charles Ofria studying evolutionary dynamics and complex diseases using digital evolution systems. Currently, my research uses digital organisms to examine potential evolutionary restraints on cancer. In my free time, I enjoy tabletop gaming and RPG’s, as well as reading and watching sci-fi and fantasy stories.
   href:
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: anyaevostinar
@@ -147,6 +161,7 @@
   bio: I have been an Assistant Professor of Computer Science at Grinnell College from 2017-2020 and will be at Carleton College starting in the fall of 2020. I earned my PhD in Ecology, Evolutionary Biology, and Behavior & Computer Science and Engineering at Michigan State University in 2017. I worked in the Devolab with Charles Ofria during my PhD. My research is focused on the evolution of symbiosis (parasitism, mutualism, etc) and using artificial life for both computer science and evolution education. I created and continue to develop Symbulation, an agent-based model of symbiosis. I have a dog named Cache, like to read sci-fi and fantasy, play video games (like Animal Crossing!), and garden.
   href:
   role: mentor
+  year: 2020
   institution: Grinnell College and Carleton College
 
 - github: DBlackwood
@@ -174,6 +189,7 @@
     I am a certified SCUBA diver and also worked as a hyperbaric chamber attendant at the NASA on-call hyperbaric facility in Shands Hospital, Gainesville, Florida.
   href: http://www.baywing.net/wp/
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: elizabethcarney
@@ -184,6 +200,7 @@
   bio: Elizabeth Carney is a senior at Smith College studying Computer Science, East Asian Languages, and Translation Studies. She is especially interested in natural language processing and science communication. She loves cats and pistachios.
   href:
   role: participant
+  year: 2020
   institution: Smith College
 
 - github: theycallmeHeem
@@ -194,6 +211,7 @@
   bio: Hi my name is Raheem Clemons, I am currently a rising sophomore at Washington and Jefferson college. I am originally from Northern Virginia and am pursuing a double major in International Business and Computer Science.
   href:
   role: participant
+  year: 2020
   institution: Washington and Jefferson College
 
 - github: abbywlsn
@@ -204,6 +222,7 @@
   bio: My name is Abby Wilson and I am currently a rising sophomore at Bard College in New York. I am double majoring in chemistry and computer science and plan to pursue graduate school after my time at Bard. I am originally from Santa Fe, New Mexico, and only recently journeyed to the East Coast for college. Outside of work and school, I really enjoy making art, music, and being outdoors -- especially if it involves hiking or skiing.
   href:
   role: participant
+  year: 2020
   institution: Bard College
 
 - github: chavez-ju
@@ -214,6 +233,7 @@
   bio: My name is Juan Chavez, an uprising Senior at Michigan State University! I'm an aspiring Software Engineer, with a particular interest in Web Development. Aside from coding, I enjoy weightlifting and hanging out with family/friends.
   href:
   role: participant
+  year: 2020
   institution: Michigan State University
 
 - github: tetianadadakova
@@ -224,6 +244,7 @@
   bio: Hi! I’m an imaging scientist and I’ve been developing algorithms for medical imaging most of my career. Currently I work on transitioning from academia into industry, where I can code full-time. In my free time I like playing piano, reading and cuddling with my cats.
   href:
   role: participant
+  year: 2020
   institution: UC Berkeley, Human Longevity Inc.
 
 - github: GraceWhipple
@@ -234,6 +255,7 @@
   bio: I am a rising junior at Michigan State University. I am a human biology major on the pre-med track. I am from Eagle, Idaho. So far, I am loving the Midwest.
   href:
   role: participant
+  year: 2020
   institution: Michigan State University
 
 - github: Oliver-BE
@@ -244,6 +266,7 @@
   bio: Hi! I'm a rising senior at Amherst College originally from Evanston, Illinois (I recently moved to New Orleans) and am double majoring in Computer Science and Statistics. I'm especially interested in evolutionary computation and interactive data visualizations. Outside of that, I enjoy photography, playing the piano, and climbing.
   href:
   role: participant
+  year: 2020
   institution: Amherst College
 
 - github: caovicto
@@ -254,7 +277,8 @@
   bio: I'm Victoria Cao, an uprising Junior at Michigan State University, studying Computer Science. During my free time I enjoy coding up side projects, drawing, and rock climbing.
   href:
   role: other
-  institution: Amherst College
+  year: 2020
+  institution: Michigan State University
 
 - github: qinyi2000
   twitter:
@@ -264,6 +288,7 @@
   bio: I'm a CS major who just graduated from Grinnell College. I enjoy software development and machine learning and I intend to work in the industry after completing graduate education. My favorite disciplines are criminal psychology and quantum mechanics.
   href:
   role: participant
+  year: 2020
   institution: Grinnell College
 
 - github: szendejo
@@ -274,6 +299,7 @@
   bio: Hi! My name is Stephanie Zendejo. I graduated from the University of Houston-Clear Lake with a degree in Computer Science. My focuses include embedded systems and automation. I'm interested in creating and promoting technology that is open and accessible to all. Outside of work, I enjoy hiking, playing the drums, and reading.
   href:
   role: participant
+  year: 2020
   institution: University of Houston-Clear Lake
 
 - github: cgnitash
@@ -284,6 +310,7 @@
   bio: I'm a grad student, interested in figuring out how complex things work. I enjoy the long road of getting to the answers, more than actually getting the answers. I enjoy c++, both getting it to do the things I want, as well as understanding how the language works, and how it got to be the way it is. Always happy to talk about any aspect of c++ in excruciating detail ;)
   href:
   role: other
+  year: 2020
   institution: Michigan State University
 
 - github: djrain
@@ -294,6 +321,7 @@
   bio: I'm Dylan, a recent computer science graduate from UC Irvine, and lifelong resident of southern California. I love to create (art, music, games). I'm also passionate about animals, fitness, and healthy plant-based food.
   href:
   role: participant
+  year: 2020
   institution: University of California, Irvine
 
 - github: mkmmnn
@@ -304,6 +332,7 @@
   bio: I just finished my sophomore year at Carleton College in Northfield, MN. I am majoring in Computer Science and Chemistry with a minor in Biochemistry. While I'm not busy studying, I enjoy playing games with friends via zoom, exercising with my dogs, and brewing absurd quantities of cold brew coffee for myself.
   href:
   role: participant
+  year: 2020
   institution: Carleton College
 
 - github: nstrasser
@@ -314,6 +343,7 @@
   bio: My name is Nadine Strasser and I am pursuing my master's degree in Information Engineering and Management at the University of Applied Sciences Upper Austria. Since February 2020, I have been working on my master thesis project in cooperation with the Digital Evolution Lab under Dr. Charles Ofria at Michigan State University. While I am not busy studying, I enjoy cooking, ballroom dancing, and going on hikes with my dog.
   href:
   role: other
+  year: 2020
   institution: University of Applied Sciences Upper Austria
 
 - github: berrym35
@@ -324,6 +354,7 @@
   bio: Maria is a junior at Michigan State University majoring in microbiology through Lyman Briggs College. Her academic interests include geomicrobiology, astrobiology, virology, and pedagogical approaches to STEM education at the tertiary level. Outside of classes and research, Maria is an Undergraduate Learning Assistant for Lyman Briggs chemistry lecture courses, a tutor for the Refugee Development Center in Lansing, and an executive board member for MSU Alternative Spartan Breaks. She also enjoys reading, running, and visiting her family's sheep at home.
   href:
   role: participant
+  year: 2020
   institution: Michigan State University
 
 - github: jgh9094
@@ -334,6 +365,7 @@
   bio: My name is Jose Guadalupe Hernandez, I am entering my 2nd year as a doctoral student at MSU pursuing a dual PhD in Computer Science and Ecology, Evolutionary Biology, & Behavior. I am part of the Digital Evolution Lab under Dr. Charles Ofria. My research focuses on the analysis and improvement of evolutionary algorithms. During my free time you can catch chilling with friends, working out, or eating tasty food!
   href:
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: Eflor
@@ -344,6 +376,7 @@
   bio: Hi! My name is Edwin Flores-Cardoso and I am from SWD, where the community consists of predominantly LatinX  people. I am entering my fourth-year at Michigan State University and am pursuing a degree in computer science and  minor in mathematics. I was introduced too STEM during my high school career, when I joined the FIRST Robotics Team. This experience increased my curiosity to purse a STEM degree.  I have also had the opportunity to work as an undergraduate learning assistant for a course in the mathematics department at Michigan State University. I improved my skill regarding communication, taking initiative, and multitasking. The WAVES program will allow me to continue growing and expand my current skill set, and I am excited to get started!
   href:
   role: participant
+  year: 2020
   institution: Michigan State University
 
 - github: lsmead
@@ -354,6 +387,7 @@
   bio: I am the Education Director at BEACON and generally interested in the teachings and learning of evolutionary biology, and the evolution of plethodontid salamanders.
   href:
   role: mentor
+  year: 2020
   institution: Michigan State University
 
 - github: rodsan0
@@ -364,6 +398,7 @@
   bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   href:
   role: other
+  year: 2020
   institution: Michigan State University
 
 - github: DanielJunghans
@@ -374,4 +409,276 @@
   bio: I am a undergraduate finance student in the Eli Broad College of Business. My research revolves around using novel machine learning techniques to better understand the invisible forces that influence the free market.
   href: http://danieljunghans.com/
   role: other
+  year: 2020
+  institution: Michigan State University
+
+- github: mitchelljohnson3
+  twitter:
+  nick: Mitchell
+  first: Michell
+  last: Johnson
+  bio: My name is Mitchell Johnson, and I'm currently pursuing a major in Computer Science and a minor in Neuroscience at the University of Washington Bothell. I am extremely interested in developing simulations of real life processes, as well as machine learning. I also love playing the drums and going backpacking!
+  href:
+  role: participant
+  year: 2021
+  institution: University of Washington Bothell
+
+- github: ackleyd1
+  twitter:
+  nick: Dave
+  first: David
+  last: Ackley
+  bio: No bio provided. Mysterious!
+  href:
+  role: participant
+  year: 2021
+  institution: Michigan State University
+
+- github: AriaKillebrewBruehl
+  twitter: BruehlAria
+  nick: Aria
+  first: Aria
+  last: Killebrew Bruehl
+  bio: I am a rising junior at Reed College in Portland, OR and originally from Berkeley, CA. I am majoring in computer science and minoring in French. Outside of school I enjoy dancing, hiking, and reading!
+  href:
+  role: participant
+  year: 2021
+  institution: Reed College
+
+- github: yemi33
+  twitter:
+  nick: Yemi
+  first: Yemi
+  last: Shin
+  bio: I am a rising senior at Carleton College, majoring in Computer Science. My academic interest is artificial intelligence, specifically in the area of Natural Language Processing. I am originally from South Korea. I like watching documentaries and eating my favorite Korean dish, Ddeokbokki, and yes, I like BTS. XD
+  href:
+  role: participant
+  year: 2021
+  institution: Carleton College
+
+- github: lemniscate8
+  twitter:
+  nick: Tait
+  first: Tait
+  last: Wecht
+  bio: I am graduate student in the math department at UC Davis. I get excited about spectral graph theory, random walks and cellular automata. Outside of a good book, I enjoy playing spikeball, ultimate frisbee and running.
+  href:
+  role: participant
+  year: 2021
+  institution: UC Davis
+
+- github: athaichi
+  twitter:
+  nick: Lanea
+  first: Lanea
+  last: Rohan
+  bio: No bio provided. Mysterious!
+  href:
+  role: participant
+  year: 2021
+  institution: Grinnell College
+
+- github: benperson745
+  twitter:
+  nick: Ben
+  first: Benjamin
+  last: Person
+  bio: I am a fourth year undergraduate student at Michigan State University pursuing a Computer Science and Experience Architecture double major with a minor in Game Design and Development. I am currently working to create an educational game aimed at teaching basic principles of genetics to middle school age students. Besides developing interactive experiences in C# and C++, I am passionate about world building, storytelling, and weightlifting.
+  href:
+  role: participant
+  year: 2021
+  institution: Michigan State University
+
+- github: TiffanyVo
+  twitter:
+  nick: Tiffany
+  first: Tiffany-Ellen
+  last: Vo
+  bio: Hello! My name is Tiffany-Ellen Vo. I'm a computer engineering major at UC Santa Cruz, with an emphasis in robotics. My interests include logic and FPGA design, assistive technology, and software development. Some of my hobbies include baking, crocheting, rock climbing and biking!
+  href:
+  role: participant
+  year: 2021
+  institution: UC Santa Cruz
+
+- github: EmilyDolson
+  twitter: emilyldolson
+  nick: Emily
+  first: Emily
+  last: Dolson
+  bio: I'm currently wrapping up a postdoctoral research position at Cleveland Clinic, before starting in the Fall as an Assistant Professor in computer science at Michigan State University. I use digital systems to study eco-evolutionary dynamics at broad spatiotemporal scales. Like most ecologists, I'm fascinated by the vast diversity of life that coexists on our planet. Understanding the evolutionary and ecological processes that generate and maintain this diversity is important both for biology and for machine learning via evolutionary computation. My formal training is in Computer Science, Evolutionary Biology, and Ecology.
+  href: https://www.emilyldolson.com/
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: mmore500
+  twitter: MorenoMatthewA
+  nick: Matthew
+  first: Matthew Andres
+  last: Moreno
+  bio: I’m a fourth year graduate student in the Digital Evolution Lab at Michigan State University. I like to think about and study evolvability. In my spare time, I love taking pictures!
+  href: https://mmore500.com
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: schmi710
+  twitter:
+  nick: Jamie
+  first: James
+  last: Schmidt
+  bio: Jamie is a third-year undergrad at Michigan State University majoring in Advanced Mathematics, Computer Science, Physics, Computational Mathematics, and Data Science. He enjoys playing the piano, pottery, and Historical European Martial Arts.
+  href:
+  role: participant
+  year: 2021
+  institution: Michigan State University
+
+- github: FergusonAJ
+  twitter: FergusonAJ17
+  nick: Austin
+  first: Austin
+  last: Ferguson
+  bio: Hello! I just finished the second year of my PhD at Michigan State University studying computer science and evolution. I use computational models to study how "living" organisms adapt to information from their environment. This includes evolution at the population level, but also learning and plasticity at the organism level. In my free time I enjoy experiencing the natural world (e.g., hiking, camping, cycling, and keeping plants) and also the synthetic (e.g., making / playing video games)!
+  href: http://austinjferguson.com/
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: alackles
+  twitter: alackles
+  nick: Acacia
+  first: Acacia
+  last: Ackles
+  bio: I'm a 2nd year PhD student in Integrative Biology at Michigan State University. I'm co-advised by Dr. Emily Dolson and Dr. Elise Zipkin, meaning that I work with computational statistical ecologists despite no formal training in (1) computation, (2) statistics, or (3) ecology. That said, I'm really interested in genetic complexity and how we can measure it using tools from different disciplines! I'm also passionate about undergraduate interdisciplinary pedagogy. Outside academia I enjoy games (board, video) and cats (the small, indoor kind).
+  href: https://alackles.github.io/
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: cliff-bohm
+  twitter: cliffbohm
+  nick: Cliff
+  first: Clifford
+  last: Bohm
+  bio: I'm generally interested in evolutionary processes that result in and from complex systems. My research interests currently include sexual selection and quantifying the effects on selection in systems with more than one orthogonal fitness vectors. I also work on MABE.
+  href: https://cliffbohm.weebly.com/
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: mjwiser
+  twitter: MikeWiser2
+  nick: Mike
+  first: Mike
+  last: Wiser
+  bio: |
+    I'm a teaching faculty member in the Biological Sciences program at MSU, and involved in several research projects over the summer.  Most relevant to the WAVES workshop is my work with Avida-ED.  My pedagogical research is most focused on what factors influence student learning about natural selection and evolution, and how students understand the concept of randomness.  I am also investigating whether different types of students have predictably different misconceptions prior to instruction.  My basic science research focuses on questions of the evolutionary process: How predictable is evolution?  How repeatable are the patterns?  And how well do patterns generalize across different study systems?  I use both computational and wetlab experiments to address these topics in the context of experimental evolution.
+  href: https://msu.edu/~mwiser/
+  role: other
+  year: 2021
+  institution: Michigan State University
+
+- github: amlalejini
+  twitter: amlalejini
+  nick: Alex
+  first: Alexander
+  last: Lalejini
+  bio: I'm a fifth year PhD student working with Dr. Charles Ofria in Computer Science and Ecology, Evolutionary Biology, & Behavior at Michigan State University. My research resides somewhere at the intersection of artificial life, evolutionary biology, and evolutionary computation. I use self-replicating computer programs as a model organism for studying the dynamics of evolving systems, and I draw inspiration from natural evolution to develop new evolutionary computation techniques and representations. Outside of academia, I enjoy tabletop gaming and un-athletically playing frisbee and soccer.
+  href: https://lalejini.com/
+  role: other
+  year: 2021
+  institution: Michigan State University
+
+- github: mercere99
+  twitter: CharlesOfria
+  nick: Charles
+  first: Charles
+  last: Ofria
+  bio: I am a Professor of Computer Science at Michigan State University, as well as Director of the Digital Evolution Laboratory, Director of the BEACON Center for the Study of Evolution in Action, and President of the International Society for Artificial Life.  My core interests have to do with understanding the evolution of complex traits, behaviors, and functions, especially the evolution of intelligence.  In nature, adaptive evolution relies on many different processes, stemming from information-rich environments with multi-scale spatial and temporal dynamics that generate complex ecologies including both cooperative and competative co-evolutionary pressures.  Ultimately these dynamics lead to open-ended evolution, where major evolutionary transitions can produce whole new type of organisms. Many of these processes can be replicated in a computer, both to understand their role in natural evolution and to harness them for problem solving.  In my lab we conduct projects to study these topics, as well as to make this research accessible to a broad range of student and public audiences.
+  href: https://ofria.com/
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: kgskocelas
+  twitter: kgskocelas
+  nick: Kate
+  first: Katherine
+  last: Skocelas
+  bio: I am entering my 2nd year as a doctoral student at MSU pursuing a dual PhD in Computer Science and Ecology, Evolutionary Biology, & Behavior. I work in the Digital Evolution Lab under Dr. Charles Ofria studying evolutionary dynamics and complex diseases using digital evolution systems. Currently, my research uses digital organisms to examine potential evolutionary restraints on cancer. In my free time, I enjoy tabletop gaming and RPG’s, as well as reading and watching sci-fi and fantasy stories.
+  href:
+  role: other
+  year: 2021
+  institution: Michigan State University
+
+- github: anyaevostinar
+  twitter: AnyaEVostinar
+  nick: Anya
+  first: Anya
+  last: Vostinar
+  bio: I have been an Assistant Professor of Computer Science at Grinnell College from 2017-2020 and will be at Carleton College starting in the fall of 2020. I earned my PhD in Ecology, Evolutionary Biology, and Behavior & Computer Science and Engineering at Michigan State University in 2017. I worked in the Devolab with Charles Ofria during my PhD. My research is focused on the evolution of symbiosis (parasitism, mutualism, etc) and using artificial life for both computer science and evolution education. I created and continue to develop Symbulation, an agent-based model of symbiosis. I have a dog named Cache, like to read sci-fi and fantasy, play video games (like Animal Crossing!), and garden.
+  href:
+  role: mentor
+  year: 2021
+  institution: Carleton College
+
+- github: DBlackwood
+  twitter: DianeJBlackwood
+  nick: Diane
+  first: Diane
+  last: Blackwood
+  bio: |
+    I am the programmer for Avida-ED at MSU. I have an eclectic background in Biology & Engineering with BS degrees in EE & Zoology from U of FL, MS in Biomedical Engineering from UT Arlington, & a PhD in Wildlife & Fisheries Science from Texas A&M.
+
+    While working at Florida's Fish and Wildlife Research Institute, I wrote the EcoSpecies web application for the South Atlantic Fisheries Management Council (SAFMC), and was the programmer for the Harmful Algal Bloom research group there.
+
+    I examined the effects of noise associated with natural gas extraction on lekking sage grouse including sound propagation/vegetation/topology maps from drilling sites during my Post-Doc at UC Davis.
+
+    For my PhD, I wrote software analyzing response times of bottlenose dolphins and beluga whales during Temporary Threshold Shift Hearing Tests at the Navy Marine Mammal Lab. The dolphin audiogram includes hearing up to 180 kHz, which is the highest frequency that had been tested due to hydrophone limitations. In another project, we recorded click vocalizations from 100 Hz to over 1 MHz and found significant sound components up to 500 kHz, which even if the dolphin does not hear frequencies that high, is useful information in modeling bottlenose dolphin click production - something that man-made projectors cannot produce.
+
+    I wrote software & compared surgical vs non-surgical treatment of human jaw fractures for my MS thesis, including a graphical user interface for an MS-DOS application.
+
+    I worked for General Dynamics on test stations to test flight computers and fire-control computers (weapons) on F-16 fighter jets. I also study G-induced loss of consciousness, both visual and auditory displays for pilot-vehicle interface advanced cockpit design.
+
+    I have been a licensed falconer since 1982 and currently fly a Harris Hawk that I trapped in December of 1991. We added a vizsla to the hunting 'pack' in 1993 and have been flying Harris Hawks over vizslas since then.
+
+    I worked caring for neonate horses (and one camel) a the U of FL College of Veterinary Medicine. I have trained horses from weanling foals thru driving with a 2 wheel cart or riding up to 1st level dressage and novice level eventing.
+
+    I am a certified SCUBA diver and also worked as a hyperbaric chamber attendant at the NASA on-call hyperbaric facility in Shands Hospital, Gainesville, Florida.
+  href: http://www.baywing.net/wp/
+  role: mentor
+  year: 2021
+  institution: Michigan State University
+
+- github: abbywlsn
+  twitter:
+  nick: Abby
+  first: Abigail
+  last: Wilson
+  bio: Abby Wilson is a rising junior at Bard College majoring in Chemistry with a concentration in Computer Science. She is originally from Santa Fe, NM and enjoys spending time with friends and getting outside.
+  href:
+  role: participant
+  year: 2021
+  institution: Bard College
+
+- github: jgh9094
+  twitter:
+  nick: Jose
+  first: Jose Guadalupe
+  last: Hernandez
+  bio: My name is Jose Guadalupe Hernandez, I am entering my 2nd year as a doctoral student at MSU pursuing a dual PhD in Computer Science and Ecology, Evolutionary Biology, & Behavior. I am part of the Digital Evolution Lab under Dr. Charles Ofria. My research focuses on the analysis and improvement of evolutionary algorithms. During my free time you can catch chilling with friends, working out, or eating tasty food!
+  href:
+  role: other
+  year: 2021
+  institution: Michigan State University
+
+- github: rodsan0
+  twitter:
+  nick: Santiago
+  first: Santiago
+  last: Rodriguez-Papa
+  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  href:
+  role: other
+  year: 2021
   institution: Michigan State University
