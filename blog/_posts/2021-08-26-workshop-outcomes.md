@@ -25,18 +25,18 @@ I've tucked in the 2020 blurb, too, further down below.
 > Some participants --- like Yemi Shin, who worked with Dr. Diane Blackwood to incorporate touch device support--- developed software explicitly tailored for Avida-ED.
 > Other participants --- like Tait Weicht, who worked with Matthew Andres Moreno to continue work on a C++ interface for mobile-friendly web design --- developed more general software tools that will directly support Avida-ED but have more general applicability.
 > Each participant wrote a blog post summary of their project.
-> (A full listing of blog posts is available at <{{ site.baseurl }}/blog.html>.)
+> (A full listing of blog posts is available at <{{ site.url }}/blog.html>.)
 >
 > To bring students up to speed with technical skills for their projects, we began the workshop with a one-week series of asynchronous tutorials introducing Avida-Ed, C++, and web design.
-> (A full listing of tutorials is available at <{{ site.baseurl }}/tutorials.html>.)
+> (A full listing of tutorials is available at <{{ site.url }}/tutorials.html>.)
 > In addition to these tutorials, participants broadened their scientific and technical horizons through topic-driven enrichment seminars.
 > These seminars were held for 90 minutes on a weekly basis.
-> (A full listing of enrichment sessions available at <{{ site.baseurl }}/enrichment.html>.)
+> (A full listing of enrichment sessions available at <{{ site.url }}/enrichment.html>.)
 > We also held weekly group meetings with breakout sessions to check in on student progress, troubleshoot barriers, and spitball ideas. We assessed a pre- and post-survey of participants to quantify learning outcomes.
 > We look forward to completing our analysis of learning outcomes in the upcoming weeks.
 >
 > We hosted 10 participants.
-> (A directory of our participants, including a brief biographical sketch for each, is available at <{{ site.baseurl }}/people.html>.)
+> (A directory of our participants, including a brief biographical sketch for each, is available at <{{ site.url }}/people.html>.)
 >
 > Five participants identified as women (50%).
 > Five participants identified as men (50%).
@@ -55,19 +55,19 @@ I've tucked in the 2020 blurb, too, further down below.
 > Some participants --- like Raheem Clemmons, who worked with Dr. Diane Blackwood to build a drag-and-drop framework --- developed software explicitly tailored for Avida-ED.
 > Other participants --- like Sara Boyd, who worked with Matthew Andres Moreno to build a C++ interface for mobile-friendly web design --- developed more general software tools that will directly support Avida-ED but have more general applicability.
 > Each participant wrote a blog post summary of their project.
-> (A full listing of blog posts is available at <{{ site.baseurl }}/blog.html>.)
+> (A full listing of blog posts is available at <{{ site.url }}/blog.html>.)
 >
 > To bring students up to speed with technical skills for their projects, we began the workshop with a one-week series of asynchronous tutorials introducing Avida-Ed, C++, and web design.
-> (A full listing of tutorials is available at <{{ site.baseurl }}/tutorials.html>.)
+> (A full listing of tutorials is available at <{{ site.url }}/tutorials.html>.)
 > In addition to these tutorials, participants broadened their scientific and technical horizons through topic-driven enrichment seminars.
 > These seminars were held for 90 minutes on a weekly basis.
-> (A full listing of enrichment sessions available at <{{ site.baseurl }}/enrichment.html>.)
+> (A full listing of enrichment sessions available at <{{ site.url }}/enrichment.html>.)
 > We also held weekly group meetings with breakout sessions to check in on student progress, troubleshoot barriers, and spitball ideas.
 > We assessed a pre- and post-survey of participants to quantify learning outcomes.
 > We look forward to completing our analysis of learning outcomes in the upcoming weeks.
 >
 > We hosted 17 participants, one of whom associated with the workshop on a volunteer basis.
-> (A directory of our participants, including a brief biographical sketch for each, is available at <{{ site.baseurl }}/people.html>.)
+> (A directory of our participants, including a brief biographical sketch for each, is available at <{{ site.url }}/people.html>.)
 >
 > Ten participants identified as women (59%).
 > Seven participants identified as men (41%).

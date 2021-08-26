@@ -9,3 +9,4 @@ plugins:
   - jemoji
 permalink: /:categories/:title:output_ext
 future: true
+url: https://mmore500.com/waves
