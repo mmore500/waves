@@ -66,9 +66,7 @@ Many large projects contain complex webs of dependencies, which are files that r
 
 One way to organize the system of dependencies is to "levelize" the code your working with. Levelizing is the process of organizing the files in a project based on the *scaffolding* of dependencies. For example, files at level 0 have no dependencies. A level one file will depend on one or many files of level 0, a level two file will depend on one or many level one files, and so on. Levelization is be a great tool to help understand how a large code base is organized.
 
-In our case, Austin used the levelization of MABE2 to decide which files we should begin testing. We've included his visualization below.
-
-[ include his levelization here ]
+In our case, Austin used the levelization of MABE2 to decide which files we should begin testing.
 
 One important thing to note about this levelization is that MABE2 has a library of third-party dependencies that are used throughout the source code, including [Empirical](https://empirical.readthedocs.io/en/latest/index.html). We worked under the assumption that all of these third-party resources were working correctly, and thus any error we found was occurring from within MABE2.
 
@@ -87,11 +85,7 @@ Since we both were thrown head-first into MABE2 and had little biology/evolution
 
 At the beginning, Austin gave us checklists of what to test in a file, and gave us guidance on how to test it.  Once we finished his checklist, we would go through and decide if there was something that we missed.
 
-After testing a couple of files with this method, we decided to push ourselves to come up with tests on our own. This lead to a new testing workflow, demonstrated in the image below.
-
-![testing flowchart]({{ site.baseurl }}/assets/Aria_Lanea/flowchart.png)
-
-In essence, we began by meeting with Austin to do a high-level overview of the code to make sure we understood what we would be testing. Then, on our own, we created a comprehensive test suite for the specific file with a variety of unit tests. Afterwards, we would send our tests to Austin who would come up with his own independent list of things to test. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We then repeat that cycle until all of us were satisfied with the testing coverage for the file. Then we repeat this process for the next file.
+After testing a couple of files with this method, we decided to push ourselves to come up with tests on our own. We began by meeting with Austin to do a high-level overview of the code to make sure we understood what we would be testing. Then, on our own, we created a comprehensive test suite for the specific file with a variety of unit tests. Afterwards, we would send our tests to Austin who would come up with his own independent list of things to test. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We then repeat that cycle until all of us were satisfied with the testing coverage for the file. Then we repeat this process for the next file.
 
 <br/>
 
@@ -174,6 +168,8 @@ At the end of the WAVES workshop, we were given the opportunity to present our s
 We attended the summer 2021 BEACON congress as both participants and speakers. We presented our talk "Planning for the Future of MABE2: A Summer of Documentation and Testing". Below you can find both our abstract, as well as a video recording of our talk.
 
 > The second Modular Agent-Based Evolver framework (MABE2) is an open-source research platform that provides accessible tools for conducting evolutionary computation and digital evolution research. MABE2 reduces the time between constructing a hypothesis and generating results by providing a library of modules that connect to form a variety of experiments. To promote use among interdisciplinary researchers, modules are connected and adjusted via a simple text interface (i.e., the user does not need to add or edit any code). However, if the user requires modules beyond the existing library, MABE2 provides a set of practical tools for developing additional modules. With the understanding that MABE2 is a large piece of software, this summer we created a documentation guide and testing framework as part of the 2021 Workshop for Avida-ED Software Development (WAVES). In this talk, we will highlight the role of the documentation and testing framework in the  MABE2 user experience through a demonstration of constructing and running a custom experiment. By creating the documentation and testing framework, we hope to make MABE2 more approachable to new users and more useful to the interdisciplinary research community.
+
+:movie_camera: Watch our talk [here](https://www.youtube.com/watch?v=D_XHRPY0xC8&ab_channel=AustinFerguson)!
 
 <br/>
 
