@@ -89,10 +89,7 @@ At the beginning, Austin gave us checklists of what to test in a file, and gave 
 
 After testing a couple of files with this method, we decided to push ourselves to come up with tests on our own. This lead to a new testing workflow, demonstrated in the image below.
 
-![testing flowchart]({{ site.baseurl }}/assets/Aria_Lanea/flowchart.png){:style="width: 100%;"}
-[**Figure Testing Flowchart.**](#fig-tf){:id="fig-tf"}
-*Flowchart for testing process created by Austin Ferguson*
-
+![testing flowchart]({{ site.baseurl }}/assets/Aria_Lanea/flowchart.png)
 
 In essence, we began by meeting with Austin to do a high-level overview of the code to make sure we understood what we would be testing. Then, on our own, we created a comprehensive test suite for the specific file with a variety of unit tests. Afterwards, we would send our tests to Austin who would come up with his own independent list of things to test. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We then repeat that cycle until all of us were satisfied with the testing coverage for the file. Then we repeat this process for the next file.
 
