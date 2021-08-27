@@ -89,7 +89,7 @@ At the beginning, Austin gave us checklists of what to test in a file, and gave 
 
 After testing a couple of files with this method, we decided to push ourselves to come up with tests on our own. This lead to a new testing workflow, demonstrated in the image below.
 
-![testing flowchart]({{ site.baseurl }}../assets/Aria_Lanea/flowchart.png){:style="width: 100%;"}
+![testing flowchart]({{ site.baseurl }}/assets/Aria_Lanea/flowchart.png){:style="width: 100%;"}
 [**Figure Testing Flowchart.**](#fig-tf){:id="fig-tf"}
 *Flowchart for testing process created by Austin Ferguson*
 
