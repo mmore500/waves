@@ -16,7 +16,6 @@ We dedicated our summer to documenting and testing MABE2, an open-source researc
 This project was guided by our wonderful mentors [Acaica Ackles](https://alackles.github.io/) (documentation) and [Austin Ferguson](http://fergusonaj.com/) (testing).
 
 ​
-
 ## :interrobang: Why Document and Test Code
 ​
 The [Digital Evolution Lab](https://devolab.org/) has spent countless hours developing MABE2 and preparing for its release. Proper documentation and testing are essential for ensuring that MABE2 is accepted into and used by as large of a community as possible.
@@ -50,17 +49,17 @@ The main page of MABE2's documentation has a more *sales-pitchy* feel to it. Thi
 The documentation also offers step-by-step installation and quickstart guides so users can quickly familiarize themselves with the fundamentals of running a MABE2 experiment. In addition to these basics, we dive deeper into the inner workings of MABE2 by documenting:
 
 * :dart: the source folder (which includes modules, tools for analysis, the MABE core, and MABE dependencies)
-* :jigsaw: the individual types of modules
+* 🧩 the individual types of modules
 * :chart_with_upwards_trend: various evaluator types
 * :card_index_dividers: the `TraitInfo` object
 
-Because MABE2 is still under active development there are some features whose implementation has yet to be finalized, meaning that for the time being, they have been left out of the documentation. In particular we did not document :dna: genomes, 	:brain: brains, or :globe_with_meridians: worlds.
+Because MABE2 is still under active development there are some features whose implementation has yet to be finalized, meaning that for the time being, they have been left out of the documentation. In particular we did not document 🧬 genomes, 🧠 brains, or :globe_with_meridians: worlds.
 
 ​If you're curious to learn more, you can check out a live version of the documentation [here](https://mabe2.readthedocs.io/en/latest/).
 
 <br/>
 
-## :test_tube: Testing
+## 🧪 Testing
 ### The Beginning
 Many large projects contain complex webs of dependencies, which are files that rely on other files. This is the case with MABE2. Dependencies make deciding where to start testing difficult. You need to be sure that the code you are testing does not rely on any untested files, since they could contain unknown bugs which may lead to errors in your current code. To avoid potential errors from untested dependencies, our mentor Austin suggested that we use a "bottom up"  method by starting with code that had no dependencies and working our way up to those with more.
 
@@ -68,7 +67,7 @@ One way to organize the system of dependencies is to "levelize" the code your wo
 
 In our case, Austin used the levelization of MABE2 to decide which files we should begin testing. We've included his visualization below.
 
-[ include his levelization here ]
+![Austin's levelization diagram]({{ site.baseurl }}/assets/AriaKillebrewBruehl/levelization.png){:style="width: 100%"}
 
 One important thing to note about this levelization is that MABE2 has a library of third-party dependencies that are used throughout the source code, including [Empirical](https://empirical.readthedocs.io/en/latest/index.html). We worked under the assumption that all of these third-party resources were working correctly, and thus any error we found was occurring from within MABE2.
 
@@ -89,7 +88,7 @@ At the beginning, Austin gave us checklists of what to test in a file, and gave 
 
 After testing a couple of files with this method, we decided to push ourselves to come up with tests on our own. This lead to a new testing workflow, demonstrated in the image below.
 
-[insert his flowchart]
+![Austin's workflow chart]({{ site.baseurl }}/assets/AriaKillebrewBruehl/mabe2_testing_flowchart.png){:style="width: 100%"}
 
 In essence, we began by meeting with Austin to do a high-level overview of the code to make sure we understood what we would be testing. Then, on our own, we created a comprehensive test suite for the specific file with a variety of unit tests. Afterwards, we would send our tests to Austin who would come up with his own independent list of things to test. He would compare his test suite with ours and give us feedback on what we missed. We would then go back and review our own tests with his advice in mind. We then repeat that cycle until all of us were satisfied with the testing coverage for the file. Then we repeat this process for the next file.
 
@@ -164,7 +163,7 @@ Here are a couple of things that you might find helpful when testing MABE2 files
     To get around this issue you can set up multiple Managers and first check things that won't add an error, and end with checking one thing that does throw an error.
 
     One note for this: if the next thing you test should get rid of the error. For example: a module A requires that at least one other module of type B exists. First you check that adding a module A by itself throws and error. However, if your very next step is to add a module of type B, this should appease the manager, and no error is thrown. In this case, the Manager can be re-used.
-10. :compass: **Pointer Tracking:** An important part of testing is making sure destructors work correctly and delete pointers as needed. Empirical provides a pointer tracker which can be used with the macro `#include "emp/base/Ptr.hpp"`. Pointers can be tracked with the boolean function `emp::BasePtr<void>::Tracker().IsDeleted(<pointer>.id)`. To turn on pointer tracking, the test file must be compiled with the flags `-g` and  `-DEMP_TRACK_MEM`.
+10. 🧭 **Pointer Tracking:** An important part of testing is making sure destructors work correctly and delete pointers as needed. Empirical provides a pointer tracker which can be used with the macro `#include "emp/base/Ptr.hpp"`. Pointers can be tracked with the boolean function `emp::BasePtr<void>::Tracker().IsDeleted(<pointer>.id)`. To turn on pointer tracking, the test file must be compiled with the flags `-g` and  `-DEMP_TRACK_MEM`.
 
 <br/>
 
