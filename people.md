@@ -20,7 +20,7 @@ description: Workshop folks
   {% assign person = by_github_username.items | first %}
 
   <div class="img-holder">
-    <a href="#{{ person.github | replace: "-", "_" }}">
+    <a href="#{{ person.github | replace: "-", "_" }}{{ person.year }}">
       <img
         src="{{ site.baseurl }}/assets/headshots/square-{{ person.github }}.png"
         alt="{{ person.first }} {{ person.last }}"
