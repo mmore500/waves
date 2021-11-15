@@ -12,7 +12,7 @@ description: Workshop folks
 {% assign participants2020 = site.data.people | where:'role', 'participant' | where:'year', '2020' | sort: "nick" %}
 {% assign friends2020 = site.data.people | where:'role', 'other' | where:'year', '2020' | sort: "nick" %}
 
-{% assign shuffled_grouped = site.data.people | group_by:"github" | sample: 100 %}
+{% assign shuffled_grouped = site.data.people | reverse | group_by:"github" | sample: 100 %}
 
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 100vw; margin-left: -50vw; left: 50%; position: relative;">
