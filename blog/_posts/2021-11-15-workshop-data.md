@@ -7,7 +7,7 @@ author: Matthew Andres Moreno
 
 In order to ensure [accountability to our funders](https://mmore500.com/waves/blog/workshop-outcomes.html) and improve the workshop experience, we collected survey data about participant demographics, aptitudes, and interests before and after our 2020 and 2021 workshops.
 In 2021, we also asked workshop applicants to voluntarily self-report demographic information.
-Although we skimmed these datasets to report a demographic sketch workshop, further analyses should delve into characterizing participant outcomes and feedback.
+Although we skimmed these datasets to report a demographic sketch of our workshop, further analyses should delve into characterizing participant outcomes and feedback.
 However, because survey responses contain potentially personally-identifying information (especially due to the small size of our cohort) it is important for these materials to remain confidential.
 
 For long-term survivability and security of our workshop's survey responses, we have set up an archive on the [Open Science Framework](https://osf.io).
