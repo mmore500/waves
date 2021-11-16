@@ -12,7 +12,7 @@ However, because survey responses contain potentially personally-identifying inf
 
 For long-term survivability and security of our workshop's survey responses, we have set up an archive on the [Open Science Framework](https://osf.io).
 The repository page can be accessed at <https://osf.io/asf3b/> (DOI `10.17605/OSF.IO/ASF3B`).
-Raw survey response data is contained within a protected sub-component of that project.
+Raw survey response data is contained within a protected sub-component of that project, located at <https://osf.io/urv7w/>.
 
 Repository administrators include,
 
