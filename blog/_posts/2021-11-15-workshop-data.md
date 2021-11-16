@@ -11,7 +11,7 @@ Although we skimmed these datasets to report a demographic sketch workshop, furt
 However, because survey responses contain potentially personally-identifying information (especially due to the small size of our cohort) it is important for these materials to remain confidential.
 
 For long-term survivability and security of our workshop's survey responses, we have set up an archive on the [Open Science Framework](https://osf.io).
-The repository page can be accessed at <https://osf.io/asf3b/>, DOI `10.17605/OSF.IO/ASF3B`.
+The repository page can be accessed at <https://osf.io/asf3b/> (DOI `10.17605/OSF.IO/ASF3B`).
 Raw survey response data is contained within a protected sub-component of that project.
 
 Repository administrators include,
