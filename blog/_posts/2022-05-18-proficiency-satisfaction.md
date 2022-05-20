@@ -11,8 +11,8 @@ In particular, the difficulty and subtlety of persistent social inequalities wit
 Evidence-driven assessment can fulfill an additional role, too, in demonstrating the efficacy of existing educational practice to stakeholders [(Groccia and Buskist, 2011)](#groccia2011need).
 
 In these veins, we used entry and exit surveys assess participant outcoes from the 2020 and 2021 Workshop for Avida-ED Software Development (WAVES) program.
-We find significant improvements in participants' self-reported proficiencies with C++, JavaScript, and HTML/CSS over the course of the workshop, with members of underrepresented groups in computer science generally starting at a lower self-reported proficiency but gaining more proficiency during the workshop than their peers.
-Interestingly, we also observed a higher proportion of underrepresented students report themselves as "very satisfied" with the workshop compared to their peers.
+We find significant improvements in participants' self-reported proficiencies with C++, JavaScript, and HTML/CSS over the course of the workshop, with members of underadvantaged groups in computer science generally starting at a lower self-reported proficiency but gaining more proficiency during the workshop than their peers.
+Interestingly, we also observed a higher proportion of underadvantaged students report themselves as "very satisfied" with the workshop compared to their peers.
 However, among all participants, we did not observe improvements in participants' self-reported overall programming proficiency nor their proficiency in evolutionary thinking.
 
 ## Workshop Recap
@@ -50,12 +50,12 @@ One participant identified as Korean (10%), one identified as Vietnamese (10%), 
 Three participants identified as LGBTQIAP (30%).
 One participant identified as first-generation (10%).
 
-In line with the NSF, we considered participants who self-identified as women, African Americans, Hispanics, American Indians, Alaska Natives, Native Hawaiians, and Pacific Islanders as members of an underrepresented group in computer science.
-Although it was not directly queried in our surveys, we considered participants who reported LGBTQIAP+ identity as "Other Identity" as members of an underrepresented group, as well ([Dym et al., 2021](#dym2021you); [Stout and Wright, 2016](#stout2016lesbian)).
+In line with the NSF, we considered participants who self-identified as women, African Americans, Hispanics, American Indians, Alaska Natives, Native Hawaiians, and Pacific Islanders as members of an underadvantaged group in computer science.
+Although it was not directly queried in our surveys, we considered participants who reported LGBTQIAP+ identity as "Other Identity" as members of an underadvantaged group, as well ([Dym et al., 2021](#dym2021you); [Stout and Wright, 2016](#stout2016lesbian)).
 Disability was also not directly queried in our surveys, and we didn't have any participants report a disability identity as "Other Identity."
 
-We counted 21 of 27 (77%) workshop participants as members of an underrepresented group (14/17 or 82% in 2020 and 7/10 or 70% in 2021).
-Because of anonymity concerns due to the small sample size, we do not disaggregate analyses beyond participants' membership in an underrepresented group [(Bhatti, 2021)](#bhatti2021toward)
+We counted 21 of 27 (77%) workshop participants as members of an underadvantaged group (14/17 or 82% in 2020 and 7/10 or 70% in 2021).
+Because of anonymity concerns due to the small sample size, we do not disaggregate analyses beyond participants' membership in an underadvantaged group [(Bhatti, 2021)](#bhatti2021toward).
 
 ## C++, JavaScript, and HTML/CSS Proficiencies
 
@@ -97,26 +97,26 @@ About half of participants rated themselves as more proficient at JavaScript aft
 One reported themself less proficient.
 Self-reported JavaScript proficiency increased significantly a mean of around 0.25 proficiency levels (strictly positive 95% confidence interval).
 
-## C++, JavaScript, and HTML/CSS Proficiencies in Members of Underrepresented Groups
+## C++, JavaScript, and HTML/CSS Proficiencies in Members of Underadvantaged Groups
 
-![Disaggregated C++ proficiency outcomes]({{ site.baseurl }}/assets/mmore500/cpp-proficiency-underrepresented.PNG){:style="width: 100%;"}
+![Disaggregated C++ proficiency outcomes]({{ site.baseurl }}/assets/mmore500/cpp-proficiency-disaggregated.PNG){:style="width: 100%;"}
 [**Figure DSRPC.**](#fig-dsrpc){:id="fig-dsrpc"}
 *Disaggregated self-reported participant C++ proficiency measured on workshop entry and exit survey.
 Error bar denotes bootstrapped 95% confidence interval.*
 
-![Disaggregated JavaScript proficiency outcomes]({{ site.baseurl }}/assets/mmore500/javascript-proficiency-underrepresented.PNG){:style="width: 100%;"}
+![Disaggregated JavaScript proficiency outcomes]({{ site.baseurl }}/assets/mmore500/javascript-proficiency-disaggregated.PNG){:style="width: 100%;"}
 [**Figure DSRPJ.**](#fig-dsrpj){:id="fig-dsrpj"}
 *Disaggregated self-reported participant JavaScript proficiency measured on workshop entry and exit survey.
 Error bar denotes bootstrapped 95% confidence interval.*
 
-![Disaggregated HTML/CSS proficiency outcomes]({{ site.baseurl }}/assets/mmore500/dom-proficiency-underrepresented.PNG){:style="width: 100%;"}
+![Disaggregated HTML/CSS proficiency outcomes]({{ site.baseurl }}/assets/mmore500/dom-proficiency-disaggregated.PNG){:style="width: 100%;"}
 [**Figure DSRPH.**](#fig-dsrph){:id="fig-dsrph"}
 *Disaggregated self-reported participant HTML/CSS proficiency measured on workshop entry and exit survey.
 Error bar denotes bootstrapped 95% confidence interval.*
 
-Figures [DSRPC](#fig-dsrpc), [DSRPJ](#fig-dsrpj), and [DSRPH](#fig-dsrph) disaggregate members of underrepresented groups' self-reported proficiencies on C++, JavaScript, and HTML/CSS.
+Figures [DSRPC](#fig-dsrpc), [DSRPJ](#fig-dsrpj), and [DSRPH](#fig-dsrph) disaggregate members of underadvantaged groups' self-reported proficiencies on C++, JavaScript, and HTML/CSS.
 For all three languages, these members entered and exited the workshop with on-average lower self-rated proficiency.
-However, for C++ and JavaScript members of underrepresented groups gained on average more self-reported proficiency units, potentially representing success of the workshop in "catching up" these participants.
+However, for C++ and JavaScript members of underadvantaged groups gained on average more self-reported proficiency units, potentially representing success of the workshop in "catching up" these participants.
 
 Although some comparisons might appear significant due to non-overlapping 95% confidence intervals, sample size is too small to reliably interpret the bootstrapped bars.
 The effect of some participants entering with no room for detectable improvement (i.e., rating themselves the highest available proficiency) must also be considered when interpreting results.
@@ -138,14 +138,14 @@ In addition to asking about specific programming languages, we also asked partic
 *Self-reported programming proficiency measured on workshop entry and exit surveys.
 Error bar denotes bootstrapped 95% confidence interval.*
 
-![Disaggregated programming proficiency outcomes]({{ site.baseurl }}/assets/mmore500/programming-proficiency-underrepresented.PNG){:style="width: 100%;"}
+![Disaggregated programming proficiency outcomes]({{ site.baseurl }}/assets/mmore500/programming-proficiency-disaggregated.PNG){:style="width: 100%;"}
 [**Figure DSRPP.**](#fig-srpsm){:id="fig-srpsm"}
 *Disaggregated self-reported programming proficiency measured on workshop entry and exit surveys.
 Error bars denotes bootstrapped 95% confidence interval.*
 
 As shown in [Figure SRPPM](#fig-srppm), we did not observe increases in self-rated overall proficiency in programming associated with WAVES.
 In fact, mean self-rated proficiency decreased over the course of the workshop.
-[Figure DSRPP](#fig-dsrpp) shows that status as a member of an underrepresented group did not notably affect overall programming proficiency outcome.
+[Figure DSRPP](#fig-dsrpp) shows that status as a member of an underadvantaged group did not notably affect overall programming proficiency outcome.
 This result suggests that enrichment content on more general programming topics might benefit the workshop experience.
 However, this result might potentially be due to too-coarse and overly-career-oriented design of the response options.
 
@@ -170,13 +170,13 @@ Error bar denotes bootstrapped 95% confidence interval.*
 As before, this result suggests that improved enrichment content on evolution topics might benefit the workshop experience.
 However, this result might potentially be due to too-coarse response options as well.
 
-![Evolution proficiency outcomes]({{ site.baseurl }}/assets/mmore500/evolution-proficiency-underrepresented.PNG){:style="width: 100%;"}
+![Evolution proficiency outcomes]({{ site.baseurl }}/assets/mmore500/evolution-proficiency-disaggregated.PNG){:style="width: 100%;"}
 [**Figure DSRET.**](#fig-dsret){:id="fig-dsret"}
 *Disaggregated self-reported evolutionary thinking proficiency measured on workshop entry and exit surveys.
 Error bars denote bootstrapped 95% confidence interval.*
 
-Disaggregating by underrepresented status in [Figure DSRET](#fig-dsret), we can see that underrepresented students entered and exited with marginally higher mean proficiency with evolutionary thinking.
-However, non-underrepresented students gained somewhat more proficiency over the course of the workshop.
+Disaggregating by underadvantaged status in [Figure DSRET](#fig-dsret), we can see that underadvantaged students entered and exited with marginally higher mean proficiency with evolutionary thinking.
+However, non-underadvantaged students gained somewhat more proficiency over the course of the workshop.
 
 ## Workshop Satisfaction
 
@@ -200,17 +200,17 @@ Note that workshop satisfaction data was only collected in 2021.*
 All participants were "satisfied" or "very satisfied."
 Six were "very satisfied" and four were "satisfied."
 
-Interestingly, disaggregating shows a higher fraction of members of an underrepresented group rating themselves "very satisfied."
+Interestingly, disaggregating shows a higher fraction of members of an underadvantaged group rating themselves "very satisfied."
 However, due to small sample size this result is not statistically significant (Fisher's Exact Test).
 
 ## Conclusion
 
-Survey data suggests the WAVES workshop succeeded in building language-specific proficiency among participants, particularly with respect to "catching up" members of underrepresented groups.
+Survey data suggests the WAVES workshop succeeded in building language-specific proficiency among participants, particularly with respect to "catching up" members of underadvantaged groups.
 However, survey data shows that the the workshop did not improve participant evolutionary thinking or overall self-assessed programming proficiency.
 This suggests areas for potential curriculum improvement if the workshop were to be offered again.
 
 In future work with existing survey data, we are interested in studying the impact of adding social "warm-up" activities to enrichment seminars in 2021, particularly with respect to participants' sense of community within the virtual workshop context.
-The potential relationship between strengthened professional social relationships and retention of members of underrepresented groups makes this question particularly prescient [(Merolla and Serpe, 2013)](#merolla2013stem).
+The potential relationship between strengthened professional social relationships and retention of members of underadvantaged groups makes this question particularly prescient [(Merolla and Serpe, 2013)](#merolla2013stem).
 
 We are also interested in comparing applicant demographic data collected in 2021 to the demographics of selected workshop participants in order to reflect on the workshop admissions process.
 
@@ -221,12 +221,12 @@ The data repository page can be accessed at <https://osf.io/asf3b/> (DOI `10.176
 Raw survey response data and collated, coded (i.e., assigned numerical labels to survey responses), and partially anonymized data is contained within a protected sub-component of that project, located at `https://osf.io/urv7w/`.
 
 We have pre- and post-workshop survey responses for all participants, except for one student from 2020 who we were not able to reach after the workshop concluded.
-Based on the pre-workshop survey data, this participant identified as a member of an underrepresented group in computer science.
+Based on the pre-workshop survey data, this participant identified as a member of an underadvantaged group in computer science.
 This participant's post-workshop survey data was excluded from all analyses because it was missing.
 
 To minimize stereotype threat effects, participants self-reported demographic information as the final component of each survey [(Steele and Aronson, 1995)](#steele1995stereotype).
 
-Data analyses are organized as a notebook, [available on GitHub](https://github.com/mmore500/waves/blob/431b98a092bc242740abb66250802b96ef39ca4d/assets/WAVES_proficiency_and_satisfaction.ipynb)
+Data analyses are organized as a notebook, [available on GitHub](https://github.com/mmore500/waves/blob/master/assets/WAVES_proficiency_and_satisfaction.ipynb)
 
 ## Acknowledgment
 
